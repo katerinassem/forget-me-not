@@ -1,0 +1,52 @@
+body
+{
+    color: purple;
+    margin: 10% auto 10%;
+}
+
+form
+{
+    width: 50%;
+}
+
+input, label
+{
+    float: left;
+    width: 100%;
+    margin-bottom: 1%;
+}
+
+.sex, .tel
+{
+    width: auto;
+}
+
+fieldset
+{
+    margin-top: 2%;
+}
+
+button
+{
+    margin: 0 auto 0;
+}
+
+textarea
+{
+    width: 100%;
+    color: grey;
+    margin: 2% 0 2%;
+}
+
+table
+{
+    border-collapse: collapse;
+    background-color: beige;
+    width: 100%;
+}
+
+td, th
+{
+    padding: 1%;
+    border: 2px solid white;
+}
