@@ -10,47 +10,47 @@ public class Attachment extends TransferObject
     String fileName;
     Date uploadDate;
     String comment;
-    Contact contact;
+    Integer contactId;
 
     public Attachment() {}
 
-    public Attachment(Integer id, String fileName, Date uploadDate, String comment, Contact contact) {
+    public Attachment(Integer id, String fileName, Date uploadDate, String comment, Integer contactId) {
         super(id);
         this.fileName = fileName;
         this.uploadDate = uploadDate;
         this.comment = comment;
-        this.contact = contact;
+        this.contactId = contactId;
     }
 
-    public Contact getContact() {
-        return contact;
+    public Integer getContactId() {
+        return contactId;
     }
 
-    public void setContact(Contact _contact) {
-        contact = _contact;
+    public void setContactId(Integer contactId) {
+        this.contactId = contactId;
     }
 
     public String getFileName() {
         return fileName;
     }
 
-    public void setFileName(String _fileName) {
-        fileName = _fileName;
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     public Date getUploadDate() {
         return uploadDate;
     }
 
-    public void setUploadDate(Date _uploadDate) {
-        uploadDate = _uploadDate;
+    public void setUploadDate(Date uploadDate) {
+        this.uploadDate = uploadDate;
     }
 
     public String getComment() {
         return comment;
     }
 
-    public void setComment(String _comment) {
-        comment = _comment;
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 }

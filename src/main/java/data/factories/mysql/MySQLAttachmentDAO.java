@@ -9,27 +9,28 @@ import java.util.ArrayList;
 public class MySQLAttachmentDAO implements DAO<Attachment>
 {
     @Override
-    public void create(Attachment object) {
-
+    public int create(Attachment object) throws Exception {
+        int generatedId = -1;
+        return generatedId;
     }
 
     @Override
-    public Attachment read(int id) {
+    public Attachment read(int id)  throws Exception {
         return null;
     }
 
     @Override
-    public boolean update(Attachment object) {
+    public boolean update(Attachment object) throws Exception {
         return false;
     }
 
     @Override
-    public boolean delete(Attachment object) {
+    public boolean delete(Attachment object) throws Exception {
         return false;
     }
 
     @Override
-    public ArrayList<Attachment> readAll() {
+    public ArrayList<Attachment> readAll() throws Exception {
         return null;
     }
 }

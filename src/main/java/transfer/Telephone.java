@@ -10,18 +10,18 @@ public class Telephone extends TransferObject
     Long telephoneNumber;
     TelephoneType type;
     String comment;
-    Contact contact;
+    Integer contactId;
 
-    public Telephone(){};
+    public Telephone(){}
 
-    public Telephone(Integer id, Short countryCode, Short operatorCode, Long telephoneNumber, TelephoneType type, String comment, Contact contact) {
+    public Telephone(Integer id, Short countryCode, Short operatorCode, Long telephoneNumber, TelephoneType type, String comment, Integer contactId) {
         super(id);
         this.countryCode = countryCode;
         this.operatorCode = operatorCode;
         this.telephoneNumber = telephoneNumber;
         this.type = type;
         this.comment = comment;
-        this.contact = contact;
+        this.contactId = contactId;
     }
 
     public Short getCountryCode() {
@@ -64,11 +64,11 @@ public class Telephone extends TransferObject
         this.comment = comment;
     }
 
-    public Contact getContact() {
-        return contact;
+    public Integer getContactId() {
+        return contactId;
     }
 
-    public void setContact(Contact contact) {
-        this.contact = contact;
+    public void setContactId(Integer contactId) {
+        this.contactId = contactId;
     }
 }

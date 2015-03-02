@@ -7,9 +7,9 @@ import java.util.ArrayList;
  */
 public interface DAO<T>
 {
-    void create (T object);
-    T read(int id);
-    boolean update (T object);
-    boolean delete (T object);
-    ArrayList<T> readAll();
+    int create (T object) throws Exception;
+    T read(int id) throws Exception;
+    boolean update (T object) throws Exception;
+    boolean delete (T object) throws Exception;
+    ArrayList<T> readAll() throws Exception;
 }

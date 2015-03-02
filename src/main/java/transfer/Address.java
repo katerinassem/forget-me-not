@@ -11,11 +11,11 @@ public class Address extends TransferObject
     Integer building;
     Integer apartment;
     Long index;
-    Contact contact;
+    Integer contactId;
 
     public Address(){}
 
-    public Address(Integer id, String country, String city, String street, Integer building, Integer apartment, Long index, Contact contact) {
+    public Address(Integer id, String country, String city, String street, Integer building, Integer apartment, Long index, Integer contactId) {
         super(id);
         this.country = country;
         this.city = city;
@@ -23,7 +23,7 @@ public class Address extends TransferObject
         this.building = building;
         this.apartment = apartment;
         this.index = index;
-        this.contact = contact;
+        this.contactId = contactId;
     }
 
     public String getCountry() {
@@ -74,12 +74,12 @@ public class Address extends TransferObject
         this.index = index;
     }
 
-    public Contact getContact() {
-        return contact;
+    public Integer getContactId() {
+        return contactId;
     }
 
-    public void setContact(Contact contact) {
-        this.contact = contact;
+    public void setContactId(Integer contactId) {
+        this.contactId = contactId;
     }
 
 }

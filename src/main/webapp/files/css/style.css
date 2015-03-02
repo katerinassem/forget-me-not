@@ -1,19 +1,14 @@
 body
 {
     color: purple;
-    margin: 10% auto 10%;
-}
-
-form
-{
-    width: 50%;
+    margin: 10% 10% 10%;
 }
 
 input, label
 {
     float: left;
-    width: 100%;
-    margin-bottom: 1%;
+    width: 50%;
+    margin: 2% 2% 2%;
 }
 
 .sex, .tel

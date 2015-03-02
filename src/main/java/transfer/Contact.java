@@ -18,6 +18,7 @@ public class Contact extends TransferObject
     String email;
     String company;
     String photoUrl;
+    Integer addressId;
 
     //  Списки присоединений, адрес, телефоны
     Address address;
@@ -153,5 +154,13 @@ public class Contact extends TransferObject
 
     public void setPhotoUrl(String _photoUrl) {
         photoUrl = _photoUrl;
+    }
+
+    public Integer getAddressId() {
+        return addressId;
+    }
+
+    public void setAddressId(Integer addressId) {
+        this.addressId = addressId;
     }
 }
