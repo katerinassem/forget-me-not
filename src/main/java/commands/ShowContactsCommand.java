@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  * Created by Катерина on 20.02.2015.
@@ -21,7 +22,7 @@ public class ShowContactsCommand implements Command
     private static Logger logger = Logger.getLogger(ShowContactsCommand.class);
 
     @Override
-    public void process(HttpServletRequest req, HttpServletResponse resp)
+    public void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException
     {
         try
         {
@@ -38,10 +39,17 @@ public class ShowContactsCommand implements Command
                 boolean del = addrDAO.delete(address);
                 del = addrDAO.delete(address);
                 address.setContactId(0);
+                generatedId = addrDAO.create(address);
             }
-            catch (Exception e)
+            catch (SQLException e)
             {
                 req.getSession().setAttribute("error", "Stricted operation with data. Entered data is invalid.");
+            }
+            catch (ServletException e)
+            {
+                logger.error(" - Cannot access the application database");
+                req.getSession().setAttribute("error", "Application error, cannot access the application database");
+                throw new ServletException(e);
             }
             RequestDispatcher dispatcher = req.getRequestDispatcher("ContactList.jsp");
             dispatcher.forward(req, resp);

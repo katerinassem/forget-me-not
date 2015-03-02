@@ -16,7 +16,7 @@ public class SaveTelephoneCommand implements Command
     private static Logger logger = Logger.getLogger(SaveTelephoneCommand.class);
 
     @Override
-    public void process(HttpServletRequest req, HttpServletResponse resp) {
+    public void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException {
 
         try {
             //Сохранение телефона

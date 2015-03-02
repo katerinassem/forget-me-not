@@ -16,7 +16,7 @@ public class SearchContactsCommand implements Command
     private static Logger logger = Logger.getLogger(SearchContactsCommand.class);
 
     @Override
-    public void process(HttpServletRequest req, HttpServletResponse resp) {
+    public void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException {
 
         try {
             //  Запоминаем найденные контакты, перенаправляем на страницу контактов

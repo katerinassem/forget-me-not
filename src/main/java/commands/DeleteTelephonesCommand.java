@@ -16,7 +16,7 @@ public class DeleteTelephonesCommand implements Command
     private static Logger logger = Logger.getLogger(DeleteTelephonesCommand.class);
 
     @Override
-    public void process(HttpServletRequest req, HttpServletResponse resp) {
+    public void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException {
 
         try {
             //Удаление телефонов

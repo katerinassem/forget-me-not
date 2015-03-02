@@ -1,6 +1,9 @@
 package data.factories.mysql;
 import data.DAO;
 import transfer.Attachment;
+
+import javax.servlet.ServletException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -9,28 +12,28 @@ import java.util.ArrayList;
 public class MySQLAttachmentDAO implements DAO<Attachment>
 {
     @Override
-    public int create(Attachment object) throws Exception {
+    public int create(Attachment object) throws SQLException, ServletException {
         int generatedId = -1;
         return generatedId;
     }
 
     @Override
-    public Attachment read(int id)  throws Exception {
+    public Attachment read(int id) throws SQLException, ServletException {
         return null;
     }
 
     @Override
-    public boolean update(Attachment object) throws Exception {
+    public boolean update(Attachment object) throws SQLException, ServletException {
         return false;
     }
 
     @Override
-    public boolean delete(Attachment object) throws Exception {
+    public boolean delete(Attachment object) throws SQLException, ServletException {
         return false;
     }
 
     @Override
-    public ArrayList<Attachment> readAll() throws Exception {
+    public ArrayList<Attachment> readAll() throws SQLException, ServletException {
         return null;
     }
 }

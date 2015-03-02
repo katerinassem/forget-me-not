@@ -1,5 +1,8 @@
 package data;
 
+import javax.servlet.ServletException;
+import java.sql.SQLDataException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -7,9 +10,9 @@ import java.util.ArrayList;
  */
 public interface DAO<T>
 {
-    int create (T object) throws Exception;
-    T read(int id) throws Exception;
-    boolean update (T object) throws Exception;
-    boolean delete (T object) throws Exception;
-    ArrayList<T> readAll() throws Exception;
+    int create (T object) throws SQLException, ServletException;
+    T read(int id) throws SQLException, ServletException;
+    boolean update (T object) throws SQLException, ServletException;
+    boolean delete (T object) throws SQLException, ServletException;
+    ArrayList<T> readAll() throws SQLException, ServletException;
 }

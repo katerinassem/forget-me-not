@@ -16,7 +16,7 @@ public class CreateEditTelephoneCommand implements Command
     private static Logger logger = Logger.getLogger(CreateEditTelephoneCommand.class);
 
     @Override
-    public void process(HttpServletRequest req, HttpServletResponse resp) {
+    public void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException {
 
         try {
             RequestDispatcher dispatcher = req.getRequestDispatcher("CreateEditTelephone.jsp");

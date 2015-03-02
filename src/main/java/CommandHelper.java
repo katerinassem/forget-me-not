@@ -1,6 +1,7 @@
 import commands.Command;
 import org.apache.log4j.Logger;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,7 +12,7 @@ public class CommandHelper {
 
     private static Logger logger = Logger.getLogger(CommandHelper.class);
 
-    public void dispatchRequest(HttpServletRequest req, HttpServletResponse resp)
+    public void dispatchRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException
     {
         String attrValue = req.getParameter("command");
         Command command = getCommandForCommandName(attrValue);

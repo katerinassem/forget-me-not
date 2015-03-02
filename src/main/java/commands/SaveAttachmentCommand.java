@@ -16,7 +16,7 @@ public class SaveAttachmentCommand implements Command
     private  static Logger logger = Logger.getLogger(SaveAttachmentCommand.class);
 
     @Override
-    public void process(HttpServletRequest req, HttpServletResponse resp) {
+    public void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException {
 
         try {
             //Сохранение присоединений

@@ -20,7 +20,14 @@ public class FrontServlet extends HttpServlet
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
-        commandHelper.dispatchRequest(req, resp);
+        try {
+            commandHelper.dispatchRequest(req, resp);
+        }
+        catch (ServletException e)
+        {
+            RequestDispatcher dispatcher = req.getRequestDispatcher("Error.jsp");
+            dispatcher.forward(req, resp);
+        }
     }
 
     @Override

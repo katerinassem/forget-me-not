@@ -16,7 +16,7 @@ public class DeleteContactsCommand implements Command
     private static Logger logger = Logger.getLogger(DeleteContactsCommand.class);
 
     @Override
-    public void process(HttpServletRequest req, HttpServletResponse resp) {
+    public void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException {
 
         try
         {

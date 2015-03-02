@@ -2,8 +2,10 @@ package data.factories.mysql;
 import data.DAO;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.omg.CORBA.portable.ApplicationException;
 import transfer.Address;
 
+import javax.servlet.ServletException;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -15,15 +17,22 @@ public class MySQLAddressDAO implements DAO<Address>
     private static Logger logger = Logger.getLogger(MySQLAddressDAO.class);
 
     @Override
-    public int create(Address object) throws Exception {
+    public int create(Address object) throws SQLException, ServletException {
         logger.info(" - [ENTERING METHOD: create(Address object), PARAMETERS: [Address object = " + object + "]");
         Connection con = null;
         PreparedStatement statement = null;
         int generatedId = -1;
         String query = "INSERT INTO address (country, city, street, building, apartment, post_index, contact_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try {
-            MySQLConnector connector =  MySQLConnector.getInstance();
-            con = connector.getConnection();
+            MySQLConnector connector = null;
+            try {
+                connector = MySQLConnector.getInstance();
+                con = connector.getConnection();
+            }
+            catch(Exception e){
+                logger.error(e + " - [DATASOURCE EXCEPTION]");
+                throw new ServletException(e);
+            }
             statement = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
             String country = object.getCountry();
@@ -91,12 +100,7 @@ public class MySQLAddressDAO implements DAO<Address>
         catch (SQLException e)
         {
             logger.error(e + " - [SQL EXCEPTION]");
-            throw new Exception(e);
-        }
-        catch (Exception e)
-        {
-            logger.error(e);
-            throw new Exception(e);
+            throw new SQLException(e);
         }
         finally {
             if(statement != null)
@@ -123,15 +127,22 @@ public class MySQLAddressDAO implements DAO<Address>
     }
 
     @Override
-    public Address read(int id) throws Exception{
+    public Address read(int id) throws SQLException, ServletException{
         logger.info(" - [ENTERING METHOD: read(int id), PARAMETERS: [int id = " + id + "]");
         Connection con = null;
         PreparedStatement statement = null;
         Address address = null;
         String query = "SELECT * FROM address WHERE id=?";
         try {
-            MySQLConnector connector =  MySQLConnector.getInstance();
-            con = connector.getConnection();
+            MySQLConnector connector = null;
+            try {
+                connector = MySQLConnector.getInstance();
+                con = connector.getConnection();
+            }
+            catch(Exception e){
+                logger.error(e + " - [DATASOURCE EXCEPTION]");
+                throw new ServletException(e);
+            }
             statement = con.prepareStatement(query);
             statement.setInt(1, id);
             logger.info(" - [EXECUTING QUERY] " + statement);
@@ -151,12 +162,7 @@ public class MySQLAddressDAO implements DAO<Address>
         catch (SQLException e)
         {
             logger.error(e + " - [SQL EXCEPTION]");
-            throw new Exception(e);
-        }
-        catch (Exception e)
-        {
-            logger.error(e);
-            throw new Exception(e);
+            throw new SQLException(e);
         }
         finally {
             if(statement != null)
@@ -183,15 +189,22 @@ public class MySQLAddressDAO implements DAO<Address>
     }
 
     @Override
-    public boolean update(Address object) throws Exception{
+    public boolean update(Address object) throws SQLException, ServletException{
         logger.info(" - [ENTERING METHOD: update(Address object), PARAMETERS: [Address object = " + object + "]");
         Connection con = null;
         PreparedStatement statement = null;
         boolean updated = false;
         String query = "UPDATE address SET country=?, city=?, street=?, building=?, apartment=?, post_index=? WHERE id=?";
         try {
-            MySQLConnector connector =  MySQLConnector.getInstance();
-            con = connector.getConnection();
+            MySQLConnector connector = null;
+            try {
+                connector = MySQLConnector.getInstance();
+                con = connector.getConnection();
+            }
+            catch(Exception e){
+                logger.error(e + " - [DATASOURCE EXCEPTION]");
+                throw new ServletException(e);
+            }
             statement = con.prepareStatement(query);
 
             String country = object.getCountry();
@@ -252,12 +265,7 @@ public class MySQLAddressDAO implements DAO<Address>
         catch (SQLException e)
         {
             logger.error(e + " - [SQL EXCEPTION]");
-            throw new Exception(e);
-        }
-        catch (Exception e)
-        {
-            logger.error(e);
-            throw new Exception(e);
+            throw new SQLException(e);
         }
         finally {
             if(statement != null)
@@ -284,15 +292,22 @@ public class MySQLAddressDAO implements DAO<Address>
     }
 
     @Override
-    public boolean delete(Address object) throws Exception{
+    public boolean delete(Address object) throws SQLException, ServletException{
         logger.info(" - [ENTERING METHOD: delete(Address object), PARAMETERS: [Address object = " + object + "]");
         Connection con = null;
         PreparedStatement statement = null;
         boolean deleted = false;
         String query = "DELETE FROM address WHERE id=?";
         try {
-            MySQLConnector connector =  MySQLConnector.getInstance();
-            con = connector.getConnection();
+            MySQLConnector connector = null;
+            try {
+                connector = MySQLConnector.getInstance();
+                con = connector.getConnection();
+            }
+            catch(Exception e){
+                logger.error(e + " - [DATASOURCE EXCEPTION]");
+                throw new ServletException(e);
+            }
             statement = con.prepareStatement(query);
             statement.setInt(1, object.getId());
             logger.info(" - [EXECUTING QUERY] " + statement);
@@ -300,15 +315,9 @@ public class MySQLAddressDAO implements DAO<Address>
             if(affectedRows > 0)
                 deleted = true;
         }
-        catch (SQLException e)
-        {
+        catch (SQLException e) {
             logger.error(e + " - [SQL EXCEPTION]");
-            throw new Exception(e);
-        }
-        catch (Exception e)
-        {
-            logger.error(e);
-            throw new Exception(e);
+            throw new SQLException(e);
         }
         finally {
             if(statement != null)
@@ -335,15 +344,22 @@ public class MySQLAddressDAO implements DAO<Address>
     }
 
     @Override
-    public ArrayList<Address> readAll() throws Exception{
+    public ArrayList<Address> readAll() throws SQLException, ServletException{
         logger.info(" - [ENTERING METHOD: readAll(), NO PARAMETERS]");
         Connection con = null;
         PreparedStatement statement = null;
         ArrayList<Address> addresses = null;
         String query = "SELECT * FROM address";
         try {
-            MySQLConnector connector =  MySQLConnector.getInstance();
-            con = connector.getConnection();
+            MySQLConnector connector = null;
+            try {
+                connector = MySQLConnector.getInstance();
+                con = connector.getConnection();
+            }
+            catch(Exception e){
+                logger.error(e + " - [DATASOURCE EXCEPTION]");
+                throw new ServletException(e);
+            }
             statement = con.prepareStatement(query);
             logger.info(" - [EXECUTING QUERY] " + statement);
             ResultSet rs = statement.executeQuery();
@@ -365,12 +381,7 @@ public class MySQLAddressDAO implements DAO<Address>
         catch (SQLException e)
         {
             logger.error(e + " - [SQL EXCEPTION]");
-            throw new Exception(e);
-        }
-        catch (Exception e)
-        {
-            logger.error(e);
-            throw new Exception(e);
+            throw new SQLException(e);
         }
         finally {
             if(statement != null)
