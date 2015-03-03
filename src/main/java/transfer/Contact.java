@@ -31,7 +31,7 @@ public class Contact extends TransferObject
         attachments = new ArrayList<Attachment>();
     }
 
-    public Contact(Integer id, String firstName, String secondName, String nameByFather, Date dateOfBirth, Sex sex, String sitizenship, String webSite, String email, String company, String photoUrl, Address address) {
+    public Contact(Integer id, String firstName, String secondName, String nameByFather, Date dateOfBirth, Sex sex, String sitizenship, String webSite, String email, String company, String photoUrl, Integer addressId) {
         super(id);
         telephones = new ArrayList<Telephone>();
         attachments = new ArrayList<Attachment>();
@@ -45,7 +45,7 @@ public class Contact extends TransferObject
         this.email = email;
         this.company = company;
         this.photoUrl = photoUrl;
-        this.address = address;
+        this.addressId = addressId;
     }
 
     public ArrayList<Attachment> getAttachments() {

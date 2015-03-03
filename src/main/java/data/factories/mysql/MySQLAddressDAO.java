@@ -2,9 +2,7 @@ package data.factories.mysql;
 import data.DAO;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
-import org.omg.CORBA.portable.ApplicationException;
 import transfer.Address;
-
 import javax.servlet.ServletException;
 import java.sql.*;
 import java.util.ArrayList;
@@ -36,24 +34,14 @@ public class MySQLAddressDAO implements DAO<Address>
             statement = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
             String country = object.getCountry();
-            if(StringUtils.isNotEmpty(country)) {
-                statement.setString(1, country);
-            }
-            else {
-                statement.setNull(1, Types.VARCHAR);
-            }
+            statement.setString(1, country);
 
             String city = object.getCity();
-            if(StringUtils.isNotEmpty(city)) {
-                statement.setString(2, String.valueOf(city));
-            }
-            else {
-                statement.setNull(2, Types.VARCHAR);
-            }
+            statement.setString(2, city);
 
             String street = object.getStreet();
             if(StringUtils.isNotEmpty(street)) {
-                statement.setString(3, String.valueOf(street));
+                statement.setString(3, street);
             }
             else {
                 statement.setNull(3, Types.VARCHAR);
@@ -83,12 +71,7 @@ public class MySQLAddressDAO implements DAO<Address>
                 statement.setNull(6, Types.BIGINT);
             }
 
-            if(object.getContactId() == null) {
-                statement.setNull(7, Types.INTEGER);
-            }
-            else {
-                statement.setInt(7, object.getContactId());
-            }
+            statement.setNull(7, Types.INTEGER);
             logger.info(" - [EXECUTING QUERY] " + statement);
             statement.executeUpdate();
             ResultSet rs = statement.getGeneratedKeys();
@@ -208,24 +191,14 @@ public class MySQLAddressDAO implements DAO<Address>
             statement = con.prepareStatement(query);
 
             String country = object.getCountry();
-            if(StringUtils.isNotEmpty(country)) {
-                statement.setString(1, country);
-            }
-            else {
-                statement.setNull(1, Types.VARCHAR);
-            }
+            statement.setString(1, country);
 
             String city = object.getCity();
-            if(StringUtils.isNotEmpty(city)) {
-                statement.setString(2, String.valueOf(city));
-            }
-            else {
-                statement.setNull(2, Types.VARCHAR);
-            }
+            statement.setString(2, city);
 
             String street = object.getStreet();
             if(StringUtils.isNotEmpty(street)) {
-                statement.setString(3, String.valueOf(street));
+                statement.setString(3, street);
             }
             else {
                 statement.setNull(3, Types.VARCHAR);

@@ -5,6 +5,8 @@ import data.DAO;
 import data.factories.MySQLDAOFactory;
 import org.apache.log4j.Logger;
 import transfer.Address;
+import transfer.Attachment;
+import transfer.Contact;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Created by Катерина on 20.02.2015.
@@ -29,7 +32,12 @@ public class ShowContactsCommand implements Command
             req.getSession().setAttribute("firstName", "Smirnov");
             AbstractDAOFactory mySQLDAOFactory = new MySQLDAOFactory();
             DAO<Address> addrDAO = mySQLDAOFactory.getAddressDAO();
+            DAO<Attachment> attDAO = mySQLDAOFactory.getAttachmentDAO();
+            DAO<Contact> contDAO = mySQLDAOFactory.getContactDAO();
             try {
+                ArrayList<Address> l1 = addrDAO.readAll();
+                //ArrayList<Attachment> l2 = attDAO.readAll();
+                ArrayList<Contact> l3 = contDAO.readAll();
                 Address address = new Address(0, "Belarus", "Minsk", "Skripnikova", 7, 154, 220019l, 2);
                 int generatedId = addrDAO.create(address);
                 address = addrDAO.read(1);

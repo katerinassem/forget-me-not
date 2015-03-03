@@ -1,6 +1,7 @@
 package transfer;
 
 import java.util.Date;
+import java.util.UUID;
 
 /**
  * Created by Катерина on 23.02.2015.
@@ -8,6 +9,7 @@ import java.util.Date;
 public class Attachment extends TransferObject
 {
     String fileName;
+    String uniqueName;
     Date uploadDate;
     String comment;
     Integer contactId;
@@ -20,6 +22,7 @@ public class Attachment extends TransferObject
         this.uploadDate = uploadDate;
         this.comment = comment;
         this.contactId = contactId;
+        this.uniqueName = UUID.randomUUID().toString();
     }
 
     public Integer getContactId() {
@@ -52,5 +55,13 @@ public class Attachment extends TransferObject
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    public String getUniqueName() {
+        return uniqueName;
+    }
+
+    public void setUniqueName(String uniqueName) {
+        this.uniqueName = uniqueName;
     }
 }
