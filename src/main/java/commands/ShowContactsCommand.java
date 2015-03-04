@@ -1,20 +1,20 @@
 package commands;
 
+import business.AbstractBLLFactory;
+import business.Business;
+import business.bllexception.BLLDataException;
+import business.bllexception.BLLFatalException;
+import business.factory.KateBllFactory;
 import data.AbstractDAOFactory;
-import data.DAO;
 import data.factories.MySQLDAOFactory;
 import org.apache.log4j.Logger;
-import transfer.Address;
-import transfer.Attachment;
 import transfer.Contact;
-import transfer.Telephone;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -30,6 +30,11 @@ public class ShowContactsCommand implements Command
     {
         try
         {
+            AbstractDAOFactory daoFactory = new MySQLDAOFactory();
+            AbstractBLLFactory bllFactory = new KateBllFactory(daoFactory);
+            Business<Contact> contactBO = bllFactory.getContactBusiness();
+            ArrayList<Contact> contacts = contactBO.readAllObjects();
+            req.getSession().setAttribute("contacts", contacts);
             RequestDispatcher dispatcher = req.getRequestDispatcher("ContactList.jsp");
             dispatcher.forward(req, resp);
         }
@@ -37,7 +42,11 @@ public class ShowContactsCommand implements Command
         {
             logger.error(e + " - in method process(HttpServletRequest req, HttpServletResponse resp), class ShowContactsCommand\n");
         }
-        catch(ServletException e)
+        catch(BLLDataException e)
+        {
+            logger.error(e + " - in method process(HttpServletRequest req, HttpServletResponse resp), class ShowContactsCommand\n");
+        }
+        catch(BLLFatalException e)
         {
             logger.error(e + " - in method process(HttpServletRequest req, HttpServletResponse resp), class ShowContactsCommand\n");
         }

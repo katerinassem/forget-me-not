@@ -61,7 +61,6 @@ public class MySQLConnector
         }
         catch (SQLException e)
         {
-            logger.error(e);
             throw new DAOFatalException("Cannot get connection to the database.", e);
         }
     }
