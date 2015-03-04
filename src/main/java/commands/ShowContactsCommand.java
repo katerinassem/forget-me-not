@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import transfer.Address;
 import transfer.Attachment;
 import transfer.Contact;
+import transfer.Telephone;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -34,20 +35,15 @@ public class ShowContactsCommand implements Command
             DAO<Address> addrDAO = mySQLDAOFactory.getAddressDAO();
             DAO<Attachment> attDAO = mySQLDAOFactory.getAttachmentDAO();
             DAO<Contact> contDAO = mySQLDAOFactory.getContactDAO();
+            DAO<Telephone> telDAO = mySQLDAOFactory.getTelephoneDAO();
             try {
                 ArrayList<Address> l1 = addrDAO.readAll();
-                //ArrayList<Attachment> l2 = attDAO.readAll();
+                ArrayList<Attachment> l2 = attDAO.readAll();
                 ArrayList<Contact> l3 = contDAO.readAll();
-                Address address = new Address(0, "Belarus", "Minsk", "Skripnikova", 7, 154, 220019l, 2);
-                int generatedId = addrDAO.create(address);
-                address = addrDAO.read(1);
-                address.setIndex(null);
-                boolean upd = addrDAO.update(address);
-                generatedId = addrDAO.create(address);
-                boolean del = addrDAO.delete(address);
-                del = addrDAO.delete(address);
-                address.setContactId(0);
-                generatedId = addrDAO.create(address);
+                l3.get(1).setAddress(l1.get(1));
+                req.getSession().setAttribute("contacts", l3);
+                ArrayList<Telephone> l4 = telDAO.readAll();
+                contDAO.delete(1);
             }
             catch (SQLException e)
             {

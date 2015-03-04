@@ -265,8 +265,8 @@ public class MySQLAddressDAO implements DAO<Address>
     }
 
     @Override
-    public boolean delete(Address object) throws SQLException, ServletException{
-        logger.info(" - [ENTERING METHOD: delete(Address object), PARAMETERS: [Address object = " + object + "]");
+    public boolean delete(int id) throws SQLException, ServletException{
+        logger.info(" - [ENTERING METHOD: delete(int id), PARAMETERS: [int id = " + id + "]");
         Connection con = null;
         PreparedStatement statement = null;
         boolean deleted = false;
@@ -282,7 +282,7 @@ public class MySQLAddressDAO implements DAO<Address>
                 throw new ServletException(e);
             }
             statement = con.prepareStatement(query);
-            statement.setInt(1, object.getId());
+            statement.setInt(1, id);
             logger.info(" - [EXECUTING QUERY] " + statement);
             int affectedRows = statement.executeUpdate();
             if(affectedRows > 0)

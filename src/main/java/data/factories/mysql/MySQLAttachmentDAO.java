@@ -158,7 +158,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
         Connection con = null;
         PreparedStatement statement = null;
         boolean updated = false;
-        String query = "UPDATE address SET file_name=?, comment=?, WHERE id=?";
+        String query = "UPDATE attachment SET file_name=?, comment=?, WHERE id=?";
         try {
             MySQLConnector connector = null;
             try {
@@ -218,8 +218,8 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
     }
 
     @Override
-    public boolean delete(Attachment object) throws SQLException, ServletException {
-        logger.info(" - [ENTERING METHOD: delete(Attachment object), PARAMETERS: [Attachment object = " + object + "]");
+    public boolean delete(int id) throws SQLException, ServletException {
+        logger.info(" - [ENTERING METHOD: delete(int id), PARAMETERS: [int id = " + id + "]");
         Connection con = null;
         PreparedStatement statement = null;
         boolean deleted = false;
@@ -235,7 +235,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
                 throw new ServletException(e);
             }
             statement = con.prepareStatement(query);
-            statement.setInt(1, object.getId());
+            statement.setInt(1, id);
             logger.info(" - [EXECUTING QUERY] " + statement);
             int affectedRows = statement.executeUpdate();
             if(affectedRows > 0)
@@ -275,7 +275,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
         Connection con = null;
         PreparedStatement statement = null;
         ArrayList<Attachment> attachments = null;
-        String query = "SELECT * FROM address";
+        String query = "SELECT * FROM attachment";
         try {
             MySQLConnector connector = null;
             try {
@@ -294,7 +294,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
             {
                 Integer id = rs.getInt("id");
                 String fileName = rs.getString("file_name");
-                Date uploadDate = rs.getDate("upload_time");
+                Date uploadDate = rs.getDate("upload_date");
                 String comment = rs.getString("comment");
                 String uniqueName = rs.getString("unique_name");
                 Integer contactId = rs.getInt("contact_id");

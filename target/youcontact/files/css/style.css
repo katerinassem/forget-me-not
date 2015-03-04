@@ -4,6 +4,16 @@ body
     margin: 10% 10% 10%;
 }
 
+h1
+{
+    font-size: 5em;
+}
+
+form
+{
+    margin: 5% 5% 5%;
+}
+
 input, label
 {
     float: left;

@@ -340,8 +340,8 @@ public class MySQLContactDAO implements DAO<Contact>
     }
 
     @Override
-    public boolean delete(Contact object) throws SQLException, ServletException {
-        logger.info(" - [ENTERING METHOD: delete(Contact object), PARAMETERS: [Contact object = " + object + "]");
+    public boolean delete(int id) throws SQLException, ServletException {
+        logger.info(" - [ENTERING METHOD: delete(int id), PARAMETERS: [int id = " + id + "]");
         Connection con = null;
         PreparedStatement statement = null;
         boolean deleted = false;
@@ -357,7 +357,7 @@ public class MySQLContactDAO implements DAO<Contact>
                 throw new ServletException(e);
             }
             statement = con.prepareStatement(query);
-            statement.setInt(1, object.getId());
+            statement.setInt(1, id);
             logger.info(" - [EXECUTING QUERY] " + statement);
             int affectedRows = statement.executeUpdate();
             if(affectedRows > 0)

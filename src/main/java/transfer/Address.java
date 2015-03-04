@@ -1,5 +1,7 @@
 package transfer;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * Created by Катерина on 23.02.2015.
  */
@@ -82,4 +84,22 @@ public class Address extends TransferObject
         this.contactId = contactId;
     }
 
+    @Override
+    public String toString() {
+        String result = "";
+        result += country + ", " + city;
+        if(StringUtils.isNotEmpty(street)){
+            result += ", " + street;
+        }
+        if(building != null){
+            result += " " + building;
+        }
+        if(apartment != null){
+            result += "-" + apartment;
+        }
+        if(index != null){
+            result += ", " + index;
+        }
+        return result;
+    }
 }
