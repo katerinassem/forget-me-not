@@ -2,6 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c45153e1-ed98-4566-9ac8-bdc994cf1fb3" name="Default" comment="4March - business objects full">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/business/AbstractBLLFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/business/factory/katebusiness/AddressBO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/business/bllexception/BLLDataException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/business/bllexception/BLLFatalException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/business/Business.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/business/factory/katebusiness/ContactBO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/data/daoexception/DAOFatalException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/business/factory/KateBllFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/business/factory/katebusiness/TelephoneBO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="YouContact.iws" />
@@ -58,16 +67,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySQLAddressDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAddressDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4800" max-vertical-offset="5984">
-              <caret line="298" column="68" selection-start-line="298" selection-start-column="20" selection-end-line="298" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Business.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/business/Business.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -102,6 +101,16 @@
                 <element signature="e#272#273#0" expanded="true" />
                 <element signature="e#316#317#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BLLDataException.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/business/bllexception/BLLDataException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.18923934" vertical-offset="0" max-vertical-offset="539">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -162,10 +171,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContactBO.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ContactBO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/business/factory/katebusiness/ContactBO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75695735" vertical-offset="0" max-vertical-offset="561">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
               <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -563,6 +572,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="daoexception" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commands" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1130,7 +1161,7 @@
       <workItem from="1425341496924" duration="478000" />
       <workItem from="1425344827369" duration="9210000" />
       <workItem from="1425466685154" duration="3904000" />
-      <workItem from="1425472074540" duration="7778000" />
+      <workItem from="1425472074540" duration="7890000" />
     </task>
     <task id="LOCAL-00001" summary="2March - address CRUD">
       <created>1425316635422</created>
@@ -1162,11 +1193,17 @@
       <option name="project" value="LOCAL" />
       <updated>1425498079594</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="4March - business objects full">
+      <created>1425498575261</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1425498575261</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174059000" />
+    <option name="totallyTimeSpent" value="174171000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1266,6 +1303,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
@@ -1274,7 +1312,8 @@
     <MESSAGE value="4March - full data access layer" />
     <MESSAGE value="4March - full data access layer Part2 + JSP" />
     <MESSAGE value="4March - business objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="4March - business objects" />
+    <MESSAGE value="4March - business objects full" />
+    <option name="LAST_COMMIT_MESSAGE" value="4March - business objects full" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.5505618" />
   </component>
   <component name="XDebuggerManager">
@@ -1571,21 +1610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/business/bllexception/BLLDataException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#173#174#0" expanded="false" />
-            <element signature="e#203#204#0" expanded="false" />
-            <element signature="e#267#268#0" expanded="false" />
-            <element signature="e#304#305#0" expanded="false" />
-            <element signature="e#352#353#0" expanded="false" />
-            <element signature="e#380#381#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/data/daoexception/DAOSQLException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
@@ -1721,11 +1745,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/business/factory/katebusiness/ContactBO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75695735" vertical-offset="0" max-vertical-offset="561">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
           <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/business/bllexception/BLLDataException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18923934" vertical-offset="0" max-vertical-offset="539">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
