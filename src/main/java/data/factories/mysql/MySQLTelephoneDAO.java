@@ -1,6 +1,8 @@
 package data.factories.mysql;
 
 import data.DAO;
+import data.daoexception.DAOFatalException;
+import data.daoexception.DAOSQLException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import transfer.Address;
@@ -19,22 +21,16 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
     private static Logger logger = Logger.getLogger(MySQLAddressDAO.class);
 
     @Override
-    public int create(Telephone object) throws SQLException, ServletException {
+    public int create(Telephone object) throws DAOSQLException, DAOFatalException {
         logger.info(" - [ENTERING METHOD: create(Telephone object), PARAMETERS: [Telephone object = " + object + "]");
         Connection con = null;
         PreparedStatement statement = null;
+        MySQLConnector connector = null;
         int generatedId = -1;
         String query = "INSERT INTO telephone (country_code, operator_code, telephone_number, telephone_type, comment, contact_id) VALUES (?, ?, ?, ?, ?, ?)";
         try {
-            MySQLConnector connector = null;
-            try {
-                connector = MySQLConnector.getInstance();
-                con = connector.getConnection();
-            }
-            catch(Exception e){
-                logger.error(e + " - [DATASOURCE EXCEPTION]");
-                throw new ServletException(e);
-            }
+            connector = MySQLConnector.getInstance();
+            con = connector.getConnection();
             statement = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
             Short countryCode = object.getCountryCode();
@@ -70,7 +66,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
         catch (SQLException e)
         {
             logger.error(e + " - [SQL EXCEPTION]");
-            throw new SQLException(e);
+            throw new DAOSQLException(e);
         }
         finally {
             if(statement != null)
@@ -86,7 +82,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
             if(con != null)
             {
                 try {
-                    con.close();
+                    connector.closeConnection(con);
                 }
                 catch(SQLException e) {
                     logger.error(e);
@@ -97,22 +93,16 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
     }
 
     @Override
-    public Telephone read(int id) throws SQLException, ServletException {
+    public Telephone read(int id) throws DAOSQLException, DAOFatalException {
         logger.info(" - [ENTERING METHOD: read(int id), PARAMETERS: [int id = " + id + "]");
         Connection con = null;
         PreparedStatement statement = null;
         Telephone telephone = null;
+        MySQLConnector connector = null;
         String query = "SELECT * FROM telephone WHERE id=?";
         try {
-            MySQLConnector connector = null;
-            try {
-                connector = MySQLConnector.getInstance();
-                con = connector.getConnection();
-            }
-            catch(Exception e){
-                logger.error(e + " - [DATASOURCE EXCEPTION]");
-                throw new ServletException(e);
-            }
+            connector = MySQLConnector.getInstance();
+            con = connector.getConnection();
             statement = con.prepareStatement(query);
             statement.setInt(1, id);
             logger.info(" - [EXECUTING QUERY] " + statement);
@@ -131,7 +121,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
         catch (SQLException e)
         {
             logger.error(e + " - [SQL EXCEPTION]");
-            throw new SQLException(e);
+            throw new DAOSQLException(e);
         }
         finally {
             if(statement != null)
@@ -147,7 +137,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
             if(con != null)
             {
                 try {
-                    con.close();
+                    connector.closeConnection(con);
                 }
                 catch(SQLException e) {
                     logger.error(e);
@@ -158,22 +148,16 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
     }
 
     @Override
-    public boolean update(Telephone object) throws SQLException, ServletException {
+    public boolean update(Telephone object) throws DAOSQLException, DAOFatalException {
         logger.info(" - [ENTERING METHOD: update(Telephone object), PARAMETERS: [Telephone object = " + object + "]");
         Connection con = null;
         PreparedStatement statement = null;
+        MySQLConnector connector = null;
         boolean updated = false;
         String query = "UPDATE telephone SET country_code=?, operator_code=?, telephone_number=?, telephone_type=?, comment=? WHERE id=?";
         try {
-            MySQLConnector connector = null;
-            try {
-                connector = MySQLConnector.getInstance();
-                con = connector.getConnection();
-            }
-            catch(Exception e){
-                logger.error(e + " - [DATASOURCE EXCEPTION]");
-                throw new ServletException(e);
-            }
+            connector = MySQLConnector.getInstance();
+            con = connector.getConnection();
             statement = con.prepareStatement(query);
 
             Short countryCode = object.getCountryCode();
@@ -206,7 +190,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
         catch (SQLException e)
         {
             logger.error(e + " - [SQL EXCEPTION]");
-            throw new SQLException(e);
+            throw new DAOSQLException(e);
         }
         finally {
             if(statement != null)
@@ -222,7 +206,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
             if(con != null)
             {
                 try {
-                    con.close();
+                    connector.closeConnection(con);
                 }
                 catch(SQLException e) {
                     logger.error(e);
@@ -233,22 +217,16 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
     }
 
     @Override
-    public boolean delete(int id) throws SQLException, ServletException {
+    public boolean delete(int id) throws DAOSQLException, DAOFatalException {
         logger.info(" - [ENTERING METHOD: delete(int id), PARAMETERS: [int id = " + id + "]");
         Connection con = null;
         PreparedStatement statement = null;
+        MySQLConnector connector = null;
         boolean deleted = false;
         String query = "DELETE FROM telephone WHERE id=?";
         try {
-            MySQLConnector connector = null;
-            try {
-                connector = MySQLConnector.getInstance();
-                con = connector.getConnection();
-            }
-            catch(Exception e){
-                logger.error(e + " - [DATASOURCE EXCEPTION]");
-                throw new ServletException(e);
-            }
+            connector = MySQLConnector.getInstance();
+            con = connector.getConnection();
             statement = con.prepareStatement(query);
             statement.setInt(1, id);
             logger.info(" - [EXECUTING QUERY] " + statement);
@@ -258,7 +236,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
         }
         catch (SQLException e) {
             logger.error(e + " - [SQL EXCEPTION]");
-            throw new SQLException(e);
+            throw new DAOSQLException(e);
         }
         finally {
             if(statement != null)
@@ -274,7 +252,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
             if(con != null)
             {
                 try {
-                    con.close();
+                    connector.closeConnection(con);
                 }
                 catch(SQLException e) {
                     logger.error(e);
@@ -285,22 +263,16 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
     }
 
     @Override
-    public ArrayList<Telephone> readAll() throws SQLException, ServletException {
+    public ArrayList<Telephone> readAll() throws DAOSQLException, DAOFatalException {
         logger.info(" - [ENTERING METHOD: readAll(), NO PARAMETERS]");
         Connection con = null;
         PreparedStatement statement = null;
         ArrayList<Telephone> telephones = null;
+        MySQLConnector connector = null;
         String query = "SELECT * FROM telephone";
         try {
-            MySQLConnector connector = null;
-            try {
-                connector = MySQLConnector.getInstance();
-                con = connector.getConnection();
-            }
-            catch(Exception e){
-                logger.error(e + " - [DATASOURCE EXCEPTION]");
-                throw new ServletException(e);
-            }
+            connector = MySQLConnector.getInstance();
+            con = connector.getConnection();
             statement = con.prepareStatement(query);
             logger.info(" - [EXECUTING QUERY] " + statement);
             ResultSet rs = statement.executeQuery();
@@ -321,7 +293,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
         catch (SQLException e)
         {
             logger.error(e + " - [SQL EXCEPTION]");
-            throw new SQLException(e);
+            throw new DAOSQLException(e);
         }
         finally {
             if(statement != null)
@@ -337,7 +309,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
             if(con != null)
             {
                 try {
-                    con.close();
+                    connector.closeConnection(con);
                 }
                 catch(SQLException e) {
                     logger.error(e);

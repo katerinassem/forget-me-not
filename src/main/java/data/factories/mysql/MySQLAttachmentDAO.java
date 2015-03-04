@@ -1,5 +1,7 @@
 package data.factories.mysql;
 import data.DAO;
+import data.daoexception.DAOFatalException;
+import data.daoexception.DAOSQLException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import transfer.Address;
@@ -18,22 +20,16 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
     private static Logger logger = Logger.getLogger(MySQLAddressDAO.class);
 
     @Override
-    public int create(Attachment object) throws SQLException, ServletException {
+    public int create(Attachment object) throws DAOSQLException, DAOFatalException {
         logger.info(" - [ENTERING METHOD: create(Attachment object), PARAMETERS: [Attachment object = " + object + "]");
         Connection con = null;
         PreparedStatement statement = null;
+        MySQLConnector connector = null;
         int generatedId = -1;
         String query = "INSERT INTO attachment (file_name, upload_date, comment, unique_name, contact_id) VALUES (?, ?, ?, ?, ?)";
         try {
-            MySQLConnector connector = null;
-            try {
-                connector = MySQLConnector.getInstance();
-                con = connector.getConnection();
-            }
-            catch(Exception e){
-                logger.error(e + " - [DATASOURCE EXCEPTION]");
-                throw new ServletException(e);
-            }
+            connector = MySQLConnector.getInstance();
+            con = connector.getConnection();
             statement = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
             String fileName = object.getFileName();
@@ -65,7 +61,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
         catch (SQLException e)
         {
             logger.error(e + " - [SQL EXCEPTION]");
-            throw new SQLException(e);
+            throw new DAOSQLException(e);
         }
         finally {
             if(statement != null)
@@ -81,7 +77,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
             if(con != null)
             {
                 try {
-                    con.close();
+                    connector.closeConnection(con);
                 }
                 catch(SQLException e) {
                     logger.error(e);
@@ -92,22 +88,16 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
     }
 
     @Override
-    public Attachment read(int id) throws SQLException, ServletException {
+    public Attachment read(int id) throws DAOSQLException, DAOFatalException {
         logger.info(" - [ENTERING METHOD: read(int id), PARAMETERS: [int id = " + id + "]");
         Connection con = null;
         PreparedStatement statement = null;
         Attachment attachment = null;
+        MySQLConnector connector = null;
         String query = "SELECT * FROM attachment WHERE id=?";
         try {
-            MySQLConnector connector = null;
-            try {
-                connector = MySQLConnector.getInstance();
-                con = connector.getConnection();
-            }
-            catch(Exception e){
-                logger.error(e + " - [DATASOURCE EXCEPTION]");
-                throw new ServletException(e);
-            }
+            connector = MySQLConnector.getInstance();
+            con = connector.getConnection();
             statement = con.prepareStatement(query);
             statement.setInt(1, id);
             logger.info(" - [EXECUTING QUERY] " + statement);
@@ -126,7 +116,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
         catch (SQLException e)
         {
             logger.error(e + " - [SQL EXCEPTION]");
-            throw new SQLException(e);
+            throw new DAOSQLException(e);
         }
         finally {
             if(statement != null)
@@ -142,7 +132,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
             if(con != null)
             {
                 try {
-                    con.close();
+                    connector.closeConnection(con);
                 }
                 catch(SQLException e) {
                     logger.error(e);
@@ -153,22 +143,16 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
     }
 
     @Override
-    public boolean update(Attachment object) throws SQLException, ServletException {
+    public boolean update(Attachment object) throws DAOSQLException, DAOFatalException {
         logger.info(" - [ENTERING METHOD: create(Attachment object), PARAMETERS: [Attachment object = " + object + "]");
         Connection con = null;
         PreparedStatement statement = null;
+        MySQLConnector connector = null;
         boolean updated = false;
         String query = "UPDATE attachment SET file_name=?, comment=?, WHERE id=?";
         try {
-            MySQLConnector connector = null;
-            try {
-                connector = MySQLConnector.getInstance();
-                con = connector.getConnection();
-            }
-            catch(Exception e){
-                logger.error(e + " - [DATASOURCE EXCEPTION]");
-                throw new ServletException(e);
-            }
+            connector = MySQLConnector.getInstance();
+            con = connector.getConnection();
             statement = con.prepareStatement(query);
 
             String fileName = object.getFileName();
@@ -191,7 +175,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
         catch (SQLException e)
         {
             logger.error(e + " - [SQL EXCEPTION]");
-            throw new SQLException(e);
+            throw new DAOSQLException(e);
         }
         finally {
             if(statement != null)
@@ -207,7 +191,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
             if(con != null)
             {
                 try {
-                    con.close();
+                    connector.closeConnection(con);
                 }
                 catch(SQLException e) {
                     logger.error(e);
@@ -218,22 +202,16 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
     }
 
     @Override
-    public boolean delete(int id) throws SQLException, ServletException {
+    public boolean delete(int id) throws DAOSQLException, DAOFatalException {
         logger.info(" - [ENTERING METHOD: delete(int id), PARAMETERS: [int id = " + id + "]");
         Connection con = null;
         PreparedStatement statement = null;
+        MySQLConnector connector = null;
         boolean deleted = false;
         String query = "DELETE FROM attachment WHERE id=?";
         try {
-            MySQLConnector connector = null;
-            try {
-                connector = MySQLConnector.getInstance();
-                con = connector.getConnection();
-            }
-            catch(Exception e){
-                logger.error(e + " - [DATASOURCE EXCEPTION]");
-                throw new ServletException(e);
-            }
+            connector = MySQLConnector.getInstance();
+            con = connector.getConnection();
             statement = con.prepareStatement(query);
             statement.setInt(1, id);
             logger.info(" - [EXECUTING QUERY] " + statement);
@@ -243,7 +221,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
         }
         catch (SQLException e) {
             logger.error(e + " - [SQL EXCEPTION]");
-            throw new SQLException(e);
+            throw new DAOSQLException(e);
         }
         finally {
             if(statement != null)
@@ -259,7 +237,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
             if(con != null)
             {
                 try {
-                    con.close();
+                    connector.closeConnection(con);
                 }
                 catch(SQLException e) {
                     logger.error(e);
@@ -270,22 +248,16 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
     }
 
     @Override
-    public ArrayList<Attachment> readAll() throws SQLException, ServletException {
+    public ArrayList<Attachment> readAll() throws DAOSQLException, DAOFatalException {
         logger.info(" - [ENTERING METHOD: readAll(), NO PARAMETERS]");
         Connection con = null;
         PreparedStatement statement = null;
         ArrayList<Attachment> attachments = null;
+        MySQLConnector connector = null;
         String query = "SELECT * FROM attachment";
         try {
-            MySQLConnector connector = null;
-            try {
-                connector = MySQLConnector.getInstance();
-                con = connector.getConnection();
-            }
-            catch(Exception e){
-                logger.error(e + " - [DATASOURCE EXCEPTION]");
-                throw new ServletException(e);
-            }
+            connector = MySQLConnector.getInstance();
+            con = connector.getConnection();
             statement = con.prepareStatement(query);
             logger.info(" - [EXECUTING QUERY] " + statement);
             ResultSet rs = statement.executeQuery();
@@ -306,7 +278,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
         catch (SQLException e)
         {
             logger.error(e + " - [SQL EXCEPTION]");
-            throw new SQLException(e);
+            throw new DAOSQLException(e);
         }
         finally {
             if(statement != null)
@@ -322,7 +294,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
             if(con != null)
             {
                 try {
-                    con.close();
+                    connector.closeConnection(con);
                 }
                 catch(SQLException e) {
                     logger.error(e);

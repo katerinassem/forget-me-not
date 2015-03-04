@@ -1,4 +1,6 @@
 package data.factories.mysql;
+import data.daoexception.DAOFatalException;
+import data.daoexception.DAOSQLException;
 import org.apache.log4j.Logger;
 
 import javax.naming.Context;
@@ -40,21 +42,28 @@ public class MySQLConnector
         }
     }
 
-    public static MySQLConnector getInstance() throws Exception
+    public static MySQLConnector getInstance() throws DAOFatalException
     {
         if(instance == null)
         {
-            throw new Exception("Database connector wasn't created.");
+            throw new DAOFatalException("Database connector wasn't created.");
         }
         return instance;
     }
 
-    public Connection getConnection() throws SQLException
+    public Connection getConnection() throws DAOFatalException
     {
         logger.info(" - [ENTERING METHOD: getConnection(), NO PARAMETERS]");
-        Connection conn = pool.getConnection();
-        logger.info(" - [ CONNECTED TO DATABASE ]");
-        return conn;
+        try {
+            Connection conn = pool.getConnection();
+            logger.info(" - [ CONNECTED TO DATABASE ]");
+            return conn;
+        }
+        catch (SQLException e)
+        {
+            logger.error(e);
+            throw new DAOFatalException("Cannot get connection to the database.", e);
+        }
     }
 
     public boolean closeConnection(Connection conn) throws SQLException

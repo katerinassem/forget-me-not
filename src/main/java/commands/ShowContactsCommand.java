@@ -30,31 +30,6 @@ public class ShowContactsCommand implements Command
     {
         try
         {
-            req.getSession().setAttribute("firstName", "Smirnov");
-            AbstractDAOFactory mySQLDAOFactory = new MySQLDAOFactory();
-            DAO<Address> addrDAO = mySQLDAOFactory.getAddressDAO();
-            DAO<Attachment> attDAO = mySQLDAOFactory.getAttachmentDAO();
-            DAO<Contact> contDAO = mySQLDAOFactory.getContactDAO();
-            DAO<Telephone> telDAO = mySQLDAOFactory.getTelephoneDAO();
-            try {
-                ArrayList<Address> l1 = addrDAO.readAll();
-                ArrayList<Attachment> l2 = attDAO.readAll();
-                ArrayList<Contact> l3 = contDAO.readAll();
-                l3.get(1).setAddress(l1.get(1));
-                req.getSession().setAttribute("contacts", l3);
-                ArrayList<Telephone> l4 = telDAO.readAll();
-                contDAO.delete(1);
-            }
-            catch (SQLException e)
-            {
-                req.getSession().setAttribute("error", "Stricted operation with data. Entered data is invalid.");
-            }
-            catch (ServletException e)
-            {
-                logger.error(" - Cannot access the application database");
-                req.getSession().setAttribute("error", "Application error, cannot access the application database");
-                throw new ServletException(e);
-            }
             RequestDispatcher dispatcher = req.getRequestDispatcher("ContactList.jsp");
             dispatcher.forward(req, resp);
         }
