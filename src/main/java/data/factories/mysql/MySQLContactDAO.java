@@ -196,7 +196,8 @@ public class MySQLContactDAO implements DAO<Contact>
                 String email = rs.getString("email");
                 String company = rs.getString("company");
                 String photoUrl = rs.getString("photo_url");
-                contact = new Contact(id, firstName, secondName, nameByFather, dateOfBirth, sex, sitizenship, webSite, email, company, photoUrl, null);
+                Integer addressId = rs.getInt("address_id");
+                contact = new Contact(id, firstName, secondName, nameByFather, dateOfBirth, sex, sitizenship, webSite, email, company, photoUrl, addressId);
             }
         }
         catch (SQLException e)
@@ -468,7 +469,8 @@ public class MySQLContactDAO implements DAO<Contact>
                 String email = rs.getString("email");
                 String company = rs.getString("company");
                 String photoUrl = rs.getString("photo_url");
-                Contact contact = new Contact(id, firstName, secondName, nameByFather, dateOfBirth, sex, sitizenship, webSite, email, company, photoUrl, null);
+                Integer addressId = rs.getInt("address_id");
+                Contact contact = new Contact(id, firstName, secondName, nameByFather, dateOfBirth, sex, sitizenship, webSite, email, company, photoUrl, addressId);
                 contacts.add(contact);
             }
         }

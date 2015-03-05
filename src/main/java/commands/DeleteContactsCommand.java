@@ -1,5 +1,6 @@
 package commands;
 
+import commands.commandexception.CommandFatalException;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -16,7 +17,7 @@ public class DeleteContactsCommand implements Command
     private static Logger logger = Logger.getLogger(DeleteContactsCommand.class);
 
     @Override
-    public void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException {
+    public void process(HttpServletRequest req, HttpServletResponse resp) throws CommandFatalException, ServletException{
 
         try
         {

@@ -38,6 +38,11 @@
                 <td>${contact.getCompany()}</td>
             </tr>
         </c:forEach>
+        <ul id="page-tab">
+        <c:forEach var="index" varStatus="status" begin="1" end="${sessionScope.pageCount}" step="1">
+            <li class="page-button" id="${index}"><a href="?command=ShowContacts&page=${index}">${index}</a></li>
+        </c:forEach>
+        </ul>
     </table>
 </form>
 </body>

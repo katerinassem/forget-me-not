@@ -1,4 +1,5 @@
 import commands.Command;
+import commands.commandexception.CommandFatalException;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -12,7 +13,7 @@ public class CommandHelper {
 
     private static Logger logger = Logger.getLogger(CommandHelper.class);
 
-    public void dispatchRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException
+    public void dispatchRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, CommandFatalException
     {
         String attrValue = req.getParameter("command");
         Command command = getCommandForCommandName(attrValue);

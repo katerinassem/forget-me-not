@@ -1,5 +1,7 @@
 package commands;
 
+import commands.commandexception.CommandFatalException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,5 +12,5 @@ import javax.servlet.http.HttpServletResponse;
 
 public interface Command
 {
-    void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException;
+    void process(HttpServletRequest req, HttpServletResponse resp) throws CommandFatalException, ServletException;
 }

@@ -1,5 +1,6 @@
 package commands;
 
+import commands.commandexception.CommandFatalException;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -16,7 +17,7 @@ public class SavePhotoCommand implements  Command
     private static Logger logger = Logger.getLogger(SavePhotoCommand.class);
 
     @Override
-    public void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException {
+    public void process(HttpServletRequest req, HttpServletResponse resp) throws CommandFatalException, ServletException{
 
         try {
             //Сохранение фото

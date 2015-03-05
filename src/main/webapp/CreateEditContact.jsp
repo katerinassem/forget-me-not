@@ -16,11 +16,11 @@
 <a href="?command=ChoosePhotoCommand"><img src="files/images/default_avatar.jpg"/></a>
 <form>
     <label>ФИО:</label>
-    <input type="text" placeholder="фамилия*" value="${sessionScope.firstName}"/>
-    <input type="text" placeholder="имя*"/>
-    <input type="text" placeholder="отчество"/>
+    <input type="text" placeholder="фамилия*" value="${sessionScope.contact.getFirstName()}"/>
+    <input type="text" placeholder="имя*"  value="${sessionScope.contact.getSecondName()}"/>
+    <input type="text" placeholder="отчество" value="${sessionScope.contact.getNameByFather()}"/>
     <label>Дата рождения:</label>
-    <input type="text" placeholder="дд.мм.гг"/>
+    <input type="text" placeholder="дд.мм.гг" value="${sessionScope.contact.getDateOfBirth()}"/>
     <fieldset>
         <legend>Пол</legend>
         <label class="sex" >женский</label>
@@ -29,7 +29,7 @@
         <input class="sex" type="radio" name="sex"/>
     </fieldset>
     <label>Гражданство:</label>
-    <input type="text" placeholder="гражданство"/>
+    <input type="text" placeholder="гражданство"  value="${sessionScope.contact.getSitizenship()}"/>
     <label>Web-сайт:</label>
     <input type="text" placeholder="web-сайт"/>
     <label>email:</label>
@@ -78,7 +78,7 @@
             </table>
         </fieldset>
         <fieldset>
-                    <legend>Список присоединений</legend>
+            <legend>Список присоединений</legend>
                 <form>
                     <button><a href="?command=DeleteAttachmentsCommand">Удалить выделенные присоединения</a></button>
                     <button><a href="javascript:window.open('?command=CreateEditAttachmentCommand', 'attachments', 'width=600,height=400,toolbar=no,menubar=no,location=no')">Создать присоединение</a></button>
@@ -102,7 +102,8 @@
                             <td>комментарий</td>
                         </tr>
                     </table>
-                </fieldset>
+                </form>
+            </fieldset>
         </form>
     </form>
     <button>Сохранить</button>

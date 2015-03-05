@@ -35,7 +35,7 @@ public class ContactBO extends Business<Contact>{
     public Contact getObjectById(int id) throws BLLDataException, BLLFatalException {
 
         logger.info(" - [ENTERING METHOD: getObjectById(int id), PARAMETERS: int id = " + id + "]");
-        Contact contact = super.getFullObjectById(id);
+        Contact contact = super.getObjectById(id);
         DAO<Address> addressDAO = daoFactory.getAddressDAO();
         try {
             Address address = addressDAO.read(contact.getAddressId());
