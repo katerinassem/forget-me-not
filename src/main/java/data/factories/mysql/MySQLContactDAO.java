@@ -4,13 +4,13 @@ import data.daoexception.DAOFatalException;
 import data.daoexception.DAOSQLException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
-import transfer.Address;
-import transfer.Contact;
-import transfer.Sex;
+import org.omg.CORBA.*;
+import transfer.*;
 
 import javax.servlet.ServletException;
 import java.sql.*;
-import java.util.ArrayList;
+import java.sql.Date;
+import java.util.*;
 
 /**
  * Created by Катерина on 23.02.2015.
@@ -30,6 +30,7 @@ public class MySQLContactDAO implements DAO<Contact>
         try {
             connector = MySQLConnector.getInstance();
             con = connector.getConnection();
+            con.setAutoCommit(false);
             statement = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
             String firstName = object.getFirstName();
@@ -61,7 +62,6 @@ public class MySQLContactDAO implements DAO<Contact>
             else {
                 statement.setNull(5, Types.VARCHAR);
             }
-
 
             String sitizenship = object.getSitizenship();
             if(StringUtils.isNotEmpty(sitizenship)) {
@@ -112,10 +112,35 @@ public class MySQLContactDAO implements DAO<Contact>
                 object.setId(rs.getInt(1));
                 generatedId = object.getId();
             }
+            MySQLAddressDAO addressDAO = new MySQLAddressDAO();
+            addressDAO.createWithExistingConnection(object.getAddress(), con);
+            if(object.getAttachments() != null && !object.getAttachments().isEmpty())
+            {
+                MySQLAttachmentDAO attachmentDAO = new MySQLAttachmentDAO();
+                for(Attachment attachment : object.getAttachments())
+                {
+                    attachmentDAO.createWithExistingConnection(attachment, con);
+                }
+            }
+            if(object.getTelephones() != null && !object.getTelephones().isEmpty())
+            {
+                MySQLTelephoneDAO telephoneDAO = new MySQLTelephoneDAO();
+                for(Telephone telephone : object.getTelephones())
+                {
+                    telephoneDAO.createWithExistingConnection(telephone, con);
+                }
+            }
+            con.commit();
         }
         catch (SQLException e)
         {
-            logger.error(e + " - [SQL EXCEPTION]");
+            if (con != null) {
+                try {
+                    con.rollback();
+                } catch (SQLException e1) {
+                    logger.error(" - [CANNOT ROLLBACK]", e1);
+                }
+            }
             throw new DAOSQLException(e);
         }
         finally {
@@ -132,6 +157,7 @@ public class MySQLContactDAO implements DAO<Contact>
             if(con != null)
             {
                 try {
+                    con.setAutoCommit(true);
                     connector.closeConnection(con);
                 }
                 catch(SQLException e) {
@@ -141,6 +167,7 @@ public class MySQLContactDAO implements DAO<Contact>
         }
         return generatedId;
     }
+
 
     @Override
     public Contact read(int id) throws DAOSQLException, DAOFatalException {
@@ -212,6 +239,7 @@ public class MySQLContactDAO implements DAO<Contact>
         try {
             connector = MySQLConnector.getInstance();
             con = connector.getConnection();
+            con.setAutoCommit(false);
             statement = con.prepareStatement(query);
 
             String firstName = object.getFirstName();
@@ -293,10 +321,52 @@ public class MySQLContactDAO implements DAO<Contact>
             int affectedRows = statement.executeUpdate();
             if(affectedRows > 0)
                 updated = true;
+            MySQLAddressDAO addressDAO = new MySQLAddressDAO();
+            if(object.getAddress().getId() != null) {
+                addressDAO.updateWithExistingConnection(object.getAddress(), con);
+            }
+            else {
+                addressDAO.createWithExistingConnection(object.getAddress(), con);
+            }
+
+            if(object.getAttachments() != null && !object.getAttachments().isEmpty())
+            {
+                MySQLAttachmentDAO attachmentDAO = new MySQLAttachmentDAO();
+                for(Attachment attachment : object.getAttachments())
+                {
+                    if(attachment.getId() != null) {
+                        attachmentDAO.updateWithExistingConnection(attachment, con);
+                    }
+                    else {
+                        attachmentDAO.createWithExistingConnection(attachment, con);
+                    }
+                }
+            }
+
+            if(object.getTelephones() != null && !object.getTelephones().isEmpty())
+            {
+                MySQLTelephoneDAO telephoneDAO = new MySQLTelephoneDAO();
+                for(Telephone telephone : object.getTelephones())
+                {
+                    if(telephone.getId() != null) {
+                        telephoneDAO.updateWithExistingConnection(telephone, con);
+                    }
+                    else {
+                        telephoneDAO.createWithExistingConnection(telephone, con);
+                    }
+                }
+            }
+            con.commit();
         }
         catch (SQLException e)
         {
-            logger.error(e + " - [SQL EXCEPTION]");
+            if (con != null) {
+                try {
+                    con.rollback();
+                } catch (SQLException e1) {
+                    logger.error(" - [CANNOT ROLLBACK]", e1);
+                }
+            }
             throw new DAOSQLException(e);
         }
         finally {
@@ -313,6 +383,7 @@ public class MySQLContactDAO implements DAO<Contact>
             if(con != null)
             {
                 try {
+                    con.setAutoCommit(true);
                     connector.closeConnection(con);
                 }
                 catch(SQLException e) {
@@ -428,5 +499,10 @@ public class MySQLContactDAO implements DAO<Contact>
             }
         }
         return contacts;
+    }
+
+    public ArrayList<Contact> readAllByContactId(int contactId) throws DAOFatalException, DAOSQLException
+    {
+        return null;
     }
 }

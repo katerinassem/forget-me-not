@@ -20,78 +20,18 @@ public class MySQLAddressDAO implements DAO<Address>
     public int create(Address object) throws DAOSQLException, DAOFatalException {
         logger.info(" - [ENTERING METHOD: create(Address object), PARAMETERS: [Address object = " + object + "]");
         Connection con = null;
-        PreparedStatement statement = null;
         MySQLConnector connector = null;
         int generatedId = -1;
-        String query = "INSERT INTO address (country, city, street, building, apartment, post_index, contact_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try {
             connector = MySQLConnector.getInstance();
             con = connector.getConnection();
-            statement = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-
-            String country = object.getCountry();
-            statement.setString(1, country);
-
-            String city = object.getCity();
-            statement.setString(2, city);
-
-            String street = object.getStreet();
-            if(StringUtils.isNotEmpty(street)) {
-                statement.setString(3, street);
-            }
-            else {
-                statement.setNull(3, Types.VARCHAR);
-            }
-
-            Integer building = object.getBuilding();
-            if(building != null) {
-                statement.setInt(4, building);
-            }
-            else {
-                statement.setNull(4, Types.INTEGER);
-            }
-
-            Integer apartment = object.getApartment();
-            if(apartment != null) {
-                statement.setInt(5, apartment);
-            }
-            else {
-                statement.setNull(5, Types.INTEGER);
-            }
-
-            Long index = object.getIndex();
-            if(index != null) {
-                statement.setLong(6, index);
-            }
-            else {
-                statement.setNull(6, Types.BIGINT);
-            }
-
-            statement.setNull(7, Types.INTEGER);
-            logger.info(" - [EXECUTING QUERY] " + statement);
-            statement.executeUpdate();
-            ResultSet rs = statement.getGeneratedKeys();
-            if (rs.next()) {
-                object.setId(rs.getInt(1));
-                generatedId = object.getId();
-            }
+            generatedId = createWithExistingConnection(object, con);
         }
         catch (SQLException e)
         {
-            logger.error(e + " - [SQL EXCEPTION]");
             throw new DAOSQLException(e);
         }
         finally {
-            if(statement != null)
-            {
-                try {
-                    statement.close();
-                    logger.info(" - [CLOSED THE STATEMENT]");
-                }
-                catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
-                }
-            }
             if(con != null)
             {
                 try {
@@ -165,76 +105,18 @@ public class MySQLAddressDAO implements DAO<Address>
     public boolean update(Address object) throws DAOSQLException, DAOFatalException{
         logger.info(" - [ENTERING METHOD: update(Address object), PARAMETERS: [Address object = " + object + "]");
         Connection con = null;
-        PreparedStatement statement = null;
         MySQLConnector connector = null;
         boolean updated = false;
-        String query = "UPDATE address SET country=?, city=?, street=?, building=?, apartment=?, post_index=? WHERE id=?";
         try {
             connector = MySQLConnector.getInstance();
             con = connector.getConnection();
-            statement = con.prepareStatement(query);
-
-            String country = object.getCountry();
-            statement.setString(1, country);
-
-            String city = object.getCity();
-            statement.setString(2, city);
-
-            String street = object.getStreet();
-            if(StringUtils.isNotEmpty(street)) {
-                statement.setString(3, street);
-            }
-            else {
-                statement.setNull(3, Types.VARCHAR);
-            }
-
-            Integer building = object.getBuilding();
-            if(building != null) {
-                statement.setInt(4, building);
-            }
-            else {
-                statement.setNull(4, Types.INTEGER);
-            }
-
-            Integer apartment = object.getApartment();
-            if(apartment != null) {
-                statement.setInt(5, apartment);
-            }
-            else {
-                statement.setNull(5, Types.INTEGER);
-            }
-
-            Long index = object.getIndex();
-            if(index != null) {
-                statement.setLong(6, index);
-            }
-            else {
-                statement.setNull(6, Types.BIGINT);
-            }
-
-            statement.setInt(7, object.getId());
-
-            logger.info(" - [EXECUTING QUERY] " + statement);
-            int affectedRows = statement.executeUpdate();
-            if(affectedRows > 0)
-                updated = true;
+            updated = updateWithExistingConnection(object, con);
         }
         catch (SQLException e)
         {
-            logger.error(e + " - [SQL EXCEPTION]");
             throw new DAOSQLException(e);
         }
         finally {
-            if(statement != null)
-            {
-                try {
-                    statement.close();
-                    logger.info(" - [CLOSED THE STATEMENT]");
-                }
-                catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
-                }
-            }
             if(con != null)
             {
                 try {
@@ -350,5 +232,150 @@ public class MySQLAddressDAO implements DAO<Address>
             }
         }
         return addresses;
+    }
+
+    @Override
+    public ArrayList<Address> readAllByContactId(int contactId) throws DAOFatalException, DAOSQLException
+    {
+        return null;
+    }
+
+    boolean updateWithExistingConnection(Address object, Connection con) throws SQLException{
+
+        logger.info(" - [ENTERING METHOD: updateWithExistingConnection(Address object, Connection con), PARAMETERS: [Address object = " + object + ", Connection con]");
+        PreparedStatement statement = null;
+        boolean updated = false;
+        String query = "UPDATE address SET country=?, city=?, street=?, building=?, apartment=?, post_index=? WHERE id=?";
+        try {
+            statement = con.prepareStatement(query);
+
+            String country = object.getCountry();
+            statement.setString(1, country);
+
+            String city = object.getCity();
+            statement.setString(2, city);
+
+            String street = object.getStreet();
+            if(StringUtils.isNotEmpty(street)) {
+                statement.setString(3, street);
+            }
+            else {
+                statement.setNull(3, Types.VARCHAR);
+            }
+
+            Integer building = object.getBuilding();
+            if(building != null) {
+                statement.setInt(4, building);
+            }
+            else {
+                statement.setNull(4, Types.INTEGER);
+            }
+
+            Integer apartment = object.getApartment();
+            if(apartment != null) {
+                statement.setInt(5, apartment);
+            }
+            else {
+                statement.setNull(5, Types.INTEGER);
+            }
+
+            Long index = object.getIndex();
+            if(index != null) {
+                statement.setLong(6, index);
+            }
+            else {
+                statement.setNull(6, Types.BIGINT);
+            }
+
+            statement.setInt(7, object.getId());
+
+            logger.info(" - [EXECUTING QUERY] " + statement);
+            int affectedRows = statement.executeUpdate();
+            if(affectedRows > 0)
+                updated = true;
+        }
+        finally {
+            if(statement != null)
+            {
+                try {
+                    statement.close();
+                    logger.info(" - [CLOSED THE STATEMENT]");
+                }
+                catch (SQLException e) {
+                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                }
+            }
+        }
+        return updated;
+    }
+
+    int createWithExistingConnection(Address object, Connection con) throws SQLException
+    {
+        logger.info(" - [ENTERING METHOD: createWithExistingConnection(Address object, Connection con), PARAMETERS: [Address object = " + object + ", Connection con]");
+        PreparedStatement statement = null;
+        int generatedId = -1;
+        String query = "INSERT INTO address (country, city, street, building, apartment, post_index, contact_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        try
+        {
+            statement = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+
+            String country = object.getCountry();
+            statement.setString(1, country);
+
+            String city = object.getCity();
+            statement.setString(2, city);
+
+            String street = object.getStreet();
+            if(StringUtils.isNotEmpty(street)) {
+                statement.setString(3, street);
+            }
+            else {
+                statement.setNull(3, Types.VARCHAR);
+            }
+
+            Integer building = object.getBuilding();
+            if(building != null) {
+                statement.setInt(4, building);
+            }
+            else {
+                statement.setNull(4, Types.INTEGER);
+            }
+
+            Integer apartment = object.getApartment();
+            if(apartment != null) {
+                statement.setInt(5, apartment);
+            }
+            else {
+                statement.setNull(5, Types.INTEGER);
+            }
+
+            Long index = object.getIndex();
+            if(index != null) {
+                statement.setLong(6, index);
+            }
+            else {
+                statement.setNull(6, Types.BIGINT);
+            }
+
+            statement.setNull(7, Types.INTEGER);
+            logger.info(" - [EXECUTING QUERY] " + statement);
+            statement.executeUpdate();
+            ResultSet rs = statement.getGeneratedKeys();
+            if (rs.next()) {
+                object.setId(rs.getInt(1));
+                generatedId = object.getId();
+            }
+        }
+        finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                    logger.info(" - [CLOSED THE STATEMENT]");
+                } catch (SQLException e) {
+                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                }
+            }
+        }
+        return generatedId;
     }
 }

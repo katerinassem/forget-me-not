@@ -15,6 +15,7 @@ public interface DAO<T>
 {
     int create (T object) throws DAOSQLException, DAOFatalException;
     T read(int id) throws DAOSQLException, DAOFatalException;
+    ArrayList<T> readAllByContactId(int contactId) throws DAOSQLException, DAOFatalException;
     boolean update (T object) throws DAOSQLException, DAOFatalException;
     boolean delete (int id) throws DAOSQLException, DAOFatalException;
     ArrayList<T> readAll() throws DAOSQLException, DAOFatalException;

@@ -24,61 +24,18 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
     public int create(Telephone object) throws DAOSQLException, DAOFatalException {
         logger.info(" - [ENTERING METHOD: create(Telephone object), PARAMETERS: [Telephone object = " + object + "]");
         Connection con = null;
-        PreparedStatement statement = null;
         MySQLConnector connector = null;
         int generatedId = -1;
-        String query = "INSERT INTO telephone (country_code, operator_code, telephone_number, telephone_type, comment, contact_id) VALUES (?, ?, ?, ?, ?, ?)";
         try {
             connector = MySQLConnector.getInstance();
             con = connector.getConnection();
-            statement = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-
-            Short countryCode = object.getCountryCode();
-            statement.setShort(1, countryCode);
-
-            Short operatorCode = object.getOperatorCode();
-            statement.setShort(2, operatorCode);
-
-            Long telephoneNumber = object.getTelephoneNumber();
-            statement.setLong(3, telephoneNumber);
-
-            TelephoneType telephoneType = object.getType();
-            statement.setString(4, telephoneType.name());
-
-            String comment = object.getComment();
-            if(StringUtils.isNotEmpty(comment)) {
-                statement.setString(5, comment);
-            }
-            else {
-                statement.setNull(5, Types.VARCHAR);
-            }
-
-            statement.setInt(6, object.getContactId());
-
-            logger.info(" - [EXECUTING QUERY] " + statement);
-            statement.executeUpdate();
-            ResultSet rs = statement.getGeneratedKeys();
-            if (rs.next()) {
-                object.setId(rs.getInt(1));
-                generatedId = object.getId();
-            }
+            generatedId = createWithExistingConnection(object, con);
         }
         catch (SQLException e)
         {
-            logger.error(e + " - [SQL EXCEPTION]");
             throw new DAOSQLException(e);
         }
         finally {
-            if(statement != null)
-            {
-                try {
-                    statement.close();
-                    logger.info(" - [CLOSED THE STATEMENT]");
-                }
-                catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
-                }
-            }
             if(con != null)
             {
                 try {
@@ -151,58 +108,18 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
     public boolean update(Telephone object) throws DAOSQLException, DAOFatalException {
         logger.info(" - [ENTERING METHOD: update(Telephone object), PARAMETERS: [Telephone object = " + object + "]");
         Connection con = null;
-        PreparedStatement statement = null;
         MySQLConnector connector = null;
         boolean updated = false;
-        String query = "UPDATE telephone SET country_code=?, operator_code=?, telephone_number=?, telephone_type=?, comment=? WHERE id=?";
         try {
             connector = MySQLConnector.getInstance();
             con = connector.getConnection();
-            statement = con.prepareStatement(query);
-
-            Short countryCode = object.getCountryCode();
-            statement.setShort(1, countryCode);
-
-            Short operatorCode = object.getOperatorCode();
-            statement.setShort(2, operatorCode);
-
-            Long telephoneNumber = object.getTelephoneNumber();
-            statement.setLong(3, telephoneNumber);
-
-            TelephoneType telephoneType = object.getType();
-            statement.setString(4, telephoneType.name());
-
-            String comment = object.getComment();
-            if(StringUtils.isNotEmpty(comment)) {
-                statement.setString(5, comment);
-            }
-            else {
-                statement.setNull(5, Types.VARCHAR);
-            }
-
-            statement.setInt(6, object.getId());
-
-            logger.info(" - [EXECUTING QUERY] " + statement);
-            int affectedRows = statement.executeUpdate();
-            if(affectedRows > 0)
-                updated = true;
+            updated = updateWithExistingConnection(object, con);
         }
         catch (SQLException e)
         {
-            logger.error(e + " - [SQL EXCEPTION]");
             throw new DAOSQLException(e);
         }
         finally {
-            if(statement != null)
-            {
-                try {
-                    statement.close();
-                    logger.info(" - [CLOSED THE STATEMENT]");
-                }
-                catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
-                }
-            }
             if(con != null)
             {
                 try {
@@ -317,5 +234,165 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
             }
         }
         return telephones;
+    }
+
+    @Override
+    public ArrayList<Telephone> readAllByContactId(int contactId) throws DAOFatalException, DAOSQLException
+    {
+        logger.info(" - [ENTERING METHOD: readAllByContactId(int contactId), PARAMETERS: int id = " + contactId + "]");
+        Connection con = null;
+        PreparedStatement statement = null;
+        ArrayList<Telephone> telephones = null;
+        MySQLConnector connector = null;
+        String query = "SELECT * FROM telephone WHERE contact_id=?";
+        try {
+            connector = MySQLConnector.getInstance();
+            con = connector.getConnection();
+            statement = con.prepareStatement(query);
+            statement.setInt(1, contactId);
+            logger.info(" - [EXECUTING QUERY] " + statement);
+            ResultSet rs = statement.executeQuery();
+            telephones = new ArrayList<Telephone>();
+            while(rs.next())
+            {
+                Integer id = rs.getInt("id");
+                Short countryCode = rs.getShort("country_code");
+                Short operatorCode = rs.getShort("operator_code");
+                Long telephoneNumber = rs.getLong("telephone_number");
+                TelephoneType telephoneType = TelephoneType.valueOf(rs.getString("telephone_type"));
+                String comment = rs.getString("comment");
+                Telephone telephone = new Telephone(id, countryCode, operatorCode, telephoneNumber, telephoneType, comment, contactId);
+                telephones.add(telephone);
+            }
+        }
+        catch (SQLException e){
+            throw new DAOSQLException(e);
+        }
+        finally {
+            if(statement != null)
+            {
+                try {
+                    statement.close();
+                    logger.info(" - [CLOSED THE STATEMENT]");
+                }
+                catch (SQLException e) {
+                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                }
+            }
+            if(con != null){
+                try {
+                    connector.closeConnection(con);
+                }
+                catch(SQLException e) {
+                    logger.error(e);
+                }
+            }
+        }
+        return telephones;
+    }
+
+    boolean updateWithExistingConnection(Telephone object, Connection con) throws SQLException {
+
+        logger.info(" - [ENTERING METHOD: updateWithExistingConnection(Telephone telephone, Connection con), PARAMETERS: [Telephone object = " + object + ", Connection con]");
+        PreparedStatement statement = null;
+        boolean updated = false;
+        String query = "UPDATE telephone SET country_code=?, operator_code=?, telephone_number=?, telephone_type=?, comment=? WHERE id=?";
+        try {
+            statement = con.prepareStatement(query);
+
+            Short countryCode = object.getCountryCode();
+            statement.setShort(1, countryCode);
+
+            Short operatorCode = object.getOperatorCode();
+            statement.setShort(2, operatorCode);
+
+            Long telephoneNumber = object.getTelephoneNumber();
+            statement.setLong(3, telephoneNumber);
+
+            TelephoneType telephoneType = object.getType();
+            statement.setString(4, telephoneType.name());
+
+            String comment = object.getComment();
+            if(StringUtils.isNotEmpty(comment)) {
+                statement.setString(5, comment);
+            }
+            else {
+                statement.setNull(5, Types.VARCHAR);
+            }
+
+            statement.setInt(6, object.getId());
+
+            logger.info(" - [EXECUTING QUERY] " + statement);
+            int affectedRows = statement.executeUpdate();
+            if(affectedRows > 0)
+                updated = true;
+        }
+        finally {
+            if(statement != null)
+            {
+                try {
+                    statement.close();
+                    logger.info(" - [CLOSED THE STATEMENT]");
+                }
+                catch (SQLException e) {
+                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                }
+            }
+        }
+        return updated;
+    }
+
+    int createWithExistingConnection(Telephone object, Connection con)throws SQLException{
+
+        logger.info(" - [ENTERING METHOD: createWithExistingConnection(Telephone telephone, Connection con), PARAMETERS: [Telephone object = " + object + ", Connection con]");
+        PreparedStatement statement = null;
+        int generatedId = -1;
+        String query = "INSERT INTO telephone (country_code, operator_code, telephone_number, telephone_type, comment, contact_id) VALUES (?, ?, ?, ?, ?, ?)";
+        try {
+            statement = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+
+            Short countryCode = object.getCountryCode();
+            statement.setShort(1, countryCode);
+
+            Short operatorCode = object.getOperatorCode();
+            statement.setShort(2, operatorCode);
+
+            Long telephoneNumber = object.getTelephoneNumber();
+            statement.setLong(3, telephoneNumber);
+
+            TelephoneType telephoneType = object.getType();
+            statement.setString(4, telephoneType.name());
+
+            String comment = object.getComment();
+            if(StringUtils.isNotEmpty(comment)) {
+                statement.setString(5, comment);
+            }
+            else {
+                statement.setNull(5, Types.VARCHAR);
+            }
+
+            statement.setInt(6, object.getContactId());
+
+            logger.info(" - [EXECUTING QUERY] " + statement);
+            statement.executeUpdate();
+            ResultSet rs = statement.getGeneratedKeys();
+            if (rs.next()) {
+                object.setId(rs.getInt(1));
+                generatedId = object.getId();
+            }
+        }
+        finally {
+            if(statement != null)
+            {
+                try {
+                    statement.close();
+                    logger.info(" - [CLOSED THE STATEMENT]");
+                }
+                catch (SQLException e) {
+                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                }
+            }
+        }
+        return generatedId;
     }
 }
