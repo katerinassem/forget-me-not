@@ -1,7 +1,11 @@
 package transfer;
 
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Created by Катерина on 23.02.2015.
@@ -11,7 +15,7 @@ public class Contact extends TransferObject
     String firstName;
     String secondName;
     String nameByFather;
-    Date dateOfBirth;
+    DateTime dateOfBirth;
     Sex sex;
     String sitizenship;
     String webSite;
@@ -31,7 +35,7 @@ public class Contact extends TransferObject
         attachments = new ArrayList<Attachment>();
     }
 
-    public Contact(Integer id, String firstName, String secondName, String nameByFather, Date dateOfBirth, Sex sex, String sitizenship, String webSite, String email, String company, String photoUrl, Integer addressId) {
+    public Contact(Integer id, String firstName, String secondName, String nameByFather, DateTime dateOfBirth, Sex sex, String sitizenship, String webSite, String email, String company, String photoUrl, Integer addressId) {
         super(id);
         telephones = new ArrayList<Telephone>();
         attachments = new ArrayList<Attachment>();
@@ -96,8 +100,37 @@ public class Contact extends TransferObject
         return nameByFather;
     }
 
-    public Date getDateOfBirth() {
+    public DateTime getDateOfBirth() {
         return dateOfBirth;
+    }
+
+    public String getFormattedDateOfBirth() {
+        if (dateOfBirth == null) {
+            return null;
+        }
+        DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("dd.MM.YYYY");
+        return dateTimeFormatter.print(dateOfBirth);
+    }
+
+    public Integer getDay(){
+        if(dateOfBirth == null){
+            return null;
+        }
+        return dateOfBirth.getDayOfMonth();
+    }
+
+    public Integer getMonth(){
+        if(dateOfBirth == null){
+            return null;
+        }
+        return dateOfBirth.getMonthOfYear();
+    }
+
+    public Integer getYear(){
+        if(dateOfBirth == null){
+            return null;
+        }
+        return  dateOfBirth.getYear();
     }
 
     public Sex getSex() {
@@ -128,7 +161,7 @@ public class Contact extends TransferObject
         nameByFather = _nameByFather;
     }
 
-    public void setDateOfBirth(Date _dateOfBirth) {
+    public void setDateOfBirth(DateTime _dateOfBirth) {
         dateOfBirth = _dateOfBirth;
     }
 
@@ -162,5 +195,19 @@ public class Contact extends TransferObject
 
     public void setAddressId(Integer addressId) {
         this.addressId = addressId;
+    }
+
+    public boolean getIfMale(){
+        if(sex != null){
+            return sex == Sex.m;
+        }
+        return false;
+    }
+
+    public boolean getIfFemale(){
+        if(sex != null){
+            return sex == Sex.f;
+        }
+        return false;
     }
 }

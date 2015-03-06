@@ -47,7 +47,7 @@ public class MySQLContactDAO implements DAO<Contact>
                 statement.setNull(3, Types.VARCHAR);
             }
 
-            java.util.Date dateOfBirth = object.getDateOfBirth();
+            org.joda.time.DateTime dateOfBirth = object.getDateOfBirth();
             if(dateOfBirth != null) {
                 statement.setDate(4, Date.valueOf(dateOfBirth.toString()));
             }
@@ -189,7 +189,7 @@ public class MySQLContactDAO implements DAO<Contact>
                 String firstName = rs.getString("first_name");
                 String secondName = rs.getString("second_name");
                 String nameByFather = rs.getString("name_by_father");
-                java.util.Date dateOfBirth = rs.getDate("date_of_birth");
+                org.joda.time.DateTime dateOfBirth = org.joda.time.DateTime.parse(rs.getDate("date_of_birth").toString());
                 Sex sex = Sex.valueOf(rs.getString("sex"));
                 String sitizenship = rs.getString("sitizenship");
                 String webSite = rs.getString("web_site");
@@ -257,7 +257,7 @@ public class MySQLContactDAO implements DAO<Contact>
                 statement.setNull(3, Types.VARCHAR);
             }
 
-            java.util.Date dateOfBirth = object.getDateOfBirth();
+            org.joda.time.DateTime dateOfBirth = object.getDateOfBirth();
             if(dateOfBirth != null) {
                 statement.setDate(4, Date.valueOf(dateOfBirth.toString()));
             }
@@ -462,7 +462,7 @@ public class MySQLContactDAO implements DAO<Contact>
                 String firstName = rs.getString("first_name");
                 String secondName = rs.getString("second_name");
                 String nameByFather = rs.getString("name_by_father");
-                java.util.Date dateOfBirth = rs.getDate("date_of_birth");
+                org.joda.time.DateTime dateOfBirth = org.joda.time.DateTime.parse(rs.getDate("date_of_birth").toString());
                 Sex sex = Sex.valueOf(rs.getString("sex"));
                 String sitizenship = rs.getString("sitizenship");
                 String webSite = rs.getString("web_site");

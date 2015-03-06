@@ -41,6 +41,9 @@ public class CreateEditContactCommand implements Command
                     AbstractBLLFactory bllFactory = new KateBllFactory(daoFactory);
                     Business<Contact> contactDAO = bllFactory.getContactBusiness();
                     Contact contact = contactDAO.getFullObjectById(id);
+                    if(contact == null){
+                        throw new BLLDataException("Запрашиваемый контакт не найден.");
+                    }
                     req.getSession().setAttribute("contact", contact);
                 }
             }

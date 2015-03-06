@@ -1,7 +1,7 @@
 body
 {
     color: purple;
-    margin: 10% 10% 10%;
+    margin: 3% 15% 3%;
 }
 
 h1
@@ -11,13 +11,19 @@ h1
 
 form
 {
-    margin: 5% 5% 5%;
+    padding: 1% 10% 1%;
+    width: 80%;
 }
 
 input, label
 {
     float: left;
-    margin: 2% 2% 2%;
+    width: 100%;
+}
+
+label
+{
+    margin: 1% 0% 1%;
 }
 
 .sex, .tel
@@ -28,11 +34,6 @@ input, label
 fieldset
 {
     margin-top: 2%;
-}
-
-button
-{
-    margin: 0 auto 0;
 }
 
 textarea
@@ -53,4 +54,59 @@ td, th
 {
     padding: 1%;
     border: 2px solid white;
+}
+
+th
+{
+    background-color: rosybrown;
+    font-size: 1.5em;
+}
+
+#page-tab
+{
+    list-style: none;
+    margin: 0 auto 0;
+    width: 100%;
+}
+
+.page-button
+{
+    display: inline-block;
+    padding: 0px 9px;
+    margin-right: 4px;
+    border-radius: 3px;
+    background-color: mediumvioletred;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+a:link, a:active, a:hover, a:visited
+{
+    color: black;
+}
+
+#telephone-table input, #attachment-table input
+{
+    margin: 0;
+}
+
+button, .button
+{
+    display: inline-block;
+    font-weight: bold;
+    background-color: mediumvioletred;
+    color: white;
+    border: none;
+}
+
+#date-tab > input
+{
+    display: inline-block;
+    width: 30%;
+}
+
+#window, #wrap
+{
+    display: none;
 }

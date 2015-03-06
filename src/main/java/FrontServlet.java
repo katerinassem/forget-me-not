@@ -28,11 +28,15 @@ public class FrontServlet extends HttpServlet
         }
         catch (ServletException e)
         {
+            logger.info(e);
+            req.getSession().setAttribute("errorMessage", "Ошибка приложения! Приносим извинения за причиненные неудобства.");
             RequestDispatcher dispatcher = req.getRequestDispatcher("Error.jsp");
             dispatcher.forward(req, resp);
         }
         catch (CommandFatalException e)
         {
+            logger.error(e);
+            req.getSession().setAttribute("errorMessage", "Ошибка приложения! Приносим извинения за причиненные неудобства.");
             RequestDispatcher dispatcher = req.getRequestDispatcher("Error.jsp");
             dispatcher.forward(req, resp);
         }
@@ -40,6 +44,16 @@ public class FrontServlet extends HttpServlet
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        try {
+            req.getSession().removeAttribute("error");
+            commandHelper.dispatchRequest(req, resp);
+        }
+        catch (CommandFatalException e)
+        {
+            logger.error(e);
+            req.getSession().setAttribute("errorMessage", "Ошибка приложения! Приносим извинения за причиненные неудобства.");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("Error.jsp");
+            dispatcher.forward(req, resp);
+        }
     }
 }

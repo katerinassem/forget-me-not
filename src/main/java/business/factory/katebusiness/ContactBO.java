@@ -8,6 +8,7 @@ import data.DAO;
 import data.daoexception.DAOFatalException;
 import data.daoexception.DAOSQLException;
 import data.factories.mysql.MySQLConnector;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.log4j.Logger;
 import transfer.*;
 
@@ -37,17 +38,19 @@ public class ContactBO extends Business<Contact>{
         logger.info(" - [ENTERING METHOD: getObjectById(int id), PARAMETERS: int id = " + id + "]");
         Contact contact = super.getObjectById(id);
         DAO<Address> addressDAO = daoFactory.getAddressDAO();
-        try {
-            Address address = addressDAO.read(contact.getAddressId());
-            if(contact != null && address != null){
-                contact.setAddress(address);
+        if(contact != null && contact.getAddressId() != null) {
+            try {
+                Address address = addressDAO.read(contact.getAddressId());
+                if (address != null) {
+                    contact.setAddress(address);
+                }
             }
-        }
-        catch (DAOSQLException e){
-            throw new BLLDataException(e);
-        }
-        catch (DAOFatalException e){
-            throw new BLLFatalException(e);
+            catch (DAOSQLException e){
+                throw new BLLDataException(e);
+            }
+            catch (DAOFatalException e){
+                throw new BLLFatalException(e);
+            }
         }
         return contact;
     }
@@ -57,23 +60,23 @@ public class ContactBO extends Business<Contact>{
 
         logger.info(" - [ENTERING METHOD: getFullObjectById(int id), PARAMETERS: int id = " + id + "]");
         Contact contact = super.getFullObjectById(id);
-        DAO<Attachment> attachmentDAO = daoFactory.getAttachmentDAO();
-        try {
-            ArrayList<Attachment> attachments = attachmentDAO.readAllByContactId(id);
-            if (attachments != null) {
-                contact.setAttachments(attachments);
+        if(contact != null) {
+            DAO<Attachment> attachmentDAO = daoFactory.getAttachmentDAO();
+            try {
+                ArrayList<Attachment> attachments = attachmentDAO.readAllByContactId(id);
+                if (CollectionUtils.isNotEmpty(attachments)) {
+                    contact.setAttachments(attachments);
+                }
+                DAO<Telephone> telephoneDAO = daoFactory.getTelephoneDAO();
+                ArrayList<Telephone> telephones = telephoneDAO.readAllByContactId(id);
+                if (CollectionUtils.isNotEmpty(telephones)) {
+                    contact.setTelephones(telephones);
+                }
+            } catch (DAOSQLException e) {
+                throw new BLLDataException(e);
+            } catch (DAOFatalException e) {
+                throw new BLLFatalException(e);
             }
-            DAO<Telephone> telephoneDAO = daoFactory.getTelephoneDAO();
-            ArrayList<Telephone> telephones = telephoneDAO.readAllByContactId(id);
-            if (telephones != null) {
-                contact.setTelephones(telephones);
-            }
-        }
-        catch (DAOSQLException e){
-            throw new BLLDataException(e);
-        }
-        catch (DAOFatalException e){
-            throw new BLLFatalException(e);
         }
         return contact;
     }
@@ -83,22 +86,22 @@ public class ContactBO extends Business<Contact>{
 
         logger.info(" - [ENTERING METHOD: readAllObjects(), NO PARAMETERS]");
         ArrayList<Contact> contacts =  super.readAllObjects();
-        DAO<Address> addressDAO = daoFactory.getAddressDAO();
-        try {
-            for(Contact contact : contacts) {
-                if(contact.getAddressId() != null) {
-                    Address address = addressDAO.read(contact.getAddressId());
-                    if (address != null) {
-                        contact.setAddress(address);
+        if(CollectionUtils.isNotEmpty(contacts)) {
+            DAO<Address> addressDAO = daoFactory.getAddressDAO();
+            try {
+                for (Contact contact : contacts) {
+                    if (contact.getAddressId() != null) {
+                        Address address = addressDAO.read(contact.getAddressId());
+                        if (address != null) {
+                            contact.setAddress(address);
+                        }
                     }
                 }
+            } catch (DAOSQLException e) {
+                throw new BLLDataException(e);
+            } catch (DAOFatalException e) {
+                throw new BLLFatalException(e);
             }
-        }
-        catch (DAOSQLException e){
-            throw new BLLDataException(e);
-        }
-        catch (DAOFatalException e){
-            throw new BLLFatalException(e);
         }
         return contacts;
     }

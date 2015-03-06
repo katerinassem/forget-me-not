@@ -16,14 +16,14 @@
 </head>
 <body>
 <h1>Список контактов.</h1>
-<form>
-    <button><a href="?command=CreateEditContactCommand&option=create">Создать новый контакт</a></button>
-    <button><a href="?command=DeleteContactsCommand">Удалить выделенные контакты</a></button>
-    <button><a href="SearchContacts.jsp">Поиск контактов</a></button>
-    <button><a href="?command=SendEmailCommand">Отправить email выделенным контактам</a></button>
+<form method="post" action="?command=DeleteContactsCommand">
+    <button  formaction="?command=CreateEditContactCommand&option=create">＋ создать</button>
+    <button type="submit">X удалить</button>
+    <button formaction="SearchContacts.jsp" formmethod="get">? поиск</button>
+    <button formaction="?command=SendEmailCommand">@ email</button>
     <table>
         <tr>
-            <td><input type="checkbox"/></td>
+            <th></th>
             <th>ФИО</th>
             <th>Дата рождения</th>
             <th>Адрес</th>
@@ -31,14 +31,19 @@
         </tr>
         <c:forEach items="${sessionScope.contacts}" var="contact" varStatus="varStatus">
             <tr>
-                <td><input type="checkbox"/></td>
-                <td><a href="?command=CreateEditContactCommand&option=edit&id=${contact.getId()}">${contact.getFirstName()} ${contact.getSecondName()} ${contact.getNameByFather()}</a></td>
-                <td>${contact.getDateOfBirth()}</td>
-                <td>${contact.getAddress()}</td>
-                <td>${contact.getCompany()}</td>
+                <td><input name="checkbox" value="${contact.id}" type="checkbox"/></td>
+                <td><a href="?command=CreateEditContactCommand&option=edit&id=${contact.id}">✐ ${contact.secondName} ${contact.firstName} ${contact.nameByFather}</a></td>
+                <td>${contact.formattedDateOfBirth}</td>
+                <td>${contact.address}</td>
+                <td>${contact.company}</td>
             </tr>
         </c:forEach>
     </table>
+    <ul id="page-tab">
+        <c:forEach var="index" varStatus="status" begin="1" end="${sessionScope.pageCount}" step="1">
+            <li class="page-button" id="${index}"><a href="?command=ShowContacts&page=${index}">${index}</a></li>
+        </c:forEach>
+    </ul>
 </form>
 </body>
 </html>

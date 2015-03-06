@@ -4,13 +4,13 @@ import data.daoexception.DAOFatalException;
 import data.daoexception.DAOSQLException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
-import transfer.Address;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import transfer.Attachment;
-
-import javax.servlet.ServletException;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.Date;
 
 /**
  * Created by Катерина on 23.02.2015.
@@ -66,7 +66,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
             if(rs.next())
             {
                 String fileName = rs.getString("file_name");
-                Date uploadDate = rs.getDate("upload_date");
+                DateTime uploadDate = DateTime.parse(rs.getDate("upload_date").toString());
                 String comment = rs.getString("comment");
                 String uniqueName = rs.getString("unique_name");
                 Integer contactId = rs.getInt("contact_id");
@@ -197,7 +197,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
             {
                 Integer id = rs.getInt("id");
                 String fileName = rs.getString("file_name");
-                Date uploadDate = rs.getDate("upload_date");
+                DateTime uploadDate = DateTime.parse(rs.getDate("upload_date").toString());
                 String comment = rs.getString("comment");
                 String uniqueName = rs.getString("unique_name");
                 Integer contactId = rs.getInt("contact_id");
@@ -256,7 +256,8 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
             {
                 Integer id = rs.getInt("id");
                 String fileName = rs.getString("file_name");
-                Date uploadDate = rs.getDate("upload_date");
+                DateTimeFormatter format = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.S");
+                DateTime uploadDate = format.parseDateTime(rs.getTimestamp("upload_date").toString());
                 String comment = rs.getString("comment");
                 String uniqueName = rs.getString("unique_name");
                 Attachment attachment = new Attachment(id, fileName, uploadDate, comment, contactId);
@@ -341,7 +342,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
             String fileName = object.getFileName();
             statement.setString(1, fileName);
 
-            Date uploadDate = object.getUploadDate();
+            DateTime uploadDate = object.getUploadDate();
             statement.setDate(2, java.sql.Date.valueOf(uploadDate.toString()));
 
             String comment = object.getComment();

@@ -6,6 +6,7 @@ import data.AbstractDAOFactory;
 import data.DAO;
 import data.daoexception.DAOFatalException;
 import data.daoexception.DAOSQLException;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;

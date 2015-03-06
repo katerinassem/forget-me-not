@@ -1,6 +1,9 @@
 package transfer;
 
-import java.util.Date;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
 import java.util.UUID;
 
 /**
@@ -10,13 +13,13 @@ public class Attachment extends TransferObject
 {
     String fileName;
     String uniqueName;
-    Date uploadDate;
+    DateTime uploadDate;
     String comment;
     Integer contactId;
 
     public Attachment() {}
 
-    public Attachment(Integer id, String fileName, Date uploadDate, String comment, Integer contactId) {
+    public Attachment(Integer id, String fileName, DateTime uploadDate, String comment, Integer contactId) {
         super(id);
         this.fileName = fileName;
         this.uploadDate = uploadDate;
@@ -41,12 +44,20 @@ public class Attachment extends TransferObject
         this.fileName = fileName;
     }
 
-    public Date getUploadDate() {
+    public DateTime getUploadDate() {
         return uploadDate;
     }
 
-    public void setUploadDate(Date uploadDate) {
+    public void setUploadDate(DateTime uploadDate) {
         this.uploadDate = uploadDate;
+    }
+
+    public String getFormattedUploadDate(){
+        if(uploadDate == null){
+            return null;
+        }
+        DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("HH:mm:ss, dd.MM.YYYY");
+        return dateTimeFormatter.print(uploadDate);
     }
 
     public String getComment() {

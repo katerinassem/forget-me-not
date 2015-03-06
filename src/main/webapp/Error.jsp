@@ -12,7 +12,7 @@
     <link href="files/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Something's wrong</h1>
-    <div>${sessionScope.error}</div>
+    <h1>Что-то не так..</h1>
+    <div>${sessionScope.errorMessage}</div>
 </body>
 </html>

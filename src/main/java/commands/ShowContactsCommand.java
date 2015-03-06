@@ -1,15 +1,13 @@
 package commands;
 
 import business.Service;
-import business.bllexception.ServiceDataException;
-import business.bllexception.ServiceFatalException;
+import business.bllexception.*;
 import business.service.ShowList;
-import business.bllexception.BLLDataException;
-import business.bllexception.BLLFatalException;
 import commands.commandexception.CommandFatalException;
 import listhandler.ContactListHandler;
 import listhandler.ListHandler;
 import org.apache.log4j.Logger;
+import session.ShowListFacade;
 import transfer.Contact;
 
 import javax.servlet.RequestDispatcher;
@@ -31,28 +29,13 @@ public class ShowContactsCommand implements Command
     @Override
     public void process(HttpServletRequest req, HttpServletResponse resp) throws CommandFatalException, ServletException
     {
+        logger.info(" - [ENTERING METHOD process(HttpServletRequest req, HttpServletResponse resp), PARAMETERS: HttpServletRequest req, HttpServletResponse resp]");
         try
         {
-            ResourceBundle bundle = ResourceBundle.getBundle("config");
-            Service showService = new ShowList();
-            ArrayList<Contact> contacts = (ArrayList<Contact>)showService.service(null);
-            if(contacts != null) {
-                int count = Integer.parseInt(bundle.getString("count"));
-                int pageCount = contacts.size() / count;
-                if(contacts.size() % count != 0){
-                    pageCount++;
-                }
-                req.getSession().setAttribute("pageCount", pageCount);
-                String str = req.getParameter("page");
-                Integer page = str == null ? null : Integer.parseInt(str);
-                if (page == null || page < 1 || page > pageCount) {
-                    page = 1;
-                }
-                int start = (page - 1) * count;
-                ListHandler<Contact> handler = new ContactListHandler();
-                contacts = handler.handleList(contacts, start, count);
-            }
-            req.getSession().setAttribute("contacts", contacts);
+            String str = req.getParameter("page");
+            Integer page = str == null ? null : Integer.parseInt(str);
+            ShowListFacade showListFacade = new ShowListFacade();
+            showListFacade.show(req.getSession(), page);
             RequestDispatcher dispatcher = req.getRequestDispatcher("ContactList.jsp");
             dispatcher.forward(req, resp);
         }
@@ -60,7 +43,7 @@ public class ShowContactsCommand implements Command
         {
             throw new ServletException();
         }
-        catch(ServiceDataException e)
+        catch(FacadeServiceException e)
         {
             logger.error(e + " - in method process(HttpServletRequest req, HttpServletResponse resp), class ShowContactsCommand\n");
             req.getSession().setAttribute("errorMessage", "Ошибка! Невозможно отобразить данные. Попытайтесь ещё.");
@@ -72,7 +55,7 @@ public class ShowContactsCommand implements Command
                 throw new ServletException();
             }
         }
-        catch(ServiceFatalException e)
+        catch(FacadeFatalException e)
         {
             throw new CommandFatalException(e);
         }
