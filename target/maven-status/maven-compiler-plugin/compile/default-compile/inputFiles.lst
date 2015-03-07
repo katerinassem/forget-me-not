@@ -1,3 +1,4 @@
+C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\session\SaveContactFacade.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\business\factory\KateBllFactory.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\commandexception\CommandFatalException.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\data\factories\mysql\MySQLAttachmentDAO.java
@@ -8,9 +9,10 @@ C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\SaveTel
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\SearchContactsCommand.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\data\factories\mysql\MySQLContactDAO.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\DeleteTelephonesCommand.java
-C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\business\bllexception\ServiceDataException.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\CreateEditContactCommand.java
+C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\business\bllexception\ServiceDataException.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\transfer\Contact.java
+C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\session\StoreFullContactFacade.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\business\factory\katebusiness\TelephoneBO.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\business\bllexception\BLLFatalException.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\business\bllexception\FacadeFatalException.java
@@ -35,6 +37,7 @@ C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\data\daoexceptio
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\business\Service.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\transfer\TelephoneType.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\ChoosePhotoCommand.java
+C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\SaveContactCommand.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\business\bllexception\FacadeServiceException.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\business\factory\katebusiness\AttachmentBO.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\business\factory\katebusiness\ContactBO.java
@@ -46,7 +49,7 @@ C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\data\factories\m
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\data\AbstractDAOFactory.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\transfer\Attachment.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\CreateEditAttachmentCommand.java
-C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\transfer\Address.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\data\factories\mysql\MySQLConnector.java
+C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\transfer\Address.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\SavePhotoCommand.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\business\factory\katebusiness\AddressBO.java

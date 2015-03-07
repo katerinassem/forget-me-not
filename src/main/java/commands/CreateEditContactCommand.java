@@ -11,6 +11,7 @@ import data.AbstractDAOFactory;
 import data.factories.MySQLDAOFactory;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.joda.time.DateTime;
 import transfer.Contact;
 
 import javax.servlet.RequestDispatcher;
@@ -31,10 +32,56 @@ public class CreateEditContactCommand implements Command
 
         logger.info(" - [ENTERING METHOD process(HttpServletRequest req, HttpServletResponse resp), PARAMETERS: HttpServletRequest req, HttpServletResponse resp]");
         try {
-            req.getSession().removeAttribute("contact");
             String opt = req.getParameter("option");
+            String idString = req.getParameter("id");
+            if(StringUtils.isNotEmpty(opt) && StringUtils.equalsIgnoreCase(opt, "editmore")){
+                //  Пересохраняем данные с формы(+ изменившиеся)
+                //  Не в базу!
+                Integer id = Integer.parseInt(idString);
+                String firstName = req.getParameter("firstName");
+                String secondName = req.getParameter("secondName");
+                String nameByFather = req.getParameter("nameByFather");
+                String day = req.getParameter("day");
+                String month = req.getParameter("month");
+                String year = req.getParameter("year");
+                String checkedSex = req.getParameterValues("checkedSex")[0];
+                String sitizenships = req.getParameter("sitizenship");
+                String webSite = req.getParameter("webSite");
+                String email = req.getParameter("email");
+                String company = req.getParameter("company");
+
+                String country = req.getParameter("country");
+                String city = req.getParameter("city");
+                String street = req.getParameter("street");
+                String building = req.getParameter("building");
+                String apartment = req.getParameter("apartment");
+                String index = req.getParameter("index");
+
+                String[] telephoneIds = req.getParameterValues("telephoneIds");
+                String[] fullNumbers = req.getParameterValues("fullNumbers");
+                String[] telephoneTypes = req.getParameterValues("telephoneTypes");
+                String[] telephoneComments = req.getParameterValues("telephoneComments");
+
+                String[] attachmentIds = req.getParameterValues("attachmentIds");
+                String[] uniqueNames = req.getParameterValues("uniqueNames");
+                String[] fileNames = req.getParameterValues("fileNames");
+                String[] formattedUploadDates = req.getParameterValues("formattedUploadDates");
+                String[] attachmentComments = req.getParameterValues("attachmentComments");
+
+
+                String attachmentId = req.getParameter("attachmentId");
+
+
+                ///FILE!!!!!!!!!!!!!!!!!!!
+
+                DateTime uploadDate = DateTime.now();
+                String attachmentComment = req.getParameter("attachmentComment");
+                //store(req);
+            }
+            else {
+                req.getSession().removeAttribute("contact");
+            }
             if(StringUtils.isNotEmpty(opt) && StringUtils.equalsIgnoreCase(opt, "edit")){
-                String idString = req.getParameter("id");
                 if(StringUtils.isNotEmpty(idString)){
                     int id = Integer.parseInt(idString);
                     AbstractDAOFactory daoFactory = new MySQLDAOFactory();

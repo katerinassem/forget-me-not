@@ -17,6 +17,7 @@ data\DAO.class
 commands\commandexception\CommandFatalException.class
 commands\DeleteTelephonesCommand.class
 data\factories\mysql\MySQLContactDAO.class
+session\StoreFullContactFacade.class
 session\ShowListFacade.class
 business\factory\katebusiness\ContactBO.class
 data\AbstractDAOFactory.class

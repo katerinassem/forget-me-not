@@ -26,7 +26,9 @@ public class SaveTelephoneCommand implements Command
 
             //Не забыть передать нужные параметры!!!
             //Возвращаем на страницу редактирования/создания телефона
-            RequestDispatcher dispatcher = req.getRequestDispatcher("?command=CreateEditTelephoneCommand&option=edit");
+            String value = req.getParameter("contactId");
+            Integer contactId = value == null ? null : Integer.parseInt(value);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("?command=CreateEditContactCommand&option=editmore");
             dispatcher.forward(req, resp);
         }
         catch (ServletException e)

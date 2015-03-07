@@ -24,16 +24,19 @@ public class SaveAttachmentCommand implements Command
             //Не в базу!
             //
             //Не забыть передать нужные параметры!!!
-            RequestDispatcher dispatcher = req.getRequestDispatcher("CreateAttachment.jsp");
+            String value = req.getParameter("contactId");
+            Integer contactId = value == null ? null : Integer.parseInt(value);
+            req.getSession().setAttribute("option", "editmore");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("CreateEditContact.jsp");
             dispatcher.forward(req, resp);
         }
-        catch (ServletException e)
-        {
-            logger.error(e + " - in method process(HttpServletRequest req, HttpServletResponse resp), class SendEmailCommand\n");
-        }
+        //catch (ServletException e)
+        //{
+        //    logger.error(e + " - in method process(HttpServletRequest req, HttpServletResponse resp), class SendEmailCommand\n");
+        //}
         catch (IOException e)
         {
-            logger.error(e + " - in method process(HttpServletRequest req, HttpServletResponse resp), class SendEmailCommand\n");
+            throw new ServletException(e);
         }
     }
 }

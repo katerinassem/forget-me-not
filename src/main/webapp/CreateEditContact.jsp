@@ -14,80 +14,81 @@
     <script src="files/js/popup.js" ></script>
 </head>
 <body>
-<h1>Создать или редактировать контакт.</h1>
-<a href="?command=ChoosePhotoCommand"><img src="files/images/default_avatar.jpg"/></a>
-<form action="?command=SaveContactCommand">
-    <label>ФИО:</label>
-    <input name="id" type="hidden" value="${sessionScope.contact.id}"/>
-    <input name="firstName" type="text" placeholder="фамилия*" value="${sessionScope.contact.firstName}"/>
-    <input name="secondName" type="text" placeholder="имя*"  value="${sessionScope.contact.secondName}"/>
-    <input name="nameByFather" type="text" placeholder="отчество" value="${sessionScope.contact.nameByFather}"/>
-    <label>Дата рождения:</label>
-    <div id="date-tab">
-        <input type="text" placeholder="дд" value="${sessionScope.contact.day}"/>
-        <input type="text" placeholder="мм" value="${sessionScope.contact.month}"/>
-        <input type="text" placeholder="гг" value="${sessionScope.contact.year}"/>
-    </div>
-    <fieldset>
-        <legend>Пол</legend>
-        <label class="sex">женский</label>
-        <input class="sex" type="radio" name="sex" checked="${sessionScope.contact.ifFemale}"/>
-        <label class="sex" >мужской</label>
-        <input class="sex" type="radio" name="sex" checked="${sessionScope.contact.ifMale}"/>
-    </fieldset>
-    <label>Гражданство:</label>
-    <input type="text" placeholder="гражданство"  value="${sessionScope.contact.sitizenship}"/>
-    <label>Web-сайт:</label>
-    <input type="text" placeholder="web-сайт"  value="${sessionScope.contact.webSite}"/>
-    <label>email:</label>
-    <input type="text" placeholder="email"  value="${sessionScope.contact.email}"/>
-    <label>Компания:</label>
-    <input type="text" placeholder="компания"  value="${sessionScope.contact.company}"/>
-    <fieldset>
-        <legend>Адрес</legend>
-            <label>Страна:</label>
-            <input type="text" placeholder="страна" value="${sessionScope.contact.address.country}"/>
-            <label>Город:</label>
-            <input type="text" placeholder="город" value="${sessionScope.contact.address.city}"/>
-            <label>Улица:</label>
-            <input type="text" placeholder="улица" value="${sessionScope.contact.address.street}"/>
-            <label>Дом:</label>
-            <input type="text" placeholder="дом" value="${sessionScope.contact.address.building}"/>
-            <label>Квартира:</label>
-            <input type="text" placeholder="квартира" value="${sessionScope.contact.address.apartment}"/>
-            <label>Индекс:</label>
-            <input type="text" placeholder="индекс" value="${sessionScope.contact.address.index}"/>
-    </fieldset>
-    <form method="post" action="?command=DeleteTelephonesCommand&">
+    <h1>Создать или редактировать контакт.</h1>
+    <a href="?command=ChoosePhotoCommand"><img src="files/images/default_avatar.jpg"/></a>
+    <form id="main" method="post" action="command=SaveContactCommand">
+        <label>ФИО:</label>
+        <input name="id" type="hidden" value="${sessionScope.contact.id}"/>
+        <input name="firstName" type="text" placeholder="фамилия*" value="${sessionScope.contact.firstName}"/>
+        <input name="secondName" type="text" placeholder="имя*"  value="${sessionScope.contact.secondName}"/>
+        <input name="nameByFather" type="text" placeholder="отчество" value="${sessionScope.contact.nameByFather}"/>
+        <label>Дата рождения:</label>
+        <div id="date-tab">
+            <input name="day" type="text" placeholder="дд" value="${sessionScope.contact.day}"/>
+            <input name=month type="text" placeholder="мм" value="${sessionScope.contact.month}"/>
+            <input name="year" type="text" placeholder="гг" value="${sessionScope.contact.year}"/>
+        </div>
         <fieldset>
-            <legend>Контактные телефоны</legend>
-            <button type="submit">X удалить</button>
-            <button><a href=href="javascript:PopUpShow()">＋ создать</a></button>
-            <table id="telephone-table">
-                <tr>
-                    <th></th>
-                    <th>Номер</th>
-                    <th>Тип</th>
-                    <th>Комментарий</th>
-                </tr>
-                <c:if test="${sessionScope.contact.telephones != null}">
-                    <c:forEach items="${sessionScope.contact.telephones}" var="telephone" varStatus="status">
-                        <tr>
-                            <td><input name="checkedTelephones" type="checkbox" value="${telephone.id}"/></td>
-                            <td><a href="?command=CreateEditTelephoneCommand&option=edit&id=${telephone.id}">✐ ${telephone.countryCode}(${telephone.operatorCode})${telephone.telephoneNumber}</a></td>
-                            <td>${telephone.telephoneType}</td>
-                            <td>${telephone.comment}</td>
-                        </tr>
-                    </c:forEach>
-                </c:if>
-            </table>
+            <legend>Пол</legend>
+            <label class="sex">женский</label>
+            <input name="checkedSex" class="sex" type="radio" name="sex" value="f" checked="${sessionScope.contact.ifFemale}"/>
+            <label class="sex" >мужской</label>
+            <input name="checkedSex" class="sex" type="radio" name="sex" value="m" checked="${sessionScope.contact.ifMale}"/>
         </fieldset>
-    </form>
-    <form method="post" action="?command=DeleteAttachmentsCommand">
+        <label>Гражданство:</label>
+        <input name="sitizenship" type="text" placeholder="гражданство"  value="${sessionScope.contact.sitizenship}"/>
+        <label>Web-сайт:</label>
+        <input name="webSite" type="text" placeholder="web-сайт"  value="${sessionScope.contact.webSite}"/>
+        <label>email:</label>
+        <input name="email" type="text" placeholder="email"  value="${sessionScope.contact.email}"/>
+        <label>Компания:</label>
+        <input name="company" type="text" placeholder="компания"  value="${sessionScope.contact.company}"/>
         <fieldset>
-            <legend>Список присоединений</legend>
+            <legend>Адрес</legend>
+                <label>Страна:</label>
+                <input name="country" type="text" placeholder="страна" value="${sessionScope.contact.address.country}"/>
+                <label>Город:</label>
+                <input name="city" type="text" placeholder="город" value="${sessionScope.contact.address.city}"/>
+                <label>Улица:</label>
+                <input name="street" type="text" placeholder="улица" value="${sessionScope.contact.address.street}"/>
+                <label>Дом:</label>
+                <input name="building" type="text" placeholder="дом" value="${sessionScope.contact.address.building}"/>
+                <label>Квартира:</label>
+                <input name="apartment" type="text" placeholder="квартира" value="${sessionScope.contact.address.apartment}"/>
+                <label>Индекс:</label>
+                <input name="index" type="text" placeholder="индекс" value="${sessionScope.contact.address.index}"/>
+        </fieldset>
+        <form name="telephone" method="post" action="?command=DeleteTelephonesCommand&">
+            <fieldset>
+                <legend>Контактные телефоны</legend>
                 <button type="submit">X удалить</button>
-                <button onclick="show('block')">＋ создать</button>
+                <button type="button" onclick="showPopUp('telephone-pop-up', 'block')">＋ создать</button>
+                <table id="telephone-table">
+                    <tr>
+                        <th></th>
+                        <th>Номер</th>
+                        <th>Тип</th>
+                        <th>Комментарий</th>
+                    </tr>
+                    <c:if test="${sessionScope.contact.telephones != null}">
+                        <c:forEach items="${sessionScope.contact.telephones}" var="telephone" varStatus="status">
+                            <tr>
+                                <input name="telephoneIds" type="hidden" value="${telephone.id}"/>
+                                <td><input name="checkedTelephones" type="checkbox" value="${telephone.id}"/></td>
+                                <td>✐ <a name="fullNumbers" href="showPopUp('telephone-pop-up', 'block', '${telephone.id}')">${telephone.countryCode}(${telephone.operatorCode})${telephone.telephoneNumber}</a></td>
+                                <td name="telephoneTypes">${telephone.telephoneType}</td>
+                                <td name="telephoneComments">${telephone.comment}</td>
+                            </tr>
+                        </c:forEach>
+                    </c:if>
+                </table>
+            </fieldset>
+        </form>
+        <form name="attachment" method="post" action="?command=DeleteAttachmentsCommand">
+            <fieldset>
+                <legend>Список присоединений</legend>
+                <button type="submit">X удалить</button>
+                <button type="button" onclick="showPopUp('attachment-pop-up', 'block')">＋ создать</button>
                 <table id="attachment-table">
                     <tr>
                         <th></th>
@@ -98,19 +99,55 @@
                     <c:if test="${sessionScope.contact.getAttachments() != null}">
                         <c:forEach items="${sessionScope.contact.attachments}" var="attachment" varStatus="status">
                             <tr>
+                                <input name="attachmentIds" type="hidden" value="${attachment.id}"/>
                                 <td><input name="checkedAttachments" type="checkbox" value="${attachment.id}"/></td>
-                                <td><a href="files/${sessionScope.contact.id}/${attachment.uniqueName}">⇓</a>&nbsp<a href="?command=CreateEditAttachmentCommand&option=edit&id=${attachment.id}">✐ ${attachment.fileName}</a></td>
-                                <td>${attachment.formattedUploadDate}</td>
-                                <td>${attachment.comment}</td>
+                                <td><a name="uniqueNames" href="files/${sessionScope.contact.id}/${attachment.uniqueName}">⇓</a>&nbsp✐ <a name="fileNames" href="showPopUp('attachment-pop-up', 'block', '${attachment.id}')">${attachment.fileName}</a></td>
+                                <td name="formattedUploadDates">${attachment.formattedUploadDate}</td>
+                                <td name="attachmentComments">${attachment.comment}</td>
                             </tr>
                         </c:forEach>
                     </c:if>
                 </table>
             </fieldset>
         </form>
+        <button form="main" type="submit">Сохранить</button>
+
+        <div id="attachment-pop-up">
+            <h4>Создать присоединение.</h4>
+            <div name="attachment">
+                <input name="attachmentId" type="hidden"/>
+                <input name="file" type="file"/>
+                <label>Комментарий: </label>
+                <input name="attachmentComment" type="text" placeholder="комментарий"/>
+                <button form="main" formaction="?command=CreateEditContactCommand&option=editmore">Сохранить</button>
+                <button type="button" onclick="showPopUp('attachment-pop-up', 'none')">Отменить</button>
+            </div>
+        </div>
     </form>
-    <button>Сохранить</button>
-    <div id="window">Hello!!!</div>
-    <div id="wrap">Hiiiii</div>
+
+    </form>
+    <div id="telephone-pop-up">
+        <h4>Создать или редактировать телефон.</h4>
+        <form name="telephone"  method="post">
+            <input name="telephoneId" type="hidden"/>
+            <label>Код страны:</label>
+            <input name="countryCode" type="text" placeholder="код страны"/>
+            <label>Код оператора:</label>
+            <input name="operatorCode" type="text" placeholder="код оператора"/>
+            <label>Телефонный номер:</label>
+            <input name="telephoneNumber" type="text" placeholder="телефонный номер"/>
+            <fieldset>
+                <legend>Тип телефона</legend>
+                <label class="tel">Домашний</label>
+                <input name="checkedType" class="tel" type="radio" value="h" name="telephone_type"/>
+                <label class="tel">Мобильный</label>
+                <input name="checkedType" type="radio" class="tel" value="m" name="telephone_type"/>
+            </fieldset>
+            <label>Комментарий:</label>
+            <input name="telephoneComment" type="text" placeholder="комментарий"/>
+            <button type="button" onclick="setTelephone()">Сохранить</button>
+            <button type="button" onclick="showPopUp('telephone-pop-up', 'none')">Отменить</button>
+        </form>
+    </div>
 </body>
 </html>

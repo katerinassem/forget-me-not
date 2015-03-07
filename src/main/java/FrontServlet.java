@@ -28,7 +28,7 @@ public class FrontServlet extends HttpServlet
         }
         catch (ServletException e)
         {
-            logger.info(e);
+            logger.error(e);
             req.getSession().setAttribute("errorMessage", "Ошибка приложения! Приносим извинения за причиненные неудобства.");
             RequestDispatcher dispatcher = req.getRequestDispatcher("Error.jsp");
             dispatcher.forward(req, resp);
