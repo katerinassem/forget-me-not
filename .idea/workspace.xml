@@ -2,78 +2,75 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c45153e1-ed98-4566-9ac8-bdc994cf1fb3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\AbstractDAOFactory.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\AbstractDAOFactory.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\AbstractDAOFactory.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\AbstractDAOFactory.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\Address.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\Address.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\Address.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\Address.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\Attachment.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\Attachment.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\Attachment.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\Attachment.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\ChoosePhotoCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\ChoosePhotoCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\ChoosePhotoCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\ChoosePhotoCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\Command.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\Command.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\Command.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\Command.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\CommandHelper.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\CommandHelper.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\CommandHelper.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\CommandHelper.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\Contact.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\Contact.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\Contact.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\Contact.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\CreateEditAttachmentCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\CreateEditAttachmentCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\CreateEditAttachmentCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\CreateEditAttachmentCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\CreateEditContactCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\CreateEditContactCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\CreateEditContactCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\CreateEditContactCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\CreateEditTelephoneCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\CreateEditTelephoneCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\CreateEditTelephoneCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\CreateEditTelephoneCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\DAO.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\DAO.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\DAO.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\DAO.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\DeleteContactsCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\DeleteContactsCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\DeleteContactsCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\DeleteContactsCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\DeleteTelephonesCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\DeleteTelephonesCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\DeleteTelephonesCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\DeleteTelephonesCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\FrontServlet.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\FrontServlet.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\FrontServlet.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\FrontServlet.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\mysql\MySQLAddressDAO.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\mysql\MySQLAddressDAO.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\factories\mysql\MySQLAddressDAO.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\factories\mysql\MySQLAddressDAO.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\mysql\MySQLAttachmentDAO.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\mysql\MySQLAttachmentDAO.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\factories\mysql\MySQLAttachmentDAO.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\factories\mysql\MySQLAttachmentDAO.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\mysql\MySQLConnector.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\mysql\MySQLConnector.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\factories\mysql\MySQLConnector.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\factories\mysql\MySQLConnector.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\mysql\MySQLContactDAO.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\mysql\MySQLContactDAO.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\factories\mysql\MySQLContactDAO.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\factories\mysql\MySQLContactDAO.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\MySQLDAOFactory.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\MySQLDAOFactory.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\factories\MySQLDAOFactory.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\factories\MySQLDAOFactory.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SaveAttachmentCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SaveAttachmentCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SaveAttachmentCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SaveAttachmentCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SavePhotoCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SavePhotoCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SavePhotoCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SavePhotoCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SaveTelephoneCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SaveTelephoneCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SaveTelephoneCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SaveTelephoneCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SearchContactsCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SearchContactsCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SearchContactsCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SearchContactsCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SendEmailCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SendEmailCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SendEmailCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SendEmailCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\Sex.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\Sex.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\Sex.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\Sex.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\ShowContactsCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\ShowContactsCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\ShowContactsCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\ShowContactsCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\Telephone.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\Telephone.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\Telephone.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\Telephone.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\TelephoneType.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\TelephoneType.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\TelephoneType.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\TelephoneType.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\TransferObject.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\TransferObject.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\TransferObject.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\TransferObject.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact.war" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact.war" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/upload/UploadHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/data/AbstractDAOFactory.class" afterPath="$PROJECT_DIR$/target/classes/data/AbstractDAOFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/AbstractDAOFactory.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/AbstractDAOFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/transfer/Address.class" afterPath="$PROJECT_DIR$/target/classes/transfer/Address.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Address.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Address.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/transfer/Attachment.class" afterPath="$PROJECT_DIR$/target/classes/transfer/Attachment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Attachment.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Attachment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/ChoosePhotoCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/ChoosePhotoCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/ChoosePhotoCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/ChoosePhotoCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/Command.class" afterPath="$PROJECT_DIR$/target/classes/commands/Command.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/Command.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/Command.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/CommandHelper.class" afterPath="$PROJECT_DIR$/target/classes/CommandHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/CommandHelper.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/CommandHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/transfer/Contact.class" afterPath="$PROJECT_DIR$/target/classes/transfer/Contact.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Contact.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Contact.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/CreateEditAttachmentCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/CreateEditAttachmentCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/CreateEditAttachmentCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/CreateEditAttachmentCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/CreateEditContactCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/CreateEditContactCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/CreateEditContactCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/CreateEditContactCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/CreateEditTelephoneCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/CreateEditTelephoneCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/CreateEditTelephoneCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/CreateEditTelephoneCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/data/DAO.class" afterPath="$PROJECT_DIR$/target/classes/data/DAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/DAO.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/DAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/DeleteContactsCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/DeleteContactsCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/DeleteContactsCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/DeleteContactsCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/DeleteTelephonesCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/DeleteTelephonesCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/DeleteTelephonesCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/DeleteTelephonesCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/FrontServlet.class" afterPath="$PROJECT_DIR$/target/classes/FrontServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/FrontServlet.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/FrontServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/data/factories/mysql/MySQLAddressDAO.class" afterPath="$PROJECT_DIR$/target/classes/data/factories/mysql/MySQLAddressDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLAddressDAO.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLAddressDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/data/factories/mysql/MySQLAttachmentDAO.class" afterPath="$PROJECT_DIR$/target/classes/data/factories/mysql/MySQLAttachmentDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLAttachmentDAO.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLAttachmentDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/data/factories/mysql/MySQLConnector.class" afterPath="$PROJECT_DIR$/target/classes/data/factories/mysql/MySQLConnector.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLConnector.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLConnector.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/data/factories/mysql/MySQLContactDAO.class" afterPath="$PROJECT_DIR$/target/classes/data/factories/mysql/MySQLContactDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLContactDAO.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLContactDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/data/factories/MySQLDAOFactory.class" afterPath="$PROJECT_DIR$/target/classes/data/factories/MySQLDAOFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/MySQLDAOFactory.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/MySQLDAOFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/SaveAttachmentCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/SaveAttachmentCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SaveAttachmentCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SaveAttachmentCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/SavePhotoCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/SavePhotoCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SavePhotoCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SavePhotoCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/SaveTelephoneCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/SaveTelephoneCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SaveTelephoneCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SaveTelephoneCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/SearchContactsCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/SearchContactsCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SearchContactsCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SearchContactsCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/SendEmailCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/SendEmailCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SendEmailCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SendEmailCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/transfer/Sex.class" afterPath="$PROJECT_DIR$/target/classes/transfer/Sex.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Sex.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Sex.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/ShowContactsCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/ShowContactsCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/ShowContactsCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/ShowContactsCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/transfer/Telephone.class" afterPath="$PROJECT_DIR$/target/classes/transfer/Telephone.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Telephone.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Telephone.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/transfer/TelephoneType.class" afterPath="$PROJECT_DIR$/target/classes/transfer/TelephoneType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/TelephoneType.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/TelephoneType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/transfer/TransferObject.class" afterPath="$PROJECT_DIR$/target/classes/transfer/TransferObject.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/TransferObject.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/TransferObject.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact.war" afterPath="$PROJECT_DIR$/target/youcontact.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/transfer/Attachment.java" afterPath="$PROJECT_DIR$/src/main/java/transfer/Attachment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\CreateEditContact.jsp" afterPath="$PROJECT_DIR$/target/youcontact/CreateEditContact.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/CreateEditContact.jsp" afterPath="$PROJECT_DIR$/target/youcontact/CreateEditContact.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/commands/CreateEditContactCommand.java" afterPath="$PROJECT_DIR$/src/main/java/commands/CreateEditContactCommand.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/FrontServlet.java" afterPath="$PROJECT_DIR$/src/main/java/FrontServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/commands/SaveAttachmentCommand.java" afterPath="$PROJECT_DIR$/src/main/java/commands/SaveAttachmentCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/commands/SaveTelephoneCommand.java" afterPath="$PROJECT_DIR$/src/main/java/commands/SaveTelephoneCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\maven-status\maven-compiler-plugin\compile\default-compile\inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\maven-archiver\pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAttachmentDAO.java" afterPath="$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAttachmentDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java" afterPath="$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/files/js/popup.js" afterPath="$PROJECT_DIR$/src/main/webapp/files/js/popup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/files/css/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/files/css/style.css" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\files\css\style.css" afterPath="$PROJECT_DIR$/target/youcontact/files/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="YouContact.iws" />
@@ -121,18 +118,18 @@
       <file leaf-file-name="CreateEditContact.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.0" vertical-offset="2106" max-vertical-offset="2703">
-              <caret line="130" column="29" selection-start-line="130" selection-start-column="29" selection-end-line="130" selection-end-column="29" />
+            <state vertical-scroll-proportion="-10.961538" vertical-offset="276" max-vertical-offset="2907">
+              <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateEditContactCommand.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CreateEditContactCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/commands/CreateEditContactCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4878788" vertical-offset="621" max-vertical-offset="1836">
-              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="276" max-vertical-offset="1462">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -141,51 +138,69 @@
       <file leaf-file-name="FrontServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/FrontServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="558" max-vertical-offset="935">
-              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="565" max-vertical-offset="986">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommandHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CommandHelper.java">
+      <file leaf-file-name="StoreFullContactFacade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="116" max-vertical-offset="1054">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2499" max-vertical-offset="3740">
+              <caret line="165" column="32" selection-start-line="165" selection-start-column="32" selection-end-line="165" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShowContactsCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/commands/ShowContactsCommand.java">
+      <file leaf-file-name="UploadHelper.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/upload/UploadHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="316" max-vertical-offset="901">
-              <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ContactList.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/ContactList.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.653846" vertical-offset="70" max-vertical-offset="935">
-              <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeleteContactsCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/commands/DeleteContactsCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="986">
-              <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.65507245" vertical-offset="811" max-vertical-offset="1921">
+              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#3021#3051#1" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Attachment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/transfer/Attachment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="350" max-vertical-offset="935">
+              <caret line="57" column="96" selection-start-line="56" selection-start-column="9" selection-end-line="57" selection-end-column="96" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MySQLAttachmentDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAttachmentDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3695" max-vertical-offset="6256">
+              <caret line="255" column="59" selection-start-line="253" selection-start-column="60" selection-end-line="255" selection-end-column="59" />
+              <folding>
+                <marker date="1425847523936" expanded="true" signature="1896:1931" placeholder="SELECT * FRO..attachment..." />
+                <marker date="1425847523936" expanded="true" signature="4736:4769" placeholder="DELETE FROM ..." />
+                <marker date="1425847523936" expanded="true" signature="6306:6330" placeholder="SELECT * FRO..attachment..." />
+                <marker date="1425847523936" expanded="true" signature="8433:8476" placeholder="SELECT * FRO..attachment..." />
+                <marker date="1425847523936" expanded="true" signature="10493:10549" placeholder="UPDATE attac..." />
+                <marker date="1425847523936" expanded="true" signature="11957:12045" placeholder="INSERT INTO ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateEditTelephoneCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/commands/CreateEditTelephoneCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+              <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -193,8 +208,8 @@
       <file leaf-file-name="popup.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/files/js/popup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="363" max-vertical-offset="935">
-              <caret line="48" column="38" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
+              <caret line="55" column="17" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -208,7 +223,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/business/factory/katebusiness/TelephoneBO.java" />
         <option value="$PROJECT_DIR$/src/main/java/data/DAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAddressDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLTelephoneDAO.java" />
@@ -249,16 +263,17 @@
         <option value="$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLContactDAO.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/ContactList.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/transfer/Contact.java" />
-        <option value="$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAttachmentDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/transfer/Attachment.java" />
         <option value="$PROJECT_DIR$/src/main/java/commands/SaveTelephoneCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FrontServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/commands/SaveAttachmentCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/files/css/style.css" />
         <option value="$PROJECT_DIR$/src/main/java/commands/CreateEditContactCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/transfer/Attachment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAttachmentDAO.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/files/js/popup.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/FrontServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/upload/UploadHelper.java" />
       </list>
     </option>
   </component>
@@ -331,14 +346,30 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="YouContact" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -431,8 +462,194 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="upload" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="transfer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="session" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="factories" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="factories" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysql" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commands" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -898,7 +1115,9 @@
       <workItem from="1425595929112" duration="6034000" />
       <workItem from="1425641035088" duration="34235000" />
       <workItem from="1425733494060" duration="30308000" />
-      <workItem from="1425766118809" duration="4501000" />
+      <workItem from="1425766118809" duration="4697000" />
+      <workItem from="1425811692727" duration="2904000" />
+      <workItem from="1425842743378" duration="11945000" />
     </task>
     <task id="LOCAL-00001" summary="2March - address CRUD">
       <created>1425316635422</created>
@@ -966,11 +1185,17 @@
       <option name="project" value="LOCAL" />
       <updated>1425679510995</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="7March - pop-up">
+      <created>1425770696096</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1425770696096</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="283862000" />
+    <option name="totallyTimeSpent" value="298907000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1006,12 +1231,12 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30668843" sideWeight="0.22012103" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16490166" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16490166" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3523654" sideWeight="0.779879" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20499243" sideWeight="0.49878347" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20499243" sideWeight="0.49878347" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1019,7 +1244,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25718608" sideWeight="0.50121653" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41598696" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37030995" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1034,14 +1259,14 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30668843" sideWeight="0.22012103" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16490166" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16490166" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41598696" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37030995" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1111,25 +1336,37 @@
           <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/commands/CreateEditContactCommand.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java</url>
+          <line>174</line>
+          <properties />
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/FrontServlet.java</url>
+          <line>49</line>
+          <properties />
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/FrontServlet.java</url>
           <line>47</line>
           <properties />
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/FrontServlet.java</url>
-          <line>25</line>
-          <properties />
-          <option name="timeStamp" value="111" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/commands/CreateEditContactCommand.java</url>
-          <line>59</line>
-          <properties />
-          <option name="timeStamp" value="113" />
+          <option name="timeStamp" value="121" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="114" />
+      <option name="time" value="122" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1138,20 +1375,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <caret line="14" column="113" selection-start-line="14" selection-start-column="113" selection-end-line="14" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/listhandler/ListHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-          <caret line="8" column="76" selection-start-line="8" selection-start-column="76" selection-end-line="8" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/commandexception/CommandFatalException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
@@ -1219,13 +1442,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAddressDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1458" max-vertical-offset="6443">
-          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1315,23 +1531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLTelephoneDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3652" max-vertical-offset="6681">
-          <caret line="243" column="4" selection-start-line="243" selection-start-column="4" selection-end-line="243" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLContactDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2664" max-vertical-offset="8585">
-          <caret line="192" column="0" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/transfer/Contact.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3282" max-vertical-offset="3723">
@@ -1339,33 +1538,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAttachmentDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4313" max-vertical-offset="6596">
-          <caret line="260" column="0" selection-start-line="260" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/transfer/Attachment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="671" max-vertical-offset="1088">
-          <caret line="58" column="82" selection-start-line="58" selection-start-column="82" selection-end-line="58" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/CreateEditAttachmentCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="578">
           <caret line="19" column="120" selection-start-line="19" selection-start-column="120" selection-end-line="19" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/CreateAttachment.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="340">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1421,23 +1597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-          <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/CreateEditTelephoneCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="510">
-          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/SaveContactCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="510">
@@ -1449,56 +1608,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1808" max-vertical-offset="2142">
           <caret line="110" column="14" selection-start-line="110" selection-start-column="14" selection-end-line="110" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/DeleteContactsCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="986">
-          <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/ContactList.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.653846" vertical-offset="70" max-vertical-offset="935">
+        <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="935">
           <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/ShowContactsCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="316" max-vertical-offset="901">
-          <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.0" vertical-offset="2106" max-vertical-offset="2703">
-          <caret line="130" column="29" selection-start-line="130" selection-start-column="29" selection-end-line="130" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/files/js/popup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="363" max-vertical-offset="935">
-          <caret line="48" column="38" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FrontServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="558" max-vertical-offset="935">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1511,11 +1627,158 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/CreateAttachment.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="340">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/ShowContactsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="316" max-vertical-offset="901">
+          <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/DeleteContactsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="986">
+          <caret line="32" column="61" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/CreateEditTelephoneCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAddressDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1458" max-vertical-offset="6443">
+          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLTelephoneDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3652" max-vertical-offset="6681">
+          <caret line="243" column="4" selection-start-line="243" selection-start-column="4" selection-end-line="243" selection-end-column="4" />
+          <folding>
+            <marker date="1425573282112" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..telephone..." />
+            <marker date="1425573282112" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1425573282112" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..telephone..." />
+            <marker date="1425573282112" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..telephone..." />
+            <marker date="1425573282112" expanded="true" signature="-1:-1" placeholder="UPDATE telep..." />
+            <marker date="1425573282112" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLContactDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.2674825" vertical-offset="1593" max-vertical-offset="8585">
+          <caret line="181" column="40" selection-start-line="181" selection-start-column="40" selection-end-line="181" selection-end-column="40" />
+          <folding>
+            <marker date="1425671960108" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1425671960108" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..contact..." />
+            <marker date="1425671960108" expanded="true" signature="-1:-1" placeholder="UPDATE conta..." />
+            <marker date="1425671960108" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1425671960108" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..contact..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17435898" vertical-offset="0" max-vertical-offset="1275">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/transfer/Attachment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="350" max-vertical-offset="935">
+          <caret line="57" column="96" selection-start-line="56" selection-start-column="9" selection-end-line="57" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAttachmentDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3695" max-vertical-offset="6256">
+          <caret line="255" column="59" selection-start-line="253" selection-start-column="60" selection-end-line="255" selection-end-column="59" />
+          <folding>
+            <marker date="1425847523936" expanded="true" signature="1896:1931" placeholder="SELECT * FRO..attachment..." />
+            <marker date="1425847523936" expanded="true" signature="4736:4769" placeholder="DELETE FROM ..." />
+            <marker date="1425847523936" expanded="true" signature="6306:6330" placeholder="SELECT * FRO..attachment..." />
+            <marker date="1425847523936" expanded="true" signature="8433:8476" placeholder="SELECT * FRO..attachment..." />
+            <marker date="1425847523936" expanded="true" signature="10493:10549" placeholder="UPDATE attac..." />
+            <marker date="1425847523936" expanded="true" signature="11957:12045" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/files/js/popup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
+          <caret line="55" column="17" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.961538" vertical-offset="276" max-vertical-offset="2907">
+          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FrontServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="565" max-vertical-offset="986">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2499" max-vertical-offset="3740">
+          <caret line="165" column="32" selection-start-line="165" selection-start-column="32" selection-end-line="165" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/CreateEditContactCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4878788" vertical-offset="621" max-vertical-offset="1836">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="286" max-vertical-offset="1462">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/upload/UploadHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65507245" vertical-offset="811" max-vertical-offset="1921">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3021#3051#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

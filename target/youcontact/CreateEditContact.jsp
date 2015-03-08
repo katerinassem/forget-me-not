@@ -16,7 +16,22 @@
 <body>
     <h1>Создать или редактировать контакт.</h1>
     <a href="?command=ChoosePhotoCommand"><img src="files/images/default_avatar.jpg"/></a>
-    <form id="main" method="post" action="command=SaveContactCommand">
+    <form id="main" method="post" action="command=SaveContactCommand" enctype="multipart/form-data">
+        <div id="attachment-pop-up">
+            <h4>Создать присоединение.</h4>
+            <div name="attachment">
+                <input name="attachmentId" type="hidden"/>
+                <input name="file" type="file"/>
+                <label>Имя файла: </label>
+                <input name="fileName" type="text"/>
+                <label>Дата загрузки: </label>
+                <input name="uploadDate" type="text"/>
+                <label>Комментарий: </label>
+                <input name="attachmentComment" type="text" placeholder="комментарий"/>
+                <button form="main" formaction="?command=CreateEditContactCommand&option=editmore">Сохранить</button>
+                <button type="button" onclick="showPopUp('attachment-pop-up', 'none')">Отменить</button>
+            </div>
+        </div>
         <label>ФИО:</label>
         <input name="id" type="hidden" value="${sessionScope.contact.id}"/>
         <input name="firstName" type="text" placeholder="фамилия*" value="${sessionScope.contact.firstName}"/>
@@ -46,6 +61,7 @@
         <fieldset>
             <legend>Адрес</legend>
                 <label>Страна:</label>
+                <input name="addressId" type="hidden" value="${sessionScope.contact.address.id}"/>
                 <input name="country" type="text" placeholder="страна" value="${sessionScope.contact.address.country}"/>
                 <label>Город:</label>
                 <input name="city" type="text" placeholder="город" value="${sessionScope.contact.address.city}"/>
@@ -72,12 +88,17 @@
                     </tr>
                     <c:if test="${sessionScope.contact.telephones != null}">
                         <c:forEach items="${sessionScope.contact.telephones}" var="telephone" varStatus="status">
+                            <input name="telephoneIds" type="hidden" value="${telephone.id}"/>
+                            <input name="countryCodes" type="hidden" value="${telephone.countryCode}"/>
+                            <input name="operatorCodes" type="hidden" value="${telephone.operatorCode}"/>
+                            <input name="telephoneNumbers" type="hidden" value="${telephone.telephoneNumber}"/>
+                            <input name="telephoneTypes" type="hidden" value="${telephone.telephoneType}"/>
+                            <input name="telephoneComments" type="hidden" value="${telephone.comment}"/>
                             <tr>
-                                <input name="telephoneIds" type="hidden" value="${telephone.id}"/>
                                 <td><input name="checkedTelephones" type="checkbox" value="${telephone.id}"/></td>
-                                <td>✐ <a name="fullNumbers" href="showPopUp('telephone-pop-up', 'block', '${telephone.id}')">${telephone.countryCode}(${telephone.operatorCode})${telephone.telephoneNumber}</a></td>
-                                <td name="telephoneTypes">${telephone.telephoneType}</td>
-                                <td name="telephoneComments">${telephone.comment}</td>
+                                <td>✐ <a href="showPopUp('telephone-pop-up', 'block', '${telephone.id}')">${telephone.countryCode}(${telephone.operatorCode})${telephone.telephoneNumber}</a></td>
+                                <td>${telephone.telephoneType}</td>
+                                <td >${telephone.comment}</td>
                             </tr>
                         </c:forEach>
                     </c:if>
@@ -98,12 +119,15 @@
                     </tr>
                     <c:if test="${sessionScope.contact.getAttachments() != null}">
                         <c:forEach items="${sessionScope.contact.attachments}" var="attachment" varStatus="status">
+                            <input name="attachmentIds" type="hidden" value="${attachment.id}"/>
+                            <input name="fileNames" type="hidden" value="${attachment.fileName}"/>
+                            <input name="formattedUploadDates" type="hidden" value="${attachment.formattedUploadDate}"/>
+                            <input name="attachmentComments" type="hidden" value="${attachment.comment}"/>
                             <tr>
-                                <input name="attachmentIds" type="hidden" value="${attachment.id}"/>
                                 <td><input name="checkedAttachments" type="checkbox" value="${attachment.id}"/></td>
-                                <td><a name="uniqueNames" href="files/${sessionScope.contact.id}/${attachment.uniqueName}">⇓</a>&nbsp✐ <a name="fileNames" href="showPopUp('attachment-pop-up', 'block', '${attachment.id}')">${attachment.fileName}</a></td>
-                                <td name="formattedUploadDates">${attachment.formattedUploadDate}</td>
-                                <td name="attachmentComments">${attachment.comment}</td>
+                                <td><a href="files/${sessionScope.contact.id}/${attachment.uniqueName}">⇓</a>&nbsp✐ <a href="showPopUp('attachment-pop-up', 'block', '${attachment.id}')">${attachment.fileName}</a></td>
+                                <td>${attachment.formattedUploadDate}</td>
+                                <td>${attachment.comment}</td>
                             </tr>
                         </c:forEach>
                     </c:if>
@@ -111,18 +135,6 @@
             </fieldset>
         </form>
         <button form="main" type="submit">Сохранить</button>
-
-        <div id="attachment-pop-up">
-            <h4>Создать присоединение.</h4>
-            <div name="attachment">
-                <input name="attachmentId" type="hidden"/>
-                <input name="file" type="file"/>
-                <label>Комментарий: </label>
-                <input name="attachmentComment" type="text" placeholder="комментарий"/>
-                <button form="main" formaction="?command=CreateEditContactCommand&option=editmore">Сохранить</button>
-                <button type="button" onclick="showPopUp('attachment-pop-up', 'none')">Отменить</button>
-            </div>
-        </div>
     </form>
 
     </form>

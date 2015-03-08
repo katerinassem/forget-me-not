@@ -12,12 +12,12 @@ import java.util.UUID;
 public class Attachment extends TransferObject
 {
     String fileName;
-    String uniqueName;
     DateTime uploadDate;
     String comment;
     Integer contactId;
 
-    public Attachment() {}
+    public Attachment() {
+    }
 
     public Attachment(Integer id, String fileName, DateTime uploadDate, String comment, Integer contactId) {
         super(id);
@@ -25,7 +25,6 @@ public class Attachment extends TransferObject
         this.uploadDate = uploadDate;
         this.comment = comment;
         this.contactId = contactId;
-        this.uniqueName = UUID.randomUUID().toString();
     }
 
     public Integer getContactId() {
@@ -66,13 +65,5 @@ public class Attachment extends TransferObject
 
     public void setComment(String comment) {
         this.comment = comment;
-    }
-
-    public String getUniqueName() {
-        return uniqueName;
-    }
-
-    public void setUniqueName(String uniqueName) {
-        this.uniqueName = uniqueName;
     }
 }

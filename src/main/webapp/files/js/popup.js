@@ -19,32 +19,40 @@ function showPopUp(id, option, elemId){
 
 function setAttachment(){
     var form = document.forms["attachment"];
-    var s = '<tr><td><input name="checkedAttachments" type="checkbox" value="' + form.attachmentId.value + '"/></td>'
+    var date = "";
+    if(form.formattedUploadDate.value != ""){
+        date = form.formattedUploadDate.value;
+    }
+    else{
+        date = Date().toDateString();
+    }
+    var s = '<input name="attachmentIds" type="hidden" value="' + form.attachmentId.value + '"/>' +
+        '<input name="fileNames" type="hidden" value="' + form.fileName.value + '"/>' +
+        '<input name="formattedUploadDates" type="hidden" value="' + date + '"/>' +
+        '<input name="attachmentComments" type="hidden" value="' + form.attachmentComment.value + '"/>' +
+        '<tr><td><input name="checkedAttachments" type="checkbox" value="' + form.attachmentId.value + '"/></td>'
         + '<td><a href="showPopUp(\'attachment-pop-up\', \'block\', \' ' + form.attachmentId.value +' \')">✐ fileName</a></td>'
-        + '<td>' + Date() + '</td>'
+        + '<td>' + date + '</td>'
         + '<td>' + form.attachmentComment.value + '</td></tr>';
     document.getElementById('attachment-table').innerHTML += s;
     form.reset();
     document.getElementById('attachment-pop-up').style.display = 'none';
 }
 
-
 function setTelephone(){
     var form = document.forms["telephone"];
-    alert("here");
-    alert("form.telephoneId.value");
-    alert("form.countryCode.value");
-    console.log("form.operatorCode.value");
-    console.log("form.telephoneNumber.value");
-    var s = '<tr><td><input name="checkedTelephones" type="checkbox" value="' + form.telephoneId.value + '"/></td>' +
+    var s = '<input name="telephoneIds" type="hidden" value="' + form.telephoneId.value +'"/>' +
+        '<input name="countryCodes" type="hidden" value="' + form.countryCode.value + '"/>' +
+        '<input name="operatorCodes" type="hidden" value="' + form.operatorCode.value + '"/>' +
+        '<input name="telephoneNumbers" type="hidden" value="' + form.telephoneNumber.value + '"/>' +
+        '<input name="telephoneTypes" type="hidden" value="' + form.checkedType.value + '"/>' +
+        '<input name="telephoneComments" type="hidden" value="' + form.telephoneComment.value + '"/>' +
+        '<tr><td><input name="checkedTelephones" type="checkbox" value="' + form.telephoneId.value + '"/></td>' +
         '<td><a href="showPopUp(\'telephone-pop-up\', \'block\', \' ' + form.telephoneId.value + ' \')">✐ ' + form.countryCode.value + '(' + form.operatorCode.value + ')' + form.telephoneNumber.value + '</a></td>' +
         '<td>' + form.checkedType.value + '</td>' +
         '<td>' + form.telephoneComment.value + '</td>' +
         '</tr>';
-    alert("here1");
     document.getElementById('telephone-table').innerHTML += s;
-    alert("here2");
     form.reset();
-    alert("here3");
     document.getElementById('telephone-pop-up').style.display = 'none';
 }

@@ -68,10 +68,8 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
                 String fileName = rs.getString("file_name");
                 DateTime uploadDate = DateTime.parse(rs.getDate("upload_date").toString());
                 String comment = rs.getString("comment");
-                String uniqueName = rs.getString("unique_name");
                 Integer contactId = rs.getInt("contact_id");
                 attachment = new Attachment(id, fileName, uploadDate, comment, contactId);
-                attachment.setUniqueName(uniqueName);
             }
         }
         catch (SQLException e)
@@ -199,10 +197,8 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
                 String fileName = rs.getString("file_name");
                 DateTime uploadDate = DateTime.parse(rs.getDate("upload_date").toString());
                 String comment = rs.getString("comment");
-                String uniqueName = rs.getString("unique_name");
                 Integer contactId = rs.getInt("contact_id");
                 Attachment attachment = new Attachment(id, fileName, uploadDate, comment, contactId);
-                attachment.setUniqueName(uniqueName);
                 attachments.add(attachment);
             }
         }
@@ -259,9 +255,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
                 DateTimeFormatter format = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.S");
                 DateTime uploadDate = format.parseDateTime(rs.getTimestamp("upload_date").toString());
                 String comment = rs.getString("comment");
-                String uniqueName = rs.getString("unique_name");
                 Attachment attachment = new Attachment(id, fileName, uploadDate, comment, contactId);
-                attachment.setUniqueName(uniqueName);
                 attachments.add(attachment);
             }
         }
@@ -335,7 +329,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
         logger.info(" - [ENTERING METHOD: createWithExistingConnection(Attachment object), PARAMETERS: [Attachment object = " + object + ", Connection con]");
         PreparedStatement statement = null;
         int generatedId = -1;
-        String query = "INSERT INTO attachment (file_name, upload_date, comment, unique_name, contact_id) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO attachment (file_name, upload_date, comment, contact_id) VALUES (?, ?, ?, ?)";
         try {
             statement = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
@@ -353,10 +347,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
                 statement.setNull(3, Types.VARCHAR);
             }
 
-            String uniqueName = object.getUniqueName();
-            statement.setString(4, uniqueName);
-
-            statement.setInt(5, object.getContactId());
+            statement.setInt(4, object.getContactId());
             logger.info(" - [EXECUTING QUERY] " + statement);
             statement.executeUpdate();
             ResultSet rs = statement.getGeneratedKeys();
