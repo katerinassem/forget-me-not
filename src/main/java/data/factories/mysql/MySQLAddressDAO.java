@@ -60,7 +60,7 @@ public class MySQLAddressDAO implements DAO<Address>
             statement.setInt(1, id);
             logger.info(" - [EXECUTING QUERY] " + statement);
             ResultSet rs = statement.executeQuery();
-            if(rs.next())
+            if(rs != null && rs.next())
             {
                 String country = rs.getString("country");
                 String city = rs.getString("city");
@@ -191,18 +191,19 @@ public class MySQLAddressDAO implements DAO<Address>
             logger.info(" - [EXECUTING QUERY] " + statement);
             ResultSet rs = statement.executeQuery();
             addresses = new ArrayList<Address>();
-            while(rs.next())
-            {
-                Integer id = rs.getInt("id");
-                String country = rs.getString("country");
-                String city = rs.getString("city");
-                String street = rs.getString("street");
-                Integer building = rs.getInt("building");
-                Integer apartment = rs.getInt("apartment");
-                Long postIndex = rs.getLong("post_index");
-                Integer contactId = rs.getInt("contact_id");
-                Address address = new Address(id, country, city, street, building, apartment, postIndex, contactId);
-                addresses.add(address);
+            if(rs != null) {
+                while (rs.next()) {
+                    Integer id = rs.getInt("id");
+                    String country = rs.getString("country");
+                    String city = rs.getString("city");
+                    String street = rs.getString("street");
+                    Integer building = rs.getInt("building");
+                    Integer apartment = rs.getInt("apartment");
+                    Long postIndex = rs.getLong("post_index");
+                    Integer contactId = rs.getInt("contact_id");
+                    Address address = new Address(id, country, city, street, building, apartment, postIndex, contactId);
+                    addresses.add(address);
+                }
             }
         }
         catch (SQLException e)

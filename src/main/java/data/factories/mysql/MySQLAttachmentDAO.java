@@ -63,7 +63,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
             statement.setInt(1, id);
             logger.info(" - [EXECUTING QUERY] " + statement);
             ResultSet rs = statement.executeQuery();
-            if(rs.next())
+            if(rs != null && rs.next())
             {
                 String fileName = rs.getString("file_name");
                 DateTime uploadDate = DateTime.parse(rs.getDate("upload_date").toString());
@@ -191,15 +191,16 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
             logger.info(" - [EXECUTING QUERY] " + statement);
             ResultSet rs = statement.executeQuery();
             attachments = new ArrayList<Attachment>();
-            while(rs.next())
-            {
-                Integer id = rs.getInt("id");
-                String fileName = rs.getString("file_name");
-                DateTime uploadDate = DateTime.parse(rs.getDate("upload_date").toString());
-                String comment = rs.getString("comment");
-                Integer contactId = rs.getInt("contact_id");
-                Attachment attachment = new Attachment(id, fileName, uploadDate, comment, contactId);
-                attachments.add(attachment);
+            if(rs != null) {
+                while (rs.next()) {
+                    Integer id = rs.getInt("id");
+                    String fileName = rs.getString("file_name");
+                    DateTime uploadDate = DateTime.parse(rs.getDate("upload_date").toString());
+                    String comment = rs.getString("comment");
+                    Integer contactId = rs.getInt("contact_id");
+                    Attachment attachment = new Attachment(id, fileName, uploadDate, comment, contactId);
+                    attachments.add(attachment);
+                }
             }
         }
         catch (SQLException e)
@@ -248,15 +249,16 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
             logger.info(" - [EXECUTING QUERY] " + statement);
             ResultSet rs = statement.executeQuery();
             attachments = new ArrayList<Attachment>();
-            while(rs.next())
-            {
-                Integer id = rs.getInt("id");
-                String fileName = rs.getString("file_name");
-                DateTimeFormatter format = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.S");
-                DateTime uploadDate = format.parseDateTime(rs.getTimestamp("upload_date").toString());
-                String comment = rs.getString("comment");
-                Attachment attachment = new Attachment(id, fileName, uploadDate, comment, contactId);
-                attachments.add(attachment);
+            if(rs != null) {
+                while (rs.next()) {
+                    Integer id = rs.getInt("id");
+                    String fileName = rs.getString("file_name");
+                    DateTimeFormatter format = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.S");
+                    DateTime uploadDate = format.parseDateTime(rs.getTimestamp("upload_date").toString());
+                    String comment = rs.getString("comment");
+                    Attachment attachment = new Attachment(id, fileName, uploadDate, comment, contactId);
+                    attachments.add(attachment);
+                }
             }
         }
         catch (SQLException e){

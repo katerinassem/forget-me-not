@@ -64,15 +64,16 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
             statement.setInt(1, id);
             logger.info(" - [EXECUTING QUERY] " + statement);
             ResultSet rs = statement.executeQuery();
-            if(rs.next())
-            {
-                Short countryCode = rs.getShort("country_code");
-                Short operatorCode = rs.getShort("operator_code");
-                Long telephoneNumber = rs.getLong("telephone_number");
-                TelephoneType telephoneType = TelephoneType.valueOf(rs.getString("telephone_type"));
-                String comment = rs.getString("comment");
-                Integer contactId = rs.getInt("contact_id");
-                telephone = new Telephone(id, countryCode, operatorCode, telephoneNumber, telephoneType, comment, contactId);
+            if(rs != null) {
+                if (rs.next()) {
+                    Short countryCode = rs.getShort("country_code");
+                    Short operatorCode = rs.getShort("operator_code");
+                    Long telephoneNumber = rs.getLong("telephone_number");
+                    TelephoneType telephoneType = TelephoneType.valueOf(rs.getString("telephone_type"));
+                    String comment = rs.getString("comment");
+                    Integer contactId = rs.getInt("contact_id");
+                    telephone = new Telephone(id, countryCode, operatorCode, telephoneNumber, telephoneType, comment, contactId);
+                }
             }
         }
         catch (SQLException e)
@@ -194,17 +195,18 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
             logger.info(" - [EXECUTING QUERY] " + statement);
             ResultSet rs = statement.executeQuery();
             telephones = new ArrayList<Telephone>();
-            while(rs.next())
-            {
-                Integer id = rs.getInt("id");
-                Short countryCode = rs.getShort("country_code");
-                Short operatorCode = rs.getShort("operator_code");
-                Long telephoneNumber = rs.getLong("telephone_number");
-                TelephoneType telephoneType = TelephoneType.valueOf(rs.getString("telephone_type"));
-                String comment = rs.getString("comment");
-                Integer contactId = rs.getInt("contact_id");
-                Telephone telephone = new Telephone(id, countryCode, operatorCode, telephoneNumber, telephoneType, comment, contactId);
-                telephones.add(telephone);
+            if(rs != null) {
+                while (rs.next()) {
+                    Integer id = rs.getInt("id");
+                    Short countryCode = rs.getShort("country_code");
+                    Short operatorCode = rs.getShort("operator_code");
+                    Long telephoneNumber = rs.getLong("telephone_number");
+                    TelephoneType telephoneType = TelephoneType.valueOf(rs.getString("telephone_type"));
+                    String comment = rs.getString("comment");
+                    Integer contactId = rs.getInt("contact_id");
+                    Telephone telephone = new Telephone(id, countryCode, operatorCode, telephoneNumber, telephoneType, comment, contactId);
+                    telephones.add(telephone);
+                }
             }
         }
         catch (SQLException e)
@@ -253,16 +255,17 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
             logger.info(" - [EXECUTING QUERY] " + statement);
             ResultSet rs = statement.executeQuery();
             telephones = new ArrayList<Telephone>();
-            while(rs.next())
-            {
-                Integer id = rs.getInt("id");
-                Short countryCode = rs.getShort("country_code");
-                Short operatorCode = rs.getShort("operator_code");
-                Long telephoneNumber = rs.getLong("telephone_number");
-                TelephoneType telephoneType = TelephoneType.valueOf(rs.getString("telephone_type"));
-                String comment = rs.getString("comment");
-                Telephone telephone = new Telephone(id, countryCode, operatorCode, telephoneNumber, telephoneType, comment, contactId);
-                telephones.add(telephone);
+            if(rs != null) {
+                while (rs.next()) {
+                    Integer id = rs.getInt("id");
+                    Short countryCode = rs.getShort("country_code");
+                    Short operatorCode = rs.getShort("operator_code");
+                    Long telephoneNumber = rs.getLong("telephone_number");
+                    TelephoneType telephoneType = TelephoneType.valueOf(rs.getString("telephone_type"));
+                    String comment = rs.getString("comment");
+                    Telephone telephone = new Telephone(id, countryCode, operatorCode, telephoneNumber, telephoneType, comment, contactId);
+                    telephones.add(telephone);
+                }
             }
         }
         catch (SQLException e){

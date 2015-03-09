@@ -16,7 +16,7 @@
 <body>
     <h1>Создать или редактировать контакт.</h1>
     <a href="?command=ChoosePhotoCommand"><img src="files/images/default_avatar.jpg"/></a>
-    <form id="main" method="post" action="?command=SaveContactCommand&option=saveall" enctype="multipart/form-data">
+    <form id="main" onsubmit="validateMain()" method="post" action="?command=SaveContactCommand&option=saveall" enctype="multipart/form-data">
 
         <div id="attachment-pop-up">
             <h4>Создать присоединение.</h4>
@@ -136,7 +136,7 @@
                 </table>
             </fieldset>
         </form>
-        <button form="main" type="submit">Сохранить</button>
+        <button form="main"  onsubmit="validateMain()" type="submit">Сохранить</button>
     </form>
 
     </form>
@@ -153,9 +153,9 @@
             <fieldset>
                 <legend>Тип телефона</legend>
                 <label class="tel">Домашний</label>
-                <input name="checkedType" class="tel" type="radio" value="h" name="telephone_type"/>
+                <input name="checkedType" class="tel" type="radio" value="h" name="telephone_type" checked="false"/>
                 <label class="tel">Мобильный</label>
-                <input name="checkedType" type="radio" class="tel" value="m" name="telephone_type"/>
+                <input name="checkedType" type="radio" class="tel" value="m" name="telephone_type" checked="true"/>
             </fieldset>
             <label>Комментарий:</label>
             <input name="telephoneComment" type="text" placeholder="комментарий"/>

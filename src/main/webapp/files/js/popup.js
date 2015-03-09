@@ -2,7 +2,120 @@
  * Created by Катерина on 07.03.2015.
  */
 
-    //Функция показа
+
+function validateMain(){
+    var form = document.forms["main"];
+    valid = true;
+    firstName = form.firstName.value;
+    if(firstName.length == 0 || firstName.length > 29){
+        form.firstName.style.borderColor='red';
+        valid = false;
+    }
+    else{
+        form.firstName.style.borderColor='green';
+    }
+    secondName = form.secondName.value;
+    if(secondName.length == 0 || secondName > 29){
+        form.secondName.style.borderColor='red';
+        valid = false;
+    }
+    else{
+        form.secondName.style.borderColor='green';
+    }
+    nameByFather = form.nameByFather.value;
+    if(nameByFather.length > 29){
+        form.nameByFather.style.borderColor='red';
+    }
+    else{
+        form.nameByFather.style.borderColor='green';
+    }
+    day = form.day.value;
+    if(day < 1 || day > 31){
+        form.day.style.borderColor = 'red';
+        valid = false;
+    }
+    else{
+        form.day.style.borderColor = 'green';
+    }
+    month = form.month.value;
+    if(month < 1 || month > 12){
+        form.month.style.borderColor = 'red';
+        valid = true;
+    }
+    else{
+        form.month.style.borderColor = 'green';
+    }
+    year = form.year.value;
+    if(year < 1970 || year >2070){
+        form.year.style.borderColor = 'red';
+        valid = false;
+    }
+    else{
+        form.year.style.borderColor = 'green';
+    }
+    sitizenship = form.sitizenship.value;
+    if(sitizenship.length == 0 || sitizenship.length > 39){
+        form.sitizenship.style.borderColor = 'red';
+        valid = false;
+    }
+    else{
+        form.sitizenship.style.borderColor = 'green';
+    }
+    webSite = form.webSite.value;
+    if(webSite.length > 99){
+        form.webSite.style.borderColor = 'red';
+        valid = false;
+    }
+    else{
+        form.webSite.style.borderColor = 'green';
+    }
+    email = form.email.value;
+    if(email.length > 99){
+        form.email.style.borderColor = 'red';
+        valid = false;
+    }
+    else{
+        form.email.style.borderColor = 'green';
+    }
+    company = form.company.value;
+    if(company.length > 49){
+        form.company.style.borderColor = 'red';
+        valid = false;
+    }
+    else{
+        form.company.style.borderColor = 'green';
+    }
+    country = form.country.value;
+    if(country.length == 0 || country.length > 39){
+        form.country.style.borderColor = 'red';
+        valid = false;
+    }
+    else{
+        form.country.style.borderColor = 'green';
+    }
+    city = form.city.value;
+    if(city.length == 0 || city.length > 100){
+        form.city.style.borderColor = 'red';
+        valid = false;
+    }
+    else{
+        form.city.style.borderColor = 'green';
+    }
+    street = form.street.value;
+    if(street > 99){
+        form.street.style.borderColor = 'red';
+        valid = false;
+    }
+    else{
+        form.street.style.borderColor = 'green';
+    }
+    building = form.building.value;
+    apartment = form.building.value;
+    index = form.building.value;
+    return valid;
+}
+
+
 function showPopUp(id, option, elemId){
 
     if(id == 'attachment-pop-up' && elemId != undefined){

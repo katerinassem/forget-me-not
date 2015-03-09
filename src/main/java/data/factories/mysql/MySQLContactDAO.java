@@ -198,7 +198,7 @@ public class MySQLContactDAO implements DAO<Contact>
             statement.setInt(1, id);
             logger.info(" - [EXECUTING QUERY] " + statement);
             ResultSet rs = statement.executeQuery();
-            if(rs.next())
+            if(rs != null && rs.next())
             {
                 String firstName = rs.getString("first_name");
                 String secondName = rs.getString("second_name");
@@ -587,22 +587,23 @@ public class MySQLContactDAO implements DAO<Contact>
             logger.info(" - [EXECUTING QUERY] " + statement);
             ResultSet rs = statement.executeQuery();
             contacts = new ArrayList<Contact>();
-            while(rs.next())
-            {
-                Integer id = rs.getInt("id");
-                String firstName = rs.getString("first_name");
-                String secondName = rs.getString("second_name");
-                String nameByFather = rs.getString("name_by_father");
-                org.joda.time.DateTime dateOfBirth = org.joda.time.DateTime.parse(rs.getDate("date_of_birth").toString());
-                Sex sex = Sex.valueOf(rs.getString("sex"));
-                String sitizenship = rs.getString("sitizenship");
-                String webSite = rs.getString("web_site");
-                String email = rs.getString("email");
-                String company = rs.getString("company");
-                String photoUrl = rs.getString("photo_url");
-                Integer addressId = rs.getInt("address_id");
-                Contact contact = new Contact(id, firstName, secondName, nameByFather, dateOfBirth, sex, sitizenship, webSite, email, company, photoUrl, addressId);
-                contacts.add(contact);
+            if(rs != null) {
+                while (rs.next()) {
+                    Integer id = rs.getInt("id");
+                    String firstName = rs.getString("first_name");
+                    String secondName = rs.getString("second_name");
+                    String nameByFather = rs.getString("name_by_father");
+                    org.joda.time.DateTime dateOfBirth = org.joda.time.DateTime.parse(rs.getDate("date_of_birth").toString());
+                    Sex sex = Sex.valueOf(rs.getString("sex"));
+                    String sitizenship = rs.getString("sitizenship");
+                    String webSite = rs.getString("web_site");
+                    String email = rs.getString("email");
+                    String company = rs.getString("company");
+                    String photoUrl = rs.getString("photo_url");
+                    Integer addressId = rs.getInt("address_id");
+                    Contact contact = new Contact(id, firstName, secondName, nameByFather, dateOfBirth, sex, sitizenship, webSite, email, company, photoUrl, addressId);
+                    contacts.add(contact);
+                }
             }
         }
         catch (SQLException e)
