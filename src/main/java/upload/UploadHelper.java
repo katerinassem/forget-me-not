@@ -70,7 +70,8 @@ public class UploadHelper {
 
         // constructs the directory path to store upload file
         // this path is relative to application's directory
-        String uploadPath = "C:\\apache-tomcat-8.0.18\\webapps\\ROOT" + File.separator + UPLOAD_DIRECTORY;
+        ServletContext servletContext = request.getSession().getServletContext();
+        String uploadPath = servletContext.getRealPath("") + File.separator + UPLOAD_DIRECTORY;
 
         // creates the directory if it does not exist
         File uploadDir = new File(uploadPath);

@@ -41,6 +41,7 @@ commands\SendEmailCommand.class
 commands\DeleteContactsCommand.class
 transfer\Telephone.class
 business\bllexception\ServiceFatalException.class
+upload\UploadHelper.class
 data\factories\mysql\MySQLTelephoneDAO.class
 business\bllexception\FacadeServiceException.class
 transfer\Attachment.class

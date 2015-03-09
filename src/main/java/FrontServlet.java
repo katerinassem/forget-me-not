@@ -45,9 +45,6 @@ public class FrontServlet extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            String r = req.getServletPath();
-            r = req.getContextPath();
-            String con = getServletContext().getRealPath("");
             req.getSession().removeAttribute("error");
             commandHelper.dispatchRequest(req, resp);
         }

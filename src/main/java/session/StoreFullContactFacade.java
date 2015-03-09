@@ -123,6 +123,8 @@ public class StoreFullContactFacade {
             }
         }
 
+        contact.setAddress(address);
+
         String[] telephoneIds = req.getParameterValues("telephoneIds");
         String[] countryCodes = req.getParameterValues("countryCodes");
         String[] operatorCodes = req.getParameterValues("operatorCodes");
@@ -161,10 +163,13 @@ public class StoreFullContactFacade {
             }
         }
 
+        contact.setTelephones(telephones);
+
         String[] attachmentIds = req.getParameterValues("attachmentIds");
         String[] fileNames = req.getParameterValues("fileNames");
         String[] formattedUploadDates = req.getParameterValues("formattedUploadDates");
         String[] attachmentComments = req.getParameterValues("attachmentComments");
+
         ArrayList<Attachment> attachments = null;
 
         DateTimeFormatter format = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.S");
@@ -181,7 +186,7 @@ public class StoreFullContactFacade {
         String fileName = req.getParameter("fileName");
         String uploadDateEntered = req.getParameter("uploadDate");
         String attachmentComment = req.getParameter("attachmentComment");
-
+/*
         Attachment someAttachment = new Attachment();
         if(StringUtils.isNotEmpty(attachmentId)){
             someAttachment.setId(Integer.parseInt(attachmentId));
@@ -198,6 +203,7 @@ public class StoreFullContactFacade {
         if(StringUtils.isNotEmpty(attachmentComment)){
             someAttachment.setComment(attachmentComment);
         }
+        */
 
         if(ArrayUtils.isNotEmpty(attachmentIds)){
             attachments = CollectionUtils.isEmpty(attachments) ? new ArrayList<Attachment>() : attachments;
@@ -221,7 +227,10 @@ public class StoreFullContactFacade {
                 }
                 attachments.add(attachment);
             }
+            contact.setAttachments(attachments);
         }
+
+        req.getSession().setAttribute("contact", contact);
 
     }
 }

@@ -337,7 +337,8 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
             statement.setString(1, fileName);
 
             DateTime uploadDate = object.getUploadDate();
-            statement.setDate(2, java.sql.Date.valueOf(uploadDate.toString()));
+            DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("YYYY-MM-dd");
+            statement.setDate(2, java.sql.Date.valueOf(dateTimeFormatter.print(uploadDate)));
 
             String comment = object.getComment();
             if(StringUtils.isNotEmpty(comment)) {

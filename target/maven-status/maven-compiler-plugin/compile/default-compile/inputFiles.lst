@@ -14,6 +14,7 @@ C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\business\bllexce
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\transfer\Contact.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\session\StoreFullContactFacade.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\business\factory\katebusiness\TelephoneBO.java
+C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\upload\UploadHelper.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\business\bllexception\BLLFatalException.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\business\bllexception\FacadeFatalException.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\data\factories\mysql\MySQLAddressDAO.java
@@ -44,8 +45,8 @@ C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\business\factory
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\SendEmailCommand.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\session\DeleteContactsFacade.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\CreateEditTelephoneCommand.java
-C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\transfer\Sex.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\data\factories\mysql\MySQLTelephoneDAO.java
+C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\transfer\Sex.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\data\AbstractDAOFactory.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\transfer\Attachment.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\CreateEditAttachmentCommand.java

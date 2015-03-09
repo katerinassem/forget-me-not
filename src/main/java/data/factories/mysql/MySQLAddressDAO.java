@@ -357,7 +357,7 @@ public class MySQLAddressDAO implements DAO<Address>
                 statement.setNull(6, Types.BIGINT);
             }
 
-            statement.setNull(7, Types.INTEGER);
+            statement.setInt(7, object.getContactId());
             logger.info(" - [EXECUTING QUERY] " + statement);
             statement.executeUpdate();
             ResultSet rs = statement.getGeneratedKeys();
