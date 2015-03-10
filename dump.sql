@@ -14,7 +14,7 @@ CREATE  TABLE `youcontact`.`contact` (
   `email` VARCHAR(100) NULL,
   `company` VARCHAR(50) NULL,
   `photo_url` VARCHAR(100) NULL,
-  `address_id` INT(10) UNSIGNED NOT NULL,     
+  `address_id` INT(10) UNSIGNED NULL,     
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -68,3 +68,9 @@ CREATE  TABLE `youcontact`.`telephone` (
   ON DELETE CASCADE,    
   PRIMARY KEY (`id`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `youcontact`.`contact` (`first_name`, `second_name`, `name_by_father`, `date_of_birth`, `sex`, `sitizenship`, `email`) VALUES ('Katerina', 'Semikina', 'Sergeevna', '1994-12-18', 'f', 'belarus', 'katarina.sem@mail.ru');
+
+INSERT INTO `youcontact`.`contact` (`first_name`, `second_name`, `name_by_father`, `date_of_birth`, `sex`, `sitizenship`, `email`) VALUES ('Daria', 'Semikina', 'Sergeevna', '1996-04-08', 'f', 'belarus', 'dashulya_plyus@mail.ru');
+
+INSERT INTO `youcontact`.`contact` (`first_name`, `second_name`, `name_by_father`, `date_of_birth`, `sex`, `sitizenship`, `email`) VALUES ('Timofey', 'Markusenko', 'Sergeevich', '1995-02-04', 'm ', 'belarus', 'tim.marcusenko@gmail.com');
