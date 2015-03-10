@@ -112,7 +112,9 @@ function validateMain(){
     building = form.building.value;
     apartment = form.building.value;
     index = form.building.value;
-    return valid;
+    if(valid){
+        form.submit();
+    }
 }
 
 

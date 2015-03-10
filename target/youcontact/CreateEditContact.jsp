@@ -110,35 +110,37 @@
             </fieldset>
         </form>
         <form name="attachment" method="post" action="?command=DeleteAttachmentsCommand">
-            <fieldset>
-                <legend>Список присоединений</legend>
-                <button type="submit">X удалить</button>
-                <button type="button" onclick="showPopUp('attachment-pop-up', 'block')">＋ создать</button>
-                <table id="attachment-table">
-                    <tr>
-                        <th></th>
-                        <th>Имя файла</th>
-                        <th>Дата загрузки</th>
-                        <th>Комментарий</th>
-                    </tr>
-                    <c:if test="${sessionScope.contact.getAttachments() != null}">
-                        <c:forEach items="${sessionScope.contact.attachments}" var="attachment" varStatus="status">
-                            <input name="attachmentIds" type="hidden" value="${attachment.id}"/>
-                            <input name="fileNames" type="hidden" value="${attachment.fileName}"/>
-                            <input name="formattedUploadDates" type="hidden" value="${attachment.formattedUploadDate}"/>
-                            <input name="attachmentComments" type="hidden" value="${attachment.comment}"/>
-                            <tr>
-                                <td><input name="checkedAttachments" type="checkbox" value="${attachment.id}"/></td>
-                                <td><a href="files/${sessionScope.contact.id}/${attachment.uniqueName}">⇓</a><div onclick="showPopUp('attachment-pop-up', 'block', '${attachment.id}')">&nbsp✐${attachment.fileName}</div></td>
-                                <td>${attachment.formattedUploadDate}</td>
-                                <td>${attachment.comment}</td>
-                            </tr>
-                        </c:forEach>
-                    </c:if>
-                </table>
-            </fieldset>
+            <c:if test="${sessionScope.contact.id != null}">
+                <fieldset>
+                    <legend>Список присоединений</legend>
+                    <button type="submit">X удалить</button>
+                    <button type="button" onclick="showPopUp('attachment-pop-up', 'block')">＋ создать</button>
+                    <table id="attachment-table">
+                        <tr>
+                            <th></th>
+                            <th>Имя файла</th>
+                            <th>Дата загрузки</th>
+                            <th>Комментарий</th>
+                        </tr>
+                        <c:if test="${sessionScope.contact.getAttachments() != null}">
+                            <c:forEach items="${sessionScope.contact.attachments}" var="attachment" varStatus="status">
+                                <input name="attachmentIds" type="hidden" value="${attachment.id}"/>
+                                <input name="fileNames" type="hidden" value="${attachment.fileName}"/>
+                                <input name="formattedUploadDates" type="hidden" value="${attachment.formattedUploadDate}"/>
+                                <input name="attachmentComments" type="hidden" value="${attachment.comment}"/>
+                                <tr>
+                                    <td><input name="checkedAttachments" type="checkbox" value="${attachment.id}"/></td>
+                                    <td><a href="files/${sessionScope.contact.id}/${attachment.uniqueName}">⇓</a><div onclick="showPopUp('attachment-pop-up', 'block', '${attachment.id}')">&nbsp✐${attachment.fileName}</div></td>
+                                    <td>${attachment.formattedUploadDate}</td>
+                                    <td>${attachment.comment}</td>
+                                </tr>
+                            </c:forEach>
+                        </c:if>
+                    </table>
+                </fieldset>
+            </c:if>
         </form>
-        <button form="main"  onsubmit="validateMain()" type="submit">Сохранить</button>
+        <button form="main" onclick="validateMain()" type="button">Сохранить</button>
     </form>
 
     </form>
