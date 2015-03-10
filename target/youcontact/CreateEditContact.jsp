@@ -26,7 +26,7 @@
                 <label>Имя файла: </label>
                 <input name="fileName" type="text"/>
                 <label>Дата загрузки: </label>
-                <input name="uploadDate" type="text"/>
+                <input name="uploadDate" type="hidden"/>
                 <label>Комментарий: </label>
                 <input name="attachmentComment" type="text" placeholder="комментарий"/>
                 <button form="main" type="submit" formaction="?command=CreateEditContactCommand&option=editmore">Сохранить</button>
@@ -92,18 +92,20 @@
                     </tr>
                     <c:if test="${sessionScope.contact.telephones != null}">
                         <c:forEach items="${sessionScope.contact.telephones}" var="telephone" varStatus="status">
-                            <input name="telephoneIds" type="hidden" value="${telephone.id}"/>
-                            <input name="countryCodes" type="hidden" value="${telephone.countryCode}"/>
-                            <input name="operatorCodes" type="hidden" value="${telephone.operatorCode}"/>
-                            <input name="telephoneNumbers" type="hidden" value="${telephone.telephoneNumber}"/>
-                            <input name="telephoneTypes" type="hidden" value="${telephone.type}"/>
-                            <input name="telephoneComments" type="hidden" value="${telephone.comment}"/>
-                            <tr>
-                                <td><input name="checkedTelephones" type="checkbox" value="${telephone.id}"/></td>
-                                <td onclick="showPopUp('telephone-pop-up', 'block', '${telephone.id}')">✐${telephone.countryCode}(${telephone.operatorCode})${telephone.telephoneNumber}</a></td>
-                                <td>${telephone.type}</td>
-                                <td >${telephone.comment}</td>
-                            </tr>
+                            <div id="${telephone.countryCode}${telephone.operatorCode}${telephone.telephoneNumber}">
+                                <input id="telephone${telephone.id}" name="telephoneIds" type="hidden" value="${telephone.id}"/>
+                                <input name="countryCodes" type="hidden" value="${telephone.countryCode}"/>
+                                <input name="operatorCodes" type="hidden" value="${telephone.operatorCode}"/>
+                                <input name="telephoneNumbers" type="hidden" value="${telephone.telephoneNumber}"/>
+                                <input name="telephoneTypes" type="hidden" value="${telephone.type}"/>
+                                <input name="telephoneComments" type="hidden" value="${telephone.comment}"/>
+                                <tr>
+                                    <td><input name="checkedTelephones" type="checkbox" value="${telephone.id}"/></td>
+                                    <td onclick="showPopUp('telephone-pop-up', 'block', '${telephone.id}')">✐${telephone.countryCode}(${telephone.operatorCode})${telephone.telephoneNumber}</td>
+                                    <td>${telephone.type}</td>
+                                    <td>${telephone.comment}</td>
+                                </tr>
+                            </div>
                         </c:forEach>
                     </c:if>
                 </table>
@@ -124,16 +126,18 @@
                         </tr>
                         <c:if test="${sessionScope.contact.getAttachments() != null}">
                             <c:forEach items="${sessionScope.contact.attachments}" var="attachment" varStatus="status">
-                                <input name="attachmentIds" type="hidden" value="${attachment.id}"/>
-                                <input name="fileNames" type="hidden" value="${attachment.fileName}"/>
-                                <input name="formattedUploadDates" type="hidden" value="${attachment.formattedUploadDate}"/>
-                                <input name="attachmentComments" type="hidden" value="${attachment.comment}"/>
-                                <tr>
-                                    <td><input name="checkedAttachments" type="checkbox" value="${attachment.id}"/></td>
-                                    <td><a href="files/${sessionScope.contact.id}/${attachment.uniqueName}">⇓</a><div onclick="showPopUp('attachment-pop-up', 'block', '${attachment.id}')">&nbsp✐${attachment.fileName}</div></td>
-                                    <td>${attachment.formattedUploadDate}</td>
-                                    <td>${attachment.comment}</td>
-                                </tr>
+                                <div id="${attachment.fileName}${attachment.formattedUploadDate}">
+                                    <input id="attachment${attachment.id}" name="attachmentIds" type="hidden" value="${attachment.id}"/>
+                                    <input name="fileNames" type="hidden" value="${attachment.fileName}"/>
+                                    <input name="formattedUploadDates" type="hidden" value="${attachment.formattedUploadDate}"/>
+                                    <input name="attachmentComments" type="hidden" value="${attachment.comment}"/>
+                                    <tr>
+                                        <td><input name="checkedAttachments" type="checkbox" value="${attachment.id}"/></td>
+                                        <td><a href="files/${sessionScope.contact.id}/${attachment.uniqueName}">⇓</a><div onclick="showPopUp('attachment-pop-up', 'block', '${attachment.id}')">&nbsp✐${attachment.fileName}</div></td>
+                                        <td>${attachment.formattedUploadDate}</td>
+                                        <td>${attachment.comment}</td>
+                                    </tr>
+                                </div>
                             </c:forEach>
                         </c:if>
                     </table>

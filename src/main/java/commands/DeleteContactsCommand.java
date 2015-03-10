@@ -38,8 +38,11 @@ public class DeleteContactsCommand implements Command
                 DeleteContactsFacade deleteContactsFacade = new DeleteContactsFacade();
                 deleteContactsFacade.delete(req.getSession(), checkedIds);
             }
-            RequestDispatcher dispatcher = req.getRequestDispatcher("ContactList.jsp");
-            dispatcher.forward(req, resp);
+            req.getSession().removeAttribute("contacts");
+            req.getSession().removeAttribute("contact");
+            resp.sendRedirect("Front?command=ShowContactsCommand");
+            //RequestDispatcher dispatcher = req.getRequestDispatcher("ContactList.jsp");
+            //dispatcher.forward(req, resp);
         }
         catch (FacadeFatalException e){
             throw new CommandFatalException(e);

@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import session.StoreFullContactFacade;
 import transfer.Contact;
+import upload.UploadHelper;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,6 +32,12 @@ public class CreateEditContactCommand implements Command
 
         logger.info(" - [ENTERING METHOD process(HttpServletRequest req, HttpServletResponse resp), PARAMETERS: HttpServletRequest req, HttpServletResponse resp]");
         try {
+            UploadHelper uploadHelper = UploadHelper.getInstance();
+            try {
+                uploadHelper.upload(req);
+            }catch (Exception e){
+                logger.error(e);
+            }
             String opt = req.getParameter("option");
             String idString = req.getParameter("id");
             if(StringUtils.isNotEmpty(opt) && StringUtils.equalsIgnoreCase(opt, "editmore")){
@@ -39,6 +46,8 @@ public class CreateEditContactCommand implements Command
 
                 StoreFullContactFacade storeFullContactFacade = new StoreFullContactFacade();
                 storeFullContactFacade.store(req, idString);
+                resp.sendRedirect("Front?command=ShowContactsCommand");
+                return;
             }
             else {
                 req.getSession().removeAttribute("contact");
@@ -55,9 +64,9 @@ public class CreateEditContactCommand implements Command
                     }
                     req.getSession().setAttribute("contact", contact);
                 }
+                RequestDispatcher dispatcher = req.getRequestDispatcher("CreateEditContact.jsp");
+                dispatcher.forward(req, resp);
             }
-            RequestDispatcher dispatcher = req.getRequestDispatcher("CreateEditContact.jsp");
-            dispatcher.forward(req, resp);
         }
         catch (BLLDataException e)
         {

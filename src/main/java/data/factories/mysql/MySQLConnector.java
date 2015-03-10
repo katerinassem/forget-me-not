@@ -1,6 +1,5 @@
 package data.factories.mysql;
 import data.daoexception.DAOFatalException;
-import data.daoexception.DAOSQLException;
 import org.apache.log4j.Logger;
 
 import javax.naming.Context;
