@@ -122,11 +122,11 @@ function showPopUp(id, option, value){
 
     if(id == 'attachment-pop-up' && value != undefined){
         var form = document.forms['attachment'];
-        form.getElementsByName('attachmentId')[0].value = value;
+        form.getElementsByName('attachmentIds')[0].value = value;
     }
     else if(id == 'telephone-pop-up' && value != undefined){
         var form = document.forms['telephone'];
-        form.getElementsByName('telephoneId')[0].value = value;
+        form.getElementsByName('telephoneIds')[0].value = value;
     }
     document.getElementById(id).style.display = option;
     return false;
