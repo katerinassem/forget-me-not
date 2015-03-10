@@ -66,8 +66,17 @@ public class MySQLAddressDAO implements DAO<Address>
                 String city = rs.getString("city");
                 String street = rs.getString("street");
                 Integer building = rs.getInt("building");
+                if(rs.wasNull()){
+                    building = null;
+                };
                 Integer apartment = rs.getInt("apartment");
+                if(rs.wasNull()){
+                    apartment = null;
+                }
                 Long postIndex = rs.getLong("post_index");
+                if(rs.wasNull()){
+                    postIndex = null;
+                }
                 Integer contactId = rs.getInt("contact_id");
                 address = new Address(id, country, city, street, building, apartment, postIndex, contactId);
             }
@@ -198,8 +207,17 @@ public class MySQLAddressDAO implements DAO<Address>
                     String city = rs.getString("city");
                     String street = rs.getString("street");
                     Integer building = rs.getInt("building");
+                    if(rs.wasNull()){
+                        building = null;
+                    }
                     Integer apartment = rs.getInt("apartment");
+                    if(rs.wasNull()){
+                        apartment = null;
+                    }
                     Long postIndex = rs.getLong("post_index");
+                    if(rs.wasNull()){
+                        postIndex = null;
+                    }
                     Integer contactId = rs.getInt("contact_id");
                     Address address = new Address(id, country, city, street, building, apartment, postIndex, contactId);
                     addresses.add(address);

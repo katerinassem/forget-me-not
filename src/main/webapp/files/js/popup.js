@@ -5,17 +5,17 @@
 
 function validateMain(){
     var form = document.forms["main"];
-    valid = true;
-    firstName = form.firstName.value;
-    if(firstName.length == 0 || firstName.length > 29){
+    var valid = true;
+    var firstName = form.firstName.value;
+    if(firstName.length === 0 || firstName.length > 29){
         form.firstName.style.borderColor='red';
         valid = false;
     }
     else{
         form.firstName.style.borderColor='green';
     }
-    secondName = form.secondName.value;
-    if(secondName.length == 0 || secondName > 29){
+    var secondName = form.secondName.value;
+    if(secondName.length === 0 || secondName > 29){
         form.secondName.style.borderColor='red';
         valid = false;
     }
@@ -40,7 +40,7 @@ function validateMain(){
     month = form.month.value;
     if(month < 1 || month > 12){
         form.month.style.borderColor = 'red';
-        valid = true;
+        valid = false;
     }
     else{
         form.month.style.borderColor = 'green';
@@ -116,15 +116,15 @@ function validateMain(){
 }
 
 
-function showPopUp(id, option, elemId){
+function showPopUp(id, option, value){
 
-    if(id == 'attachment-pop-up' && elemId != undefined){
+    if(id == 'attachment-pop-up' && value != undefined){
         var form = document.forms['attachment'];
-        form.getElementsByName('attachmentId')[0].value = elemId;
+        form.getElementsByName('attachmentId')[0].value = value;
     }
-    else if(id == 'telephone-pop-up' && elemId != undefined){
+    else if(id == 'telephone-pop-up' && value != undefined){
         var form = document.forms['telephone'];
-        form.getElementsByName('telephoneId')[0].value = elemId;
+        form.getElementsByName('telephoneId')[0].value = value;
     }
     document.getElementById(id).style.display = option;
     return false;
@@ -144,7 +144,7 @@ function setAttachment(){
         '<input name="formattedUploadDates" type="hidden" value="' + date + '"/>' +
         '<input name="attachmentComments" type="hidden" value="' + form.attachmentComment.value + '"/>' +
         '<tr><td><input name="checkedAttachments" type="checkbox" value="' + form.attachmentId.value + '"/></td>'
-        + '<td><a href="showPopUp(\'attachment-pop-up\', \'block\', \' ' + form.attachmentId.value +' \')">✐ fileName</a></td>'
+        + '<td><a href="#" onclick="showPopUp(\'attachment-pop-up\', \'block\', \' ' + form.attachmentId.value +' \')">✐ fileName</a></td>'
         + '<td>' + date + '</td>'
         + '<td>' + form.attachmentComment.value + '</td></tr>';
     document.getElementById('attachment-table').innerHTML += s;
@@ -161,7 +161,7 @@ function setTelephone(){
         '<input name="telephoneTypes" type="hidden" value="' + form.checkedType.value + '"/>' +
         '<input name="telephoneComments" type="hidden" value="' + form.telephoneComment.value + '"/>' +
         '<tr><td><input name="checkedTelephones" type="checkbox" value="' + form.telephoneId.value + '"/></td>' +
-        '<td><a href="showPopUp(\'telephone-pop-up\', \'block\', \' ' + form.telephoneId.value + ' \')">✐ ' + form.countryCode.value + '(' + form.operatorCode.value + ')' + form.telephoneNumber.value + '</a></td>' +
+        '<td><a href="#" onclick="showPopUp(\'telephone-pop-up\', \'block\', \' ' + form.telephoneId.value + ' \')">✐ ' + form.countryCode.value + '(' + form.operatorCode.value + ')' + form.telephoneNumber.value + '</a></td>' +
         '<td>' + form.checkedType.value + '</td>' +
         '<td>' + form.telephoneComment.value + '</td>' +
         '</tr>';

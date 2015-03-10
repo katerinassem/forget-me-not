@@ -16,7 +16,7 @@
 <body>
     <h1>Создать или редактировать контакт.</h1>
     <a href="?command=ChoosePhotoCommand"><img src="files/images/default_avatar.jpg"/></a>
-    <form id="main" method="post" action="?command=SaveContactCommand&option=saveall" enctype="multipart/form-data">
+    <form id="main" onsubmit="validateMain()" method="post" action="?command=SaveContactCommand&option=saveall" enctype="multipart/form-data">
 
         <div id="attachment-pop-up">
             <h4>Создать присоединение.</h4>
@@ -46,12 +46,14 @@
             <input name="year" type="text" placeholder="гг" value="${sessionScope.contact.year}"/>
         </div>
         <fieldset>
-            <legend>Пол</legend>
             <label class="sex">женский</label>
             <input name="checkedSex" class="sex" type="radio" name="sex" value="f" checked="${sessionScope.contact.ifFemale}"/>
+        </fieldset>
+        <fieldset>
             <label class="sex" >мужской</label>
             <input name="checkedSex" class="sex" type="radio" name="sex" value="m" checked="${sessionScope.contact.ifMale}"/>
         </fieldset>
+
         <label>Гражданство:</label>
         <input name="sitizenship" type="text" placeholder="гражданство"  value="${sessionScope.contact.sitizenship}"/>
         <label>Web-сайт:</label>
@@ -94,12 +96,12 @@
                             <input name="countryCodes" type="hidden" value="${telephone.countryCode}"/>
                             <input name="operatorCodes" type="hidden" value="${telephone.operatorCode}"/>
                             <input name="telephoneNumbers" type="hidden" value="${telephone.telephoneNumber}"/>
-                            <input name="telephoneTypes" type="hidden" value="${telephone.telephoneType}"/>
+                            <input name="telephoneTypes" type="hidden" value="${telephone.type}"/>
                             <input name="telephoneComments" type="hidden" value="${telephone.comment}"/>
                             <tr>
                                 <td><input name="checkedTelephones" type="checkbox" value="${telephone.id}"/></td>
-                                <td>✐ <a href="showPopUp('telephone-pop-up', 'block', '${telephone.id}')">${telephone.countryCode}(${telephone.operatorCode})${telephone.telephoneNumber}</a></td>
-                                <td>${telephone.telephoneType}</td>
+                                <td onclick="showPopUp('telephone-pop-up', 'block', '${telephone.id}')">✐${telephone.countryCode}(${telephone.operatorCode})${telephone.telephoneNumber}</a></td>
+                                <td>${telephone.type}</td>
                                 <td >${telephone.comment}</td>
                             </tr>
                         </c:forEach>
@@ -127,7 +129,7 @@
                             <input name="attachmentComments" type="hidden" value="${attachment.comment}"/>
                             <tr>
                                 <td><input name="checkedAttachments" type="checkbox" value="${attachment.id}"/></td>
-                                <td><a href="files/${sessionScope.contact.id}/${attachment.uniqueName}">⇓</a>&nbsp✐ <a href="showPopUp('attachment-pop-up', 'block', '${attachment.id}')">${attachment.fileName}</a></td>
+                                <td><a href="files/${sessionScope.contact.id}/${attachment.uniqueName}">⇓</a><div onclick="showPopUp('attachment-pop-up', 'block', '${attachment.id}')">&nbsp✐${attachment.fileName}</div></td>
                                 <td>${attachment.formattedUploadDate}</td>
                                 <td>${attachment.comment}</td>
                             </tr>
@@ -136,7 +138,7 @@
                 </table>
             </fieldset>
         </form>
-        <button form="main" type="submit">Сохранить</button>
+        <button form="main"  onsubmit="validateMain()" type="submit">Сохранить</button>
     </form>
 
     </form>
@@ -153,9 +155,9 @@
             <fieldset>
                 <legend>Тип телефона</legend>
                 <label class="tel">Домашний</label>
-                <input name="checkedType" class="tel" type="radio" value="h" name="telephone_type"/>
+                <input name="checkedType" class="tel" type="radio" value="h" name="telephone_type" checked="false"/>
                 <label class="tel">Мобильный</label>
-                <input name="checkedType" type="radio" class="tel" value="m" name="telephone_type"/>
+                <input name="checkedType" type="radio" class="tel" value="m" name="telephone_type" checked="true"/>
             </fieldset>
             <label>Комментарий:</label>
             <input name="telephoneComment" type="text" placeholder="комментарий"/>

@@ -211,6 +211,9 @@ public class MySQLContactDAO implements DAO<Contact>
                 String company = rs.getString("company");
                 String photoUrl = rs.getString("photo_url");
                 Integer addressId = rs.getInt("address_id");
+                if(rs.wasNull()){
+                    addressId = null;
+                }
                 contact = new Contact(id, firstName, secondName, nameByFather, dateOfBirth, sex, sitizenship, webSite, email, company, photoUrl, addressId);
             }
         }
@@ -601,6 +604,9 @@ public class MySQLContactDAO implements DAO<Contact>
                     String company = rs.getString("company");
                     String photoUrl = rs.getString("photo_url");
                     Integer addressId = rs.getInt("address_id");
+                    if(rs.wasNull()){
+                        addressId = null;
+                    }
                     Contact contact = new Contact(id, firstName, secondName, nameByFather, dateOfBirth, sex, sitizenship, webSite, email, company, photoUrl, addressId);
                     contacts.add(contact);
                 }

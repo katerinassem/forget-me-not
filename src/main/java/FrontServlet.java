@@ -46,6 +46,9 @@ public class FrontServlet extends HttpServlet
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        req.setCharacterEncoding("utf-8");
+        resp.setCharacterEncoding("utf-8");
         try {
             req.getSession().removeAttribute("error");
             commandHelper.dispatchRequest(req, resp);
