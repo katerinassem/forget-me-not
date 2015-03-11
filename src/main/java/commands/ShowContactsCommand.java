@@ -6,6 +6,7 @@ import business.service.ShowList;
 import commands.commandexception.CommandFatalException;
 import listhandler.ContactListHandler;
 import listhandler.ListHandler;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import session.ShowListFacade;
 import transfer.Contact;
@@ -33,9 +34,12 @@ public class ShowContactsCommand implements Command
         try
         {
             String str = req.getParameter("page");
+            String opt = req.getParameter("option");
             Integer page = str == null ? null : Integer.parseInt(str);
-            ShowListFacade showListFacade = new ShowListFacade();
-            showListFacade.show(req.getSession(), page);
+            if(StringUtils.isEmpty(opt) || !StringUtils.equalsIgnoreCase(opt, "search")) {
+                ShowListFacade showListFacade = new ShowListFacade();
+                showListFacade.show(req.getSession(), page);
+            }
             RequestDispatcher dispatcher = req.getRequestDispatcher("ContactList.jsp");
             dispatcher.forward(req, resp);
         }

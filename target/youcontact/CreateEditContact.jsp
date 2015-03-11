@@ -35,8 +35,8 @@
 
         <label>ФИО:</label>
         <input name="id" type="hidden" value="${sessionScope.contact.id}"/>
-        <input name="firstName" type="text" placeholder="фамилия*" value="${sessionScope.contact.firstName}"/>
-        <input name="secondName" type="text" placeholder="имя*"  value="${sessionScope.contact.secondName}"/>
+        <input name="firstName" type="text" placeholder="имя*" value="${sessionScope.contact.firstName}"/>
+        <input name="secondName" type="text" placeholder="фамилия*"  value="${sessionScope.contact.secondName}"/>
         <input name="nameByFather" type="text" placeholder="отчество" value="${sessionScope.contact.nameByFather}"/>
         <label>Дата рождения:</label>
         <div id="date-tab">
@@ -91,20 +91,21 @@
                     </tr>
                     <c:if test="${sessionScope.contact.telephones != null}">
                         <c:forEach items="${sessionScope.contact.telephones}" var="telephone" varStatus="status">
-                            <div id="${telephone.countryCode}${telephone.operatorCode}${telephone.telephoneNumber}">
-                                <input id="telephone${telephone.id}" name="telephoneIds" type="hidden" value="${telephone.id}"/>
-                                <input name="countryCodes" type="hidden" value="${telephone.countryCode}"/>
-                                <input name="operatorCodes" type="hidden" value="${telephone.operatorCode}"/>
-                                <input name="telephoneNumbers" type="hidden" value="${telephone.telephoneNumber}"/>
-                                <input name="telephoneTypes" type="hidden" value="${telephone.type}"/>
-                                <input name="telephoneComments" type="hidden" value="${telephone.comment}"/>
-                                <tr>
-                                    <td><input name="checkedTelephones" type="checkbox" value="${telephone.id}"/></td>
-                                    <td onclick="showPopUp('telephone-pop-up', 'block', '${telephone.countryCode}${telephone.operatorCode}${telephone.telephoneNumber}')">✐${telephone.countryCode}(${telephone.operatorCode})${telephone.telephoneNumber}</td>
-                                    <td>${telephone.type}</td>
-                                    <td>${telephone.comment}</td>
-                                </tr>
-                            </div>
+                            <tr id="${telephone.countryCode}${telephone.operatorCode}${telephone.telephoneNumber}">
+                                <td>
+                                    <input id="telephone${telephone.id}" name="telephoneIds" type="hidden" value="${telephone.id}"/>
+                                    <input name="countryCodes" type="hidden" value="${telephone.countryCode}"/>
+                                    <input name="operatorCodes" type="hidden" value="${telephone.operatorCode}"/>
+                                    <input name="telephoneNumbers" type="hidden" value="${telephone.telephoneNumber}"/>
+                                    <input name="telephoneTypes" type="hidden" value="${telephone.type}"/>
+                                    <input name="telephoneComments" type="hidden" value="${telephone.comment}"/>
+
+                                    <input name="checkedTelephones" type="checkbox" value="${telephone.id}"/>
+                                </td>
+                                <td onclick="showPopUp('telephone-pop-up', 'block', '${telephone.countryCode}${telephone.operatorCode}${telephone.telephoneNumber}')">✐${telephone.countryCode}(${telephone.operatorCode})${telephone.telephoneNumber}</td>
+                                <td>${telephone.type}</td>
+                                <td>${telephone.comment}</td>
+                            </tr>
                         </c:forEach>
                     </c:if>
                 </table>

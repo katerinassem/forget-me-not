@@ -90,7 +90,7 @@ function validateMain(){
         form.webSite.style.borderColor = 'green';
         form.webSite.placeholder = 'сайт';
     }
-    if(email.length > 100 || !regEmail.test(email)){
+    if(email !== "" && ( email.length > 100 || !regEmail.test(email)) ){
         form.email.style.borderColor = 'red';
         form.email.placeholder = 'неверный или слишком большой email'
         valid = false;
@@ -333,14 +333,14 @@ function showPopUp(id, option, value){
         form.attachmentId.value = value;
         var trOfAttachment = document.getElementById(value);
         var i = 0;
-        children = trOfAttachment.children;
-        trOfAttachment = children[i++];
+        var attachChildren = trOfAttachment.children[0].children;
+        trOfAttachment = attachChildren[i++];
         form.attachmentId.value = trOfAttachment.value;
-        trOfAttachment = children[i++];
+        trOfAttachment = attachChildren[i++];
         form.fileName.value = trOfAttachment.value;
-        trOfAttachment = children[i++];
+        trOfAttachment = attachChildren[i++];
         form.uploadDate.value = trOfAttachment.value;
-        trOfAttachment = children[i++];
+        trOfAttachment = attachChildren[i++];
         form.attachmentComment.value = trOfAttachment.value;
         form.file.style.display = 'none';
     }
@@ -352,7 +352,7 @@ function showPopUp(id, option, value){
         form = document.forms['telephone'];
         var trOfTelephone = document.getElementById(value);
         var j = 0;
-        telChildren = trOfTelephone.children;
+        telChildren = trOfTelephone.children[0].children;
         trOfTelephone = telChildren[j++];
         form.telephoneId.value = trOfTelephone.value;
         trOfTelephone = telChildren[j++];
@@ -423,6 +423,7 @@ function setAttachment(){
             + '<td>' + form.attachmentComment.value + '</td></tr>';
         var elemToEdit = document.getElementById(attachmentString);
         if (elemToEdit != null) {
+            elemToEdit.innerHTML = "";
             elemToEdit.innerHTML = s;
         }
         else {
@@ -483,23 +484,24 @@ function setTelephone(){
     var form = document.forms["telephone"];
     if(validateTelephone(form)) {
         var telephoneString = form.countryCode.value.toString() + form.operatorCode.value.toString() + form.telephoneNumber.value.toString();
-        var s = '<input name="telephoneIds" type="hidden" value="' + form.telephoneId.value + '"/>' +
+        var s =
+            '<td>' +
+            '<input name="telephoneIds" type="hidden" value="' + form.telephoneId.value + '"/>' +
             '<input name="countryCodes" type="hidden" value="' + form.countryCode.value + '"/>' +
             '<input name="operatorCodes" type="hidden" value="' + form.operatorCode.value + '"/>' +
             '<input name="telephoneNumbers" type="hidden" value="' + form.telephoneNumber.value + '"/>' +
             '<input name="telephoneTypes" type="hidden" value="' + form.checkedType.value + '"/>' +
             '<input name="telephoneComments" type="hidden" value="' + form.telephoneComment.value + '"/>' +
-            '<tr><td><input name="checkedTelephones" type="checkbox" value="' + form.telephoneId.value + '"/></td>' +
+            '<input name="checkedTelephones" type="checkbox" value="' + form.telephoneId.value + '"/>' +
             '<td onclick="showPopUp(\'telephone-pop-up\', \'block\', \'' + telephoneString + '\')">✐ ' + form.countryCode.value + '(' + form.operatorCode.value + ')' + form.telephoneNumber.value + '</td>' +
             '<td>' + form.checkedType.value + '</td>' +
-            '<td>' + form.telephoneComment.value + '</td>' +
-            '</tr>';
+            '<td>' + form.telephoneComment.value + '</td>';
         var elemToEdit = document.getElementById(telephoneString);
-        if (elemToEdit != null) {
+        if (elemToEdit) {
             elemToEdit.innerHTML = s;
         }
         else {
-            document.getElementById('telephone-table').innerHTML += '<div id="' + telephoneString + '">' + s + '</div>';
+            document.getElementById('telephone-table').innerHTML += '<tr id="' + telephoneString + '">' + s + '</tr>';
         }
         form.reset();
         document.getElementById('telephone-pop-up').style.display = 'none';

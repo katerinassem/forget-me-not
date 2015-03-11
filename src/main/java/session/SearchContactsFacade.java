@@ -130,6 +130,7 @@ public class SearchContactsFacade {
             if(obj != null) {
                 contacts = (ArrayList<Contact>) obj;
                 req.getSession().setAttribute("contacts", contacts);
+                req.getSession().setAttribute("infoMessage", "Результаты поиска:");
             }
         }
         catch (ServiceDataException e){

@@ -16,6 +16,7 @@
 </head>
 <body>
 <h1>Список контактов.</h1>
+<h4>${sessionScope.infoMessage}</h4>
 <form method="post" action="?command=DeleteContactsCommand">
     <button  formaction="?command=CreateEditContactCommand&option=create">＋ создать</button>
     <button type="submit">X удалить</button>

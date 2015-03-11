@@ -16,10 +16,11 @@
 </head>
 <body>
 <h1>Список контактов.</h1>
+<h4>${sessionScope.infoMessage}</h4>
 <form method="post" action="?command=DeleteContactsCommand">
     <button  formaction="?command=CreateEditContactCommand&option=create">＋ создать</button>
     <button type="submit">X удалить</button>
-    <button formaction="SearchContacts.jsp" formmethod="get">? поиск</button>
+    <button formaction="?command=SearchContactsCommand&option=get">? поиск</button>
     <button formaction="?command=SendEmailCommand">@ email</button>
     <table>
         <tr>

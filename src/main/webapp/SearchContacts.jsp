@@ -5,7 +5,8 @@
   Time: 1:07
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"  %>
 <html>
 <head>
     <title>YouContact</title>
@@ -16,8 +17,8 @@
 <h1>Поиск контактов.</h1>
 <form name="search" method="post" action="?command=SearchContactsCommand">
     <label>ФИО:</label>
-    <input name="firstName" type="text" placeholder="фамилия"/>
-    <input name="secondName" type="text" placeholder="имя"/>
+    <input name="firstName" type="text" placeholder="имя"/>
+    <input name="secondName" type="text" placeholder="фамилия"/>
     <input name="nameByFather" type="text" placeholder="отчество"/>
     <fieldset>
         <legend>Дата рождения</legend>

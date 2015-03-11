@@ -651,7 +651,7 @@ public class MySQLContactDAO implements DAO<Contact>
         PreparedStatement statement = null;
         ArrayList<Contact> contacts = null;
         MySQLConnector connector = null;
-        String query = "SELECT * FROM contact LEFT JOIN address ON contact.id=address.address_id WHERE TRUE";
+        String query = "SELECT * FROM contact LEFT JOIN address ON contact.id=address.contact_id WHERE TRUE";
         try {
             connector = MySQLConnector.getInstance();
             con = connector.getConnection();
@@ -661,45 +661,45 @@ public class MySQLContactDAO implements DAO<Contact>
 
             if(object != null) {
                 if (StringUtils.isNotEmpty(object.getFirstName())) {
-                    String partQuery = " AND contact.first_name LIKE %?%";
+                    String partQuery = " AND contact.first_name LIKE ?";
                     query += partQuery;
                 }
                 if (StringUtils.isNotEmpty(object.getSecondName())) {
-                    String partQuery = " AND contact.second_name LIKE %?%";
+                    String partQuery = " AND contact.second_name LIKE ?";
                     query += partQuery;
                 }
                 if (StringUtils.isNotEmpty(object.getNameByFather())) {
-                    String partQuery = " AND contact.name_by_father LIKE %?%";
+                    String partQuery = " AND contact.name_by_father LIKE ?";
                     query += partQuery;
                 }
 
                 DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("YYYY-MM-dd");
                 if(object.getDateOfBirth() != null && beforeDateParam != null) {
-                    String partQuery = "AND contact.date_of_birth BETWEEN STR_TO_DATE(?, '%Y-%m-%d') AND STR_TO_DATE(?, '%Y-%m-%d')";
+                    String partQuery = " AND contact.date_of_birth BETWEEN STR_TO_DATE(?, '%Y-%m-%d') AND STR_TO_DATE(?, '%Y-%m-%d')";
                     query += partQuery;
                 }
 
                 if (object.getSex() != null) {
-                    String partQuery = " AND contact.sex LIKE %?%";
+                    String partQuery = " AND contact.sex=?";
                     query += partQuery;
                 }
                 if (StringUtils.isNotEmpty(object.getSitizenship())) {
-                    String partQuery = " AND contact.sitizenship LIKE %?%";
+                    String partQuery = " AND contact.sitizenship LIKE ?";
                     query += partQuery;
                 }
             }
             if(object.getAddress() != null) {
                 Address address = object.getAddress();
                 if (StringUtils.isNotEmpty(address.getCountry())) {
-                    String partQuery = " AND address.country LIKE %?%";
+                    String partQuery = " AND address.country LIKE ?";
                     query += partQuery;
                 }
                 if (StringUtils.isNotEmpty(address.getCity())) {
-                    String partQuery = " AND address.city LIKE %?%";
+                    String partQuery = " AND address.city LIKE ?";
                     query += partQuery;
                 }
                 if (StringUtils.isNotEmpty(address.getStreet())) {
-                    String partQuery = " AND address.street LIKE %?%";
+                    String partQuery = " AND address.street LIKE ?";
                     query += partQuery;
                 }
                 if (address.getBuilding() != null) {
@@ -719,13 +719,13 @@ public class MySQLContactDAO implements DAO<Contact>
             int i = 1;
             if(object != null) {
                 if (StringUtils.isNotEmpty(object.getFirstName())) {
-                    statement.setString(i++, object.getFirstName());
+                    statement.setString(i++, "%" + object.getFirstName() + "%");
                 }
                 if (StringUtils.isNotEmpty(object.getSecondName())) {
-                    statement.setString(i++, object.getSecondName());
+                    statement.setString(i++, "%" + object.getSecondName() + "%");
                 }
                 if (StringUtils.isNotEmpty(object.getNameByFather())) {
-                    statement.setString(i++, object.getNameByFather());
+                    statement.setString(i++, "%" + object.getNameByFather() + "%");
                 }
 
                 DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("YYYY-MM-dd");
@@ -738,19 +738,19 @@ public class MySQLContactDAO implements DAO<Contact>
                     statement.setString(i++, object.getSex().name());
                 }
                 if (StringUtils.isNotEmpty(object.getSitizenship())) {
-                    statement.setString(i++, object.getSitizenship());
+                    statement.setString(i++, "%" + object.getSitizenship() + "%");
                 }
             }
             if(object.getAddress() != null) {
                 Address address = object.getAddress();
                 if (StringUtils.isNotEmpty(address.getCountry())) {
-                    statement.setString(i++, address.getCountry());
+                    statement.setString(i++, "%" + address.getCountry() + "%");
                 }
                 if (StringUtils.isNotEmpty(address.getCity())) {
-                    statement.setString(i++, address.getCity());
+                    statement.setString(i++, "%" + address.getCity() + "%");
                 }
                 if (StringUtils.isNotEmpty(address.getStreet())) {
-                    statement.setString(i++, address.getStreet());
+                    statement.setString(i++, "%" + address.getStreet() + "%");
                 }
                 if (address.getBuilding() != null) {
                     statement.setInt(i++, address.getBuilding());

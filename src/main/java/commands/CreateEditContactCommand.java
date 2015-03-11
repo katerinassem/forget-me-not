@@ -32,12 +32,12 @@ public class CreateEditContactCommand implements Command
 
         logger.info(" - [ENTERING METHOD process(HttpServletRequest req, HttpServletResponse resp), PARAMETERS: HttpServletRequest req, HttpServletResponse resp]");
         try {
-            UploadHelper uploadHelper = UploadHelper.getInstance();
+            /*UploadHelper uploadHelper = UploadHelper.getInstance();
             try {
                 uploadHelper.upload(req);
             }catch (Exception e){
                 logger.error(e);
-            }
+            }*/
             String opt = req.getParameter("option");
             String idString = req.getParameter("id");
             if(StringUtils.isNotEmpty(opt) && StringUtils.equalsIgnoreCase(opt, "editmore")){
@@ -64,6 +64,10 @@ public class CreateEditContactCommand implements Command
                     }
                     req.getSession().setAttribute("contact", contact);
                 }
+                RequestDispatcher dispatcher = req.getRequestDispatcher("CreateEditContact.jsp");
+                dispatcher.forward(req, resp);
+            }
+            else{
                 RequestDispatcher dispatcher = req.getRequestDispatcher("CreateEditContact.jsp");
                 dispatcher.forward(req, resp);
             }
