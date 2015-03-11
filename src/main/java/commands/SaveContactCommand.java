@@ -50,8 +50,7 @@ public class SaveContactCommand implements Command {
                 contactBusiness.updateObject(contact);
             }
 
-            RequestDispatcher dispatcher = req.getRequestDispatcher("ContactList.jsp");
-            dispatcher.forward(req, resp);
+            resp.sendRedirect("Front?command=ShowContactsCommand");
         }
         catch (BLLDataException e){
             logger.error(e + " - in method process(HttpServletRequest req, HttpServletResponse resp), class SaveContactCommand");

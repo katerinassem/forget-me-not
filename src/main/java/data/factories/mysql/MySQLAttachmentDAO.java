@@ -233,6 +233,11 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
     }
 
     @Override
+    public ArrayList<Attachment> search(Attachment object, Object params) throws DAOSQLException, DAOFatalException {
+        return null;
+    }
+
+    @Override
     public ArrayList<Attachment> readAllByContactId(int contactId) throws DAOFatalException, DAOSQLException
     {
         logger.info(" - [ENTERING METHOD: readAllByContactId(int contactId), PARAMETERS: int contactId = " + contactId + "]");

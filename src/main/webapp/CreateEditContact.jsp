@@ -16,7 +16,7 @@
 <body>
     <h1>Создать или редактировать контакт.</h1>
     <a href="?command=ChoosePhotoCommand"><img src="files/images/default_avatar.jpg"/></a>
-    <form id="main" onsubmit="validateMain()" method="post" action="?command=SaveContactCommand&option=saveall" enctype="multipart/form-data">
+    <form id="main" method="post" action="?command=SaveContactCommand&option=saveall" enctype="multipart/form-data">
 
         <div id="attachment-pop-up">
             <h4>Создать присоединение.</h4>
@@ -25,11 +25,10 @@
                 <input name="file" type="file"/>
                 <label>Имя файла: </label>
                 <input name="fileName" type="text"/>
-                <label>Дата загрузки: </label>
                 <input name="uploadDate" type="hidden"/>
                 <label>Комментарий: </label>
                 <input name="attachmentComment" type="text" placeholder="комментарий"/>
-                <button form="main" type="submit" formaction="?command=CreateEditContactCommand&option=editmore">Сохранить</button>
+                <button form="main" type="button" onclick="setAttachment()" formaction="?command=CreateEditContactCommand&option=editmore">Сохранить</button>
                 <button type="button" onclick="showPopUp('attachment-pop-up', 'none')">Отменить</button>
             </div>
         </div>
@@ -101,7 +100,7 @@
                                 <input name="telephoneComments" type="hidden" value="${telephone.comment}"/>
                                 <tr>
                                     <td><input name="checkedTelephones" type="checkbox" value="${telephone.id}"/></td>
-                                    <td onclick="showPopUp('telephone-pop-up', 'block', '${telephone.id}')">✐${telephone.countryCode}(${telephone.operatorCode})${telephone.telephoneNumber}</td>
+                                    <td onclick="showPopUp('telephone-pop-up', 'block', '${telephone.countryCode}${telephone.operatorCode}${telephone.telephoneNumber}')">✐${telephone.countryCode}(${telephone.operatorCode})${telephone.telephoneNumber}</td>
                                     <td>${telephone.type}</td>
                                     <td>${telephone.comment}</td>
                                 </tr>
@@ -133,7 +132,7 @@
                                     <input name="attachmentComments" type="hidden" value="${attachment.comment}"/>
                                     <tr>
                                         <td><input name="checkedAttachments" type="checkbox" value="${attachment.id}"/></td>
-                                        <td><a href="files/${sessionScope.contact.id}/${attachment.uniqueName}">⇓</a><div onclick="showPopUp('attachment-pop-up', 'block', '${attachment.id}')">&nbsp✐${attachment.fileName}</div></td>
+                                        <td><a href="files/${sessionScope.contact.id}/${attachment.uniqueName}">⇓</a><div onclick="showPopUp('attachment-pop-up', 'block', '${attachment.fileName}${attachment.formattedUploadDate}')">&nbsp✐${attachment.fileName}</div></td>
                                         <td>${attachment.formattedUploadDate}</td>
                                         <td>${attachment.comment}</td>
                                     </tr>

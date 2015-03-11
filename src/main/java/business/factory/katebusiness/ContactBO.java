@@ -86,24 +86,50 @@ public class ContactBO extends Business<Contact>{
 
         logger.info(" - [ENTERING METHOD: readAllObjects(), NO PARAMETERS]");
         ArrayList<Contact> contacts =  super.readAllObjects();
-        if(CollectionUtils.isNotEmpty(contacts)) {
-            DAO<Address> addressDAO = daoFactory.getAddressDAO();
-            try {
-                for (Contact contact : contacts) {
-                    if (contact.getAddressId() != null) {
-                        Address address = addressDAO.read(contact.getAddressId());
-                        if (address != null) {
-                            contact.setAddress(address);
-                        }
-                    }
-                }
-            } catch (DAOSQLException e) {
-                throw new BLLDataException(e);
-            } catch (DAOFatalException e) {
-                throw new BLLFatalException(e);
-            }
+        try {
+            appendAddressForContact(contacts);
+        }
+        catch (DAOSQLException e){
+            throw new BLLDataException(e);
+        }
+        catch (DAOFatalException e){
+            throw new BLLFatalException(e);
         }
         return contacts;
     }
+
+    @Override
+    public ArrayList<Contact> searchAllObjects(Contact object, Object params) throws BLLDataException, BLLFatalException {
+
+        logger.info(" - [ENTERING METHOD: searchAllObjects(Contact object, Object params), PARAMETERS: Contact object = " + object + ", Object params = " + params + "]");
+        ArrayList<Contact> contacts =  super.searchAllObjects(object, params);
+        try {
+            appendAddressForContact(contacts);
+        }
+        catch (DAOSQLException e){
+            throw new BLLDataException(e);
+        }
+        catch (DAOFatalException e){
+            throw new BLLFatalException(e);
+        }
+        return contacts;
+    }
+
+    private void appendAddressForContact(ArrayList<Contact> contacts) throws DAOSQLException, DAOFatalException{
+
+        logger.info(" - [ENTERING help METHOD appendAddressForContact(ArrayList<Contact> contacts), PARAMETERS: ArrayList<Contact> contacts = " + contacts +"]");
+        if(CollectionUtils.isNotEmpty(contacts)) {
+            DAO<Address> addressDAO = daoFactory.getAddressDAO();
+            for (Contact contact : contacts) {
+                if (contact.getAddressId() != null) {
+                    Address address = addressDAO.read(contact.getAddressId());
+                    if (address != null) {
+                        contact.setAddress(address);
+                    }
+                }
+            }
+        }
+    }
+
 
 }

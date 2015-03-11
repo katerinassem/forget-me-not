@@ -17,6 +17,11 @@ public class MySQLAddressDAO implements DAO<Address>
     private static Logger logger = Logger.getLogger(MySQLAddressDAO.class);
 
     @Override
+    public ArrayList<Address> search(Address object, Object params) throws DAOSQLException, DAOFatalException {
+        return null;
+    }
+
+    @Override
     public int create(Address object) throws DAOSQLException, DAOFatalException {
         logger.info(" - [ENTERING METHOD: create(Address object), PARAMETERS: [Address object = " + object + "]");
         Connection con = null;

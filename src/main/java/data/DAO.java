@@ -19,4 +19,5 @@ public interface DAO<T>
     boolean update (T object) throws DAOSQLException, DAOFatalException;
     boolean delete (int id) throws DAOSQLException, DAOFatalException;
     ArrayList<T> readAll() throws DAOSQLException, DAOFatalException;
+    ArrayList<T> search(T object, Object params) throws DAOSQLException, DAOFatalException;
 }

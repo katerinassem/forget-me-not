@@ -19,7 +19,7 @@
 <form method="post" action="?command=DeleteContactsCommand">
     <button  formaction="?command=CreateEditContactCommand&option=create">＋ создать</button>
     <button type="submit">X удалить</button>
-    <button formaction="SearchContacts.jsp" formmethod="get">? поиск</button>
+    <button formaction="?command=SearchContactsCommand&option=get">? поиск</button>
     <button formaction="?command=SendEmailCommand">@ email</button>
     <table>
         <tr>

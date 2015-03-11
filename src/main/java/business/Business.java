@@ -8,6 +8,7 @@ import data.daoexception.DAOFatalException;
 import data.daoexception.DAOSQLException;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.log4j.Logger;
+import transfer.Contact;
 
 import java.util.ArrayList;
 
@@ -112,6 +113,24 @@ public abstract class Business<T> {
         ArrayList<T> objects = null;
         try {
             objects = entityDAO.readAll();
+        }
+        catch (DAOSQLException e) {
+            logger.error(" [DAO CAUSED EXCEPTION] - in readAllObjects()", e);
+            throw new BLLDataException(e);
+        }
+        catch (DAOFatalException e)
+        {
+            throw new BLLFatalException(e);
+        }
+        return objects;
+    }
+
+    public ArrayList<T> searchAllObjects(T object, Object params) throws BLLDataException, BLLFatalException{
+
+        logger.info(" - [ENTERING METHOD: searchAllObjects(T object, Object params), PARAMETERS: T object = " + object + ", Object params = " + params + "]");
+        ArrayList<T> objects = null;
+        try {
+            objects = entityDAO.search(object, params);
         }
         catch (DAOSQLException e) {
             logger.error(" [DAO CAUSED EXCEPTION] - in readAllObjects()", e);

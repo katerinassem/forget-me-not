@@ -239,6 +239,11 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
     }
 
     @Override
+    public ArrayList<Telephone> search(Telephone object, Object params) throws DAOSQLException, DAOFatalException {
+        return null;
+    }
+
+    @Override
     public ArrayList<Telephone> readAllByContactId(int contactId) throws DAOFatalException, DAOSQLException
     {
          logger.info(" - [ENTERING METHOD: readAllByContactId(int contactId), PARAMETERS: int id = " + contactId + "]");

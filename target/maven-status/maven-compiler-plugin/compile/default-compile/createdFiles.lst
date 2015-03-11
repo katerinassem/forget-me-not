@@ -2,6 +2,7 @@ transfer\Address.class
 transfer\TelephoneType.class
 business\factory\KateBllFactory.class
 commands\CreateEditContactCommand.class
+business\service\SearchList.class
 commands\CreateEditAttachmentCommand.class
 commands\SaveContactCommand.class
 data\daoexception\DAOFatalException.class
@@ -41,6 +42,7 @@ commands\SendEmailCommand.class
 commands\DeleteContactsCommand.class
 transfer\Telephone.class
 business\bllexception\ServiceFatalException.class
+session\SearchContactsFacade.class
 upload\UploadHelper.class
 data\factories\mysql\MySQLTelephoneDAO.class
 business\bllexception\FacadeServiceException.class

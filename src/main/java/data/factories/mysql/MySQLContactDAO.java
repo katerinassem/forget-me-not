@@ -4,12 +4,14 @@ import data.daoexception.DAOFatalException;
 import data.daoexception.DAOSQLException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.omg.CORBA.*;
 import transfer.*;
 
 import javax.servlet.ServletException;
+import java.lang.Object;
 import java.sql.*;
 import java.sql.Date;
 import java.util.*;
@@ -587,6 +589,179 @@ public class MySQLContactDAO implements DAO<Contact>
             connector = MySQLConnector.getInstance();
             con = connector.getConnection();
             statement = con.prepareStatement(query);
+            logger.info(" - [EXECUTING QUERY] " + statement);
+            ResultSet rs = statement.executeQuery();
+            contacts = new ArrayList<Contact>();
+            if(rs != null) {
+                while (rs.next()) {
+                    Integer id = rs.getInt("id");
+                    String firstName = rs.getString("first_name");
+                    String secondName = rs.getString("second_name");
+                    String nameByFather = rs.getString("name_by_father");
+                    org.joda.time.DateTime dateOfBirth = org.joda.time.DateTime.parse(rs.getDate("date_of_birth").toString());
+                    Sex sex = Sex.valueOf(rs.getString("sex"));
+                    String sitizenship = rs.getString("sitizenship");
+                    String webSite = rs.getString("web_site");
+                    String email = rs.getString("email");
+                    String company = rs.getString("company");
+                    String photoUrl = rs.getString("photo_url");
+                    Integer addressId = rs.getInt("address_id");
+                    if(rs.wasNull()){
+                        addressId = null;
+                    }
+                    Contact contact = new Contact(id, firstName, secondName, nameByFather, dateOfBirth, sex, sitizenship, webSite, email, company, photoUrl, addressId);
+                    contacts.add(contact);
+                }
+            }
+        }
+        catch (SQLException e)
+        {
+            logger.error(e + " - [SQL EXCEPTION]");
+            throw new DAOSQLException(e);
+        }
+        finally {
+            if(statement != null)
+            {
+                try {
+                    statement.close();
+                    logger.info(" - [CLOSED THE STATEMENT]");
+                }
+                catch (SQLException e) {
+                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                }
+            }
+            if(con != null)
+            {
+                try {
+                    connector.closeConnection(con);
+                }
+                catch(SQLException e) {
+                    logger.error(e);
+                }
+            }
+        }
+        return contacts;
+    }
+
+    @Override
+    public ArrayList<Contact> search(Contact object, Object params) throws DAOSQLException, DAOFatalException {
+
+        logger.info(" - [ENTERING METHOD: search(Contact object, Object params), PARAMETERS: Contact object = " + object + ", Object params = " + params + "]");
+        Connection con = null;
+        PreparedStatement statement = null;
+        ArrayList<Contact> contacts = null;
+        MySQLConnector connector = null;
+        String query = "SELECT * FROM contact LEFT JOIN address ON contact.id=address.address_id WHERE TRUE";
+        try {
+            connector = MySQLConnector.getInstance();
+            con = connector.getConnection();
+            statement = con.prepareStatement(query);
+
+            DateTime beforeDateParam = (DateTime)params;
+
+            if(object != null) {
+                if (StringUtils.isNotEmpty(object.getFirstName())) {
+                    String partQuery = " AND contact.first_name LIKE %?%";
+                    query += partQuery;
+                }
+                if (StringUtils.isNotEmpty(object.getSecondName())) {
+                    String partQuery = " AND contact.second_name LIKE %?%";
+                    query += partQuery;
+                }
+                if (StringUtils.isNotEmpty(object.getNameByFather())) {
+                    String partQuery = " AND contact.name_by_father LIKE %?%";
+                    query += partQuery;
+                }
+
+                DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("YYYY-MM-dd");
+                if(object.getDateOfBirth() != null && beforeDateParam != null) {
+                    String partQuery = "AND contact.date_of_birth BETWEEN STR_TO_DATE(?, '%Y-%m-%d') AND STR_TO_DATE(?, '%Y-%m-%d')";
+                    query += partQuery;
+                }
+
+                if (object.getSex() != null) {
+                    String partQuery = " AND contact.sex LIKE %?%";
+                    query += partQuery;
+                }
+                if (StringUtils.isNotEmpty(object.getSitizenship())) {
+                    String partQuery = " AND contact.sitizenship LIKE %?%";
+                    query += partQuery;
+                }
+            }
+            if(object.getAddress() != null) {
+                Address address = object.getAddress();
+                if (StringUtils.isNotEmpty(address.getCountry())) {
+                    String partQuery = " AND address.country LIKE %?%";
+                    query += partQuery;
+                }
+                if (StringUtils.isNotEmpty(address.getCity())) {
+                    String partQuery = " AND address.city LIKE %?%";
+                    query += partQuery;
+                }
+                if (StringUtils.isNotEmpty(address.getStreet())) {
+                    String partQuery = " AND address.street LIKE %?%";
+                    query += partQuery;
+                }
+                if (address.getBuilding() != null) {
+                    String partQuery = " AND address.building=?";
+                    query += partQuery;
+                }
+                if (address.getApartment() != null) {
+                    String partQuery = " AND address.apartment=?";
+                    query += partQuery;
+                }
+                if (address.getIndex() != null) {
+                    String partQuery = " AND address.post_index=?";
+                    query += partQuery;
+                }
+            }
+            statement = con.prepareStatement(query);
+            int i = 1;
+            if(object != null) {
+                if (StringUtils.isNotEmpty(object.getFirstName())) {
+                    statement.setString(i++, object.getFirstName());
+                }
+                if (StringUtils.isNotEmpty(object.getSecondName())) {
+                    statement.setString(i++, object.getSecondName());
+                }
+                if (StringUtils.isNotEmpty(object.getNameByFather())) {
+                    statement.setString(i++, object.getNameByFather());
+                }
+
+                DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("YYYY-MM-dd");
+                if(object.getDateOfBirth() != null && beforeDateParam != null) {
+                    statement.setString(i++, dateTimeFormatter.print(object.getDateOfBirth()));
+                    statement.setString(i++, dateTimeFormatter.print(beforeDateParam));
+                }
+
+                if (object.getSex() != null) {
+                    statement.setString(i++, object.getSex().name());
+                }
+                if (StringUtils.isNotEmpty(object.getSitizenship())) {
+                    statement.setString(i++, object.getSitizenship());
+                }
+            }
+            if(object.getAddress() != null) {
+                Address address = object.getAddress();
+                if (StringUtils.isNotEmpty(address.getCountry())) {
+                    statement.setString(i++, address.getCountry());
+                }
+                if (StringUtils.isNotEmpty(address.getCity())) {
+                    statement.setString(i++, address.getCity());
+                }
+                if (StringUtils.isNotEmpty(address.getStreet())) {
+                    statement.setString(i++, address.getStreet());
+                }
+                if (address.getBuilding() != null) {
+                    statement.setInt(i++, address.getBuilding());
+                }
+                if (address.getApartment() != null) {
+                    statement.setInt(i++, address.getApartment());
+                }
+                if (address.getIndex() != null) {
+                    statement.setLong(i++, address.getIndex());
+                }
+            }
             logger.info(" - [EXECUTING QUERY] " + statement);
             ResultSet rs = statement.executeQuery();
             contacts = new ArrayList<Contact>();
