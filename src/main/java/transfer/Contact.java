@@ -197,17 +197,17 @@ public class Contact extends TransferObject
         this.addressId = addressId;
     }
 
-    public boolean getIfMale(){
+    public String getIfMale(){
         if(sex != null){
-            return sex == Sex.m;
+            return sex == Sex.m ? "checked" : null;
         }
-        return false;
+        return null;
     }
 
-    public boolean getIfFemale(){
+    public String getIfFemale(){
         if(sex != null){
-            return sex == Sex.f;
+            return sex == Sex.f ? "checked" : null;
         }
-        return false;
+        return null;
     }
 }

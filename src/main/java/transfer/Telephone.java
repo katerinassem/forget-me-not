@@ -5,8 +5,8 @@ package transfer;
  */
 public class Telephone extends TransferObject
 {
-    Short countryCode;
-    Short operatorCode;
+    Integer countryCode;
+    Integer operatorCode;
     Long telephoneNumber;
     TelephoneType type;
     String comment;
@@ -14,7 +14,7 @@ public class Telephone extends TransferObject
 
     public Telephone(){}
 
-    public Telephone(Integer id, Short countryCode, Short operatorCode, Long telephoneNumber, TelephoneType type, String comment, Integer contactId) {
+    public Telephone(Integer id, Integer countryCode, Integer operatorCode, Long telephoneNumber, TelephoneType type, String comment, Integer contactId) {
         super(id);
         this.countryCode = countryCode;
         this.operatorCode = operatorCode;
@@ -24,19 +24,19 @@ public class Telephone extends TransferObject
         this.contactId = contactId;
     }
 
-    public Short getCountryCode() {
+    public Integer getCountryCode() {
         return countryCode;
     }
 
-    public void setCountryCode(Short countryCode) {
+    public void setCountryCode(Integer countryCode) {
         this.countryCode = countryCode;
     }
 
-    public Short getOperatorCode() {
+    public Integer getOperatorCode() {
         return operatorCode;
     }
 
-    public void setOperatorCode(Short operatorCode) {
+    public void setOperatorCode(Integer operatorCode) {
         this.operatorCode = operatorCode;
     }
 
@@ -70,5 +70,9 @@ public class Telephone extends TransferObject
 
     public void setContactId(Integer contactId) {
         this.contactId = contactId;
+    }
+
+    public String getTypeString(){
+        return type == TelephoneType.h ? "домашний" : "мобильный";
     }
 }

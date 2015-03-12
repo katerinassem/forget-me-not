@@ -38,9 +38,9 @@
     <fieldset>
         <legend>Пол</legend>
         <label class="sex" >женский</label>
-        <input name="checkedSex" type="radio" class="sex" name="sex"/>
+        <input name="checkedSex" type="radio" class="sex" value="f"/>
         <label class="sex" >мужской</label>
-        <input name="checkedSex" type="radio" class="sex" name="sex"/>
+        <input name="checkedSex" type="radio" class="sex" value="m"/>
     </fieldset>
     <label>Семейное положение:</label>
     <input type="text" placeholder="семейное положение"/>

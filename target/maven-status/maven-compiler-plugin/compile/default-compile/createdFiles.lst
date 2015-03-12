@@ -1,4 +1,5 @@
 transfer\Address.class
+business\service\SendMail.class
 transfer\TelephoneType.class
 business\factory\KateBllFactory.class
 commands\CreateEditContactCommand.class
@@ -8,10 +9,10 @@ commands\SaveContactCommand.class
 data\daoexception\DAOFatalException.class
 business\factory\katebusiness\AddressBO.class
 business\bllexception\ServiceDataException.class
-business\bllexception\BLLDataException.class
 session\DeleteContactsFacade.class
-data\factories\mysql\MySQLConnector.class
+business\bllexception\BLLDataException.class
 session\SaveContactFacade.class
+data\factories\mysql\MySQLConnector.class
 business\bllexception\FacadeFatalException.class
 business\Service.class
 data\DAO.class
@@ -20,9 +21,9 @@ commands\DeleteTelephonesCommand.class
 data\factories\mysql\MySQLContactDAO.class
 session\StoreFullContactFacade.class
 session\ShowListFacade.class
+listhandler\ListHandler.class
 business\factory\katebusiness\ContactBO.class
 data\AbstractDAOFactory.class
-listhandler\ListHandler.class
 transfer\Contact.class
 business\factory\katebusiness\AttachmentBO.class
 business\Business.class
@@ -34,6 +35,7 @@ business\service\ShowList.class
 data\daoexception\DAOSQLException.class
 data\factories\mysql\MySQLAttachmentDAO.class
 business\AbstractBLLFactory.class
+business\service\SendMail$1.class
 transfer\TransferObject.class
 business\bllexception\BLLFatalException.class
 commands\ChoosePhotoCommand.class
@@ -41,9 +43,11 @@ listhandler\ContactListHandler.class
 commands\SendEmailCommand.class
 commands\DeleteContactsCommand.class
 transfer\Telephone.class
+session\SendMailFacade.class
 business\bllexception\ServiceFatalException.class
 session\SearchContactsFacade.class
 upload\UploadHelper.class
+business\service\EmailsString.class
 data\factories\mysql\MySQLTelephoneDAO.class
 business\bllexception\FacadeServiceException.class
 transfer\Attachment.class

@@ -21,7 +21,7 @@
     <button  formaction="?command=CreateEditContactCommand&option=create">＋ создать</button>
     <button type="submit">X удалить</button>
     <button formaction="?command=SearchContactsCommand&option=get">? поиск</button>
-    <button formaction="?command=SendEmailCommand">@ email</button>
+    <button formaction="?command=SendEmailCommand&option=get">@ email</button>
     <table>
         <tr>
             <th></th>

@@ -11,6 +11,7 @@ import java.util.UUID;
  */
 public class Attachment extends TransferObject
 {
+    Integer id;
     String fileName;
     DateTime uploadDate;
     String comment;
@@ -65,5 +66,15 @@ public class Attachment extends TransferObject
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    @Override
+    public Integer getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

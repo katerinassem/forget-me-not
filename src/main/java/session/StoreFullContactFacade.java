@@ -55,7 +55,7 @@ public class StoreFullContactFacade {
                 contact.setDateOfBirth(new DateTime(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day), 0, 0));
             }
         }
-        String checkedSex = req.getParameterValues("checkedSex")[0];
+        String checkedSex = req.getParameter("checkedSex");
 
         if (StringUtils.isNotEmpty(checkedSex)) {
             Sex sex = Sex.valueOf(checkedSex);
@@ -135,16 +135,17 @@ public class StoreFullContactFacade {
             telephones = new ArrayList<Telephone>();
             for (int i = 0; i < telephoneIds.length; i++) {
                 Telephone telephone = new Telephone();
+                telephone.setContactId(id);
                 if (StringUtils.isNotEmpty(telephoneIds[i])) {
                     telephone.setId(Integer.parseInt(telephoneIds[i]));
                 }
 
                 if (StringUtils.isNotEmpty(countryCodes[i])) {
-                    telephone.setCountryCode(Short.parseShort(countryCodes[i]));
+                    telephone.setCountryCode(Integer.parseInt(countryCodes[i]));
                 }
 
                 if (StringUtils.isNotEmpty(operatorCodes[i])) {
-                    telephone.setOperatorCode(Short.parseShort(operatorCodes[i]));
+                    telephone.setOperatorCode(Integer.parseInt(operatorCodes[i]));
                 }
 
                 if (StringUtils.isNotEmpty(telephoneNumbers[i])) {
@@ -186,6 +187,7 @@ public class StoreFullContactFacade {
         DateTimeFormatter format = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.S");
         if (StringUtils.isNotEmpty(fileName) && StringUtils.isNotEmpty(uploadDateEntered)) {
             someAttachment = new Attachment();
+            someAttachment.setContactId(id);
             if (StringUtils.isNotEmpty(attachmentId)) {
                 someAttachment.setId(Integer.parseInt(attachmentId));
             }
@@ -205,6 +207,7 @@ public class StoreFullContactFacade {
         if (ArrayUtils.isNotEmpty(attachmentIds)) {
             for (int i = 0; i < attachmentIds.length; i++) {
                 Attachment localAttachment = new Attachment();
+                localAttachment.setContactId(id);
 
                 if (StringUtils.isNotEmpty(attachmentIds[i])) {
                     localAttachment.setId(Integer.parseInt(attachmentIds[i]));

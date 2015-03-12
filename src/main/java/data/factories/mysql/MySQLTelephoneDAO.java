@@ -66,8 +66,8 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
             ResultSet rs = statement.executeQuery();
             if(rs != null) {
                 if (rs.next()) {
-                    Short countryCode = rs.getShort("country_code");
-                    Short operatorCode = rs.getShort("operator_code");
+                    Integer countryCode = rs.getInt("country_code");
+                    Integer operatorCode = rs.getInt("operator_code");
                     Long telephoneNumber = rs.getLong("telephone_number");
                     TelephoneType telephoneType = TelephoneType.valueOf(rs.getString("telephone_type"));
                     String comment = rs.getString("comment");
@@ -198,8 +198,8 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
             if(rs != null) {
                 while (rs.next()) {
                     Integer id = rs.getInt("id");
-                    Short countryCode = rs.getShort("country_code");
-                    Short operatorCode = rs.getShort("operator_code");
+                    Integer countryCode = rs.getInt("country_code");
+                    Integer operatorCode = rs.getInt("operator_code");
                     Long telephoneNumber = rs.getLong("telephone_number");
                     TelephoneType telephoneType = TelephoneType.valueOf(rs.getString("telephone_type"));
                     String comment = rs.getString("comment");
@@ -263,8 +263,8 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
             if(rs != null) {
                 while (rs.next()) {
                     Integer id = rs.getInt("id");
-                    Short countryCode = rs.getShort("country_code");
-                    Short operatorCode = rs.getShort("operator_code");
+                    Integer countryCode = rs.getInt("country_code");
+                    Integer operatorCode = rs.getInt("operator_code");
                     Long telephoneNumber = rs.getLong("telephone_number");
                     TelephoneType telephoneType = TelephoneType.valueOf(rs.getString("telephone_type"));
                     String comment = rs.getString("comment");
@@ -308,11 +308,11 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
         try {
             statement = con.prepareStatement(query);
 
-            Short countryCode = object.getCountryCode();
-            statement.setShort(1, countryCode);
+            Integer countryCode = object.getCountryCode();
+            statement.setInt(1, countryCode);
 
-            Short operatorCode = object.getOperatorCode();
-            statement.setShort(2, operatorCode);
+            Integer operatorCode = object.getOperatorCode();
+            statement.setInt(2, operatorCode);
 
             Long telephoneNumber = object.getTelephoneNumber();
             statement.setLong(3, telephoneNumber);
@@ -359,11 +359,11 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
         try {
             statement = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
-            Short countryCode = object.getCountryCode();
-            statement.setShort(1, countryCode);
+            Integer countryCode = object.getCountryCode();
+            statement.setInt(1, countryCode);
 
-            Short operatorCode = object.getOperatorCode();
-            statement.setShort(2, operatorCode);
+            Integer operatorCode = object.getOperatorCode();
+            statement.setInt(2, operatorCode);
 
             Long telephoneNumber = object.getTelephoneNumber();
             statement.setLong(3, telephoneNumber);

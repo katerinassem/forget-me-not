@@ -351,6 +351,7 @@ function showPopUp(id, option, value){
     else if(id == 'telephone-pop-up' && value != undefined){
         form = document.forms['telephone'];
         var trOfTelephone = document.getElementById(value);
+        form.myId.value = value;
         var j = 0;
         telChildren = trOfTelephone.children[0].children;
         trOfTelephone = telChildren[j++];
@@ -412,22 +413,22 @@ function setAttachment(){
             var curr_sec = date.getSeconds();
             date = curr_hour + ':' + curr_min + ':' + curr_sec + ', ' + curr_day + '.' + curr_month + ':' + curr_year;
         }
-        var attachmentString = form.fileName.value + date;
-        var s = '<input name="attachmentIds" type="hidden" value="' + form.attachmentId.value + '"/>' +
+        var attachmentString = date;
+        var s = '<td>' +
+            '<input name="attachmentIds" type="hidden" value="' + form.attachmentId.value + '"/>' +
             '<input name="fileNames" type="hidden" value="' + form.fileName.value + '"/>' +
             '<input name="formattedUploadDates" type="hidden" value="' + date + '"/>' +
             '<input name="attachmentComments" type="hidden" value="' + form.attachmentComment.value + '"/>' +
-            '<tr><td><input name="checkedAttachments" type="checkbox" value="' + form.attachmentId.value + '"/></td>'
+            '<input name="checkedAttachments" type="checkbox" value="' + form.attachmentId.value + '"/></td>'
             + '<td onclick="showPopUp(\'attachment-pop-up\', \'block\', \'' + attachmentString + ' \')">✐ fileName</td>'
             + '<td>' + date + '</td>'
-            + '<td>' + form.attachmentComment.value + '</td></tr>';
+            + '<td>' + form.attachmentComment.value + '</td>';
         var elemToEdit = document.getElementById(attachmentString);
-        if (elemToEdit != null) {
-            elemToEdit.innerHTML = "";
+        if (!elemToEdit) {
             elemToEdit.innerHTML = s;
         }
         else {
-            document.getElementById('attachment-table').innerHTML += '<div id="' + attachmentString + '">' + s + '</div>';
+            document.getElementById('attachment-table').innerHTML += '<tr id="' + attachmentString + '">' + s + '</tr>';
         }
         form.reset();
         document.getElementById('attachment-pop-up').style.display = 'none';
@@ -483,7 +484,17 @@ function validateTelephone(form){
 function setTelephone(){
     var form = document.forms["telephone"];
     if(validateTelephone(form)) {
-        var telephoneString = form.countryCode.value.toString() + form.operatorCode.value.toString() + form.telephoneNumber.value.toString();
+        var typeString = form.checkedType.value == 'h' ? 'домашний' : 'мобильный';
+        var myId = form.myId.value;
+        if(! myId){
+            var last = document.getElementById('telephone-table').lastChild.firstChild;
+            if(last){
+                myId = parseInt(last.id.value) + 1;
+            }
+            else{
+                myId = 0;
+            }
+        }
         var s =
             '<td>' +
             '<input name="telephoneIds" type="hidden" value="' + form.telephoneId.value + '"/>' +
@@ -493,17 +504,57 @@ function setTelephone(){
             '<input name="telephoneTypes" type="hidden" value="' + form.checkedType.value + '"/>' +
             '<input name="telephoneComments" type="hidden" value="' + form.telephoneComment.value + '"/>' +
             '<input name="checkedTelephones" type="checkbox" value="' + form.telephoneId.value + '"/>' +
-            '<td onclick="showPopUp(\'telephone-pop-up\', \'block\', \'' + telephoneString + '\')">✐ ' + form.countryCode.value + '(' + form.operatorCode.value + ')' + form.telephoneNumber.value + '</td>' +
-            '<td>' + form.checkedType.value + '</td>' +
+            '<td onclick="showPopUp(\'telephone-pop-up\', \'block\', \'' + myId + '\')">✐ ' + form.countryCode.value + '(' + form.operatorCode.value + ')' + form.telephoneNumber.value + '</td>' +
+            '<td>' + typeString + '</td>' +
             '<td>' + form.telephoneComment.value + '</td>';
-        var elemToEdit = document.getElementById(telephoneString);
+        var elemToEdit = document.getElementById(myId);
         if (elemToEdit) {
             elemToEdit.innerHTML = s;
         }
         else {
-            document.getElementById('telephone-table').innerHTML += '<tr id="' + telephoneString + '">' + s + '</tr>';
+            document.getElementById('telephone-table').innerHTML += '<tr id="' + myId + '">' + s + '</tr>';
         }
         form.reset();
+        form.myId.value = "";
         document.getElementById('telephone-pop-up').style.display = 'none';
+    }
+}
+
+function validateSend(){
+    var form = document.forms["send"];
+    var emails = form.emails.value;
+    var subject = form.subject.value;
+    var letter = form.letter.value;
+    valid = true;
+    if(emails === ""){
+        form.emails.style.borderColor='red';
+        form.emails.placeholder='нет получателей!';
+        valid = false;
+    }
+    else{
+        form.emails.style.borderColor='green';
+        form.emails.placeholder='кому';
+    }
+    if(subject === ""){
+        form.subject.style.borderColor='red';
+        form.subject.placeholder='нет темы!';
+        valid = false;
+    }
+    else{
+        form.subject.style.borderColor='green';
+        form.subject.placeholder='тема';
+    }
+    if(letter === ""){
+        form.letter.style.borderColor='red';
+        form.letter.placeholder='нет текста письма!';
+        valid = false;
+    }
+    else{
+        form.letter.style.borderColor='green';
+        form.letter.placeholder='кому';
+    }
+
+    if(valid) {
+        form.submit();
     }
 }

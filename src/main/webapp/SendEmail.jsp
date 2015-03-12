@@ -10,23 +10,24 @@
 <head>
     <title>YouContact</title>
     <link href="files/css/style.css" rel="stylesheet">
+    <script src="files/js/popup.js" ></script>
 </head>
 <body>
 <h1>Отправить email контактам.</h1>
-<form>
+<form name="send" method="post" action="?command=SendEmailCommand&option=send">
     <label>Кому:</label>
-    <input type="text" placeholder="кому"/>
+    <input name="emails" type="text" placeholder="кому" value="${emails}"/>
     <label>Тема:</label>
-    <input type="text" placeholder="Тема"/>
+    <input name="subject" type="text" placeholder="Тема"/>
     <label>Выберите шаблон:</label>
     <select>
         <option>Не выбран</option>
         <option>Шаблон1</option>
         <option>Шаблон2</option>
     </select>
-    <textarea placeholder="текст письма"></textarea>
-    <button><a href="?command=SendEmailCommand">Отправить</a></button>
-    <button><a href="?command=ContactsList">Отменить</a></button>
+    <textarea name="letter"  placeholder="текст письма"></textarea>
+    <button type="button" onclick="validateSend()">Отправить</button>
+    <button type="button"><a href="?command=ShowContactsCommand">Отменить</a></button>
 </form>
 </body>
 </html>
