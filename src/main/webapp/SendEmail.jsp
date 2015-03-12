@@ -16,7 +16,8 @@
 <h1>Отправить email контактам.</h1>
 <form name="send" method="post" action="?command=SendEmailCommand&option=send">
     <label>Кому:</label>
-    <input name="emails" type="text" placeholder="кому" value="${emails}"/>
+    <label name="emails">${emails}</label>
+    <input name="emails" type="hidden" value="${emails}"/>
     <label>Тема:</label>
     <input name="subject" type="text" placeholder="Тема"/>
     <label>Выберите шаблон:</label>

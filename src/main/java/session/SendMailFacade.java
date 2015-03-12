@@ -32,6 +32,7 @@ public class SendMailFacade {
         String subject = req.getParameter("subject");
         String letter = req.getParameter("letter");
         if(StringUtils.isEmpty(emails) || StringUtils.isEmpty(subject) || StringUtils.isEmpty(letter)){
+            req.getSession().setAttribute("infoMessage", "Не выбраны получатели для отправки писем!");
             return;
         }
 

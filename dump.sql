@@ -43,7 +43,6 @@ FOREIGN KEY (`address_id`)
 CREATE  TABLE `youcontact`.`attachment` (
   `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
   `file_name` VARCHAR(100) NOT NULL,
-  `unique_name` VARCHAR(200) NOT NULL,
   `upload_date` DATETIME NOT NULL,  
   `comment` VARCHAR(200) NULL,
   `contact_id` INT(10) UNSIGNED NOT NULL,
@@ -56,8 +55,8 @@ CREATE  TABLE `youcontact`.`attachment` (
 
 CREATE  TABLE `youcontact`.`telephone` (
   `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
-  `country_code` TINYINT UNSIGNED NOT NULL,
-  `operator_code` TINYINT UNSIGNED NOT NULL,
+  `country_code` INT(10) UNSIGNED NOT NULL,
+  `operator_code` INT(10) UNSIGNED NOT NULL,
   `telephone_number` BIGINT UNSIGNED NOT NULL,  
   `telephone_type` ENUM('h', 'm') NOT NULL,
   `comment` VARCHAR(200) NULL,

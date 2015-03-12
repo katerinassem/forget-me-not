@@ -54,7 +54,6 @@ public class SendEmailCommand implements Command
             }
             SendMailFacade sendMailFacade = new SendMailFacade();
             sendMailFacade.send(req);
-            req.getSession().setAttribute("infoMessage", "Письма были успешно высланы.");
             resp.sendRedirect("Front?command=ShowContactsCommand");
 
         }

@@ -4,51 +4,53 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/upload/UploadHelper.java" line="84" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c45153e1-ed98-4566-9ac8-bdc994cf1fb3" name="Default" comment="11March -search, adding dinamic">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/business/service/EmailsString.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/business/service/SendMail.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/session/SendMailFacade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/transfer/Attachment.class" afterPath="$PROJECT_DIR$/target/classes/transfer/Attachment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Attachment.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Attachment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/transfer/Contact.class" afterPath="$PROJECT_DIR$/target/classes/transfer/Contact.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Contact.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Contact.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\CreateEditContactCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\CreateEditContactCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/CreateEditContactCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/CreateEditContactCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\mysql\MySQLAttachmentDAO.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\mysql\MySQLAttachmentDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLAttachmentDAO.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLAttachmentDAO.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\mysql\MySQLContactDAO.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\mysql\MySQLContactDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLContactDAO.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLContactDAO.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SendEmailCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SendEmailCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SendEmailCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SendEmailCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\ShowContactsCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\ShowContactsCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/ShowContactsCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/ShowContactsCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/transfer/Telephone.class" afterPath="$PROJECT_DIR$/target/classes/transfer/Telephone.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Telephone.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Telephone.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact.war" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/transfer/Attachment.java" afterPath="$PROJECT_DIR$/src/main/java/transfer/Attachment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/transfer/Contact.java" afterPath="$PROJECT_DIR$/src/main/java/transfer/Contact.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/ContactList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/ContactList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/ContactList.jsp" afterPath="$PROJECT_DIR$/target/youcontact/ContactList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/CreateEditContact.jsp" afterPath="$PROJECT_DIR$/target/youcontact/CreateEditContact.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLTelephoneDAO.java" afterPath="$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLTelephoneDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/SearchContacts.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/SearchContacts.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/SearchContacts.jsp" afterPath="$PROJECT_DIR$/target/youcontact/SearchContacts.jsp" />
+    <list default="true" id="c45153e1-ed98-4566-9ac8-bdc994cf1fb3" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\AbstractDAOFactory.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\AbstractDAOFactory.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\AbstractDAOFactory.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\AbstractDAOFactory.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\Address.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\Address.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\Address.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\Address.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\ChoosePhotoCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\ChoosePhotoCommand.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\ChoosePhotoCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\ChoosePhotoCommand.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\Command.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\Command.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\Command.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\Command.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\CommandHelper.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\CommandHelper.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\CommandHelper.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\CommandHelper.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\CreateEditAttachmentCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\CreateEditAttachmentCommand.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\CreateEditAttachmentCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\CreateEditAttachmentCommand.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\CreateEditTelephoneCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\CreateEditTelephoneCommand.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\CreateEditTelephoneCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\CreateEditTelephoneCommand.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\DAO.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\DAO.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\DAO.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\DAO.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\DeleteContactsCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\DeleteContactsCommand.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\DeleteContactsCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\DeleteContactsCommand.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\DeleteTelephonesCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\DeleteTelephonesCommand.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\DeleteTelephonesCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\DeleteTelephonesCommand.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\FrontServlet.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\FrontServlet.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\FrontServlet.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\FrontServlet.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\mysql\MySQLAddressDAO.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\mysql\MySQLAddressDAO.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\factories\mysql\MySQLAddressDAO.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\factories\mysql\MySQLAddressDAO.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\mysql\MySQLConnector.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\mysql\MySQLConnector.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\factories\mysql\MySQLConnector.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\factories\mysql\MySQLConnector.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\MySQLDAOFactory.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\data\factories\MySQLDAOFactory.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\factories\MySQLDAOFactory.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\data\factories\MySQLDAOFactory.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SaveAttachmentCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SaveAttachmentCommand.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SaveAttachmentCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SaveAttachmentCommand.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SavePhotoCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SavePhotoCommand.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SavePhotoCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SavePhotoCommand.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SaveTelephoneCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SaveTelephoneCommand.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SaveTelephoneCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SaveTelephoneCommand.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SearchContactsCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SearchContactsCommand.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SearchContactsCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SearchContactsCommand.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\Sex.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\Sex.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\Sex.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\Sex.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\TelephoneType.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\TelephoneType.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\TelephoneType.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\TelephoneType.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\TransferObject.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\transfer\TransferObject.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\TransferObject.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\transfer\TransferObject.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/SendEmail.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/SendEmail.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/SendEmail.jsp" afterPath="$PROJECT_DIR$/target/youcontact/SendEmail.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/commands/SendEmailCommand.java" afterPath="$PROJECT_DIR$/src/main/java/commands/SendEmailCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java" afterPath="$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/transfer/Telephone.java" afterPath="$PROJECT_DIR$/src/main/java/transfer/Telephone.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YouContact.iml" afterPath="$PROJECT_DIR$/YouContact.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/YouContact_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/YouContact_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/config.properties" afterPath="$PROJECT_DIR$/target/classes/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/config.properties" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/files/js/popup.js" afterPath="$PROJECT_DIR$/src/main/webapp/files/js/popup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/session/SendMailFacade.java" afterPath="$PROJECT_DIR$/src/main/java/session/SendMailFacade.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dump.sql" afterPath="$PROJECT_DIR$/dump.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="YouContact.iws" />
@@ -93,11 +95,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FrontServlet.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FrontServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/FrontServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.609375" vertical-offset="60" max-vertical-offset="1020">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="574" max-vertical-offset="1020">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -106,8 +108,8 @@
       <file leaf-file-name="SendEmailCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/commands/SendEmailCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1149" max-vertical-offset="1734">
-              <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="846" max-vertical-offset="1717">
+              <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -120,9 +122,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="503" max-vertical-offset="1088">
               <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,7 +132,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="1054">
               <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,11 +142,28 @@
       <file leaf-file-name="SendMailFacade.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/session/SendMailFacade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="452" max-vertical-offset="1037">
-              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="350" max-vertical-offset="1054">
+              <caret line="34" column="100" selection-start-line="34" selection-start-column="100" selection-end-line="34" selection-end-column="100" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1325#1333#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MySQLContactDAO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLContactDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33224756" vertical-offset="6052" max-vertical-offset="13838">
+              <caret line="377" column="0" selection-start-line="377" selection-start-column="0" selection-end-line="377" selection-end-column="0" />
+              <folding>
+                <marker date="1426084036591" expanded="true" signature="1098:1267" placeholder="INSERT INTO ..." />
+                <marker date="1426084036591" expanded="true" signature="6867:6899" placeholder="SELECT * FRO..contact..." />
+                <marker date="1426084036591" expanded="true" signature="9492:9665" placeholder="UPDATE conta..." />
+                <marker date="1426084036591" expanded="true" signature="15932:16105" placeholder="UPDATE conta..." />
+                <marker date="1426084036591" expanded="true" signature="19740:19770" placeholder="DELETE FROM ..." />
+                <marker date="1426084036591" expanded="true" signature="21298:21319" placeholder="SELECT * FRO..contact..." />
+                <marker date="1426084036591" expanded="true" signature="24162:24245" placeholder="SELECT * FRO..contact..." />
               </folding>
             </state>
           </provider>
@@ -153,8 +172,8 @@
       <file leaf-file-name="SendEmail.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/SendEmail.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.4615383" vertical-offset="104" max-vertical-offset="663">
-              <caret line="16" column="73" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
+            <state vertical-scroll-proportion="-7.769231" vertical-offset="104" max-vertical-offset="680">
+              <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -165,11 +184,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="1234" max-vertical-offset="1819">
               <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2584#2871#0" expanded="true" />
-                <element signature="e#2870#2871#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -177,7 +192,7 @@
       <file leaf-file-name="CreateEditContact.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="3111">
+            <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="3111">
               <caret line="13" column="46" selection-start-line="12" selection-start-column="54" selection-end-line="13" selection-end-column="46" />
               <folding />
             </state>
@@ -189,16 +204,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="9050" max-vertical-offset="9622">
               <caret line="526" column="28" selection-start-line="526" selection-start-column="28" selection-end-line="526" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchContactsFacade.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/session/SearchContactsFacade.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="91" max-vertical-offset="2295">
-              <caret line="132" column="83" selection-start-line="131" selection-start-column="68" selection-end-line="132" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -257,12 +262,12 @@
         <option value="$PROJECT_DIR$/src/main/java/session/SendMailSession.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/commands/SendEmailCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/business/service/EmailsString.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/files/js/popup.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/SendEmail.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/session/SendMailFacade.java" />
         <option value="$PROJECT_DIR$/src/main/java/business/service/SendMail.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/SendEmail.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/commands/SendEmailCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/session/SendMailFacade.java" />
       </list>
     </option>
   </component>
@@ -335,6 +340,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -345,294 +351,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="External Libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="files" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="files" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transfer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="session" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listhandler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="commands" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YouContact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="business" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -907,7 +625,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -960,7 +677,67 @@
       <recent name="C:\Users\Катерина\IdeaProjects\YouContact\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.run project">
+  <component name="RunManager" selected="Tomcat Server.SendEmail.jsp">
+    <configuration default="false" name="SendEmail.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 8.0.18" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/SendEmail.jsp" />
+      <deployment>
+        <artifact name="YouContact:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="SendEmail_jsp_YouContact" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="49660" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="YouContact:war" />
+        </option>
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -1323,9 +1100,15 @@
         </option>
       </method>
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.run project" />
+      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.SendEmail.jsp" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Tomcat Server.SendEmail.jsp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -1386,7 +1169,8 @@
       <workItem from="1426052311003" duration="19022000" />
       <workItem from="1426077708998" duration="745000" />
       <workItem from="1426082938585" duration="8843000" />
-      <workItem from="1426099508170" duration="22841000" />
+      <workItem from="1426099508170" duration="22981000" />
+      <workItem from="1426143275203" duration="1660000" />
     </task>
     <task id="LOCAL-00001" summary="2March - address CRUD">
       <created>1425316635422</created>
@@ -1538,11 +1322,17 @@
       <option name="project" value="LOCAL" />
       <updated>1426092098496</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="11March - mailing">
+      <created>1426123848019</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1426123848019</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="411010000" />
+    <option name="totallyTimeSpent" value="412810000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1578,12 +1368,12 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30668843" sideWeight="0.22012103" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16490166" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16490166" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3523654" sideWeight="0.779879" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22768533" sideWeight="0.49878347" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22768533" sideWeight="0.49878347" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1645,7 +1435,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="2March - address CRUD" />
     <MESSAGE value="3March - exceptions part1" />
     <MESSAGE value="4March - full data access layer" />
     <MESSAGE value="4March - full data access layer Part2 + JSP" />
@@ -1670,7 +1459,8 @@
     <MESSAGE value="10March - validate, bugs" />
     <MESSAGE value="11March -search" />
     <MESSAGE value="11March -search, adding dinamic" />
-    <option name="LAST_COMMIT_MESSAGE" value="11March -search, adding dinamic" />
+    <MESSAGE value="11March - mailing" />
+    <option name="LAST_COMMIT_MESSAGE" value="11March - mailing" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.5505618" />
   </component>
   <component name="XDebuggerManager">
@@ -1717,30 +1507,6 @@
           <line>26</line>
           <properties />
           <option name="timeStamp" value="158" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLContactDAO.java</url>
-          <line>377</line>
-          <properties />
-          <option name="timeStamp" value="179" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/FrontServlet.java</url>
-          <line>49</line>
-          <properties />
-          <option name="timeStamp" value="181" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/session/SendMailFacade.java</url>
-          <line>44</line>
-          <properties />
-          <option name="timeStamp" value="183" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/FrontServlet.java</url>
-          <line>24</line>
-          <properties />
-          <option name="timeStamp" value="184" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="185" />
@@ -1885,7 +1651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
           <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1893,7 +1658,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
           <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1909,7 +1673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="2108">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1933,7 +1696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="982" max-vertical-offset="2346">
           <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1951,13 +1713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="6266" max-vertical-offset="6851">
           <caret line="402" column="0" selection-start-line="402" selection-start-column="0" selection-end-line="402" selection-end-column="0" />
-          <folding>
-            <marker date="1426061942002" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..address..." />
-            <marker date="1426061942002" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1426061942002" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..address..." />
-            <marker date="1426061942002" expanded="true" signature="-1:-1" placeholder="UPDATE addre..." />
-            <marker date="1426061942002" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1990,34 +1745,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLContactDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6052" max-vertical-offset="13838">
-          <caret line="377" column="0" selection-start-line="377" selection-start-column="0" selection-end-line="377" selection-end-column="0" />
-          <folding>
-            <marker date="1426084036591" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1426084036591" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..contact..." />
-            <marker date="1426084036591" expanded="true" signature="-1:-1" placeholder="UPDATE conta..." />
-            <marker date="1426084036591" expanded="true" signature="-1:-1" placeholder="UPDATE conta..." />
-            <marker date="1426084036591" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1426084036591" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..contact..." />
-            <marker date="1426084036591" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..contact..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLTelephoneDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="5457" max-vertical-offset="6817">
           <caret line="338" column="0" selection-start-line="338" selection-start-column="0" selection-end-line="338" selection-end-column="0" />
-          <folding>
-            <marker date="1426112930138" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..telephone..." />
-            <marker date="1426112930138" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1426112930138" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..telephone..." />
-            <marker date="1426112930138" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..telephone..." />
-            <marker date="1426112930138" expanded="true" signature="-1:-1" placeholder="UPDATE telep..." />
-            <marker date="1426112930138" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2025,7 +1756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="281" max-vertical-offset="1275">
           <caret line="52" column="64" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2033,7 +1763,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
           <caret line="24" column="68" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2041,7 +1770,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="1037">
           <caret line="36" column="17" selection-start-line="28" selection-start-column="12" selection-end-line="36" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2050,7 +1778,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="2160" max-vertical-offset="4029">
           <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
           <folding>
-            <element signature="e#7898#7910#0" expanded="true" />
+            <element signature="e#7898#7910#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2059,7 +1787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
           <caret line="20" column="68" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2067,7 +1794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="244" max-vertical-offset="816">
           <caret line="48" column="9" selection-start-line="24" selection-start-column="8" selection-end-line="48" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2075,7 +1801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="952">
           <caret line="59" column="13" selection-start-line="50" selection-start-column="9" selection-end-line="59" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2091,7 +1816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="136">
           <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2099,7 +1823,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1723" max-vertical-offset="2295">
           <caret line="132" column="83" selection-start-line="131" selection-start-column="68" selection-end-line="132" selection-end-column="83" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#4662#4670#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2107,15 +1834,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="503" max-vertical-offset="1088">
           <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="3111">
+        <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="3111">
           <caret line="13" column="46" selection-start-line="12" selection-start-column="54" selection-end-line="13" selection-end-column="46" />
           <folding />
         </state>
@@ -2129,44 +1854,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/SendEmail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.4615383" vertical-offset="104" max-vertical-offset="663">
-          <caret line="16" column="73" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/business/service/SendMail.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1234" max-vertical-offset="1819">
           <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2584#2871#0" expanded="true" />
-            <element signature="e#2870#2871#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/session/SendMailFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="452" max-vertical-offset="1037">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1325#1333#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/SendEmailCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1149" max-vertical-offset="1734">
-          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2174,15 +1866,61 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="1054">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FrontServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.609375" vertical-offset="60" max-vertical-offset="1020">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="574" max-vertical-offset="1020">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/SendEmail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.769231" vertical-offset="104" max-vertical-offset="680">
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/SendEmailCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="846" max-vertical-offset="1717">
+          <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/session/SendMailFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="350" max-vertical-offset="1054">
+          <caret line="34" column="100" selection-start-line="34" selection-start-column="100" selection-end-line="34" selection-end-column="100" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLContactDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33224756" vertical-offset="6052" max-vertical-offset="13838">
+          <caret line="377" column="0" selection-start-line="377" selection-start-column="0" selection-end-line="377" selection-end-column="0" />
+          <folding>
+            <marker date="1426084036591" expanded="true" signature="1098:1267" placeholder="INSERT INTO ..." />
+            <marker date="1426084036591" expanded="true" signature="6867:6899" placeholder="SELECT * FRO..contact..." />
+            <marker date="1426084036591" expanded="true" signature="9492:9665" placeholder="UPDATE conta..." />
+            <marker date="1426084036591" expanded="true" signature="15932:16105" placeholder="UPDATE conta..." />
+            <marker date="1426084036591" expanded="true" signature="19740:19770" placeholder="DELETE FROM ..." />
+            <marker date="1426084036591" expanded="true" signature="21298:21319" placeholder="SELECT * FRO..contact..." />
+            <marker date="1426084036591" expanded="true" signature="24162:24245" placeholder="SELECT * FRO..contact..." />
+          </folding>
         </state>
       </provider>
     </entry>
