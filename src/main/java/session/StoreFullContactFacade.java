@@ -30,6 +30,15 @@ public class StoreFullContactFacade {
         if (StringUtils.isNotEmpty(idString)) {
             id = Integer.parseInt(idString);
         }
+
+
+        UploadHelper uploadHelper = UploadHelper.getInstance();
+         try {
+           uploadHelper.upload(req);
+        }catch (Exception e) {
+             logger.error(e);
+         }
+
         contact.setId(id);
 
         String firstName = req.getParameter("firstName");
@@ -171,11 +180,6 @@ public class StoreFullContactFacade {
         String[] attachmentComments = req.getParameterValues("attachmentComments");
 
 
-        // UploadHelper uploadHelper = UploadHelper.getInstance();
-        // try {
-        //   uploadHelper.upload(req);
-        //}catch (Exception e) {
-        //  logger.error(e);
 
         ///FILE!!!!!!!!!!!!!!!!!!
         String attachmentId = req.getParameter("attachmentId");

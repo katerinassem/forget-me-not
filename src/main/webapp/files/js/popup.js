@@ -425,12 +425,10 @@ function setAttachment(){
             + '<td>' + form.attachmentComment.value + '</td>';
         var elemToEdit = document.getElementById(attachmentString);
         if (!elemToEdit) {
-            elemToEdit.innerHTML = s;
         }
         else {
             document.getElementById('attachment-table').innerHTML += '<tr id="' + attachmentString + '">' + s + '</tr>';
         }
-        form.reset();
         document.getElementById('attachment-pop-up').style.display = 'none';
         form.submit();
     }

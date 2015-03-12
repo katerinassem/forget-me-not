@@ -33,7 +33,6 @@ public class SaveContactCommand implements Command {
         logger.info(" - [ENTERING METHOD process(HttpServletRequest req, HttpServletResponse resp), PARAMETERS: HttpServletRequest req, HttpServletResponse resp]");
         try {
             StoreFullContactFacade storeFullContactFacade = new StoreFullContactFacade();
-            String opt = req.getParameter("option");
             String idString = req.getParameter("id");
             storeFullContactFacade.store(req, idString);
             Contact contact = (Contact)req.getSession().getAttribute("contact");

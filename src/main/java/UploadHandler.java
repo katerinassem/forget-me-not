@@ -1,56 +1,42 @@
-package upload;
-
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 /**
- * Created by Катерина on 09.03.2015.
+ * Created by Катерина on 12.03.2015.
  */
-public class UploadHelper {
-
-    private static Logger logger = Logger.getLogger(UploadHelper.class);
-
-    private static UploadHelper instance = new UploadHelper();
-
+public class UploadHandler extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     // location to store file uploaded
     private static final String UPLOAD_DIRECTORY = "upload";
 
     // upload settings
-    private static final int MEMORY_THRESHOLD   = 1024 * 1024 * 3;  // 3MB
-    private static final int MAX_FILE_SIZE      = 1024 * 1024 * 40; // 40MB
-    private static final int MAX_REQUEST_SIZE   = 1024 * 1024 * 50; // 50MB
-
-
-    private UploadHelper(){
-        logger.info(" - [ENTERING UploadHelper CONSTRUCTOR, PARAMETERS: ServletContext aervletContext]");
-    }
-
-    public static UploadHelper getInstance(){
-        logger.info(" - [ENTERING getInstance(ServletContext servletContext), PARAMETERS: getInstance(ServletContext servletContext)]");
-        return instance;
-    }
+    private static final int MEMORY_THRESHOLD = 1024 * 1024 * 3;  // 3MB
+    private static final int MAX_FILE_SIZE = 1024 * 1024 * 40; // 40MB
+    private static final int MAX_REQUEST_SIZE = 1024 * 1024 * 50; // 50MB
 
     /**
      * Upon receiving file upload submission, parses the request to read
      * upload data and saves the file on disk.
      */
-    public void upload(HttpServletRequest request) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // checks if the request actually contains upload file
         if (!ServletFileUpload.isMultipartContent(request)) {
             // if not, we stop here
-            logger.error("Error: Form must has enctype=multipart/form-data.");
+            PrintWriter writer = response.getWriter();
+            writer.println("Error: Form must has enctype=multipart/form-data.");
+            writer.flush();
             return;
         }
 
@@ -71,7 +57,7 @@ public class UploadHelper {
 
         // constructs the directory path to store upload file
         // this path is relative to application's directory
-        String uploadPath = request.getServletContext().getContextPath()
+        String uploadPath = getServletContext().getContextPath()
                 + File.separator + UPLOAD_DIRECTORY;
 
         // creates the directory if it does not exist
@@ -98,15 +84,20 @@ public class UploadHelper {
 
                             // saves the file on disk
                             item.write(storeFile);
-                            request.getSession().setAttribute("infoMessage",
-                                    "Успешно загружено!");
+                            request.setAttribute("message",
+                                    "Upload has been done successfully!");
+
+                            System.out.println(storeFile.getAbsolutePath());
                         }
                     }
                 }
             }
         } catch (Exception ex) {
-            request.setAttribute("errorMessage",
-                    "Ошибка при загрузке файла: " + ex.getMessage());
+            request.setAttribute("message",
+                    "There was an error: " + ex.getMessage());
         }
+        // redirects client to message page
+        getServletContext().getRequestDispatcher("/message.jsp").forward(
+                request, response);
     }
 }

@@ -1,6 +1,7 @@
 import commands.Command;
 import commands.commandexception.CommandFatalException;
 import org.apache.log4j.Logger;
+import upload.UploadHelper;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +16,13 @@ public class CommandHelper {
 
     public void dispatchRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, CommandFatalException
     {
+
+        UploadHelper uploadHelper = UploadHelper.getInstance();
+        try {
+            uploadHelper.upload(req);
+        }catch (Exception e) {
+            logger.error(e);
+        }
         String attrValue = req.getParameter("command");
         Command command = getCommandForCommandName(attrValue);
         command.process(req, resp);

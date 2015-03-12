@@ -8,6 +8,7 @@ import commands.commandexception.CommandFatalException;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
+import upload.UploadHelper;
 
 public class FrontServlet extends HttpServlet
 {
@@ -47,8 +48,8 @@ public class FrontServlet extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        req.setCharacterEncoding("utf-8");
-        resp.setCharacterEncoding("utf-8");
+        //req.setCharacterEncoding("utf-8");
+        //resp.setCharacterEncoding("utf-8");
         try {
             req.getSession().removeAttribute("error");
             commandHelper.dispatchRequest(req, resp);

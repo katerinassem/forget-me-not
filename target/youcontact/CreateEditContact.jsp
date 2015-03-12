@@ -16,8 +16,9 @@
 <body>
     <h1>Создать или редактировать контакт.</h1>
     <a href="?command=ChoosePhotoCommand"><img src="files/images/default_avatar.jpg"/></a>
-    <form id="main" method="post" action="?command=SaveContactCommand&option=saveall" enctype="multipart/form-data">
-
+    <form id="main" method="post" action="/Front?ii=ee&tyty=ert" enctype="multipart/form-data">
+        <input type="hidden" name="command" value="CreateEditContactCommand"/>
+        <input type="hidden" name="option" value="editmore"/>
         <div id="attachment-pop-up">
             <h4>Создать присоединение.</h4>
             <div name="attachment">
@@ -28,7 +29,7 @@
                 <input name="uploadDate" type="hidden"/>
                 <label>Комментарий: </label>
                 <input name="attachmentComment" type="text" placeholder="комментарий"/>
-                <button form="main" type="button" onclick="setAttachment()" formaction="?command=CreateEditContactCommand&option=editmore">Сохранить</button>
+                <button form="main" type="button" onclick="setAttachment()">Сохранить</button>
                 <button type="button" onclick="showPopUp('attachment-pop-up', 'none')">Отменить</button>
             </div>
         </div>
