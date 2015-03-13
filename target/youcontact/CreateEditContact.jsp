@@ -5,8 +5,8 @@
   Time: 1:06
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"  %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>YouContact</title>
@@ -15,6 +15,7 @@
 </head>
 <body>
     <h1>Создать или редактировать контакт.</h1>
+    <h4>${sessionScope.infoMessage}</h4>
     <a href="?command=ChoosePhotoCommand"><img src="files/images/default_avatar.jpg"/></a>
     <form id="main" method="post" action="/Front" enctype="multipart/form-data">
         <input type="hidden" name="command" value="CreateEditContactCommand"/>
@@ -110,7 +111,6 @@
                     </c:if>
                 </table>
             </fieldset>
-            <c:if test="${sessionScope.contact.id != null}">
                 <fieldset>
                     <legend>Список присоединений</legend>
                     <button type="submit">X удалить</button>
@@ -122,26 +122,30 @@
                             <th>Дата загрузки</th>
                             <th>Комментарий</th>
                         </tr>
-                        <c:if test="${sessionScope.contact.getAttachments() != null}">
-                            <c:forEach items="${sessionScope.contact.attachments}" var="attachment" varStatus="status">
-                                <tr id="${attachment.formattedUploadDate}">
-                                    <td>
-                                        <input name="attachmentIds" type="hidden" value="${attachment.id}"/>
-                                        <input name="fileNames" type="hidden" value="${attachment.fileName}"/>
-                                        <input name="formattedUploadDates" type="hidden" value="${attachment.formattedUploadDate}"/>
-                                        <input name="attachmentComments" type="hidden" value="${attachment.comment}"/>
+                        <c:if test="${sessionScope.contact.id == null}">
+                            <h5>Файлы можно загружать для существующих контактов.</h5>
+                        </c:if>
+                        <c:if test="${sessionScope.contact.id != null}">
+                            <c:if test="${sessionScope.contact.getAttachments() != null}">
+                                <c:forEach items="${sessionScope.contact.attachments}" var="attachment" varStatus="status">
+                                    <tr id="${attachment.formattedUploadDate}">
+                                        <td>
+                                            <input name="attachmentIds" type="hidden" value="${attachment.id}"/>
+                                            <input name="fileNames" type="hidden" value="${attachment.fileName}"/>
+                                            <input name="formattedUploadDates" type="hidden" value="${attachment.formattedUploadDate}"/>
+                                            <input name="attachmentComments" type="hidden" value="${attachment.comment}"/>
 
-                                        <input name="checkedAttachments" type="checkbox" value="${attachment.id}"/>
-                                    </td>
-                                    <td><a href="/upload/${sessionScope.contact.id}/${attachment.id}">⇓</a><div onclick="showPopUp('attachment-pop-up', 'block', '${attachment.formattedUploadDate}')">&nbsp✐${attachment.fileName}</div></td>
-                                    <td>${attachment.formattedUploadDate}</td>
-                                    <td>${attachment.comment}</td>
-                                </tr>
-                            </c:forEach>
+                                            <input name="checkedAttachments" type="checkbox" value="${attachment.id}"/>
+                                        </td>
+                                        <td><a href="/upload/${sessionScope.contact.id}/${attachment.id}">⇓</a><div onclick="showPopUp('attachment-pop-up', 'block', '${attachment.formattedUploadDate}')">&nbsp✐${attachment.fileName}</div></td>
+                                        <td>${attachment.formattedUploadDate}</td>
+                                        <td>${attachment.comment}</td>
+                                    </tr>
+                                </c:forEach>
+                            </c:if>
                         </c:if>
                     </table>
                 </fieldset>
-            </c:if>
         <button form="main" onclick="validateMain()" type="button">Сохранить</button>
         <div id="telephone-pop-up">
             <h4>Создать или редактировать телефон.</h4>

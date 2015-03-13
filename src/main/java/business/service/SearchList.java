@@ -28,6 +28,7 @@ public class SearchList implements Service{
     public Object service(Object params) throws ServiceFatalException, ServiceDataException {
 
         logger.info(" - [ENTERING METHOD service(Object params), PARAMETERS: Object params = " + params + "]");
+
         AbstractDAOFactory daoFactory = new MySQLDAOFactory();
         AbstractBLLFactory bllFactory = new KateBllFactory(daoFactory);
         Business<Contact> contactBusiness = bllFactory.getContactBusiness();

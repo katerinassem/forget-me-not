@@ -22,7 +22,9 @@ public class DeleteContactsFacade {
     public void delete(HttpSession session, Integer[] checkedIds) throws FacadeFatalException, FacadeServiceException {
 
         logger.info(" - [ENTERING METHOD delete(HttpSession session, Integer[] checkedIds), PARAMETERS: HttpSession session, Integer[] checkedIds]");
+        int i = 0;
         if(ArrayUtils.isEmpty(checkedIds)){
+            session.setAttribute("infoMessage", "Не выбраны контакты для удаленияю.");
             return;
         }
         boolean success = true;
@@ -35,11 +37,13 @@ public class DeleteContactsFacade {
                     if(contactDAO.deleteObjectById(checkedId) != true){
                         success = false;
                     }
+                    else {i++;}
                 }
             }
             if(success != true){
                 throw new BLLDataException("Cannot delete contact(s)");
             }
+            session.setAttribute("infoMessage", "Удалено контактов: " + i);
         }
         catch (BLLDataException e){
             throw new FacadeServiceException(e);

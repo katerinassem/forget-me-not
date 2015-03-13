@@ -24,6 +24,9 @@ public class ShowList implements Service {
 
     @Override
     public Object service(Object params) throws ServiceFatalException, ServiceDataException {
+
+        logger.info(" - [ENTERING METHOD service(Object params), PARAMETERS: Object params = " + params + "]");
+
         ArrayList<Contact> contacts = null;
         try {
             AbstractDAOFactory daoFactory = new MySQLDAOFactory();

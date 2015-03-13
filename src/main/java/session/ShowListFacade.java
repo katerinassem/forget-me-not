@@ -20,13 +20,13 @@ public class ShowListFacade {
 
     private static Logger logger = Logger.getLogger(ShowList.class);
 
-    public void show(HttpSession session, Integer page) throws FacadeFatalException, FacadeServiceException{
+    public void show(HttpSession session, Integer page, Service service) throws FacadeFatalException, FacadeServiceException{
 
         logger.info(" - [ENTERING METHOD show(HttpSession session, Integer page), PARAMETERS: HttpSession session, Integer page = " + page + "]");
         ResourceBundle bundle = ResourceBundle.getBundle("config");
         Service showService = new ShowList();
         try {
-            ArrayList<Contact> contacts = (ArrayList<Contact>) showService.service(null);
+            ArrayList<Contact> contacts = (ArrayList<Contact>) service.service(session);
             if (contacts != null) {
                 int count = StringUtils.isNotEmpty(bundle.getString("count")) ?
                         Integer.parseInt(bundle.getString("count")) : 1;

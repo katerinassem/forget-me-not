@@ -2,6 +2,7 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 import commands.commandexception.CommandFatalException;
@@ -27,7 +28,7 @@ public class FrontServlet extends HttpServlet
         req.setCharacterEncoding("utf-8");
         resp.setCharacterEncoding("utf-8");
         try {
-            req.getSession().removeAttribute("errorMessage");
+            cleanSessionAttributes(req.getSession());
             commandHelper.dispatchRequest(req, resp);
         }
         catch (UploadException e){
@@ -58,7 +59,7 @@ public class FrontServlet extends HttpServlet
         req.setCharacterEncoding("utf-8");
         resp.setCharacterEncoding("utf-8");
         try {
-            req.getSession().removeAttribute("errorMessage");
+            cleanSessionAttributes(req.getSession());
             commandHelper.dispatchRequest(req, resp);
         }
         catch (ServletException e)
@@ -81,5 +82,11 @@ public class FrontServlet extends HttpServlet
             RequestDispatcher dispatcher = req.getRequestDispatcher("Error.jsp");
             dispatcher.forward(req, resp);
         }
+    }
+
+    private void cleanSessionAttributes(HttpSession session){
+
+        session.removeAttribute("infoMessage");
+        session.removeAttribute("errorMessage");
     }
 }

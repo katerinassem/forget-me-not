@@ -10,6 +10,7 @@ import business.factory.KateBllFactory;
 import commands.commandexception.CommandFatalException;
 import data.AbstractDAOFactory;
 import data.factories.MySQLDAOFactory;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import session.StoreFullContactFacade;
 import transfer.Contact;
@@ -33,7 +34,10 @@ public class SaveContactCommand implements Command {
         logger.info(" - [ENTERING METHOD process(HttpServletRequest req, HttpServletResponse resp), PARAMETERS: HttpServletRequest req, HttpServletResponse resp]");
         try {
             StoreFullContactFacade storeFullContactFacade = new StoreFullContactFacade();
-            String idString = ((String[])req.getAttribute("id"))[0];
+            String idString = (String[])req.getAttribute("id") == null ? null : ((String[])req.getAttribute("id"))[0];
+            if(StringUtils.isEmpty(idString)){
+                throw new FacadeServiceException("Nothing to save.");
+            }
             storeFullContactFacade.store(req, idString);
             Contact contact = (Contact)req.getSession().getAttribute("contact");
             if(contact == null){
@@ -43,16 +47,28 @@ public class SaveContactCommand implements Command {
             AbstractBLLFactory bllFactory = new KateBllFactory(daoFactory);
             Business<Contact> contactBusiness = bllFactory.getContactBusiness();
             if(contact.getId() == null){
-                contactBusiness.createObject(contact);
+                int res = contactBusiness.createObject(contact);
+                if(res == -1){
+                    req.getSession().setAttribute("infoMessage", "Не удалось сохранить контакт..");
+                }
+                else {
+                    req.getSession().setAttribute("infoMessage", "Новый контакт успешно сохранён.");
+                }
             }
             else{
-                contactBusiness.updateObject(contact);
+                boolean res = contactBusiness.updateObject(contact);
+                if(res){
+                    req.getSession().setAttribute("infoMessage", "Изменения успешно сохранены.");
+                }
+                else {
+                    req.getSession().setAttribute("infoMessage", "Не удалось сохранить изменения..");
+                }
             }
 
             resp.sendRedirect("Front?command=ShowContactsCommand");
         }
         catch (BLLDataException e){
-            logger.error(e + " - in method process(HttpServletRequest req, HttpServletResponse resp), class SaveContactCommand");
+            logger.error(e);
             req.getSession().setAttribute("errorMessage", "Ошибка! Невозможно сохранить данные. Попытайтесь ещё.");
             RequestDispatcher dispatcher = req.getRequestDispatcher("Error.jsp");
             try {
@@ -69,7 +85,7 @@ public class SaveContactCommand implements Command {
             throw new CommandFatalException(e);
         }
         catch (FacadeServiceException e){
-            logger.error(e + " - in method process(HttpServletRequest req, HttpServletResponse resp), class SaveContactCommand");
+            logger.error(e);
             req.getSession().setAttribute("errorMessage", "Ошибка! Невозможно сохранить данные. Попытайтесь ещё.");
             RequestDispatcher dispatcher = req.getRequestDispatcher("Error.jsp");
             try {

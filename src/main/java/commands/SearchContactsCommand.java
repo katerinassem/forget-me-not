@@ -43,7 +43,7 @@ public class SearchContactsCommand implements Command
             throw new CommandFatalException(e);
         }
         catch (FacadeServiceException e){
-            logger.error(e + " - in method process(HttpServletRequest req, HttpServletResponse resp), class SearchContactsCommand\n");
+            logger.error(e);
             req.getSession().setAttribute("errorMessage", "Ошибка! Невозможно отобразить данные поиска. Попытайтесь ещё.");
             RequestDispatcher dispatcher = req.getRequestDispatcher("Error.jsp");
             try {

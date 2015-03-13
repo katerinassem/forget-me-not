@@ -32,8 +32,8 @@ public class CreateEditContactCommand implements Command
 
         logger.info(" - [ENTERING METHOD process(HttpServletRequest req, HttpServletResponse resp), PARAMETERS: HttpServletRequest req, HttpServletResponse resp]");
         try {
-            String opt = req.getParameter("option") == null ? ((String[])req.getAttribute("option"))[0] : req.getParameter("option");
-            String idString = req.getParameter("id") == null ? ((String[])req.getAttribute("id"))[0] : req.getParameter("id");
+            String opt = req.getParameter("option") == null ? (req.getAttribute("option") == null ? null : ((String[])req.getAttribute("option"))[0]) : req.getParameter("option");
+            String idString = req.getParameter("id") == null ? (req.getAttribute("id") == null ? null : ((String[])req.getAttribute("id"))[0]) : req.getParameter("id");
             if(StringUtils.isNotEmpty(opt) && StringUtils.equalsIgnoreCase(opt, "editmore")){
 
                 //  Пересохраняем данные с формы(+ изменившиеся)
@@ -100,7 +100,7 @@ public class CreateEditContactCommand implements Command
         }
         catch (IOException e)
         {
-           logger.error(e + " - in method process(HttpServletRequest req, HttpServletResponse resp), class CreateEditContactCommand\n");
+           logger.error(e);
         }
     }
 }

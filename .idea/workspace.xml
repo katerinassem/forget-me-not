@@ -2,29 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c45153e1-ed98-4566-9ac8-bdc994cf1fb3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/upload/UploadException.java" />
-      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\session\SaveContactFacade.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/transfer/Attachment.class" afterPath="$PROJECT_DIR$/target/classes/transfer/Attachment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Attachment.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Attachment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/CommandHelper.class" afterPath="$PROJECT_DIR$/target/classes/CommandHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/CommandHelper.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/CommandHelper.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/business/service/ShowSearchResults.java" />
+      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\CreateEditAttachmentCommand.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\CreateEditTelephoneCommand.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\DeleteTelephonesCommand.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\SaveAttachmentCommand.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\SaveTelephoneCommand.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\CreateEditAttachmentCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\CreateEditTelephoneCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\DeleteTelephonesCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SaveAttachmentCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SaveTelephoneCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\CreateEditAttachmentCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\CreateEditTelephoneCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\DeleteTelephonesCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SaveAttachmentCommand.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SaveTelephoneCommand.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/CreateEditContactCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/CreateEditContactCommand.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/CreateEditContactCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/CreateEditContactCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/FrontServlet.class" afterPath="$PROJECT_DIR$/target/classes/FrontServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/FrontServlet.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/FrontServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/data/factories/mysql/MySQLAttachmentDAO.class" afterPath="$PROJECT_DIR$/target/classes/data/factories/mysql/MySQLAttachmentDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLAttachmentDAO.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLAttachmentDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/DeleteContactsCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/DeleteContactsCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/DeleteContactsCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/DeleteContactsCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/SearchContactsCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/SearchContactsCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SearchContactsCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SearchContactsCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/SendEmailCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/SendEmailCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SendEmailCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SendEmailCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/ShowContactsCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/ShowContactsCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/ShowContactsCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/ShowContactsCommand.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact.war" afterPath="$PROJECT_DIR$/target/youcontact.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/transfer/Attachment.java" afterPath="$PROJECT_DIR$/src/main/java/transfer/Attachment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CommandHelper.java" afterPath="$PROJECT_DIR$/src/main/java/CommandHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/CreateEditContact.jsp" afterPath="$PROJECT_DIR$/target/youcontact/CreateEditContact.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/commands/CreateEditContactCommand.java" afterPath="$PROJECT_DIR$/src/main/java/commands/CreateEditContactCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/commands/DeleteContactsCommand.java" afterPath="$PROJECT_DIR$/src/main/java/commands/DeleteContactsCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/session/DeleteContactsFacade.java" afterPath="$PROJECT_DIR$/src/main/java/session/DeleteContactsFacade.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/FrontServlet.java" afterPath="$PROJECT_DIR$/src/main/java/FrontServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAttachmentDAO.java" afterPath="$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAttachmentDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/commands/SaveContactCommand.java" afterPath="$PROJECT_DIR$/src/main/java/commands/SaveContactCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/commands/SearchContactsCommand.java" afterPath="$PROJECT_DIR$/src/main/java/commands/SearchContactsCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/business/service/SearchList.java" afterPath="$PROJECT_DIR$/src/main/java/business/service/SearchList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/commands/SendEmailCommand.java" afterPath="$PROJECT_DIR$/src/main/java/commands/SendEmailCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/commands/ShowContactsCommand.java" afterPath="$PROJECT_DIR$/src/main/java/commands/ShowContactsCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/business/service/ShowList.java" afterPath="$PROJECT_DIR$/src/main/java/business/service/ShowList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/session/ShowListFacade.java" afterPath="$PROJECT_DIR$/src/main/java/session/ShowListFacade.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java" afterPath="$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/upload/UploadHelper.java" afterPath="$PROJECT_DIR$/src/main/java/upload/UploadHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/config.properties" afterPath="$PROJECT_DIR$/target/classes/config.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/config.properties" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/config.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/files/js/popup.js" afterPath="$PROJECT_DIR$/src/main/webapp/files/js/popup.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -70,35 +91,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FrontServlet.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FrontServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/FrontServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33224756" vertical-offset="680" max-vertical-offset="1343">
-              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UploadHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/upload/UploadHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1951" max-vertical-offset="2805">
-              <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3176#3203#0" expanded="true" />
-                <element signature="e#4004#4012#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SaveContactCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/commands/SaveContactCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1258">
-              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="730" max-vertical-offset="1445">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -107,8 +104,54 @@
       <file leaf-file-name="Business.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/business/Business.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1152" max-vertical-offset="2346">
-              <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="986" max-vertical-offset="2346">
+              <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MySQLAddressDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAddressDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="6851">
+              <caret line="313" column="0" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
+              <folding>
+                <marker date="1426061942002" expanded="true" signature="1912:1944" placeholder="SELECT * FRO..address..." />
+                <marker date="1426061942002" expanded="true" signature="5169:5199" placeholder="DELETE FROM ..." />
+                <marker date="1426061942002" expanded="true" signature="6727:6748" placeholder="SELECT * FRO..address..." />
+                <marker date="1426061942002" expanded="true" signature="9444:9540" placeholder="UPDATE addre..." />
+                <marker date="1426061942002" expanded="true" signature="11738:11855" placeholder="INSERT INTO ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShowContactsCommand.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/commands/ShowContactsCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3322884" vertical-offset="200" max-vertical-offset="1241">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShowListFacade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/session/ShowListFacade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="322" max-vertical-offset="833">
+              <caret line="28" column="86" selection-start-line="28" selection-start-column="86" selection-end-line="28" selection-end-column="86" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommandHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CommandHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1292">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -117,66 +160,38 @@
       <file leaf-file-name="CreateEditContactCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/commands/CreateEditContactCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1598">
-              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="1598">
+              <caret line="36" column="73" selection-start-line="36" selection-start-column="73" selection-end-line="36" selection-end-column="73" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySQLContactDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLContactDAO.java">
+      <file leaf-file-name="SearchContactsCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/commands/SearchContactsCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5627" max-vertical-offset="13838">
-              <caret line="352" column="0" selection-start-line="352" selection-start-column="0" selection-end-line="352" selection-end-column="0" />
-              <folding>
-                <marker date="1426084036591" expanded="true" signature="1098:1267" placeholder="INSERT INTO ..." />
-                <marker date="1426084036591" expanded="true" signature="6867:6899" placeholder="SELECT * FRO..contact..." />
-                <marker date="1426084036591" expanded="true" signature="9492:9665" placeholder="UPDATE conta..." />
-                <marker date="1426084036591" expanded="true" signature="15932:16105" placeholder="UPDATE conta..." />
-                <marker date="1426084036591" expanded="true" signature="19740:19770" placeholder="DELETE FROM ..." />
-                <marker date="1426084036591" expanded="true" signature="21298:21319" placeholder="SELECT * FRO..contact..." />
-                <marker date="1426084036591" expanded="true" signature="24162:24245" placeholder="SELECT * FRO..contact..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommandHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CommandHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="1292">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="173" max-vertical-offset="952">
+              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UploadHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/UploadHandler.java">
+      <file leaf-file-name="SearchContactsFacade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/session/SearchContactsFacade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1176" max-vertical-offset="1649">
-              <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1988" max-vertical-offset="2295">
+              <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="popup.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/files/js/popup.js">
+      <file leaf-file-name="DeleteContactsCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/commands/DeleteContactsCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="8795" max-vertical-offset="10353">
-              <caret line="527" column="35" selection-start-line="527" selection-start-column="35" selection-end-line="527" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StoreFullContactFacade.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3723" max-vertical-offset="4369">
-              <caret line="245" column="0" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1037">
+              <caret line="42" column="64" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -190,57 +205,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/business/service/ShowList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/commands/CreateEditTelephoneCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/session/SessionFacade.java" />
         <option value="$PROJECT_DIR$/src/main/java/business/bllexception/FacadeServiceException.java" />
         <option value="$PROJECT_DIR$/src/main/java/business/bllexception/FacadeFatalException.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/Error.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/session/ShowListFacade.java" />
         <option value="$PROJECT_DIR$/src/main/java/business/bllexception/FacadeBLLException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/session/DeleteContactsFacade.java" />
         <option value="$PROJECT_DIR$/src/main/java/session/SaveContactFacade.java" />
         <option value="$PROJECT_DIR$/src/main/java/commands/SaveTelephoneCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/commands/SaveAttachmentCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLConnector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/commands/DeleteContactsCommand.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/files/css/style.css" />
         <option value="$PROJECT_DIR$/src/main/java/data/DAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAddressDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/business/Business.java" />
         <option value="$PROJECT_DIR$/src/main/java/business/factory/katebusiness/ContactBO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/commands/SearchContactsCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLContactDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/commands/ShowContactsCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/business/service/SearchList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/session/SearchContactsFacade.java" />
         <option value="$PROJECT_DIR$/src/main/java/transfer/TelephoneType.java" />
         <option value="$PROJECT_DIR$/src/main/java/transfer/Contact.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/SearchContacts.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/transfer/Telephone.java" />
         <option value="$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLTelephoneDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/ContactList.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/session/SendMailSession.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
         <option value="$PROJECT_DIR$/src/main/java/business/service/EmailsString.java" />
         <option value="$PROJECT_DIR$/src/main/java/business/service/SendMail.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/SendEmail.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/commands/SendEmailCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/session/SendMailFacade.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/UploadHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/upload/UploadException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FrontServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/transfer/Attachment.java" />
         <option value="$PROJECT_DIR$/src/main/java/CommandHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/commands/SaveContactCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/upload/UploadHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAttachmentDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/files/js/popup.js" />
-        <option value="$PROJECT_DIR$/src/main/java/commands/CreateEditContactCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/ContactList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/session/SearchContactsFacade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/commands/DeleteContactsCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/session/DeleteContactsFacade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/commands/SearchContactsCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/commands/SendEmailCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/session/ShowListFacade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/business/service/SearchList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/business/service/ShowList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/business/service/ShowSearchResults.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/upload/UploadHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FrontServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/commands/CreateEditContactCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/commands/SaveContactCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/commands/ShowContactsCommand.java" />
       </list>
     </option>
   </component>
@@ -313,17 +328,12 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="YouContact" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -415,6 +425,10 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -497,6 +511,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="session" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="listhandler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -632,6 +668,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YouContact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="log" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -653,6 +715,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1215,7 +1278,8 @@
       <workItem from="1426099508170" duration="22981000" />
       <workItem from="1426143275203" duration="16374000" />
       <workItem from="1426171818647" duration="21049000" />
-      <workItem from="1426193228813" duration="17749000" />
+      <workItem from="1426193228813" duration="18022000" />
+      <workItem from="1426241752926" duration="12415000" />
     </task>
     <task id="LOCAL-00001" summary="2March - address CRUD">
       <created>1425316635422</created>
@@ -1385,11 +1449,17 @@
       <option name="project" value="LOCAL" />
       <updated>1426161301808</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="13March - files upload">
+      <created>1426211601765</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1426211601765</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="466322000" />
+    <option name="totallyTimeSpent" value="479010000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1430,7 +1500,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3523654" sideWeight="0.779879" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22768533" sideWeight="0.49878347" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22768533" sideWeight="0.49878347" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1438,7 +1508,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25718608" sideWeight="0.50121653" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43230015" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43393147" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -1460,7 +1530,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43230015" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43393147" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1470,7 +1540,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3523654" sideWeight="0.779879" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22768533" sideWeight="0.49878347" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22768533" sideWeight="0.49878347" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1492,7 +1562,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="4March - full data access layer Part2 + JSP" />
     <MESSAGE value="4March - business objects" />
     <MESSAGE value="4March - business objects full" />
     <MESSAGE value="4March - business objects complete :)" />
@@ -1517,30 +1586,13 @@
     <MESSAGE value="11March - mailing" />
     <MESSAGE value="12March - mailing" />
     <MESSAGE value="12March - unknown upload error detected" />
-    <option name="LAST_COMMIT_MESSAGE" value="12March - unknown upload error detected" />
+    <MESSAGE value="13March - files upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="13March - files upload" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.5505618" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/commands/SaveAttachmentCommand.java</url>
-          <line>26</line>
-          <properties />
-          <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/commands/SaveTelephoneCommand.java</url>
-          <line>28</line>
-          <properties />
-          <option name="timeStamp" value="100" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/commands/SaveAttachmentCommand.java</url>
-          <line>28</line>
-          <properties />
-          <option name="timeStamp" value="102" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/commands/SearchContactsCommand.java</url>
           <line>26</line>
@@ -1578,7 +1630,7 @@
           <option name="timeStamp" value="188" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="270" />
+      <option name="time" value="290" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1587,113 +1639,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/business/service/SearchList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-          <caret line="24" column="68" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/DeleteContactsCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="1037">
-          <caret line="36" column="17" selection-start-line="28" selection-start-column="12" selection-end-line="36" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/ShowContactsCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="952">
-          <caret line="59" column="13" selection-start-line="50" selection-start-column="9" selection-end-line="59" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="136">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/SendEmail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.769231" vertical-offset="104" max-vertical-offset="680">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/SendEmailCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="846" max-vertical-offset="1717">
-          <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/business/service/EmailsString.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="503" max-vertical-offset="1088">
-          <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/business/service/SendMail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="333" max-vertical-offset="1785">
-          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Database_datasource.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26153848" vertical-offset="0" max-vertical-offset="629">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Downloads/commons-fileupload-1.3.1-bin/commons-fileupload-1.3.1-bin/lib/commons-fileupload-1.3.1.jar!/org/apache/commons/fileupload/servlet/ServletFileUpload.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.92" vertical-offset="208" max-vertical-offset="612">
-          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Downloads/commons-fileupload-1.3.1-bin/commons-fileupload-1.3.1-bin/lib/commons-fileupload-1.3.1.jar!/org/apache/commons/fileupload/servlet/ServletRequestContext.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.92" vertical-offset="157" max-vertical-offset="816">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Downloads/commons-fileupload-1.3.1-bin/commons-fileupload-1.3.1-bin/lib/commons-fileupload-1.3.1.jar!/org/apache/commons/fileupload/FileUploadBase.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.52" vertical-offset="7879" max-vertical-offset="11356">
-          <caret line="527" column="8" selection-start-line="527" selection-start-column="8" selection-end-line="527" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.ideaLibSources/commons-fileupload-1.3.1-sources.jar!/org/apache/commons/fileupload/servlet/ServletFileUpload.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1322" max-vertical-offset="2261">
-          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.ideaLibSources/commons-fileupload-1.3.1-sources.jar!/org/apache/commons/fileupload/FileUpload.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="792" max-vertical-offset="1377">
-          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.ideaLibSources/commons-fileupload-1.3.1-sources.jar!/org/apache/commons/fileupload/servlet/ServletRequestContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1288" max-vertical-offset="1768">
-          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.ideaLibSources/commons-fileupload-1.3.1-sources.jar!/org/apache/commons/fileupload/util/LimitedInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="2652">
@@ -1802,18 +1747,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/CreateAttachment.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/apache-tomcat-8.0.18/lib/servlet-api.jar!/javax/servlet/ServletRequest.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3482143" vertical-offset="196" max-vertical-offset="1496">
           <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1855,7 +1792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
           <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1874,7 +1810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
           <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1888,14 +1823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/business/factory/katebusiness/ContactBO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="710" max-vertical-offset="2108">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/transfer/Attachment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="662" max-vertical-offset="1037">
@@ -1904,13 +1831,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/CreateEditTelephoneCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAttachmentDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="510">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="6119" max-vertical-offset="6426">
+          <caret line="330" column="17" selection-start-line="330" selection-start-column="17" selection-end-line="330" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLContactDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5627" max-vertical-offset="13838">
+          <caret line="352" column="0" selection-start-line="352" selection-start-column="0" selection-end-line="352" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
+            <marker date="1426084036591" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1426084036591" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..contact..." />
+            <marker date="1426084036591" expanded="true" signature="-1:-1" placeholder="UPDATE conta..." />
+            <marker date="1426084036591" expanded="true" signature="-1:-1" placeholder="UPDATE conta..." />
+            <marker date="1426084036591" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1426084036591" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..contact..." />
+            <marker date="1426084036591" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..contact..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/CreateAttachment.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/files/js/popup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6347" max-vertical-offset="10336">
+          <caret line="379" column="53" selection-start-line="379" selection-start-column="53" selection-end-line="379" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/ContactList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537" vertical-offset="102" max-vertical-offset="952">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1924,97 +1897,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/session/DeleteContactsFacade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="356" max-vertical-offset="816">
-          <caret line="23" column="149" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="149" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="884">
+          <caret line="26" column="84" selection-start-line="26" selection-start-column="84" selection-end-line="26" selection-end-column="84" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/session/ShowListFacade.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/business/service/EmailsString.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="833">
-          <caret line="20" column="68" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="68" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="139" max-vertical-offset="867">
+          <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/session/SearchContactsFacade.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/business/service/SearchList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1723" max-vertical-offset="2295">
-          <caret line="132" column="83" selection-start-line="131" selection-start-column="68" selection-end-line="132" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAttachmentDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6119" max-vertical-offset="6426">
-          <caret line="330" column="17" selection-start-line="330" selection-start-column="17" selection-end-line="330" selection-end-column="17" />
-          <folding>
-            <marker date="1426209015669" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..attachment..." />
-            <marker date="1426209015669" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1426209015669" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..attachment..." />
-            <marker date="1426209015669" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..attachment..." />
-            <marker date="1426209015669" expanded="true" signature="-1:-1" placeholder="UPDATE attac..." />
-            <marker date="1426209015669" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAddressDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6120" max-vertical-offset="6851">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <marker date="1426061942002" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..address..." />
-            <marker date="1426061942002" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1426061942002" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..address..." />
-            <marker date="1426061942002" expanded="true" signature="-1:-1" placeholder="UPDATE addre..." />
-            <marker date="1426061942002" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.846154" vertical-offset="2388" max-vertical-offset="3009">
-          <caret line="154" column="4" selection-start-line="154" selection-start-column="4" selection-end-line="154" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/upload/UploadHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1951" max-vertical-offset="2805">
-          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3176#3203#0" expanded="true" />
-            <element signature="e#4004#4012#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/business/Business.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1152" max-vertical-offset="2346">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/files/js/popup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="8795" max-vertical-offset="10353">
-          <caret line="527" column="35" selection-start-line="527" selection-start-column="35" selection-end-line="527" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommandHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="1292">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/business/service/SendMail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1496">
+          <caret line="31" column="111" selection-start-line="30" selection-start-column="0" selection-end-line="31" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/business/service/ShowList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+          <caret line="25" column="93" selection-start-line="25" selection-start-column="93" selection-end-line="25" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/business/service/ShowSearchResults.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="112" max-vertical-offset="714">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="136">
+          <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/listhandler/ContactListHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="527">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -2027,50 +1969,162 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/upload/UploadHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3723" max-vertical-offset="4369">
-          <caret line="245" column="0" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1411" max-vertical-offset="2533">
+          <caret line="117" column="25" selection-start-line="117" selection-start-column="25" selection-end-line="117" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/CreateEditContactCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/business/factory/KateBllFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1598">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="207" max-vertical-offset="527">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="e#971#972#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/business/factory/katebusiness/ContactBO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2108">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/ChoosePhotoCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="578">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/SavePhotoCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="115" max-vertical-offset="663">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/SendEmailCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="523" max-vertical-offset="1496">
+          <caret line="79" column="27" selection-start-line="79" selection-start-column="27" selection-end-line="79" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2410" max-vertical-offset="4369">
+          <caret line="140" column="82" selection-start-line="140" selection-start-column="82" selection-end-line="140" selection-end-column="82" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/SaveContactCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1258">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="203" max-vertical-offset="1513">
+          <caret line="37" column="45" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLContactDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5627" max-vertical-offset="13838">
-          <caret line="352" column="0" selection-start-line="352" selection-start-column="0" selection-end-line="352" selection-end-column="0" />
+        <state vertical-scroll-proportion="-7.5384617" vertical-offset="1946" max-vertical-offset="3077">
+          <caret line="126" column="31" selection-start-line="126" selection-start-column="31" selection-end-line="126" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/business/Business.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="986" max-vertical-offset="2346">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAddressDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="6851">
+          <caret line="313" column="0" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
           <folding>
-            <marker date="1426084036591" expanded="true" signature="1098:1267" placeholder="INSERT INTO ..." />
-            <marker date="1426084036591" expanded="true" signature="6867:6899" placeholder="SELECT * FRO..contact..." />
-            <marker date="1426084036591" expanded="true" signature="9492:9665" placeholder="UPDATE conta..." />
-            <marker date="1426084036591" expanded="true" signature="15932:16105" placeholder="UPDATE conta..." />
-            <marker date="1426084036591" expanded="true" signature="19740:19770" placeholder="DELETE FROM ..." />
-            <marker date="1426084036591" expanded="true" signature="21298:21319" placeholder="SELECT * FRO..contact..." />
-            <marker date="1426084036591" expanded="true" signature="24162:24245" placeholder="SELECT * FRO..contact..." />
+            <marker date="1426061942002" expanded="true" signature="1912:1944" placeholder="SELECT * FRO..address..." />
+            <marker date="1426061942002" expanded="true" signature="5169:5199" placeholder="DELETE FROM ..." />
+            <marker date="1426061942002" expanded="true" signature="6727:6748" placeholder="SELECT * FRO..address..." />
+            <marker date="1426061942002" expanded="true" signature="9444:9540" placeholder="UPDATE addre..." />
+            <marker date="1426061942002" expanded="true" signature="11738:11855" placeholder="INSERT INTO ..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/DeleteContactsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1037">
+          <caret line="42" column="64" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/CreateEditContactCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="642" max-vertical-offset="1598">
+          <caret line="36" column="73" selection-start-line="36" selection-start-column="73" selection-end-line="36" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/session/SearchContactsFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1988" max-vertical-offset="2295">
+          <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/SearchContactsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="632" max-vertical-offset="952">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/session/ShowListFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
+          <caret line="28" column="86" selection-start-line="28" selection-start-column="86" selection-end-line="28" selection-end-column="86" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FrontServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33224756" vertical-offset="680" max-vertical-offset="1343">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="1445">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CommandHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="1292">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/ShowContactsCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3322884" vertical-offset="200" max-vertical-offset="1241">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>

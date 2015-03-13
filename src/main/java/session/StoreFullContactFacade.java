@@ -41,91 +41,91 @@ public class StoreFullContactFacade {
 
         contact.setId(id);
 
-        String firstName = getAttributeString(req, "firstName") == null ? null : getAttributeString(req, "firstName");
+        String firstName = getAttributeString(req, "firstName");
         if (StringUtils.isNotEmpty(firstName)) {
             contact.setFirstName(firstName);
         }
 
-        String secondName = getAttributeString(req, "secondName") == null ? null : getAttributeString(req, "secondName");
+        String secondName = getAttributeString(req, "secondName");
         if (StringUtils.isNotEmpty(secondName)) {
             contact.setSecondName(secondName);
         }
 
-        String nameByFather = getAttributeString(req, "nameByFather") == null ? null : getAttributeString(req, "nameByFather");
+        String nameByFather = getAttributeString(req, "nameByFather");
         if (StringUtils.isNotEmpty(nameByFather)) {
             contact.setNameByFather(nameByFather);
         }
 
-        String day = getAttributeString(req, "day") == null ? null : getAttributeString(req, "day");
-        String month = getAttributeString(req, "month") == null ? null : getAttributeString(req, "month");
-        String year = getAttributeString(req, "year") == null ? null : getAttributeString(req, "year");
+        String day = getAttributeString(req, "day");
+        String month = getAttributeString(req, "month");
+        String year = getAttributeString(req, "year");
         if (StringUtils.isNotEmpty(day) && StringUtils.isNotEmpty(month) && StringUtils.isNotEmpty(year)) {
             if (StringUtils.isNumeric(day) && StringUtils.isNumeric(month) && StringUtils.isNumeric(year)) {
                 contact.setDateOfBirth(new DateTime(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day), 0, 0));
             }
         }
-        String checkedSex = getAttributeString(req, "checkedSex") == null ? null : getAttributeString(req, "checkedSex");
+        String checkedSex = getAttributeString(req, "checkedSex");
 
         if (StringUtils.isNotEmpty(checkedSex)) {
             Sex sex = Sex.valueOf(checkedSex);
             contact.setSex(sex);
         }
 
-        String sitizenship = getAttributeString(req, "sitizenship") == null ? null : getAttributeString(req, "sitizenship");
+        String sitizenship = getAttributeString(req, "sitizenship");
         if (StringUtils.isNotEmpty(sitizenship)) {
             contact.setSitizenship(sitizenship);
         }
 
-        String webSite = getAttributeString(req, "webSite") == null ? null : getAttributeString(req, "webSite");
+        String webSite = getAttributeString(req, "webSite");
         if (StringUtils.isNotEmpty(webSite)) {
             contact.setWebSite(webSite);
         }
 
-        String email = getAttributeString(req, "email") == null ? null : getAttributeString(req, "email");
+        String email = getAttributeString(req, "email");
         if (StringUtils.isNotEmpty(email)) {
             contact.setEmail(email);
         }
 
-        String company = getAttributeString(req, "company") == null ? null : getAttributeString(req, "company");
+        String company = getAttributeString(req, "company");
         if (StringUtils.isNotEmpty(company)) {
             contact.setCompany(company);
         }
 
         Address address = new Address();
-        String addressId = getAttributeString(req, "addressId") == null ? null : getAttributeString(req, "addressId");
+        String addressId = getAttributeString(req, "addressId");
         if (StringUtils.isNotEmpty(addressId)) {
             address.setId(Integer.parseInt(addressId));
         }
 
-        String country = getAttributeString(req, "country") == null ? null : getAttributeString(req, "country");
+        String country = getAttributeString(req, "country");
         if (StringUtils.isNotEmpty(country)) {
             address.setCountry(country);
         }
 
-        String city = getAttributeString(req, "city") == null ? null : getAttributeString(req, "city");
+        String city = getAttributeString(req, "city");
         if (StringUtils.isNotEmpty(city)) {
             address.setCity(city);
         }
 
-        String street = getAttributeString(req, "street") == null ? null : getAttributeString(req, "street");
+        String street = getAttributeString(req, "street");
         if (StringUtils.isNotEmpty(street)) {
             address.setStreet(street);
         }
 
-        String building = getAttributeString(req, "building") == null ? null : getAttributeString(req, "building");
+        String building = getAttributeString(req, "building");
         if (StringUtils.isNotEmpty(building)) {
             if (StringUtils.isNumeric(building)) {
                 address.setBuilding(Integer.parseInt(building));
             }
         }
 
-        String apartment = getAttributeString(req, "apartment") == null ? null : getAttributeString(req, "apartment");
+        String apartment = getAttributeString(req, "apartment");
         if (StringUtils.isNotEmpty(apartment)) {
             if (StringUtils.isNumeric(apartment)) {
                 address.setApartment(Integer.parseInt(apartment));
             }
         }
-        String index = getAttributeString(req, "index") == null ? null : getAttributeString(req, "index");
+        String index = getAttributeString(req, "index");
         if (StringUtils.isNotEmpty(index)) {
             if (StringUtils.isNumeric(index)) {
                 address.setIndex(Long.parseLong(index));

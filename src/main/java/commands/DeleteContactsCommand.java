@@ -48,7 +48,7 @@ public class DeleteContactsCommand implements Command
             throw new CommandFatalException(e);
         }
         catch (FacadeServiceException e){
-            logger.error(e + " - in method process(HttpServletRequest req, HttpServletResponse resp), class DeleteContactsCommand\n");
+            logger.error(e);
             req.getSession().setAttribute("errorMessage", "Ошибка! Невозможно удалить данные. Попытайтесь ещё.");
             RequestDispatcher dispatcher = req.getRequestDispatcher("Error.jsp");
             try {

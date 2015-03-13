@@ -557,7 +557,6 @@ function setTelephone(){
         else {
             document.getElementById('telephone-table').innerHTML += '<tr id="' + myId + '">' + s + '</tr>';
         }
-        form.reset();
         form.myId.value = "";
         document.getElementById('telephone-pop-up').style.display = 'none';
     }

@@ -3,6 +3,7 @@ package commands;
 import business.Service;
 import business.bllexception.*;
 import business.service.ShowList;
+import business.service.ShowSearchResults;
 import commands.commandexception.CommandFatalException;
 import listhandler.ContactListHandler;
 import listhandler.ListHandler;
@@ -36,10 +37,27 @@ public class ShowContactsCommand implements Command
             String str = req.getParameter("page");
             String opt = req.getParameter("option");
             Integer page = str == null ? null : Integer.parseInt(str);
-            if(StringUtils.isEmpty(opt) || !StringUtils.equalsIgnoreCase(opt, "search")) {
-                ShowListFacade showListFacade = new ShowListFacade();
-                showListFacade.show(req.getSession(), page);
+            ShowListFacade showListFacade = new ShowListFacade();
+
+            if(StringUtils.equalsIgnoreCase(opt, "search")){
+
+                showListFacade.show(req.getSession(), page, new ShowSearchResults());
+                req.getSession().setAttribute("search", "true");
             }
+            else if(StringUtils.isEmpty(str)){
+
+                showListFacade.show(req.getSession(), page, new ShowList());
+                req.getSession().removeAttribute("search");
+            }
+            else if(req.getSession().getAttribute("search") != null){
+
+                showListFacade.show(req.getSession(), page, new ShowSearchResults());
+            }
+            else {
+
+                showListFacade.show(req.getSession(), page, new ShowList());
+            }
+
             RequestDispatcher dispatcher = req.getRequestDispatcher("ContactList.jsp");
             dispatcher.forward(req, resp);
         }
@@ -49,7 +67,7 @@ public class ShowContactsCommand implements Command
         }
         catch(FacadeServiceException e)
         {
-            logger.error(e + " - in method process(HttpServletRequest req, HttpServletResponse resp), class ShowContactsCommand\n");
+            logger.error(e);
             req.getSession().setAttribute("errorMessage", "Ошибка! Невозможно отобразить данные. Попытайтесь ещё.");
             RequestDispatcher dispatcher = req.getRequestDispatcher("Error.jsp");
             try {

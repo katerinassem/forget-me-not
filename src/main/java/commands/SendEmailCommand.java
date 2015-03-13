@@ -62,7 +62,7 @@ public class SendEmailCommand implements Command
         }
         catch (ServiceDataException e){
 
-            logger.error(e + " - in method process(HttpServletRequest req, HttpServletResponse resp), class SendEmailCommand\n");
+            logger.error(e);
             req.getSession().setAttribute("errorMessage", "Ошибка! Невозможно выслать письма. Попытайтесь ещё.");
             RequestDispatcher dispatcher = req.getRequestDispatcher("Error.jsp");
             try {
@@ -77,7 +77,7 @@ public class SendEmailCommand implements Command
         }
         catch (FacadeServiceException e){
 
-            logger.error(e + " - in method process(HttpServletRequest req, HttpServletResponse resp), class SendEmailCommand\n");
+            logger.error(e);
             req.getSession().setAttribute("errorMessage", "Ошибка! Невозможно выслать письма. Попытайтесь ещё.");
             RequestDispatcher dispatcher = req.getRequestDispatcher("Error.jsp");
             try {
