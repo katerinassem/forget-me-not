@@ -51,7 +51,8 @@ public class ShowContactsCommand implements Command
             }
             else if(req.getSession().getAttribute("search") != null){
 
-                showListFacade.show(req.getSession(), page, new ShowSearchResults());
+                Service service = new ShowSearchResults();
+                showListFacade.show(req.getSession(), page, service);
             }
             else {
 

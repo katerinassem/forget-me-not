@@ -26,7 +26,7 @@ public class ShowSearchResults implements Service {
         ArrayList<Contact> contacts = null;
         HttpSession session = (HttpSession)params;
         try {
-            contacts = (ArrayList<Contact>) session.getAttribute("contacts");
+            contacts = (ArrayList<Contact>) session.getAttribute("contactsSearch");
         }
         catch (ClassCastException e){
             return new ServiceDataException(e);
