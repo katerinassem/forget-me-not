@@ -4,12 +4,20 @@
 
 
 function validateMain(){
+    document.getElementsByName("command")[0].value = 'SaveContactCommand';
+    document.getElementsByName("option")[0].value = '';
     var form = document.forms["main"];
     var valid = true;
     var regDate = /^(((0[1-9]|[12]\d|3[01])\.(0[13578]|1[02])\.((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\.(0[13456789]|1[012])\.((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\.02\.((19|[2-9]\d)\d{2}))|(29\.02\.((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/;
     var regEmail = /.+@.+\..+/i;
     var day = form.day.value;
+    if(day < 10){
+        day = '0' + day;
+    }
     var month = form.month.value;
+    if(month < 10){
+        month = '0' + month;
+    }
     var year = form.year.value;
     var firstName = form.firstName.value;
     var secondName = form.secondName.value;
@@ -54,11 +62,6 @@ function validateMain(){
         form.nameByFather.placeholder = 'отчество';
     }
 
-    console.log(isInteger((day)));
-    console.log(isInteger((month)));
-    console.log(isInteger((year)));
-    console.log(date);
-    console.log(regDate.test(date));
     if((day !== "" && !isInteger(day)) || (month !== "" && !isInteger(month)) || (year !== "" && !isInteger(year)) || !regDate.test(date)) {
         form.day.style.borderColor = 'red';
         form.month.style.borderColor = 'red';
@@ -171,11 +174,23 @@ function validateSearch(){
     var valid = true;
     var regDate = /^(((0[1-9]|[12]\d|3[01])\.(0[13578]|1[02])\.((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\.(0[13456789]|1[012])\.((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\.02\.((19|[2-9]\d)\d{2}))|(29\.02\.((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/;
     var day = form.day.value;
+    if(day < 0){
+        day = '0' + day;
+    }
     var month = form.month.value;
+    if(month < 0){
+        month = '0' + month;
+    }
     var year = form.year.value;
     var date = day.toString() + '.' + month.toString() + '.' + year.toString();
     var day1 = form.day1.value;
+    if(day1 < 0){
+        day1 = '0' + day1;
+    }
     var month1 = form.month1.value;
+    if(month1 < 0){
+        month1 = '0' + month1;
+    }
     var year1 = form.year1.value;
     var date1 = day1.toString() + '.' + month1.toString() + '.' + year1.toString();
     var firstName = form.firstName.value;
@@ -327,9 +342,8 @@ function isInteger(n) {
 
 
 function showPopUp(id, option, value){
-    var form;
+    var form = document.forms['main'];
     if(id == 'attachment-pop-up' && value != undefined){
-        form = document.forms['main'];
         form.attachmentId.value = value;
         var trOfAttachment = document.getElementById(value);
         var i = 0;
@@ -343,17 +357,25 @@ function showPopUp(id, option, value){
         trOfAttachment = attachChildren[i++];
         form.attachmentComment.value = trOfAttachment.value;
         form.file.style.display = 'none';
+        document.getElementById("fileNameLabel").style.display = 'block';
+        document.getElementById("fileNameLabel").innerText = form.fileName.value;
     }
     else if(id == 'attachment-pop-up') {
-        form = document.forms['main'];
-        form.uploadDate.value = Date.now();
+        form.file.style.display = 'block';
+        document.getElementById("fileNameLabel").style.display = 'none';
+        if(option === "none"){
+            form.attachmentComment.value = "";
+            form.uploadDate.value = "";
+            form.fileName.value = "";
+            form.attachmentId.value = "";
+            form.file.value = "";
+        }
     }
     else if(id == 'telephone-pop-up' && value != undefined){
-        form = document.forms['telephone'];
         var trOfTelephone = document.getElementById(value);
         form.myId.value = value;
         var j = 0;
-        telChildren = trOfTelephone.children[0].children;
+        var telChildren = trOfTelephone.children[0].children;
         trOfTelephone = telChildren[j++];
         form.telephoneId.value = trOfTelephone.value;
         trOfTelephone = telChildren[j++];
@@ -367,23 +389,24 @@ function showPopUp(id, option, value){
         trOfTelephone = telChildren[j++];
         form.telephoneComment.value = trOfTelephone.value;
     }
+    else if(option === 'none'){
+        form.telephoneId.value = '';
+        form.myId.value = '';
+        form.countryCode.value = '';
+        form.operatorCode.value = '';
+        form.telephoneNumber.value = '';
+        form.checkedType.value = '';
+        form.telephoneComment.value = '';
+    }
     document.getElementById(id).style.display = option;
     return false;
 }
 
 function validateAttachment(form){
-    var fileName = form.fileName.value;
+    document.getElementsByName("command")[0].value = 'CreateEditContactCommand';
+    document.getElementsByName("option")[0].value = 'editmore';
     var attachmentComment = form.attachmentComment.value;
     var valid = true;
-    if(fileName.length === 0 || fileName.length > 100){
-        form.fileName.style.borderColor = 'red';
-        form.fileName.placeholder = 'заполните! до 100 символов';
-        valid = false;
-    }
-    else{
-        form.fileName.style.borderColor = 'green';
-        form.fileName.placeholder = 'имя файла';
-    }
     if(attachmentComment.length > 200){
         form.attachmentComment.style.borderColor = 'red';
         form.attachmentComment.placeholder = 'до 200 символов';
@@ -404,33 +427,55 @@ function setAttachment(){
             date = form.uploadDate.value;
         }
         else {
-            date = Date.now();
-            var curr_day = date.getDay();
-            var curr_month = date.getMonth();
-            var curr_year = ddate.getFullYear();
+            date = new Date();
+            var curr_day = date.getDate();
+            var curr_month = date.getMonth() + 1;
+            if(curr_day < 10) {
+                curr_day = '0' + curr_day;
+            }
+            if(curr_month<10) {
+                curr_month = '0' + curr_month;
+            }
+            var curr_year = date.getFullYear();
             var curr_hour = date.getHours();
+            if(curr_hour < 10){
+                curr_hour = '0' + curr_hour;
+            }
             var curr_min = date.getMinutes();
+            if(curr_min < 10){
+                curr_min = '0' + curr_min;
+            }
             var curr_sec = date.getSeconds();
-            date = curr_hour + ':' + curr_min + ':' + curr_sec + ', ' + curr_day + '.' + curr_month + ':' + curr_year;
+            if(curr_sec < 10){
+                curr_sec = '0' + curr_sec;
+            }
+            date = curr_hour + ':' + curr_min + ':' + curr_sec + ', ' + curr_day + '.' + curr_month + '.' + curr_year;
+            form.uploadDate.value = date;
         }
         var attachmentString = date;
-        var s = '<td>' +
-            '<input name="attachmentIds" type="hidden" value="' + form.attachmentId.value + '"/>' +
-            '<input name="fileNames" type="hidden" value="' + form.fileName.value + '"/>' +
-            '<input name="formattedUploadDates" type="hidden" value="' + date + '"/>' +
-            '<input name="attachmentComments" type="hidden" value="' + form.attachmentComment.value + '"/>' +
-            '<input name="checkedAttachments" type="checkbox" value="' + form.attachmentId.value + '"/></td>'
-            + '<td onclick="showPopUp(\'attachment-pop-up\', \'block\', \'' + attachmentString + ' \')">✐ fileName</td>'
-            + '<td>' + date + '</td>'
-            + '<td>' + form.attachmentComment.value + '</td>';
         var elemToEdit = document.getElementById(attachmentString);
-        if (!elemToEdit) {
+        if (elemToEdit) {
+            var s = '<td>' +
+                '<input name="attachmentIds" type="hidden" value="' + form.attachmentId.value + '"/>' +
+                '<input name="fileNames" type="hidden" value="' + form.fileName.value + '"/>' +
+                '<input name="formattedUploadDates" type="hidden" value="' + date + '"/>' +
+                '<input name="attachmentComments" type="hidden" value="' + form.attachmentComment.value + '"/>' +
+                '<input name="checkedAttachments" type="checkbox" value="' + form.attachmentId.value + '"/></td>'
+                + '<td onclick="showPopUp(\'attachment-pop-up\', \'block\', \'' + attachmentString + '\')">✐' + form.fileName.value + '</td>'
+                + '<td>' + date + '</td>'
+                + '<td>' + form.attachmentComment.value + '</td>';
+            document.getElementById(attachmentString).innerHTML = s;
+            document.getElementById('attachment-pop-up').style.display = 'none';
+            form.attachmentComment.value = "";
+            form.uploadDate.value = "";
+            form.fileName.value = "";
+            form.attachmentId.value = "";
+            form.file.value = "";
         }
         else {
-            document.getElementById('attachment-table').innerHTML += '<tr id="' + attachmentString + '">' + s + '</tr>';
+            document.getElementById('attachment-pop-up').style.display = 'none';
+            form.submit();
         }
-        document.getElementById('attachment-pop-up').style.display = 'none';
-        form.submit();
     }
 }
 
@@ -480,7 +525,7 @@ function validateTelephone(form){
 }
 
 function setTelephone(){
-    var form = document.forms["telephone"];
+    var form = document.forms["main"];
     if(validateTelephone(form)) {
         var typeString = form.checkedType.value == 'h' ? 'домашний' : 'мобильный';
         var myId = form.myId.value;
@@ -523,7 +568,7 @@ function validateSend(){
     var emails = form.emails.value;
     var subject = form.subject.value;
     var letter = form.letter.value;
-    valid = true;
+    var valid = true;
     if(emails === ""){
         form.emails.style.borderColor='red';
         form.emails.placeholder='нет получателей!';

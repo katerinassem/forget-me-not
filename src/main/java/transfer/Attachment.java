@@ -11,7 +11,6 @@ import java.util.UUID;
  */
 public class Attachment extends TransferObject
 {
-    Integer id;
     String fileName;
     DateTime uploadDate;
     String comment;

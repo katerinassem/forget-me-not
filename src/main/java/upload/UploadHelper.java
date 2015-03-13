@@ -1,17 +1,22 @@
 package upload;
 
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.File;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Катерина on 09.03.2015.
@@ -34,79 +39,121 @@ public class UploadHelper {
 
 
     private UploadHelper(){
-        logger.info(" - [ENTERING UploadHelper CONSTRUCTOR, PARAMETERS: ServletContext aervletContext]");
+
+        logger.info(" - [ ENTERING UploadHelper CONSTRUCTOR, NO PARAMETERS ]");
     }
 
     public static UploadHelper getInstance(){
-        logger.info(" - [ENTERING getInstance(ServletContext servletContext), PARAMETERS: getInstance(ServletContext servletContext)]");
+        logger.info(" - [ ENTERING getInstance(), NO PARAMETERS ]");
         return instance;
     }
 
-    /**
-     * Upon receiving file upload submission, parses the request to read
-     * upload data and saves the file on disk.
-     */
-    public void upload(HttpServletRequest request) throws ServletException, IOException {
-        // checks if the request actually contains upload file
+    public void prepareRequest(HttpServletRequest req) throws UploadException{
+
+        logger.info(" - [ ENTERING METHOD analyzeRequest(HttpServletRequest req) ]");
+
+        if(ServletFileUpload.isMultipartContent(req)) {
+            upload(req);
+        }
+
+    }
+
+    public void upload(HttpServletRequest request) throws UploadException {
+
+        logger.info(" - [ ENTERING METHOD upload(HttpServletRequest request), PARAMETERS: HttpServletRequest request ]");
         if (!ServletFileUpload.isMultipartContent(request)) {
-            // if not, we stop here
-            logger.error("Error: Form must has enctype=multipart/form-data.");
+            logger.error("Form must have enctype=multipart/form-data");
             return;
         }
 
-        // configures upload settings
+        //  Configures upload settings
         DiskFileItemFactory factory = new DiskFileItemFactory();
-        // sets memory threshold - beyond which files are stored in disk
+
         factory.setSizeThreshold(MEMORY_THRESHOLD);
-        // sets temporary location to store files
+
         factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
 
         ServletFileUpload upload = new ServletFileUpload(factory);
 
-        // sets maximum size of upload file
         upload.setFileSizeMax(MAX_FILE_SIZE);
 
-        // sets maximum size of request (include file + form data)
         upload.setSizeMax(MAX_REQUEST_SIZE);
 
-        // constructs the directory path to store upload file
-        // this path is relative to application's directory
+        //  This path is relative to application's directory
         String uploadPath = request.getServletContext().getContextPath()
                 + File.separator + UPLOAD_DIRECTORY;
 
-        // creates the directory if it does not exist
         File uploadDir = new File(uploadPath);
         if (!uploadDir.exists()) {
             uploadDir.mkdir();
         }
 
         try {
-            // parses the request's content to extract file data
+
+            //  Parses the request's content to extract file data
             @SuppressWarnings("unchecked")
             List<FileItem> formItems = upload.parseRequest(request);
+            HashMap<String, ArrayList<String>> attributes = new HashMap<String, ArrayList<String>>();
+            FileItem fileItem = null;
+            String contactId = null;
+            DateTimeFormatter formatter = DateTimeFormat.forPattern("HH_mm_ss_dd_MM_YYYY_");
+            String dateNowString = formatter.print(DateTime.now());
 
             if (formItems != null && formItems.size() > 0) {
-                // iterates over form's fields
                 for (FileItem item : formItems) {
-                    // processes only fields that are not form fields
                     if (!item.isFormField()) {
-                        String fileName = new File(item.getName()).getName();
-
-                        if (StringUtils.isNotEmpty(fileName)) {
-                            String filePath = uploadPath + File.separator + fileName;
-                            File storeFile = new File(filePath);
-
-                            // saves the file on disk
-                            item.write(storeFile);
-                            request.getSession().setAttribute("infoMessage",
-                                    "Успешно загружено!");
+                        fileItem = item;
+                    }
+                    else {
+                        if(attributes.containsKey(item.getFieldName())){
+                            ((ArrayList<String>)attributes.get(item.getFieldName())).add(item.getString("UTF-8"));
+                        }
+                        else {
+                            ArrayList<String> array = new ArrayList<String>();
+                            array.add(item.getString("UTF-8"));
+                            attributes.put(item.getFieldName(), array);
+                        }
+                        if(StringUtils.equalsIgnoreCase(item.getFieldName(), "id")){
+                            contactId = item.getString("UTF-8");
                         }
                     }
                 }
             }
-        } catch (Exception ex) {
-            request.setAttribute("errorMessage",
-                    "Ошибка при загрузке файла: " + ex.getMessage());
+            String fileName = null;
+
+            if(fileItem != null && fileItem.getSize() > 0) {
+                fileName = new File(fileItem.getName()).getName();
+
+                if (StringUtils.isNotEmpty(fileName) && contactId != null) {
+
+                    String contactPath = uploadPath + File.separator + contactId;
+                    File uploadFileDir = new File(contactPath);
+                    if (!uploadFileDir.exists()) {
+                        uploadFileDir.mkdir();
+                    }
+                    fileName = dateNowString + fileName;
+                    String filePath = contactPath + File.separator + fileName;
+                    File storeFile = new File(filePath);
+                    // saves the file on disk
+                    fileItem.write(storeFile);
+                    request.getSession().setAttribute("infoMessage",
+                            "Успешно загружено!");
+                }
+                else {
+                    throw new UploadException("Невозможно сохранить файл: fileName = " + String.valueOf(fileName) + ", contactId = " + String.valueOf(contactId));
+                }
+            }
+            if(MapUtils.isNotEmpty(attributes)){
+                for(Map.Entry<String, ArrayList<String>> entry : attributes.entrySet()) {
+                    request.setAttribute(entry.getKey(), entry.getValue().toArray(new String[entry.getValue().size()]));
+                }
+            }
+            if(fileName != null) {
+                request.setAttribute("fileName", fileName);
+            }
+
+        } catch (Exception e) {
+            throw new UploadException(e);
         }
     }
 }

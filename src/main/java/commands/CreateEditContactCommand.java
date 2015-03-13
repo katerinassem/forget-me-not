@@ -32,21 +32,17 @@ public class CreateEditContactCommand implements Command
 
         logger.info(" - [ENTERING METHOD process(HttpServletRequest req, HttpServletResponse resp), PARAMETERS: HttpServletRequest req, HttpServletResponse resp]");
         try {
-            /*UploadHelper uploadHelper = UploadHelper.getInstance();
-            try {
-                uploadHelper.upload(req);
-            }catch (Exception e){
-                logger.error(e);
-            }*/
-            String opt = req.getParameter("option");
-            String idString = req.getParameter("id");
+            String opt = req.getParameter("option") == null ? ((String[])req.getAttribute("option"))[0] : req.getParameter("option");
+            String idString = req.getParameter("id") == null ? ((String[])req.getAttribute("id"))[0] : req.getParameter("id");
             if(StringUtils.isNotEmpty(opt) && StringUtils.equalsIgnoreCase(opt, "editmore")){
+
                 //  Пересохраняем данные с формы(+ изменившиеся)
                 //  Не в базу!
-
+                //  В базу только если был загружен файл, сохраняем ТОЛЬКО его
                 StoreFullContactFacade storeFullContactFacade = new StoreFullContactFacade();
                 storeFullContactFacade.store(req, idString);
-                resp.sendRedirect("Front?command=ShowContactsCommand");
+                RequestDispatcher dispatcher = req.getRequestDispatcher("CreateEditContact.jsp");
+                dispatcher.forward(req, resp);
                 return;
             }
             else {

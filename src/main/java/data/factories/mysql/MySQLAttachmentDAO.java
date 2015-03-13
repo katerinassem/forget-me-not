@@ -66,7 +66,8 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
             if(rs != null && rs.next())
             {
                 String fileName = rs.getString("file_name");
-                DateTime uploadDate = DateTime.parse(rs.getDate("upload_date").toString());
+                DateTimeFormatter format = DateTimeFormat.forPattern("YYYY-MM-dd HH:mm:ss.S");
+                DateTime uploadDate = format.parseDateTime(rs.getTimestamp("upload_date").toString());
                 String comment = rs.getString("comment");
                 Integer contactId = rs.getInt("contact_id");
                 attachment = new Attachment(id, fileName, uploadDate, comment, contactId);
@@ -195,7 +196,8 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
                 while (rs.next()) {
                     Integer id = rs.getInt("id");
                     String fileName = rs.getString("file_name");
-                    DateTime uploadDate = DateTime.parse(rs.getDate("upload_date").toString());
+                    DateTimeFormatter format = DateTimeFormat.forPattern("YYYY-MM-dd HH:mm:ss.S");
+                    DateTime uploadDate = format.parseDateTime(rs.getTimestamp("upload_date").toString());
                     String comment = rs.getString("comment");
                     Integer contactId = rs.getInt("contact_id");
                     Attachment attachment = new Attachment(id, fileName, uploadDate, comment, contactId);
@@ -258,7 +260,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
                 while (rs.next()) {
                     Integer id = rs.getInt("id");
                     String fileName = rs.getString("file_name");
-                    DateTimeFormatter format = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.S");
+                    DateTimeFormatter format = DateTimeFormat.forPattern("YYYY-MM-dd HH:mm:ss.S");
                     DateTime uploadDate = format.parseDateTime(rs.getTimestamp("upload_date").toString());
                     String comment = rs.getString("comment");
                     Attachment attachment = new Attachment(id, fileName, uploadDate, comment, contactId);
@@ -296,7 +298,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
         logger.info(" - [ENTERING METHOD: updateWithExistingConnection(Attachment object), PARAMETERS: [Attachment object = " + object + ", Connection con]");
         PreparedStatement statement = null;
         boolean updated = false;
-        String query = "UPDATE attachment SET file_name=?, comment=?, WHERE id=?";
+        String query = "UPDATE attachment SET file_name=?, comment=? WHERE id=?";
         try {
             statement = con.prepareStatement(query);
 
@@ -344,8 +346,8 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
             statement.setString(1, fileName);
 
             DateTime uploadDate = object.getUploadDate();
-            DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("YYYY-MM-dd");
-            statement.setDate(2, java.sql.Date.valueOf(dateTimeFormatter.print(uploadDate)));
+            DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("YYYY-MM-dd HH:mm:ss");
+            statement.setTimestamp(2, java.sql.Timestamp.valueOf(dateTimeFormatter.print(uploadDate)));
 
             String comment = object.getComment();
             if(StringUtils.isNotEmpty(comment)) {

@@ -1,6 +1,9 @@
+import com.sun.deploy.net.HttpRequest;
 import commands.Command;
 import commands.commandexception.CommandFatalException;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import upload.UploadException;
 import upload.UploadHelper;
 
 import javax.servlet.ServletException;
@@ -14,18 +17,25 @@ public class CommandHelper {
 
     private static Logger logger = Logger.getLogger(CommandHelper.class);
 
-    public void dispatchRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, CommandFatalException
+    public void dispatchRequest(HttpServletRequest req, HttpServletResponse resp) throws UploadException, ServletException, CommandFatalException
     {
-
-        UploadHelper uploadHelper = UploadHelper.getInstance();
-        try {
-            uploadHelper.upload(req);
-        }catch (Exception e) {
-            logger.error(e);
-        }
+        logger.info(" - [ ENTERING METHOD dispatchRequest(HttpServletRequest req, HttpServletResponse resp)]");
+        prepareRequest(req);
         String attrValue = req.getParameter("command");
+        if(StringUtils.isEmpty(attrValue)){
+            if(req.getAttribute("command") != null) {
+                attrValue = String.valueOf(((String[])req.getAttribute("command"))[0]);
+            }
+        }
         Command command = getCommandForCommandName(attrValue);
         command.process(req, resp);
+    }
+
+    public void prepareRequest(HttpServletRequest req) throws UploadException{
+
+        logger.info(" - [ ENTERING METHOD prepareRequest(HttpServletRequest req)]");
+        UploadHelper uploadHelper = UploadHelper.getInstance();
+        uploadHelper.prepareRequest(req);
     }
 
     public Command getCommandForCommandName(String commandName)

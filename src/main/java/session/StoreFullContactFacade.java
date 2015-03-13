@@ -1,7 +1,14 @@
 package session;
 
+import business.AbstractBLLFactory;
+import business.Business;
+import business.bllexception.BLLDataException;
+import business.bllexception.BLLFatalException;
 import business.bllexception.FacadeFatalException;
 import business.bllexception.FacadeServiceException;
+import business.factory.KateBllFactory;
+import data.AbstractDAOFactory;
+import data.factories.MySQLDAOFactory;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -25,120 +32,115 @@ public class StoreFullContactFacade {
     public void store(HttpServletRequest req, String idString) throws FacadeFatalException, FacadeServiceException {
 
         logger.info(" - [ENTERING METHOD store(HttpRequest req), PARAMETERS: HttpRequest req]");
+
         Contact contact = new Contact();
         Integer id = null;
         if (StringUtils.isNotEmpty(idString)) {
             id = Integer.parseInt(idString);
         }
 
-
-        UploadHelper uploadHelper = UploadHelper.getInstance();
-         try {
-           uploadHelper.upload(req);
-        }catch (Exception e) {
-             logger.error(e);
-         }
-
         contact.setId(id);
 
-        String firstName = req.getParameter("firstName");
+        String firstName = getAttributeString(req, "firstName") == null ? null : getAttributeString(req, "firstName");
         if (StringUtils.isNotEmpty(firstName)) {
             contact.setFirstName(firstName);
         }
 
-        String secondName = req.getParameter("secondName");
+        String secondName = getAttributeString(req, "secondName") == null ? null : getAttributeString(req, "secondName");
         if (StringUtils.isNotEmpty(secondName)) {
             contact.setSecondName(secondName);
         }
 
-        String nameByFather = req.getParameter("nameByFather");
+        String nameByFather = getAttributeString(req, "nameByFather") == null ? null : getAttributeString(req, "nameByFather");
         if (StringUtils.isNotEmpty(nameByFather)) {
             contact.setNameByFather(nameByFather);
         }
 
-        String day = req.getParameter("day");
-        String month = req.getParameter("month");
-        String year = req.getParameter("year");
+        String day = getAttributeString(req, "day") == null ? null : getAttributeString(req, "day");
+        String month = getAttributeString(req, "month") == null ? null : getAttributeString(req, "month");
+        String year = getAttributeString(req, "year") == null ? null : getAttributeString(req, "year");
         if (StringUtils.isNotEmpty(day) && StringUtils.isNotEmpty(month) && StringUtils.isNotEmpty(year)) {
             if (StringUtils.isNumeric(day) && StringUtils.isNumeric(month) && StringUtils.isNumeric(year)) {
                 contact.setDateOfBirth(new DateTime(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day), 0, 0));
             }
         }
-        String checkedSex = req.getParameter("checkedSex");
+        String checkedSex = getAttributeString(req, "checkedSex") == null ? null : getAttributeString(req, "checkedSex");
 
         if (StringUtils.isNotEmpty(checkedSex)) {
             Sex sex = Sex.valueOf(checkedSex);
             contact.setSex(sex);
         }
 
-        String sitizenship = req.getParameter("sitizenship");
+        String sitizenship = getAttributeString(req, "sitizenship") == null ? null : getAttributeString(req, "sitizenship");
         if (StringUtils.isNotEmpty(sitizenship)) {
             contact.setSitizenship(sitizenship);
         }
 
-        String webSite = req.getParameter("webSite");
+        String webSite = getAttributeString(req, "webSite") == null ? null : getAttributeString(req, "webSite");
         if (StringUtils.isNotEmpty(webSite)) {
             contact.setWebSite(webSite);
         }
 
-        String email = req.getParameter("email");
+        String email = getAttributeString(req, "email") == null ? null : getAttributeString(req, "email");
         if (StringUtils.isNotEmpty(email)) {
             contact.setEmail(email);
         }
 
-        String company = req.getParameter("company");
+        String company = getAttributeString(req, "company") == null ? null : getAttributeString(req, "company");
         if (StringUtils.isNotEmpty(company)) {
             contact.setCompany(company);
         }
 
         Address address = new Address();
-        String addressId = req.getParameter("addressId");
+        String addressId = getAttributeString(req, "addressId") == null ? null : getAttributeString(req, "addressId");
         if (StringUtils.isNotEmpty(addressId)) {
             address.setId(Integer.parseInt(addressId));
         }
 
-        String country = req.getParameter("country");
+        String country = getAttributeString(req, "country") == null ? null : getAttributeString(req, "country");
         if (StringUtils.isNotEmpty(country)) {
             address.setCountry(country);
         }
 
-        String city = req.getParameter("city");
+        String city = getAttributeString(req, "city") == null ? null : getAttributeString(req, "city");
         if (StringUtils.isNotEmpty(city)) {
             address.setCity(city);
         }
 
-        String street = req.getParameter("street");
+        String street = getAttributeString(req, "street") == null ? null : getAttributeString(req, "street");
         if (StringUtils.isNotEmpty(street)) {
             address.setStreet(street);
         }
 
-        String building = req.getParameter("building");
+        String building = getAttributeString(req, "building") == null ? null : getAttributeString(req, "building");
         if (StringUtils.isNotEmpty(building)) {
             if (StringUtils.isNumeric(building)) {
                 address.setBuilding(Integer.parseInt(building));
             }
         }
 
-        String apartment = req.getParameter("apartment");
+        String apartment = getAttributeString(req, "apartment") == null ? null : getAttributeString(req, "apartment");
         if (StringUtils.isNotEmpty(apartment)) {
             if (StringUtils.isNumeric(apartment)) {
                 address.setApartment(Integer.parseInt(apartment));
             }
         }
-        String index = req.getParameter("index");
+        String index = getAttributeString(req, "index") == null ? null : getAttributeString(req, "index");
         if (StringUtils.isNotEmpty(index)) {
             if (StringUtils.isNumeric(index)) {
                 address.setIndex(Long.parseLong(index));
             }
         }
+        address.setContactId(id);
+        contact.setAddressId(address.getId());
         contact.setAddress(address);
 
-        String[] telephoneIds = req.getParameterValues("telephoneIds");
-        String[] countryCodes = req.getParameterValues("countryCodes");
-        String[] operatorCodes = req.getParameterValues("operatorCodes");
-        String[] telephoneNumbers = req.getParameterValues("telephoneNumbers");
-        String[] telephoneTypes = req.getParameterValues("telephoneTypes");
-        String[] telephoneComments = req.getParameterValues("telephoneComments");
+        String[] telephoneIds = req.getAttribute("telephoneIds") == null ? null : (String[])req.getAttribute("telephoneIds");
+        String[] countryCodes = req.getAttribute("countryCodes") == null ? null : (String[])req.getAttribute("countryCodes");
+        String[] operatorCodes = req.getAttribute("operatorCodes") == null ? null : (String[])req.getAttribute("operatorCodes");
+        String[] telephoneNumbers = req.getAttribute("telephoneNumbers") == null ? null : (String[])req.getAttribute("telephoneNumbers");
+        String[] telephoneTypes = req.getAttribute("telephoneTypes") == null ? null : (String[])req.getAttribute("telephoneTypes");
+        String[] telephoneComments = req.getAttribute("telephoneComments") == null ? null : (String[])req.getAttribute("telephoneComments");
         ArrayList<Telephone> telephones = null;
         if (ArrayUtils.isNotEmpty(telephoneIds)) {
             telephones = new ArrayList<Telephone>();
@@ -174,21 +176,18 @@ public class StoreFullContactFacade {
 
         contact.setTelephones(telephones);
 
-        String[] attachmentIds = req.getParameterValues("attachmentIds");
-        String[] fileNames = req.getParameterValues("fileNames");
-        String[] formattedUploadDates = req.getParameterValues("formattedUploadDates");
-        String[] attachmentComments = req.getParameterValues("attachmentComments");
+        String[] attachmentIds = req.getAttribute("attachmentIds") == null ? null : (String[])req.getAttribute("attachmentIds");
+        String[] fileNames = req.getAttribute("fileNames") == null ? null : (String[])req.getAttribute("fileNames");
+        String[] formattedUploadDates = req.getAttribute("formattedUploadDates") == null ? null : (String[])req.getAttribute("formattedUploadDates");
+        String[] attachmentComments = req.getAttribute("attachmentComments") == null ? null : (String[])req.getAttribute("attachmentComments");
 
-
-
-        ///FILE!!!!!!!!!!!!!!!!!!
-        String attachmentId = req.getParameter("attachmentId");
-        String fileName = req.getParameter("fileName");
-        String uploadDateEntered = req.getParameter("uploadDate");
-        String attachmentComment = req.getParameter("attachmentComment");
+        String attachmentId = getAttributeString(req, "attachmentId") == null ? null : getAttributeString(req, "attachmentId");
+        String fileName = req.getAttribute("fileName") == null ? null : req.getAttribute("fileName").toString();
+        String uploadDateEntered = getAttributeString(req, "uploadDate") == null ? null : getAttributeString(req, "uploadDate");
+        String attachmentComment = getAttributeString(req, "attachmentComment") == null ? null : getAttributeString(req, "attachmentComment");
         Attachment someAttachment = null;
 
-        DateTimeFormatter format = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.S");
+        DateTimeFormatter format = DateTimeFormat.forPattern("HH:mm:ss, dd.MM.YYYY");
         if (StringUtils.isNotEmpty(fileName) && StringUtils.isNotEmpty(uploadDateEntered)) {
             someAttachment = new Attachment();
             someAttachment.setContactId(id);
@@ -196,19 +195,16 @@ public class StoreFullContactFacade {
                 someAttachment.setId(Integer.parseInt(attachmentId));
             }
             someAttachment.setUploadDate(format.parseDateTime(uploadDateEntered));
-
-            if (StringUtils.isNotEmpty(fileName)) {
-                someAttachment.setFileName(fileName);
-            }
-
+            someAttachment.setFileName(fileName);
             if (StringUtils.isNotEmpty(attachmentComment)) {
                 someAttachment.setComment(attachmentComment);
             }
         }
 
-        ArrayList<Attachment> attachments = new ArrayList<Attachment>();
+        ArrayList<Attachment> attachments = null;
 
         if (ArrayUtils.isNotEmpty(attachmentIds)) {
+            attachments = new ArrayList<Attachment>();
             for (int i = 0; i < attachmentIds.length; i++) {
                 Attachment localAttachment = new Attachment();
                 localAttachment.setContactId(id);
@@ -228,9 +224,7 @@ public class StoreFullContactFacade {
                 if (StringUtils.isNotEmpty(attachmentComments[i])) {
                     localAttachment.setComment(attachmentComments[i]);
                 }
-                if (someAttachment == null || (someAttachment != null && !localAttachment.getId().equals(someAttachment.getId()))) {
-                    attachments.add(localAttachment);
-                }
+                attachments.add(localAttachment);
             }
         }
 
@@ -243,7 +237,36 @@ public class StoreFullContactFacade {
             contact.getAttachments().add(someAttachment);
         }
 
+        if(someAttachment != null) {
+            saveNewAttachment(someAttachment);
+        }
+
         req.getSession().setAttribute("contact", contact);
 
+    }
+
+    private void saveNewAttachment(Attachment attachment) throws FacadeServiceException, FacadeFatalException{
+
+        try {
+            logger.info(" - [ ENTERING METHOD saveNewAttachment(Attachment attachment), PARAMETERS: Attachment attachment = " + attachment + "]");
+            AbstractDAOFactory daoFactory = new MySQLDAOFactory();
+            AbstractBLLFactory bllFactory = new KateBllFactory(daoFactory);
+            Business<Attachment> attachmentBusiness = bllFactory.getAttachmentBusiness();
+            attachmentBusiness.createObject(attachment);
+        }
+        catch (BLLDataException e){
+            throw new FacadeServiceException(e);
+        }
+        catch (BLLFatalException e){
+            throw new FacadeFatalException(e);
+        }
+    }
+
+    private String getAttributeString(HttpServletRequest req, String attribute){
+
+        if(req.getAttribute(attribute) == null){
+            return null;
+        }
+        return ((String[])req.getAttribute(attribute))[0];
     }
 }

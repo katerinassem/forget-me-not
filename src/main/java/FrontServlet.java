@@ -8,6 +8,7 @@ import commands.commandexception.CommandFatalException;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
+import upload.UploadException;
 import upload.UploadHelper;
 
 public class FrontServlet extends HttpServlet
@@ -26,8 +27,14 @@ public class FrontServlet extends HttpServlet
         req.setCharacterEncoding("utf-8");
         resp.setCharacterEncoding("utf-8");
         try {
-            req.getSession().removeAttribute("error");
+            req.getSession().removeAttribute("errorMessage");
             commandHelper.dispatchRequest(req, resp);
+        }
+        catch (UploadException e){
+            logger.error(e);
+            req.getSession().setAttribute("errorMessage", "Ошибка! Невозможно загрузить данные на сервер.");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("Error.jsp");
+            dispatcher.forward(req, resp);
         }
         catch (ServletException e)
         {
@@ -48,11 +55,24 @@ public class FrontServlet extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        //req.setCharacterEncoding("utf-8");
-        //resp.setCharacterEncoding("utf-8");
+        req.setCharacterEncoding("utf-8");
+        resp.setCharacterEncoding("utf-8");
         try {
-            req.getSession().removeAttribute("error");
+            req.getSession().removeAttribute("errorMessage");
             commandHelper.dispatchRequest(req, resp);
+        }
+        catch (ServletException e)
+        {
+            logger.error(e);
+            req.getSession().setAttribute("errorMessage", "Ошибка приложения! Приносим извинения за причиненные неудобства.");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("Error.jsp");
+            dispatcher.forward(req, resp);
+        }
+        catch (UploadException e){
+            logger.error(e);
+            req.getSession().setAttribute("errorMessage", "Ошибка! Невозможно загрузить данные на сервер.");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("Error.jsp");
+            dispatcher.forward(req, resp);
         }
         catch (CommandFatalException e)
         {

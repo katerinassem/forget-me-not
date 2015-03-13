@@ -16,7 +16,7 @@
 <body>
     <h1>Создать или редактировать контакт.</h1>
     <a href="?command=ChoosePhotoCommand"><img src="files/images/default_avatar.jpg"/></a>
-    <form id="main" method="post" action="/Front?ii=ee&tyty=ert" enctype="multipart/form-data">
+    <form id="main" method="post" action="/Front" enctype="multipart/form-data">
         <input type="hidden" name="command" value="CreateEditContactCommand"/>
         <input type="hidden" name="option" value="editmore"/>
         <div id="attachment-pop-up">
@@ -24,8 +24,8 @@
             <div name="attachment">
                 <input name="attachmentId" type="hidden"/>
                 <input name="file" type="file"/>
-                <label>Имя файла: </label>
-                <input name="fileName" type="text"/>
+                <input name="fileName" type="hidden"/>
+                <label id="fileNameLabel"></label>
                 <input name="uploadDate" type="hidden"/>
                 <label>Комментарий: </label>
                 <input name="attachmentComment" type="text" placeholder="комментарий"/>
@@ -78,7 +78,6 @@
                 <label>Индекс:</label>
                 <input name="index" type="text" placeholder="индекс" value="${sessionScope.contact.address.index}"/>
         </fieldset>
-        <form name="telephone" method="post" action="?command=DeleteTelephonesCommand&">
             <fieldset>
                 <legend>Контактные телефоны</legend>
                 <button type="submit">X удалить</button>
@@ -111,8 +110,6 @@
                     </c:if>
                 </table>
             </fieldset>
-        </form>
-        <form name="attachment" method="post" action="?command=DeleteAttachmentsCommand">
             <c:if test="${sessionScope.contact.id != null}">
                 <fieldset>
                     <legend>Список присоединений</legend>
@@ -136,7 +133,7 @@
 
                                         <input name="checkedAttachments" type="checkbox" value="${attachment.id}"/>
                                     </td>
-                                    <td><a href="files/${sessionScope.contact.id}/${attachment.id}">⇓</a><div onclick="showPopUp('attachment-pop-up', 'block', '${attachment.formattedUploadDate}')">&nbsp✐${attachment.fileName}</div></td>
+                                    <td><a href="/upload/${sessionScope.contact.id}/${attachment.id}">⇓</a><div onclick="showPopUp('attachment-pop-up', 'block', '${attachment.formattedUploadDate}')">&nbsp✐${attachment.fileName}</div></td>
                                     <td>${attachment.formattedUploadDate}</td>
                                     <td>${attachment.comment}</td>
                                 </tr>
@@ -145,14 +142,9 @@
                     </table>
                 </fieldset>
             </c:if>
-        </form>
         <button form="main" onclick="validateMain()" type="button">Сохранить</button>
-    </form>
-
-    </form>
-    <div id="telephone-pop-up">
-        <h4>Создать или редактировать телефон.</h4>
-        <form name="telephone"  method="post">
+        <div id="telephone-pop-up">
+            <h4>Создать или редактировать телефон.</h4>
             <input name="myId" type="hidden"/>
             <input name="telephoneId" type="hidden"/>
             <label>Код страны:</label>
@@ -172,7 +164,8 @@
             <input name="telephoneComment" type="text" placeholder="комментарий"/>
             <button type="button" onclick="setTelephone()">Сохранить</button>
             <button type="button" onclick="showPopUp('telephone-pop-up', 'none')">Отменить</button>
-        </form>
-    </div>
+        </div>
+    </form>
+
 </body>
 </html>
