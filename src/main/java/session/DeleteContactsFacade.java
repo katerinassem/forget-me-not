@@ -24,7 +24,7 @@ public class DeleteContactsFacade {
         logger.info(" - [ENTERING METHOD delete(HttpSession session, Integer[] checkedIds), PARAMETERS: HttpSession session, Integer[] checkedIds]");
         int i = 0;
         if(ArrayUtils.isEmpty(checkedIds)){
-            session.setAttribute("infoMessage", "Не выбраны контакты для удаленияю.");
+            session.setAttribute("infoMessage", "Не выбраны контакты для удаления.");
             return;
         }
         boolean success = true;

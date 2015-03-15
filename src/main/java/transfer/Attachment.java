@@ -15,6 +15,7 @@ public class Attachment extends TransferObject
     DateTime uploadDate;
     String comment;
     Integer contactId;
+    boolean deleted = false;
 
     public Attachment() {
     }
@@ -75,5 +76,13 @@ public class Attachment extends TransferObject
     @Override
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
     }
 }

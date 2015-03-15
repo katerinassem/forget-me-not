@@ -1,4 +1,4 @@
-import com.sun.deploy.net.HttpRequest;
+
 import commands.Command;
 import commands.commandexception.CommandFatalException;
 import org.apache.commons.lang3.StringUtils;
@@ -21,11 +21,12 @@ public class CommandHelper {
     {
         logger.info(" - [ ENTERING METHOD dispatchRequest(HttpServletRequest req, HttpServletResponse resp)]");
         prepareRequest(req);
-        String attrValue = req.getParameter("command");
-        if(StringUtils.isEmpty(attrValue)){
-            if(req.getAttribute("command") != null) {
-                attrValue = String.valueOf(((String[])req.getAttribute("command"))[0]);
-            }
+        String attrValue = null;
+        if(req.getAttribute("command") != null) {
+            attrValue = String.valueOf(((String[])req.getAttribute("command"))[0]);
+        }
+        else{
+            attrValue = req.getParameter("command");
         }
         Command command = getCommandForCommandName(attrValue);
         command.process(req, resp);

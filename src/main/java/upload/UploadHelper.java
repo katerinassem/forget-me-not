@@ -1,6 +1,5 @@
 package upload;
 
-import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -11,10 +10,8 @@ import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 import java.io.File;
 import java.util.*;
 
@@ -80,7 +77,7 @@ public class UploadHelper {
         upload.setSizeMax(MAX_REQUEST_SIZE);
 
         //  This path is relative to application's directory
-        String uploadPath = request.getServletContext().getContextPath()
+        String uploadPath = request.getSession().getServletContext().getContextPath()
                 + File.separator + UPLOAD_DIRECTORY;
 
         File uploadDir = new File(uploadPath);

@@ -1,11 +1,23 @@
 package business.service;
 
+import business.AbstractBLLFactory;
+import business.Business;
 import business.Service;
+import business.bllexception.BLLDataException;
+import business.bllexception.BLLFatalException;
 import business.bllexception.ServiceDataException;
 import business.bllexception.ServiceFatalException;
+import business.factory.KateBllFactory;
+import data.AbstractDAOFactory;
+import data.factories.MySQLDAOFactory;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+import org.stringtemplate.v4.ST;
+import transfer.Contact;
 
 import java.util.ArrayList;
 import java.util.Properties;
@@ -40,18 +52,28 @@ public class SendMail implements Service {
         String[] emails = null;
         String text = null;
         String subject = null;
+        Integer[] ids = null;
+        Integer template = null;
+        ST templateST = null;
         try {
             emails = (String[]) obj.get(0);
             subject = (String) obj.get(1);
             text = (String) obj.get(2);
+            ids = (Integer[]) obj.get(3);
+            template = (Integer) obj.get(4);
 
-            if (StringUtils.isEmpty(text) || ArrayUtils.isEmpty(emails) || StringUtils.isEmpty(subject)) {
+            if ((StringUtils.isEmpty(text) && template == null) || ArrayUtils.isEmpty(emails) || ArrayUtils.isEmpty(ids) || StringUtils.isEmpty(subject)) {
                 logger.info(" - [NOTHING TO SEND]");
                 return null;
             }
         } catch (Exception e) {
             logger.info(" - [NOTHING TO SEND]");
             return null;
+        }
+
+        if(template != null) {
+            ResolveTemplate resolveService = new ResolveTemplate();
+            templateST = (ST) resolveService.service(template);
         }
 
         ResourceBundle bundle = ResourceBundle.getBundle("config");
@@ -68,8 +90,9 @@ public class SendMail implements Service {
         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 
         Integer count = 0;
-        for (String to : emails) {
+        for (int i = 0; i < emails.length; i++) {
 
+            String to = emails[i];
             logger.info(" - [CONNECTING TO MAIL SERVER..]");
             Session session = Session.getInstance(props,
                     new javax.mail.Authenticator() {
@@ -78,6 +101,12 @@ public class SendMail implements Service {
                                     username, password);
                         }
                     });
+            if (templateST != null) {
+                text = formLetterFor(template, templateST, ids[i]);
+                if(StringUtils.isEmpty(text)){
+                    continue;
+                }
+            }
 
             try {
                 logger.info(" - [SENDING EMAIL to " + to + " ...]");
@@ -98,5 +127,43 @@ public class SendMail implements Service {
             }
         }
         return count;
+    }
+
+    private String formLetterFor(int templateId, ST template, int recipientId){
+
+        logger.info(" - [ENTERING help METHOD formLetterFor(int templateId, ST template, int recipientId), PARAMETERS:int templateId = " + templateId + ", ST template = " + template.toString() +", int recipientId = " + recipientId +"]");
+
+        String letter = "";
+        String firstName = null;
+        DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("dd.MM.YYYY");
+        DateTime now = DateTime.now();
+        String date = dateTimeFormatter.print(now);
+        String address = "";
+        try {
+            AbstractDAOFactory daoFactory = new MySQLDAOFactory();
+            AbstractBLLFactory bllFactory = new KateBllFactory(daoFactory);
+            Business<Contact> contactDAO = bllFactory.getContactBusiness();
+            Contact contact = null;
+            if ((contact = contactDAO.getFullObjectById(recipientId)) != null) {
+                firstName = contact.getFirstName();
+                if((contact.getAddress()) != null) {
+                    address = contact.getAddress().toString();
+                }
+            }
+
+            template.add("firstName", firstName);
+            template.add("date", date);
+            template.add("address", address);
+            letter = template.render();
+            return letter;
+        }
+        catch (BLLDataException e) {
+            logger.error(e);
+            return null;
+        }
+        catch (BLLFatalException e) {
+            logger.error(e);
+            return  null;
+        }
     }
 }

@@ -16,8 +16,8 @@
 <body>
     <h1>Создать или редактировать контакт.</h1>
     <h4>${sessionScope.infoMessage}</h4>
-    <a href="?command=ChoosePhotoCommand"><img src="files/images/default_avatar.jpg"/></a>
-    <form id="main" method="post" action="/Front" enctype="multipart/form-data">
+    <div onclick="showPopUp('photo-pop-up', 'block')"><img src="files/images/default_avatar.jpg"/></div>
+    <form id="main" method="post" action="" enctype="multipart/form-data">
         <input type="hidden" name="command" value="CreateEditContactCommand"/>
         <input type="hidden" name="option" value="editmore"/>
         <div id="attachment-pop-up">
@@ -81,11 +81,11 @@
         </fieldset>
             <fieldset>
                 <legend>Контактные телефоны</legend>
-                <button type="submit">X удалить</button>
+                <button type="button" onclick="deleteTelephones()">X удалить</button>
                 <button type="button" onclick="showPopUp('telephone-pop-up', 'block')">＋ создать</button>
                 <table id="telephone-table">
                     <tr>
-                        <th></th>
+                        <th class="checkbox"></th>
                         <th>Номер</th>
                         <th>Тип</th>
                         <th>Комментарий</th>
@@ -94,6 +94,7 @@
                         <c:forEach items="${sessionScope.contact.telephones}" var="telephone" varStatus="status">
                             <tr id="${status.index}">
                                 <td>
+                                    <input type="hidden" id="{telephone.id}" value="${status.index}"/>
                                     <input id="telephone${telephone.id}" name="telephoneIds" type="hidden" value="${telephone.id}"/>
                                     <input name="countryCodes" type="hidden" value="${telephone.countryCode}"/>
                                     <input name="operatorCodes" type="hidden" value="${telephone.operatorCode}"/>
@@ -101,7 +102,7 @@
                                     <input name="telephoneTypes" type="hidden" value="${telephone.type}"/>
                                     <input name="telephoneComments" type="hidden" value="${telephone.comment}"/>
 
-                                    <input name="checkedTelephones" type="checkbox" value="${telephone.id}"/>
+                                    <input class="checkbox" name="checkedTelephones" type="checkbox" value="${telephone.id}"/>
                                 </td>
                                 <td onclick="showPopUp('telephone-pop-up', 'block', '${status.index}')">✐${telephone.countryCode}(${telephone.operatorCode})${telephone.telephoneNumber}</td>
                                 <td>${telephone.typeString}</td>
@@ -113,11 +114,13 @@
             </fieldset>
                 <fieldset>
                     <legend>Список присоединений</legend>
-                    <button type="submit">X удалить</button>
-                    <button type="button" onclick="showPopUp('attachment-pop-up', 'block')">＋ создать</button>
+                    <c:if test="${sessionScope.contact.id != null}">
+                        <button type="button" onclick="deleteAttachments()">X удалить</button>
+                        <button type="button" onclick="showPopUp('attachment-pop-up', 'block')">＋ создать</button>
+                    </c:if>
                     <table id="attachment-table">
                         <tr>
-                            <th></th>
+                            <th class="checkbox"></th>
                             <th>Имя файла</th>
                             <th>Дата загрузки</th>
                             <th>Комментарий</th>
@@ -126,16 +129,17 @@
                             <h5>Файлы можно загружать для существующих контактов.</h5>
                         </c:if>
                         <c:if test="${sessionScope.contact.id != null}">
-                            <c:if test="${sessionScope.contact.getAttachments() != null}">
+                            <c:if test="${sessionScope.contact.attachments != null}">
                                 <c:forEach items="${sessionScope.contact.attachments}" var="attachment" varStatus="status">
                                     <tr id="${attachment.formattedUploadDate}">
                                         <td>
+                                            <input type="hidden" id="{attachment.id}" value="${attachment.formattedUploadDate}"/>
                                             <input name="attachmentIds" type="hidden" value="${attachment.id}"/>
                                             <input name="fileNames" type="hidden" value="${attachment.fileName}"/>
                                             <input name="formattedUploadDates" type="hidden" value="${attachment.formattedUploadDate}"/>
                                             <input name="attachmentComments" type="hidden" value="${attachment.comment}"/>
 
-                                            <input name="checkedAttachments" type="checkbox" value="${attachment.id}"/>
+                                            <input class="checkbox" name="checkedAttachments" type="checkbox" value="${attachment.id}"/>
                                         </td>
                                         <td><a href="/upload/${sessionScope.contact.id}/${attachment.id}">⇓</a><div onclick="showPopUp('attachment-pop-up', 'block', '${attachment.formattedUploadDate}')">&nbsp✐${attachment.fileName}</div></td>
                                         <td>${attachment.formattedUploadDate}</td>
@@ -168,6 +172,14 @@
             <input name="telephoneComment" type="text" placeholder="комментарий"/>
             <button type="button" onclick="setTelephone()">Сохранить</button>
             <button type="button" onclick="showPopUp('telephone-pop-up', 'none')">Отменить</button>
+        </div>
+
+        <div id="photo-pop-up">
+            <h4>Редактировать аватар.</h4>
+            <label>Изображение:</label>
+            <input name="avatarFile" type="file"/>
+            <button type="button" onclick="setTelephone()">Выбрать</button>
+            <button type="button" onclick="showPopUp('photo-pop-up', 'none')">Отменить</button>
         </div>
     </form>
 

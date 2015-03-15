@@ -13,6 +13,7 @@ import data.factories.MySQLDAOFactory;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import transfer.Address;
 import transfer.Contact;
 
 /**
@@ -36,7 +37,7 @@ public class EmailsString implements Service {
             Contact contact = null;
             if (checkedIds[i] != null) {
                 try {
-                    if ((contact = contactDAO.getObjectById(checkedIds[i])) != null && StringUtils.isNotEmpty(contact.getEmail())) {
+                    if ((contact = contactDAO.getFullObjectById(checkedIds[i])) != null && StringUtils.isNotEmpty(contact.getEmail())) {
                         emails[i] = contact.getEmail();
                     }
                 } catch (BLLDataException e) {
@@ -48,11 +49,14 @@ public class EmailsString implements Service {
             }
         }
         String emailsString = "";
+        StringBuilder sb = new StringBuilder(emailsString);
         for (int i = 0; i < emails.length; i++) {
-            if(emails[i] != null) {
-                emailsString += emails[i] + ";";
+            if(StringUtils.isNotEmpty(emails[i])) {
+                sb.append(emails[i]);
+                sb.append(";");
             }
         }
+        emailsString = sb.toString();
         return emailsString;
     }
 }

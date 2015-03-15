@@ -20,6 +20,7 @@ import transfer.*;
 import upload.UploadHelper;
 
 import javax.servlet.http.HttpServletRequest;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -135,6 +136,7 @@ public class StoreFullContactFacade {
         contact.setAddressId(address.getId());
         contact.setAddress(address);
 
+        String[] deletedTelephones = req.getAttribute("deletedTelephones") == null ? null : (String[])req.getAttribute("deletedTelephones");
         String[] telephoneIds = req.getAttribute("telephoneIds") == null ? null : (String[])req.getAttribute("telephoneIds");
         String[] countryCodes = req.getAttribute("countryCodes") == null ? null : (String[])req.getAttribute("countryCodes");
         String[] operatorCodes = req.getAttribute("operatorCodes") == null ? null : (String[])req.getAttribute("operatorCodes");
@@ -172,10 +174,23 @@ public class StoreFullContactFacade {
                 }
                 telephones.add(telephone);
             }
+            if(ArrayUtils.isNotEmpty(deletedTelephones)){
+                for(int i = 0; i < deletedTelephones.length; i++){
+                    if(StringUtils.isNotEmpty(deletedTelephones[i])) {
+                        for(Telephone telephone : telephones) {
+                            if(telephone.getId() == Integer.parseInt(deletedTelephones[i])) {
+                                telephone.setDeleted(true);
+                            }
+                        }
+                    }
+                }
+            }
         }
+
 
         contact.setTelephones(telephones);
 
+        String[] deletedAttachments = req.getAttribute("deletedAttachments") == null ? null : (String[])req.getAttribute("deletedAttachments");
         String[] attachmentIds = req.getAttribute("attachmentIds") == null ? null : (String[])req.getAttribute("attachmentIds");
         String[] fileNames = req.getAttribute("fileNames") == null ? null : (String[])req.getAttribute("fileNames");
         String[] formattedUploadDates = req.getAttribute("formattedUploadDates") == null ? null : (String[])req.getAttribute("formattedUploadDates");
@@ -225,6 +240,17 @@ public class StoreFullContactFacade {
                     localAttachment.setComment(attachmentComments[i]);
                 }
                 attachments.add(localAttachment);
+            }
+            if(ArrayUtils.isNotEmpty(deletedAttachments)){
+                for(int i = 0; i < deletedAttachments.length; i++){
+                    if(StringUtils.isNotEmpty(deletedAttachments[i])) {
+                        for(Attachment attachment : attachments) {
+                            if(attachment.getId() == Integer.parseInt(deletedAttachments[i])) {
+                                attachment.setDeleted(true);
+                            }
+                        }
+                    }
+                }
             }
         }
 

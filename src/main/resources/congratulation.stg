@@ -1,0 +1,21 @@
+congratulation(firstName,date,address)::=<<
+Уважаемый пользователь <firstName>!
+
+Примите искренние поздравления с Днем Рождения!
+Ваш адрес:
+	<address>
+
+YouContact Project, <date>
+>>
+
+winner(firstName,date,address)::=<<
+Уважаемый пользователь <firstName>!
+
+Поздравляем! Вы выиграли приз от нашего проекта!
+Приз будет отправлен почтой по адресу:
+	<address>
+
+*Если адрес не был указан, ответьте на это письмо с указанием почтового адреса.
+
+YouContact Project, <date>
+>>

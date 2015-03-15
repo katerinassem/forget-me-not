@@ -30,5 +30,30 @@ public class AttachmentBO extends Business<Attachment>{
         entityDAO = daoFactory.getAttachmentDAO();
     }
 
+    @Override
+    public int createObject(Attachment object) throws BLLDataException, BLLFatalException {
+
+        logger.info(" - [ENTERING METHOD: createObject(Attachment object), PARAMETERS: Attachment object = " + object + "]");
+        int result = -1;
+        if(!object.isDeleted()) {
+            result = super.createObject(object);
+        }
+        return result;
+    }
+
+    @Override
+    public boolean updateObject(Attachment object) throws BLLDataException, BLLFatalException {
+
+        logger.info(" - [ENTERING METHOD: createObject(Attachment object), PARAMETERS: Attachment object = " + object + "]");
+        boolean result = false;
+        if(!object.isDeleted()) {
+            result = super.updateObject(object);
+        }
+        else {
+            super.deleteObjectById(object.getId());
+        }
+        return result;
+    }
+
 
 }

@@ -17,6 +17,8 @@
           <element id="library" level="project" name="Maven: org.apache.commons:commons-collections4:4.0" />
           <element id="library" level="project" name="Maven: javax.mail:mail:1.4.7" />
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+          <element id="library" level="project" name="Maven: org.antlr:stringtemplate:4.0.2" />
+          <element id="library" level="project" name="Maven: org.antlr:antlr-runtime:3.3" />
         </element>
       </element>
       <element id="directory" name="META-INF">

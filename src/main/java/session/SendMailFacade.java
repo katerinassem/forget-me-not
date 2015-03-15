@@ -28,19 +28,32 @@ public class SendMailFacade {
 
         logger.info(" - [ENTERING METHOD send(HttpServletRequest req), PARAMETERS: HttpServletRequest req]");
 
+        String checkedTemplate = req.getParameter("checkedTemplate");
+        String ids = req.getParameter("checkedIds");
         String emails = req.getParameter("emails");
         String subject = req.getParameter("subject");
         String letter = req.getParameter("letter");
-        if(StringUtils.isEmpty(emails) || StringUtils.isEmpty(subject) || StringUtils.isEmpty(letter)){
-            req.getSession().setAttribute("infoMessage", "Не выбраны получатели для отправки писем!");
+        if(StringUtils.isEmpty(ids) || StringUtils.isEmpty(emails) || StringUtils.isEmpty(subject) || (StringUtils.isEmpty(letter) && StringUtils.isEmpty("template"))){
+            req.getSession().setAttribute("infoMessage", "Для отправки нужно письма нужно указать получателей, тему, текст письма(или выбрать шаблон)!");
             return;
         }
 
         String[] allEmails = StringUtils.split(emails, ";");
+        String[] allIdsStrings = StringUtils.split(ids, ";");
+        Integer[] allIds = new Integer[allIdsStrings.length];
+        for (int i = 0; i < allIdsStrings.length; i++) {
+            allIds[i] = Integer.parseInt(allIdsStrings[i]);
+        }
         ArrayList<Object> params = new ArrayList<Object>();
         params.add(allEmails);
         params.add(subject);
         params.add(letter);
+        params.add(allIds);
+        Integer templateId = null;
+        if(checkedTemplate != null){
+            templateId = Integer.parseInt(checkedTemplate);
+        }
+        params.add(templateId);
         try {
             Service sendMailService = new SendMail();
             Integer count = (Integer) sendMailService.service(params);

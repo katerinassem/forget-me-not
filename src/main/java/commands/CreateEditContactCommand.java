@@ -31,9 +31,12 @@ public class CreateEditContactCommand implements Command
     public void process(HttpServletRequest req, HttpServletResponse resp) throws CommandFatalException, ServletException{
 
         logger.info(" - [ENTERING METHOD process(HttpServletRequest req, HttpServletResponse resp), PARAMETERS: HttpServletRequest req, HttpServletResponse resp]");
+        req.getSession().removeAttribute("infoMessage");
+
         try {
-            String opt = req.getParameter("option") == null ? (req.getAttribute("option") == null ? null : ((String[])req.getAttribute("option"))[0]) : req.getParameter("option");
-            String idString = req.getParameter("id") == null ? (req.getAttribute("id") == null ? null : ((String[])req.getAttribute("id"))[0]) : req.getParameter("id");
+            String opt = req.getAttribute("option") == null ? req.getParameter("option") : ((String[])req.getAttribute("option"))[0];
+            String idString = req.getAttribute("id") == null ? req.getParameter("id") : ((String[])req.getAttribute("id"))[0];
+            req.getSession().removeAttribute("infoMessage");
             if(StringUtils.isNotEmpty(opt) && StringUtils.equalsIgnoreCase(opt, "editmore")){
 
                 //  Пересохраняем данные с формы(+ изменившиеся)
@@ -44,9 +47,6 @@ public class CreateEditContactCommand implements Command
                 RequestDispatcher dispatcher = req.getRequestDispatcher("CreateEditContact.jsp");
                 dispatcher.forward(req, resp);
                 return;
-            }
-            else {
-                req.getSession().removeAttribute("contact");
             }
             if(StringUtils.isNotEmpty(opt) && StringUtils.equalsIgnoreCase(opt, "edit")){
                 if(StringUtils.isNotEmpty(idString)){

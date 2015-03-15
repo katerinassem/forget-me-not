@@ -24,6 +24,8 @@ public class DeleteContactsCommand implements Command
     public void process(HttpServletRequest req, HttpServletResponse resp) throws CommandFatalException, ServletException{
 
         logger.info(" - [ENTERING METHOD process(HttpServletRequest req, HttpServletResponse resp), PARAMETRES: HttpServletRequest req, HttpServletResponse resp]");
+        req.getSession().removeAttribute("infoMessage");
+
         try
         {
             String[] checked = req.getParameterValues("checkbox");
@@ -38,7 +40,9 @@ public class DeleteContactsCommand implements Command
                 DeleteContactsFacade deleteContactsFacade = new DeleteContactsFacade();
                 deleteContactsFacade.delete(req.getSession(), checkedIds);
             }
-            req.getSession().removeAttribute("contacts");
+            else {
+                req.setAttribute("infoMessage", "Не выбраны контакты для удаления.");
+            }
             req.getSession().removeAttribute("contact");
             resp.sendRedirect("Front?command=ShowContactsCommand");
             //RequestDispatcher dispatcher = req.getRequestDispatcher("ContactList.jsp");

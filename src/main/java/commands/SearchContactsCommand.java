@@ -23,6 +23,8 @@ public class SearchContactsCommand implements Command
     @Override
     public void process(HttpServletRequest req, HttpServletResponse resp) throws CommandFatalException, ServletException{
 
+        logger.info(" - [ENTERING METHOD process(HttpServletRequest req, HttpServletResponse resp), PARAMETERS: HttpServletRequest req, HttpServletResponse resp]");
+        req.getSession().removeAttribute("infoMessage");
 
         try {
             String option = req.getParameter("option");

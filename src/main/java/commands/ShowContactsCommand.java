@@ -32,6 +32,7 @@ public class ShowContactsCommand implements Command
     public void process(HttpServletRequest req, HttpServletResponse resp) throws CommandFatalException, ServletException
     {
         logger.info(" - [ENTERING METHOD process(HttpServletRequest req, HttpServletResponse resp), PARAMETERS: HttpServletRequest req, HttpServletResponse resp]");
+
         try
         {
             String str = req.getParameter("page");
@@ -55,10 +56,11 @@ public class ShowContactsCommand implements Command
                 showListFacade.show(req.getSession(), page, service);
             }
             else {
-
                 showListFacade.show(req.getSession(), page, new ShowList());
             }
-
+            if(!StringUtils.isEmpty(str)){
+                req.getSession().removeAttribute("infoMessage");
+            }
             RequestDispatcher dispatcher = req.getRequestDispatcher("ContactList.jsp");
             dispatcher.forward(req, resp);
         }

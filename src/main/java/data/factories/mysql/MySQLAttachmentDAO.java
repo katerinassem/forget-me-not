@@ -111,7 +111,12 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
         try {
             connector = MySQLConnector.getInstance();
             con = connector.getConnection();
-            updated = updateWithExistingConnection(object, con);
+            if(!object.isDeleted()) {
+                updated = updateWithExistingConnection(object, con);
+            }
+            else {
+                deleteWithExistingConnection(object.getId(), con);
+            }
         }
         catch (SQLException e)
         {
@@ -135,23 +140,43 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
     public boolean delete(int id) throws DAOSQLException, DAOFatalException {
         logger.info(" - [ENTERING METHOD: delete(int id), PARAMETERS: [int id = " + id + "]");
         Connection con = null;
-        PreparedStatement statement = null;
         MySQLConnector connector = null;
         boolean deleted = false;
-        String query = "DELETE FROM attachment WHERE id=?";
         try {
             connector = MySQLConnector.getInstance();
             con = connector.getConnection();
+            deleted = deleteWithExistingConnection(id, con);
+        }
+        catch (SQLException e) {
+            logger.error(e + " - [SQL EXCEPTION]");
+            throw new DAOSQLException(e);
+        }
+        finally {
+            if(con != null)
+            {
+                try {
+                    connector.closeConnection(con);
+                }
+                catch(SQLException e) {
+                    logger.error(e);
+                }
+            }
+        }
+        return deleted;
+    }
+
+    public boolean deleteWithExistingConnection(int id, Connection con) throws SQLException {
+        logger.info(" - [ENTERING METHOD: deleteWithExistingConnection(int id, Connection con), PARAMETERS: [int id = " + id + "]");
+        PreparedStatement statement = null;
+        boolean deleted = false;
+        String query = "DELETE FROM attachment WHERE id=?";
+        try {
             statement = con.prepareStatement(query);
             statement.setInt(1, id);
             logger.info(" - [EXECUTING QUERY] " + statement);
             int affectedRows = statement.executeUpdate();
             if(affectedRows > 0)
                 deleted = true;
-        }
-        catch (SQLException e) {
-            logger.error(e + " - [SQL EXCEPTION]");
-            throw new DAOSQLException(e);
         }
         finally {
             if(statement != null)
@@ -162,15 +187,6 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
                 }
                 catch (SQLException e) {
                     logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
-                }
-            }
-            if(con != null)
-            {
-                try {
-                    connector.closeConnection(con);
-                }
-                catch(SQLException e) {
-                    logger.error(e);
                 }
             }
         }
@@ -296,6 +312,11 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
     boolean updateWithExistingConnection(Attachment object, Connection con) throws SQLException{
 
         logger.info(" - [ENTERING METHOD: updateWithExistingConnection(Attachment object), PARAMETERS: [Attachment object = " + object + ", Connection con]");
+        boolean result = false;
+        if(object.isDeleted()){
+            result = deleteWithExistingConnection(object.getId(), con);
+            return  result;
+        }
         PreparedStatement statement = null;
         boolean updated = false;
         String query = "UPDATE attachment SET file_name=?, comment=? WHERE id=?";
@@ -336,6 +357,9 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
 
     int createWithExistingConnection(Attachment object, Connection con) throws SQLException{
         logger.info(" - [ENTERING METHOD: createWithExistingConnection(Attachment object), PARAMETERS: [Attachment object = " + object + ", Connection con]");
+        if (object.isDeleted()) {
+            return  -1;
+        }
         PreparedStatement statement = null;
         int generatedId = -1;
         String query = "INSERT INTO attachment (file_name, upload_date, comment, contact_id) VALUES (?, ?, ?, ?)";

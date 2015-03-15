@@ -114,7 +114,12 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
         try {
             connector = MySQLConnector.getInstance();
             con = connector.getConnection();
-            updated = updateWithExistingConnection(object, con);
+            if(object.isDeleted()){
+                deleteWithRxistingConnection(object.getId(), con);
+            }
+            else {
+                updated = updateWithExistingConnection(object, con);
+            }
         }
         catch (SQLException e)
         {
@@ -302,8 +307,13 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
     boolean updateWithExistingConnection(Telephone object, Connection con) throws SQLException {
 
         logger.info(" - [ENTERING METHOD: updateWithExistingConnection(Telephone telephone, Connection con), PARAMETERS: [Telephone object = " + object + ", Connection con]");
+
         PreparedStatement statement = null;
         boolean updated = false;
+        if(object.isDeleted()){
+            updated = deleteWithRxistingConnection(object.getId(), con);
+            return false;
+        }
         String query = "UPDATE telephone SET country_code=?, operator_code=?, telephone_number=?, telephone_type=?, comment=? WHERE id=?";
         try {
             statement = con.prepareStatement(query);
@@ -353,6 +363,9 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
     int createWithExistingConnection(Telephone object, Connection con)throws SQLException{
 
         logger.info(" - [ENTERING METHOD: createWithExistingConnection(Telephone telephone, Connection con), PARAMETERS: [Telephone object = " + object + ", Connection con]");
+        if(object.isDeleted()) {
+            return -1;
+        }
         PreparedStatement statement = null;
         int generatedId = -1;
         String query = "INSERT INTO telephone (country_code, operator_code, telephone_number, telephone_type, comment, contact_id) VALUES (?, ?, ?, ?, ?, ?)";
@@ -402,5 +415,33 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
             }
         }
         return generatedId;
+    }
+
+    public boolean deleteWithRxistingConnection(int id, Connection con) throws SQLException {
+        logger.info(" - [ENTERING METHOD: deleteWithExistingConnection(int id, Connection con), PARAMETERS: [int id = " + id + "]");
+        PreparedStatement statement = null;
+        boolean deleted = false;
+        String query = "DELETE FROM telephone WHERE id=?";
+        try {
+            statement = con.prepareStatement(query);
+            statement.setInt(1, id);
+            logger.info(" - [EXECUTING QUERY] " + statement);
+            int affectedRows = statement.executeUpdate();
+            if(affectedRows > 0)
+                deleted = true;
+        }
+        finally {
+            if(statement != null)
+            {
+                try {
+                    statement.close();
+                    logger.info(" - [CLOSED THE STATEMENT]");
+                }
+                catch (SQLException e) {
+                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                }
+            }
+        }
+        return deleted;
     }
 }

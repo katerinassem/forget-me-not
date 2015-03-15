@@ -600,3 +600,53 @@ function validateSend(){
         form.submit();
     }
 }
+
+function deleteTelephones() {
+    var form = document.forms["main"];
+    var array = form.checkedTelephones;
+    var telephonesForm = document.getElementById("telephone-table");
+    var inputName = 'deletedTelephones';
+    var res = deleteSome(array, telephonesForm, inputName);
+    return res;
+}
+
+function deleteAttachments() {
+    var form = document.forms["main"];
+    var array = form.checkedAttachments;
+    var attachmentsForm = document.getElementById("attachment-table");
+    var inputName = 'deletedAttachments';
+    var res = deleteSome(array, attachmentsForm, inputName);
+    return res;
+}
+
+function deleteSome(array, form, newName) {
+    var form = document.forms["main"];
+    var i;
+    var appended = '';
+    for (i = 0; i < array.length; i++) {
+        if (array[i].checked) {
+            appended += '<input type="hidden" name="' + newName + '" value="' + array[i].value + '"/>';
+            //var trId = (document.getElementById(array[i].value)).value;
+            //trId.style.display = 'none';
+            array[i].style.display = 'none';
+        }
+    }
+    if (appended) {
+        form.innerHTML += appended;
+    }
+}
+
+function changeTemplate(){
+    var id = document.getElementById("templates").options.selectedIndex;
+    var form = document.forms["send"];
+    var letter = form.letter;
+    if(id === 0){
+        letter.innerHTML = '';
+        form.checkedTemplate.value = '';
+        return true;
+    }
+    var contentOfSelected = document.getElementById((id-1) + 'Content').innerHTML;
+    form.checkedTemplate.value = id - 1;
+    letter.innerHTML = contentOfSelected;
+    return true;
+}

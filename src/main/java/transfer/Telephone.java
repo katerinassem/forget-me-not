@@ -11,6 +11,7 @@ public class Telephone extends TransferObject
     TelephoneType type;
     String comment;
     Integer contactId;
+    boolean deleted = false;
 
     public Telephone(){}
 
@@ -74,5 +75,13 @@ public class Telephone extends TransferObject
 
     public String getTypeString(){
         return type == TelephoneType.h ? "домашний" : "мобильный";
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
     }
 }

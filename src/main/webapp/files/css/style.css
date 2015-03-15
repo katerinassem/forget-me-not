@@ -26,6 +26,10 @@ fieldset
     border: 5px solid purple;
 }
 
+.checkbox{
+    width: 25%;
+}
+
 input
 {
     border: 2px solid mediumpurple;
@@ -116,7 +120,7 @@ button, .button
     width: 30%;
 }
 
-#attachment-pop-up, #telephone-pop-up{
+#attachment-pop-up, #telephone-pop-up, #photo-pop-up{
     display: none;
     width:80%;
     position:fixed;
@@ -128,4 +132,8 @@ button, .button
     background-color: white;
     border-radius:5px;
 	border: 5px solid purple;
+}
+
+.available-template{
+    display: none;
 }

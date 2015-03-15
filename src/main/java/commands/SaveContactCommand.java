@@ -32,12 +32,12 @@ public class SaveContactCommand implements Command {
     public void process(HttpServletRequest req, HttpServletResponse resp) throws CommandFatalException, ServletException {
 
         logger.info(" - [ENTERING METHOD process(HttpServletRequest req, HttpServletResponse resp), PARAMETERS: HttpServletRequest req, HttpServletResponse resp]");
+        req.getSession().removeAttribute("infoMessage");
+
         try {
             StoreFullContactFacade storeFullContactFacade = new StoreFullContactFacade();
             String idString = (String[])req.getAttribute("id") == null ? null : ((String[])req.getAttribute("id"))[0];
-            if(StringUtils.isEmpty(idString)){
-                throw new FacadeServiceException("Nothing to save.");
-            }
+
             storeFullContactFacade.store(req, idString);
             Contact contact = (Contact)req.getSession().getAttribute("contact");
             if(contact == null){
