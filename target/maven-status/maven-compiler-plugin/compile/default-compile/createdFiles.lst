@@ -8,8 +8,8 @@ commands\SaveContactCommand.class
 data\daoexception\DAOFatalException.class
 business\factory\katebusiness\AddressBO.class
 business\bllexception\ServiceDataException.class
-business\bllexception\BLLDataException.class
 session\DeleteContactsFacade.class
+business\bllexception\BLLDataException.class
 data\factories\mysql\MySQLConnector.class
 business\bllexception\FacadeFatalException.class
 business\Service.class
@@ -25,6 +25,7 @@ listhandler\ListHandler.class
 transfer\Contact.class
 business\factory\katebusiness\AttachmentBO.class
 business\Business.class
+upload\DownloadException.class
 CommandHelper.class
 commands\Command.class
 business\factory\katebusiness\TelephoneBO.class
@@ -39,6 +40,7 @@ commands\ChoosePhotoCommand.class
 listhandler\ContactListHandler.class
 commands\SendEmailCommand.class
 commands\DeleteContactsCommand.class
+commands\DownloadImageCommand.class
 transfer\Telephone.class
 session\SendMailFacade.class
 business\bllexception\ServiceFatalException.class
@@ -50,7 +52,7 @@ business\bllexception\FacadeServiceException.class
 transfer\Attachment.class
 commands\SearchContactsCommand.class
 business\service\ShowSearchResults.class
-commands\SavePhotoCommand.class
+commands\DownloadAttachmentCommand.class
 data\factories\MySQLDAOFactory.class
 commands\ShowContactsCommand.class
 transfer\Sex.class

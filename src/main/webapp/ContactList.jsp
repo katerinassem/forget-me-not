@@ -6,13 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="transfer.Contact" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"  %>
 <html>
 <head>
     <title>YouContact</title>
     <link href="files/css/style.css" rel="stylesheet">
+    <script src="files/js/popup.js" ></script>
 </head>
 <body>
 <h1>Список контактов.</h1>
@@ -42,7 +41,7 @@
     </table>
     <ul id="page-tab">
         <c:forEach var="index" varStatus="status" begin="1" end="${sessionScope.pageCount}" step="1">
-            <li class="page-button" id="${index}"><a href="?command=ShowContacts&page=${index}">${index}</a></li>
+            <li class="page-button" onclick="setActive(index)" id="${index}"><a href="?command=ShowContacts&page=${index}">${index}</a></li>
         </c:forEach>
     </ul>
 </form>

@@ -26,9 +26,6 @@ fieldset
     border: 5px solid purple;
 }
 
-.checkbox{
-    width: 20%;
-}
 
 input
 {
@@ -48,6 +45,12 @@ label
 fieldset
 {
     margin-top: 2%;
+}
+
+.checkbox{
+    float: none;
+    min-width: 15%;
+    border: none;
 }
 
 textarea
@@ -80,7 +83,6 @@ th
 {
     list-style: none;
     margin: 0 auto 0;
-    width: 100%;
 }
 
 .page-button
@@ -92,6 +94,10 @@ th
     font-weight: bold;
     text-decoration: none;
     color: white;
+}
+
+.active{
+    background-color: white;
 }
 
 a:link, a:active, a:hover, a:visited

@@ -18,7 +18,7 @@
     <h4>${sessionScope.infoMessage}</h4>
     <div onclick="showPopUp('avatar-pop-up', 'block')">
         <c:if test="${sessionScope.contact.hasAvatar}">
-            <img src="${sessionScope.contact.id}/${sessionScope.contact.photoUrl}"/>
+            <img id="avatar" src="?command=DownloadImageCommand&contactId=${sessionScope.contact.id}&fileName=${sessionScope.contact.photoUrl}"/>
         </c:if>
         <c:if test="${!sessionScope.contact.hasAvatar}">
             <img src="files/images/default_avatar.jpg"/>
@@ -192,9 +192,14 @@
 
         <div id="avatar-pop-up">
             <h4>Редактировать аватар.</h4>
-            <label>Изображение:</label>
-            <input name="avatarFile" type="file"/>
-            <button type="button" onclick="setAvatar()">Выбрать</button>
+            <c:if test="${sessionScope.contact.id != null}">
+                <label>Изображение:</label>
+                <input name="avatarFile" type="file"/>
+                <button type="button" onclick="setAvatar(${sessionScope.contact.id})">Выбрать</button>
+            </c:if>
+            <c:if test="${sessionScope.contact.id == null}">
+                Загрузите изображение после регистрации.
+            </c:if>
             <button type="button" onclick="showPopUp('avatar-pop-up', 'none')">Отменить</button>
         </div>
     </form>

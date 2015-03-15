@@ -2,82 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c45153e1-ed98-4566-9ac8-bdc994cf1fb3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/commands/DownloadAttachmentCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/upload/DownloadException.java" />
-      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\SavePhotoCommand.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/data/AbstractDAOFactory.class" afterPath="$PROJECT_DIR$/target/classes/data/AbstractDAOFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/AbstractDAOFactory.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/AbstractDAOFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/transfer/Address.class" afterPath="$PROJECT_DIR$/target/classes/transfer/Address.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Address.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Address.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/transfer/Attachment.class" afterPath="$PROJECT_DIR$/target/classes/transfer/Attachment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Attachment.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Attachment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/ChoosePhotoCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/ChoosePhotoCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/ChoosePhotoCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/ChoosePhotoCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/Command.class" afterPath="$PROJECT_DIR$/target/classes/commands/Command.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/Command.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/Command.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/CommandHelper.class" afterPath="$PROJECT_DIR$/target/classes/CommandHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/CommandHelper.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/CommandHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/transfer/Contact.class" afterPath="$PROJECT_DIR$/target/classes/transfer/Contact.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Contact.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Contact.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/CreateEditContactCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/CreateEditContactCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/CreateEditContactCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/CreateEditContactCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/data/DAO.class" afterPath="$PROJECT_DIR$/target/classes/data/DAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/DAO.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/DAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/DeleteContactsCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/DeleteContactsCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/DeleteContactsCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/DeleteContactsCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/FrontServlet.class" afterPath="$PROJECT_DIR$/target/classes/FrontServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/FrontServlet.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/FrontServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/data/factories/mysql/MySQLAddressDAO.class" afterPath="$PROJECT_DIR$/target/classes/data/factories/mysql/MySQLAddressDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLAddressDAO.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLAddressDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/data/factories/mysql/MySQLAttachmentDAO.class" afterPath="$PROJECT_DIR$/target/classes/data/factories/mysql/MySQLAttachmentDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLAttachmentDAO.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLAttachmentDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/data/factories/mysql/MySQLConnector.class" afterPath="$PROJECT_DIR$/target/classes/data/factories/mysql/MySQLConnector.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLConnector.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLConnector.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/data/factories/mysql/MySQLContactDAO.class" afterPath="$PROJECT_DIR$/target/classes/data/factories/mysql/MySQLContactDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLContactDAO.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/mysql/MySQLContactDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/data/factories/MySQLDAOFactory.class" afterPath="$PROJECT_DIR$/target/classes/data/factories/MySQLDAOFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/MySQLDAOFactory.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/data/factories/MySQLDAOFactory.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SavePhotoCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\classes\commands\SavePhotoCommand.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SavePhotoCommand.class" afterPath="C:\Users\Катерина\IdeaProjects\YouContact\target\youcontact\WEB-INF\classes\commands\SavePhotoCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/SearchContactsCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/SearchContactsCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SearchContactsCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SearchContactsCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/SendEmailCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/SendEmailCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SendEmailCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/SendEmailCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/transfer/Sex.class" afterPath="$PROJECT_DIR$/target/classes/transfer/Sex.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Sex.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Sex.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/commands/ShowContactsCommand.class" afterPath="$PROJECT_DIR$/target/classes/commands/ShowContactsCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/ShowContactsCommand.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/commands/ShowContactsCommand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/transfer/Telephone.class" afterPath="$PROJECT_DIR$/target/classes/transfer/Telephone.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Telephone.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/Telephone.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/transfer/TelephoneType.class" afterPath="$PROJECT_DIR$/target/classes/transfer/TelephoneType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/TelephoneType.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/TelephoneType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/transfer/TransferObject.class" afterPath="$PROJECT_DIR$/target/classes/transfer/TransferObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/TransferObject.class" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/transfer/TransferObject.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/commands/DownloadImageCommand.java" />
+      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\src\main\webapp\ChoosePhoto.jsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\src\main\webapp\CreateAttachment.jsp" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Катерина\IdeaProjects\YouContact\src\main\webapp\CreateEditTelephone.jsp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact.war" afterPath="$PROJECT_DIR$/target/youcontact.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/transfer/Attachment.java" afterPath="$PROJECT_DIR$/src/main/java/transfer/Attachment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/commands/ChoosePhotoCommand.java" afterPath="$PROJECT_DIR$/src/main/java/commands/ChoosePhotoCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/transfer/Contact.java" afterPath="$PROJECT_DIR$/src/main/java/transfer/Contact.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/ContactList.jsp" afterPath="$PROJECT_DIR$/target/youcontact/ContactList.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/ContactList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/ContactList.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/CreateEditContact.jsp" afterPath="$PROJECT_DIR$/target/youcontact/CreateEditContact.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/commands/CreateEditContactCommand.java" afterPath="$PROJECT_DIR$/src/main/java/commands/CreateEditContactCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/FrontServlet.java" afterPath="$PROJECT_DIR$/src/main/java/FrontServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/SendEmail.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/SendEmail.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/SendEmail.jsp" afterPath="$PROJECT_DIR$/target/youcontact/SendEmail.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/commands/SendEmailCommand.java" afterPath="$PROJECT_DIR$/src/main/java/commands/SendEmailCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/business/service/SendMail.java" afterPath="$PROJECT_DIR$/src/main/java/business/service/SendMail.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/session/SendMailFacade.java" afterPath="$PROJECT_DIR$/src/main/java/session/SendMailFacade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java" afterPath="$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/transfer/Telephone.java" afterPath="$PROJECT_DIR$/src/main/java/transfer/Telephone.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/upload/UploadHelper.java" afterPath="$PROJECT_DIR$/src/main/java/upload/UploadHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/config.properties" afterPath="$PROJECT_DIR$/target/classes/config.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/config.properties" afterPath="$PROJECT_DIR$/target/youcontact/WEB-INF/classes/config.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/files/js/popup.js" afterPath="$PROJECT_DIR$/src/main/webapp/files/js/popup.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/files/css/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/files/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/youcontact/files/css/style.css" afterPath="$PROJECT_DIR$/target/youcontact/files/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="YouContact.iws" />
@@ -145,8 +85,18 @@
       <file leaf-file-name="ContactList.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/ContactList.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.6153846" vertical-offset="380" max-vertical-offset="952">
-              <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
+            <state vertical-scroll-proportion="-11.846154" vertical-offset="389" max-vertical-offset="935">
+              <caret line="41" column="20" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="popup.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/files/js/popup.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="12138" max-vertical-offset="12512">
+              <caret line="727" column="97" selection-start-line="727" selection-start-column="97" selection-end-line="727" selection-end-column="97" />
               <folding />
             </state>
           </provider>
@@ -155,8 +105,8 @@
       <file leaf-file-name="DownloadAttachmentCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/commands/DownloadAttachmentCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="952">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="952">
+              <caret line="47" column="9" selection-start-line="25" selection-start-column="8" selection-end-line="47" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -164,43 +114,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShowListFacade.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/session/ShowListFacade.java">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/files/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="833">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="616" max-vertical-offset="2618">
+              <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StoreFullContactFacade.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java">
+      <file leaf-file-name="DownloadImageCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/commands/DownloadImageCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4318" max-vertical-offset="4998">
-              <caret line="283" column="5" selection-start-line="283" selection-start-column="5" selection-end-line="283" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChoosePhotoCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/commands/ChoosePhotoCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="901">
-              <caret line="47" column="13" selection-start-line="39" selection-start-column="12" selection-end-line="47" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UploadHelper.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/upload/UploadHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1590909" vertical-offset="2312" max-vertical-offset="3723">
-              <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="918">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UploadHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/upload/UploadHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3587" max-vertical-offset="4369">
+              <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3370#3400#1" expanded="true" />
                 <element signature="e#3541#3568#0" expanded="true" />
                 <element signature="e#4429#4437#0" expanded="true" />
               </folding>
@@ -225,11 +168,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateEditContact.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CreateEditContact.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.8461537" vertical-offset="162" max-vertical-offset="3553">
-              <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+            <state vertical-scroll-proportion="11.292857" vertical-offset="255" max-vertical-offset="3638">
+              <caret line="201" column="19" selection-start-line="201" selection-start-column="19" selection-end-line="201" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -243,7 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/data/DAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAddressDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/business/Business.java" />
         <option value="$PROJECT_DIR$/src/main/java/business/factory/katebusiness/ContactBO.java" />
@@ -269,7 +211,6 @@
         <option value="$PROJECT_DIR$/src/main/java/business/service/ResolveTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/resources/congratulation.stg" />
         <option value="$PROJECT_DIR$/src/main/java/commands/ShowContactsCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/ContactList.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/business/factory/katebusiness/TelephoneBO.java" />
         <option value="$PROJECT_DIR$/src/main/java/business/factory/katebusiness/AttachmentBO.java" />
         <option value="$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLContactDAO.java" />
@@ -281,19 +222,21 @@
         <option value="$PROJECT_DIR$/src/main/java/transfer/Attachment.java" />
         <option value="$PROJECT_DIR$/src/main/java/session/StoreFullContactFacade.java" />
         <option value="$PROJECT_DIR$/src/main/java/session/SendMailFacade.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/files/css/style.css" />
         <option value="$PROJECT_DIR$/src/main/java/commands/SendEmailCommand.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/SendEmail.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/business/service/SendMail.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/files/js/popup.js" />
         <option value="$PROJECT_DIR$/src/main/java/commands/CreateEditContactCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/upload/DownloadException.java" />
         <option value="$PROJECT_DIR$/src/main/java/commands/commandexception/DownloadAttachmentCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/commands/DownloadAttachmentCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/upload/UploadHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/FrontServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/commands/DownloadImageCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/upload/UploadHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/ContactList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/files/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/files/js/popup.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp" />
       </list>
     </option>
   </component>
@@ -1493,7 +1436,7 @@
       <workItem from="1426241752926" duration="13059000" />
       <workItem from="1426258711252" duration="4757000" />
       <workItem from="1426335396468" duration="37811000" />
-      <workItem from="1426407917415" duration="42100000" />
+      <workItem from="1426407917415" duration="48015000" />
     </task>
     <task id="LOCAL-00001" summary="2March - address CRUD">
       <created>1425316635422</created>
@@ -1687,11 +1630,17 @@
       <option name="project" value="LOCAL" />
       <updated>1426377838152</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="14March - bugs fixed + upload + download">
+      <created>1426455769661</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1426455769661</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="564322000" />
+    <option name="totallyTimeSpent" value="570237000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1728,7 +1677,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43393147" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43393147" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1827,7 +1776,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="408" />
+      <option name="time" value="412" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1836,14 +1785,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/data/factories/mysql/MySQLAddressDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="6851">
-          <caret line="313" column="0" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/META-INF/context.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
@@ -1951,26 +1892,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/CreateAttachment.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24329159" vertical-offset="0" max-vertical-offset="559">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/business/factory/katebusiness/AttachmentBO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="446" max-vertical-offset="850">
           <caret line="46" column="97" selection-start-line="46" selection-start-column="97" selection-end-line="46" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/CreateEditTelephone.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1980,7 +1905,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="527">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
-            <element signature="e#971#972#0" expanded="true" />
+            <element signature="e#971#972#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2005,14 +1930,6 @@
             <marker date="1426374619184" expanded="true" signature="-1:-1" placeholder="UPDATE attac..." />
             <marker date="1426374619184" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/ChoosePhoto.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2108,14 +2025,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/files/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="333" max-vertical-offset="2499">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/congratulation.stg">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.766666" vertical-offset="0" max-vertical-offset="442">
@@ -2188,14 +2097,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/files/js/popup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2907" max-vertical-offset="12257">
-          <caret line="190" column="17" selection-start-line="190" selection-start-column="17" selection-end-line="190" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/commands/SearchContactsCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="986">
@@ -2251,32 +2152,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/commands/DownloadAttachmentCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="952">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/ContactList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.6153846" vertical-offset="380" max-vertical-offset="952">
-          <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8461537" vertical-offset="162" max-vertical-offset="3553">
-          <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FrontServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1700">
@@ -2295,13 +2170,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/upload/UploadHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1590909" vertical-offset="2312" max-vertical-offset="3723">
-          <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3587" max-vertical-offset="4369">
+          <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3370#3400#1" expanded="true" />
             <element signature="e#3541#3568#0" expanded="true" />
             <element signature="e#4429#4437#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/DownloadImageCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="918">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/ContactList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.846154" vertical-offset="389" max-vertical-offset="935">
+          <caret line="41" column="20" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/files/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="616" max-vertical-offset="2618">
+          <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/files/js/popup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="12138" max-vertical-offset="12512">
+          <caret line="727" column="97" selection-start-line="727" selection-start-column="97" selection-end-line="727" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/commands/DownloadAttachmentCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="952">
+          <caret line="47" column="9" selection-start-line="25" selection-start-column="8" selection-end-line="47" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/CreateEditContact.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="11.292857" vertical-offset="255" max-vertical-offset="3638">
+          <caret line="201" column="19" selection-start-line="201" selection-start-column="19" selection-end-line="201" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>

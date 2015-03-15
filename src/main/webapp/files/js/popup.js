@@ -2,6 +2,17 @@
  * Created by Катерина on 07.03.2015.
  */
 
+function setActive(index){
+    var pageTabb = document.getElementById('page-tab');
+    var page = pageTabb.children[index-1];
+    var i = 0;
+    var pages = pageTabb.childrenl
+    for(i = 0; i < pages.length; i++){
+        pages[i].className = '';
+    }
+    page.className = 'active';
+    return true;
+}
 
 function validateMain(){
     document.getElementsByName("command")[0].value = 'SaveContactCommand';
@@ -705,12 +716,16 @@ function validateAvatar(){
     return result;
 }
 
-function setAvatar() {
+function setAvatar(contactId) {
     var form = document.forms["main"];
     if (validateAvatar()) {
         document.getElementsByName("command")[0].value = 'ChoosePhotoCommand';
         document.getElementsByName("option")[0].value = '';
         document.getElementById('avatar-pop-up').style.display = 'none';
+        var avatar = document.getElementById('avatar');
+        var nameArr = form.avatarFile.value.split('\\');
+        var name = nameArr[nameArr.length - 1];
+        avatar.src = '?command=DownloadImageCommand&contactId=' + contactId + '&fileName=' + name;
         form.submit();
     }
 }

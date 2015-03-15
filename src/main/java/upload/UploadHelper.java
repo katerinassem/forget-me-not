@@ -210,4 +210,42 @@ public class UploadHelper {
             throw new DownloadException(e);
         }
     }
+
+    public void downloadImage(String fileName, Integer contactId, HttpServletResponse resp) throws DownloadException{
+
+        logger.info(" - [ ENTERING METHOD download(HttpServletRequest req, HttpServletResponse resp), PARAMETERS: String fileName = " + String.valueOf(fileName) +",Integer contactId = " + String.valueOf(contactId) + ", HttpServletResponse resp]");
+
+        if(StringUtils.isEmpty(fileName) || contactId == null){
+            throw new DownloadException("Пустое имя файла!");
+        }
+
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("config");
+        String dir = resourceBundle.getString("uploadDir");
+        String rootPath = System.getProperty("catalina.home");
+        File file = new File(rootPath + File.separator + dir + File.separator + contactId + File.separator + fileName);
+        if(!file.exists()){
+            throw new DownloadException("Запрашиваемый файл не существует");
+        }
+        try {
+            InputStream fis = new FileInputStream(file);
+            resp.setContentType("image/*");
+
+            ServletOutputStream os = resp.getOutputStream();
+            byte[] bufferData = new byte[1024];
+            int read = 0;
+            while ((read = fis.read(bufferData)) != -1) {
+                os.write(bufferData, 0, read);
+            }
+            os.flush();
+            os.close();
+            fis.close();
+            logger.info(" - [ FILE " + fileName + " WAS DOWNLOADED SUCCESFULLY]");
+        }
+        catch (FileNotFoundException e){
+            throw new DownloadException(e);
+        }
+        catch (IOException e){
+            throw new DownloadException(e);
+        }
+    }
 }

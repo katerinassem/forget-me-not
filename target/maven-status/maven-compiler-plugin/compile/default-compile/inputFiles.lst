@@ -42,6 +42,7 @@ C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\upload\UploadException.j
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\business\Service.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\transfer\TelephoneType.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\ChoosePhotoCommand.java
+C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\DownloadImageCommand.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\commands\SaveContactCommand.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\upload\DownloadException.java
 C:\Users\Катерина\IdeaProjects\YouContact\src\main\java\business\bllexception\FacadeServiceException.java
