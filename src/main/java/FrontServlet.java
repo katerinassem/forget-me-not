@@ -4,15 +4,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 import commands.commandexception.CommandFatalException;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import upload.UploadException;
 import upload.UploadHelper;
 
+@WebServlet("/upload/*")
 public class FrontServlet extends HttpServlet
 {
     private static Logger logger = Logger.getLogger(FrontServlet.class);
@@ -28,6 +32,9 @@ public class FrontServlet extends HttpServlet
     {
         req.setCharacterEncoding("utf-8");
         resp.setCharacterEncoding("utf-8");
+        if(req.getSession().getAttribute("path") == null ||  StringUtils.isEmpty((String)req.getSession().getAttribute("path"))){
+            setPath(req.getSession());
+        }
         try {
             cleanSessionAttributes(req.getSession());
             commandHelper.dispatchRequest(req, resp);
@@ -90,5 +97,15 @@ public class FrontServlet extends HttpServlet
         session.removeAttribute("errorMessage");
         session.removeAttribute("contacts");
 
+    }
+
+    private void setPath(HttpSession session){
+
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("config");
+        String dir = resourceBundle.getString("uploadDir");
+        String rootPath = System.getProperty("catalina.home");
+        File f = new File(rootPath + File.separator + dir);
+        String path = f.getPath();
+        session.setAttribute("path", path);
     }
 }

@@ -32,7 +32,7 @@
         </tr>
         <c:forEach items="${sessionScope.contacts}" var="contact" varStatus="varStatus">
             <tr>
-                <td><input name="checkbox" value="${contact.id}" type="checkbox"/></td>
+                <td><input class="checkbox" name="checkbox" value="${contact.id}" type="checkbox"/></td>
                 <td><a href="?command=CreateEditContactCommand&option=edit&id=${contact.id}">✐ ${contact.secondName} ${contact.firstName} ${contact.nameByFather}</a></td>
                 <td>${contact.formattedDateOfBirth}</td>
                 <td>${contact.address}</td>

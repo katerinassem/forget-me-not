@@ -81,6 +81,9 @@ public class Attachment extends TransferObject
     public boolean isDeleted() {
         return deleted;
     }
+    public boolean getIsDeleted() {
+        return deleted;
+    }
 
     public void setDeleted(boolean deleted) {
         this.deleted = deleted;

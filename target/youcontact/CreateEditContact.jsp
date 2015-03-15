@@ -16,23 +16,28 @@
 <body>
     <h1>Создать или редактировать контакт.</h1>
     <h4>${sessionScope.infoMessage}</h4>
-    <div onclick="showPopUp('photo-pop-up', 'block')"><img src="files/images/default_avatar.jpg"/></div>
+    <div onclick="showPopUp('avatar-pop-up', 'block')">
+        <c:if test="${sessionScope.contact.hasAvatar}">
+            <img src="${sessionScope.contact.id}/${sessionScope.contact.photoUrl}"/>
+        </c:if>
+        <c:if test="${!sessionScope.contact.hasAvatar}">
+            <img src="files/images/default_avatar.jpg"/>
+        </c:if>
+    </div>
     <form id="main" method="post" action="" enctype="multipart/form-data">
         <input type="hidden" name="command" value="CreateEditContactCommand"/>
         <input type="hidden" name="option" value="editmore"/>
         <div id="attachment-pop-up">
             <h4>Создать присоединение.</h4>
-            <div name="attachment">
-                <input name="attachmentId" type="hidden"/>
-                <input name="file" type="file"/>
-                <input name="fileName" type="hidden"/>
-                <label id="fileNameLabel"></label>
-                <input name="uploadDate" type="hidden"/>
-                <label>Комментарий: </label>
-                <input name="attachmentComment" type="text" placeholder="комментарий"/>
-                <button form="main" type="button" onclick="setAttachment()">Сохранить</button>
-                <button type="button" onclick="showPopUp('attachment-pop-up', 'none')">Отменить</button>
-            </div>
+            <input name="attachmentId" type="hidden"/>
+            <input name="file" type="file"/>
+            <input name="fileName" type="hidden"/>
+            <label id="fileNameLabel"></label>
+            <input name="uploadDate" type="hidden"/>
+            <label>Комментарий: </label>
+            <input name="attachmentComment" type="text" placeholder="комментарий"/>
+            <button form="main" type="button" onclick="setAttachment()">Сохранить</button>
+            <button type="button" onclick="showPopUp('attachment-pop-up', 'none')">Отменить</button>
         </div>
 
         <label>ФИО:</label>
@@ -63,6 +68,7 @@
         <input name="email" type="text" placeholder="email"  value="${sessionScope.contact.email}"/>
         <label>Компания:</label>
         <input name="company" type="text" placeholder="компания"  value="${sessionScope.contact.company}"/>
+        <input name="photoUrl" type="hidden" value="${sessionScope.contact.photoUrl}"/>
         <fieldset>
             <legend>Адрес</legend>
                 <label>Страна:</label>
@@ -92,7 +98,7 @@
                     </tr>
                     <c:if test="${sessionScope.contact.telephones != null}">
                         <c:forEach items="${sessionScope.contact.telephones}" var="telephone" varStatus="status">
-                            <tr id="${status.index}">
+                            <tr id="${status.index}" class="${telephone.isDeleted ? "deleted" : "foo"}">
                                 <td>
                                     <input type="hidden" id="{telephone.id}" value="${status.index}"/>
                                     <input id="telephone${telephone.id}" name="telephoneIds" type="hidden" value="${telephone.id}"/>
@@ -108,6 +114,11 @@
                                 <td>${telephone.typeString}</td>
                                 <td>${telephone.comment}</td>
                             </tr>
+                        </c:forEach>
+                        <c:forEach items="${sessionScope.contact.telephones}" var="telephone" varStatus="status">
+                            <c:if test="${telephone.isDeleted}">
+                                <input type="hidden" name="deletedTelephones" value="${telephone.id}"/>
+                            </c:if>
                         </c:forEach>
                     </c:if>
                 </table>
@@ -131,7 +142,7 @@
                         <c:if test="${sessionScope.contact.id != null}">
                             <c:if test="${sessionScope.contact.attachments != null}">
                                 <c:forEach items="${sessionScope.contact.attachments}" var="attachment" varStatus="status">
-                                    <tr id="${attachment.formattedUploadDate}">
+                                    <tr id="${attachment.formattedUploadDate}" class="${attachment.isDeleted ? "deleted" : "foo"}">
                                         <td>
                                             <input type="hidden" id="{attachment.id}" value="${attachment.formattedUploadDate}"/>
                                             <input name="attachmentIds" type="hidden" value="${attachment.id}"/>
@@ -141,10 +152,15 @@
 
                                             <input class="checkbox" name="checkedAttachments" type="checkbox" value="${attachment.id}"/>
                                         </td>
-                                        <td><a href="/upload/${sessionScope.contact.id}/${attachment.id}">⇓</a><div onclick="showPopUp('attachment-pop-up', 'block', '${attachment.formattedUploadDate}')">&nbsp✐${attachment.fileName}</div></td>
+                                        <td><a href="?command=DownloadAttachmentCommand&fileName=${attachment.fileName}&contactId=${sessionScope.contact.id}">⇓</a><div onclick="showPopUp('attachment-pop-up', 'block', '${attachment.formattedUploadDate}')">&nbsp✐${attachment.fileName}</div></td>
                                         <td>${attachment.formattedUploadDate}</td>
                                         <td>${attachment.comment}</td>
                                     </tr>
+                                </c:forEach>
+                                <c:forEach items="${sessionScope.contact.attachments}" var="attachment" varStatus="status">
+                                    <c:if test="${attachment.isDeleted}">
+                                        <input type="hidden" name="deletedAttachments" value="${attachment.id}"/>
+                                    </c:if>
                                 </c:forEach>
                             </c:if>
                         </c:if>
@@ -174,12 +190,12 @@
             <button type="button" onclick="showPopUp('telephone-pop-up', 'none')">Отменить</button>
         </div>
 
-        <div id="photo-pop-up">
+        <div id="avatar-pop-up">
             <h4>Редактировать аватар.</h4>
             <label>Изображение:</label>
             <input name="avatarFile" type="file"/>
-            <button type="button" onclick="setTelephone()">Выбрать</button>
-            <button type="button" onclick="showPopUp('photo-pop-up', 'none')">Отменить</button>
+            <button type="button" onclick="setAvatar()">Выбрать</button>
+            <button type="button" onclick="showPopUp('avatar-pop-up', 'none')">Отменить</button>
         </div>
     </form>
 

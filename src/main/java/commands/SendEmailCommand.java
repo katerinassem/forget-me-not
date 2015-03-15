@@ -31,7 +31,8 @@ public class SendEmailCommand implements Command
         
         req.getSession().removeAttribute("infoMessage");
         try {
-            Integer[] checkedIds = null;
+            String checkedIds = null;
+            Integer[] checkedIdsInteger = null;
             String option = req.getParameter("option");
             String emails = null;
             ArrayList<String> templateNames = new ArrayList<String>();
@@ -40,17 +41,23 @@ public class SendEmailCommand implements Command
                 String[] checked = req.getParameterValues("checkbox");
                 if (ArrayUtils.isNotEmpty(checked)) {
 
-                    checkedIds = new Integer[checked.length];
+                    checkedIds = "";
+                    checkedIdsInteger = new Integer[checked.length];
+                    StringBuilder sb = new StringBuilder(checkedIds);
 
                     for (int i = 0; i < checked.length; i++) {
                         if (StringUtils.isNotEmpty(checked[i])) {
                             Integer checkedId = Integer.parseInt(checked[i]);
-                            checkedIds[i] = checkedId;
+                            sb.append(checkedId);
+                            sb.append(";");
+                            checkedIdsInteger[i] = checkedId;
                         }
                     }
 
+                    checkedIds = sb.toString();
+
                     Service emailsStringService = new EmailsString();
-                    emails = (String)emailsStringService.service(checkedIds);
+                    emails = (String)emailsStringService.service(checkedIdsInteger);
 
                     req.setAttribute("emails", emails);
                     req.setAttribute("checkedIds", checkedIds);

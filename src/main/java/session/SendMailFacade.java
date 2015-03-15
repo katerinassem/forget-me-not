@@ -50,7 +50,7 @@ public class SendMailFacade {
         params.add(letter);
         params.add(allIds);
         Integer templateId = null;
-        if(checkedTemplate != null){
+        if(StringUtils.isNotEmpty(checkedTemplate)){
             templateId = Integer.parseInt(checkedTemplate);
         }
         params.add(templateId);

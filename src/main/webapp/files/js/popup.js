@@ -174,21 +174,21 @@ function validateSearch(){
     var valid = true;
     var regDate = /^(((0[1-9]|[12]\d|3[01])\.(0[13578]|1[02])\.((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\.(0[13456789]|1[012])\.((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\.02\.((19|[2-9]\d)\d{2}))|(29\.02\.((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/;
     var day = form.day.value;
-    if(day < 0){
+    if(day < 10){
         day = '0' + day;
     }
     var month = form.month.value;
-    if(month < 0){
+    if(month < 10){
         month = '0' + month;
     }
     var year = form.year.value;
     var date = day.toString() + '.' + month.toString() + '.' + year.toString();
     var day1 = form.day1.value;
-    if(day1 < 0){
+    if(day1 < 10){
         day1 = '0' + day1;
     }
     var month1 = form.month1.value;
-    if(month1 < 0){
+    if(month1 < 10){
         month1 = '0' + month1;
     }
     var year1 = form.year1.value;
@@ -346,7 +346,7 @@ function showPopUp(id, option, value){
     if(id == 'attachment-pop-up' && value != undefined){
         form.attachmentId.value = value;
         var trOfAttachment = document.getElementById(value);
-        var i = 0;
+        var i = 1;
         var attachChildren = trOfAttachment.children[0].children;
         trOfAttachment = attachChildren[i++];
         form.attachmentId.value = trOfAttachment.value;
@@ -368,13 +368,19 @@ function showPopUp(id, option, value){
             form.uploadDate.value = "";
             form.fileName.value = "";
             form.attachmentId.value = "";
-            form.file.value = "";
+            if(form.file.value){
+                var attachmentDiv = document.getElementById('attachment-pop-up');
+                var attachFileNode = attachmentDiv.childNodes[3];
+                form.file.value = '';
+                var attachFileNodeClone = attachFileNode.cloneNode(false);
+                attachmentDiv.replaceChild(attachFileNodeClone, attachFileNode);
+            }
         }
     }
     else if(id == 'telephone-pop-up' && value != undefined){
         var trOfTelephone = document.getElementById(value);
         form.myId.value = value;
-        var j = 0;
+        var j = 1;
         var telChildren = trOfTelephone.children[0].children;
         trOfTelephone = telChildren[j++];
         form.telephoneId.value = trOfTelephone.value;
@@ -389,7 +395,7 @@ function showPopUp(id, option, value){
         trOfTelephone = telChildren[j++];
         form.telephoneComment.value = trOfTelephone.value;
     }
-    else if(option === 'none'){
+    else if(id == 'telephone-pop-up'){
         form.telephoneId.value = '';
         form.myId.value = '';
         form.countryCode.value = '';
@@ -398,13 +404,20 @@ function showPopUp(id, option, value){
         form.checkedType.value = '';
         form.telephoneComment.value = '';
     }
+    else if(id === 'avatar-pop-up' && option === 'none'){
+        if(form.avatarFile.value){
+            var avatarDiv = document.getElementById('avatar-pop-up');
+            var fileNode = avatarDiv.childNodes[3];
+            form.avatarFile.value = '';
+            var clone = fileNode.cloneNode(false);
+            avatarDiv.replaceChild(clone, fileNode);
+        }
+    }
     document.getElementById(id).style.display = option;
     return false;
 }
 
 function validateAttachment(form){
-    document.getElementsByName("command")[0].value = 'CreateEditContactCommand';
-    document.getElementsByName("option")[0].value = 'editmore';
     var attachmentComment = form.attachmentComment.value;
     var valid = true;
     if(attachmentComment.length > 200){
@@ -473,6 +486,8 @@ function setAttachment(){
             form.file.value = "";
         }
         else {
+            document.getElementsByName("command")[0].value = 'CreateEditContactCommand';
+            document.getElementsByName("option")[0].value = 'editmore';
             document.getElementById('attachment-pop-up').style.display = 'none';
             form.submit();
         }
@@ -530,9 +545,10 @@ function setTelephone(){
         var typeString = form.checkedType.value == 'h' ? 'домашний' : 'мобильный';
         var myId = form.myId.value;
         if(! myId){
-            var last = document.getElementById('telephone-table').lastChild.firstChild;
+            var trs = document.getElementById('telephone-table').children[0].children;
+            var last = trs[trs.length - 1];
             if(last){
-                myId = parseInt(last.id.value) + 1;
+                myId = parseInt(last.id) + 1;
             }
             else{
                 myId = 0;
@@ -555,7 +571,7 @@ function setTelephone(){
             elemToEdit.innerHTML = s;
         }
         else {
-            document.getElementById('telephone-table').innerHTML += '<tr id="' + myId + '">' + s + '</tr>';
+            document.getElementById('telephone-table').children[0].innerHTML += '<tr id="' + myId + '">' + s + '</tr>';
         }
         form.myId.value = "";
         document.getElementById('telephone-pop-up').style.display = 'none';
@@ -606,8 +622,9 @@ function deleteTelephones() {
     var array = form.checkedTelephones;
     var telephonesForm = document.getElementById("telephone-table");
     var inputName = 'deletedTelephones';
-    var res = deleteSome(array, telephonesForm, inputName);
-    return res;
+    return deleteSome(array, telephonesForm, inputName);
+
+
 }
 
 function deleteAttachments() {
@@ -615,25 +632,49 @@ function deleteAttachments() {
     var array = form.checkedAttachments;
     var attachmentsForm = document.getElementById("attachment-table");
     var inputName = 'deletedAttachments';
-    var res = deleteSome(array, attachmentsForm, inputName);
-    return res;
+    return deleteSome(array, attachmentsForm, inputName);
 }
 
 function deleteSome(array, form, newName) {
-    var form = document.forms["main"];
     var i;
     var appended = '';
-    for (i = 0; i < array.length; i++) {
-        if (array[i].checked) {
-            appended += '<input type="hidden" name="' + newName + '" value="' + array[i].value + '"/>';
-            //var trId = (document.getElementById(array[i].value)).value;
-            //trId.style.display = 'none';
-            array[i].style.display = 'none';
+    var parentTBody;
+    var child;
+
+    if(!array){
+        return true;
+    }
+    //  если всего 1 строка
+    if(array.checked){
+        parentTBody = form.children[0];
+        child = parentTBody.children[1];
+        if (array.value) {
+            appended += '<input type="hidden" name="' + newName + '" value="' + array.value + '"/>';
+            child.style.display = 'none';
+        }
+        else {
+            parentTBody.removeChild(child);
+        }
+    }
+    else {
+        for (i = 0; i < array.length; i++) {
+            if (array[i].checked) {
+                parentTBody = form.children[0];
+                child = parentTBody.children[i+1];
+                if (array[i].value) {
+                    appended += '<input type="hidden" name="' + newName + '" value="' + array[i].value + '"/>';
+                    child.style.display = 'none';
+                }
+                else {
+                    parentTBody.removeChild(child);
+                }
+            }
         }
     }
     if (appended) {
         form.innerHTML += appended;
     }
+    return true;
 }
 
 function changeTemplate(){
@@ -649,4 +690,27 @@ function changeTemplate(){
     form.checkedTemplate.value = id - 1;
     letter.innerHTML = contentOfSelected;
     return true;
+}
+
+function validateAvatar(){
+    var form = document.forms["main"];
+    var result = false;
+    if(form.avatarFile.value){
+        form.avatarFile.style.color='green';
+        result = true;
+    }
+    else{
+        form.avatarFile.style.color='red';
+    }
+    return result;
+}
+
+function setAvatar() {
+    var form = document.forms["main"];
+    if (validateAvatar()) {
+        document.getElementsByName("command")[0].value = 'ChoosePhotoCommand';
+        document.getElementsByName("option")[0].value = '';
+        document.getElementById('avatar-pop-up').style.display = 'none';
+        form.submit();
+    }
 }

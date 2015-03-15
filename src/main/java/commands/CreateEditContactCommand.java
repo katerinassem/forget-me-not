@@ -64,6 +64,7 @@ public class CreateEditContactCommand implements Command
                 dispatcher.forward(req, resp);
             }
             else{
+                req.getSession().removeAttribute("contact");
                 RequestDispatcher dispatcher = req.getRequestDispatcher("CreateEditContact.jsp");
                 dispatcher.forward(req, resp);
             }

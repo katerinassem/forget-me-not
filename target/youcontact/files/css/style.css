@@ -27,7 +27,7 @@ fieldset
 }
 
 .checkbox{
-    width: 25%;
+    width: 20%;
 }
 
 input
@@ -88,7 +88,6 @@ th
     display: inline-block;
     padding: 0px 9px;
     margin-right: 4px;
-    border-radius: 3px;
     background-color: mediumvioletred;
     font-weight: bold;
     text-decoration: none;
@@ -120,7 +119,7 @@ button, .button
     width: 30%;
 }
 
-#attachment-pop-up, #telephone-pop-up, #photo-pop-up{
+#attachment-pop-up, #telephone-pop-up, #avatar-pop-up{
     display: none;
     width:80%;
     position:fixed;
@@ -135,5 +134,9 @@ button, .button
 }
 
 .available-template{
+    display: none;
+}
+
+.deleted{
     display: none;
 }

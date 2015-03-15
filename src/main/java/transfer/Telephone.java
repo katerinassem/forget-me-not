@@ -81,6 +81,10 @@ public class Telephone extends TransferObject
         return deleted;
     }
 
+    public boolean getIsDeleted() {
+        return deleted;
+    }
+
     public void setDeleted(boolean deleted) {
         this.deleted = deleted;
     }

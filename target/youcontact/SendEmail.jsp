@@ -19,9 +19,7 @@
     <label>Кому:</label>
     <label name="emails">${emails}</label>
     <input name="emails" type="hidden" value="${emails}"/>
-    <c:forEach items="${checkedIds}" var="id">
-        <input name="checkedIds" type="hidden" value="${id}"/>
-    </c:forEach>
+    <input name="checkedIds" type="hidden" value="${checkedIds}"/>
     <label>Тема:</label>
     <input name="subject" type="text" placeholder="Тема"/>
     <label>Выберите шаблон:</label>

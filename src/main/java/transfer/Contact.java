@@ -1,5 +1,6 @@
 package transfer;
 
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -209,5 +210,9 @@ public class Contact extends TransferObject
             return sex == Sex.f ? "checked" : null;
         }
         return null;
+    }
+
+    public boolean getHasAvatar(){
+        return StringUtils.isNotEmpty(photoUrl);
     }
 }

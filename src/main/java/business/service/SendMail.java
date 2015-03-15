@@ -90,6 +90,9 @@ public class SendMail implements Service {
         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 
         Integer count = 0;
+        if(emails == null){
+            return 0;
+        }
         for (int i = 0; i < emails.length; i++) {
 
             String to = emails[i];
@@ -151,6 +154,9 @@ public class SendMail implements Service {
                 }
             }
 
+            template.remove("firstName");
+            template.remove("date");
+            template.remove("address");
             template.add("firstName", firstName);
             template.add("date", date);
             template.add("address", address);

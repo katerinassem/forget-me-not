@@ -178,7 +178,7 @@ public class StoreFullContactFacade {
                 for(int i = 0; i < deletedTelephones.length; i++){
                     if(StringUtils.isNotEmpty(deletedTelephones[i])) {
                         for(Telephone telephone : telephones) {
-                            if(telephone.getId() == Integer.parseInt(deletedTelephones[i])) {
+                            if(telephone.getId() != null && telephone.getId() == Integer.parseInt(deletedTelephones[i])) {
                                 telephone.setDeleted(true);
                             }
                         }
@@ -197,9 +197,14 @@ public class StoreFullContactFacade {
         String[] attachmentComments = req.getAttribute("attachmentComments") == null ? null : (String[])req.getAttribute("attachmentComments");
 
         String attachmentId = getAttributeString(req, "attachmentId") == null ? null : getAttributeString(req, "attachmentId");
-        String fileName = req.getAttribute("fileName") == null ? null : req.getAttribute("fileName").toString();
+        String fileName = null;
+        if(req.getAttribute("fileName") != null) {
+            fileName = (String)req.getAttribute("fileName");
+            fileName = StringUtils.isEmpty(fileName) ? null : fileName;
+        }
         String uploadDateEntered = getAttributeString(req, "uploadDate") == null ? null : getAttributeString(req, "uploadDate");
         String attachmentComment = getAttributeString(req, "attachmentComment") == null ? null : getAttributeString(req, "attachmentComment");
+
         Attachment someAttachment = null;
 
         DateTimeFormatter format = DateTimeFormat.forPattern("HH:mm:ss, dd.MM.YYYY");
@@ -245,7 +250,7 @@ public class StoreFullContactFacade {
                 for(int i = 0; i < deletedAttachments.length; i++){
                     if(StringUtils.isNotEmpty(deletedAttachments[i])) {
                         for(Attachment attachment : attachments) {
-                            if(attachment.getId() == Integer.parseInt(deletedAttachments[i])) {
+                            if(attachment.getId() != null && attachment.getId() == Integer.parseInt(deletedAttachments[i])) {
                                 attachment.setDeleted(true);
                             }
                         }
@@ -265,6 +270,13 @@ public class StoreFullContactFacade {
 
         if(someAttachment != null) {
             saveNewAttachment(someAttachment);
+        }
+
+        if(StringUtils.isNotEmpty(getAttributeString(req, "photoUrl"))){
+            contact.setPhotoUrl(getAttributeString(req, "photoUrl"));
+        }
+        else if(StringUtils.isNotEmpty(fileName) && StringUtils.isEmpty(uploadDateEntered)) {
+            contact.setPhotoUrl(fileName);
         }
 
         req.getSession().setAttribute("contact", contact);

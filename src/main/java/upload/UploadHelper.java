@@ -10,9 +10,11 @@ import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
-import javax.servlet.http.HttpServlet;
+import javax.activation.MimetypesFileTypeMap;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
 import java.util.*;
 
 /**
@@ -77,8 +79,16 @@ public class UploadHelper {
         upload.setSizeMax(MAX_REQUEST_SIZE);
 
         //  This path is relative to application's directory
-        String uploadPath = request.getSession().getServletContext().getContextPath()
-                + File.separator + UPLOAD_DIRECTORY;
+        //String uploadPath = request.getSession().getServletContext().getContextPath()
+        //        + File.separator + UPLOAD_DIRECTORY;
+
+        String rootPath = System.getProperty("catalina.home");
+        String uploadPath = rootPath + File.separator + "/upload";
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("config");
+        String dir = resourceBundle.getString("uploadDir");
+        if(StringUtils.isNotEmpty(dir)){
+            uploadPath = rootPath + File.separator + dir;
+        }
 
         File uploadDir = new File(uploadPath);
         if (!uploadDir.exists()) {
@@ -95,10 +105,11 @@ public class UploadHelper {
             String contactId = null;
             DateTimeFormatter formatter = DateTimeFormat.forPattern("HH_mm_ss_dd_MM_YYYY_");
             String dateNowString = formatter.print(DateTime.now());
+            String uploadDate = null;
 
             if (formItems != null && formItems.size() > 0) {
                 for (FileItem item : formItems) {
-                    if (!item.isFormField()) {
+                    if (!item.isFormField() && item.getSize() > 0) {
                         fileItem = item;
                     }
                     else {
@@ -112,6 +123,9 @@ public class UploadHelper {
                         }
                         if(StringUtils.equalsIgnoreCase(item.getFieldName(), "id")){
                             contactId = item.getString("UTF-8");
+                        }
+                        if(StringUtils.equalsIgnoreCase(item.getFieldName(), "uploadDate")){
+                            uploadDate = item.getString("UTF-8");
                         }
                     }
                 }
@@ -145,12 +159,55 @@ public class UploadHelper {
                     request.setAttribute(entry.getKey(), entry.getValue().toArray(new String[entry.getValue().size()]));
                 }
             }
+            request.removeAttribute("fileName");
             if(fileName != null) {
                 request.setAttribute("fileName", fileName);
             }
 
         } catch (Exception e) {
             throw new UploadException(e);
+        }
+    }
+
+    public boolean download(String fileName, Integer contactId, HttpServletResponse resp) throws DownloadException{
+
+        logger.info(" - [ ENTERING METHOD download(HttpServletRequest req, HttpServletResponse resp), PARAMETERS: String fileName = " + String.valueOf(fileName) +",Integer contactId = " + String.valueOf(contactId) + ", HttpServletResponse resp]");
+
+        if(StringUtils.isEmpty(fileName) || contactId == null){
+            throw new DownloadException("Пустое имя файла!");
+        }
+
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("config");
+        String dir = resourceBundle.getString("uploadDir");
+        String rootPath = System.getProperty("catalina.home");
+        File file = new File(rootPath + File.separator + dir + File.separator + contactId + File.separator + fileName);
+        if(!file.exists()){
+            throw new DownloadException("Запрашиваемый файл не существует");
+        }
+        try {
+            InputStream fis = new FileInputStream(file);
+            String mimeType = new MimetypesFileTypeMap().getContentType(file);
+            resp.setContentType(mimeType != null ? mimeType : "application/octet-stream");
+            resp.setContentLength((int) file.length());
+            resp.setHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
+
+            ServletOutputStream os = resp.getOutputStream();
+            byte[] bufferData = new byte[1024];
+            int read = 0;
+            while ((read = fis.read(bufferData)) != -1) {
+                os.write(bufferData, 0, read);
+            }
+            os.flush();
+            os.close();
+            fis.close();
+            logger.info(" - [ FILE " + fileName + " WAS DOWNLOADED SUCCESFULLY]");
+            return true;
+        }
+        catch (FileNotFoundException e){
+            throw new DownloadException(e);
+        }
+        catch (IOException e){
+            throw new DownloadException(e);
         }
     }
 }
