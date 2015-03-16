@@ -71,7 +71,7 @@ public class CreateEditContactCommand implements Command
         }
         catch (BLLDataException e)
         {
-            logger.error(e + " - in method process(HttpServletRequest req, HttpServletResponse resp), class CreateEditContactCommand\n");
+            logger.error(e);
             req.getSession().setAttribute("errorMessage", "Ошибка! Невозможно отобразить данные. Попытайтесь ещё.");
             RequestDispatcher dispatcher = req.getRequestDispatcher("Error.jsp");
             try {
@@ -86,7 +86,7 @@ public class CreateEditContactCommand implements Command
         }
         catch (FacadeServiceException e)
         {
-            logger.error(e + " - in method process(HttpServletRequest req, HttpServletResponse resp), class CreateEditContactCommand\n");
+            logger.error(e);
             req.getSession().setAttribute("errorMessage", "Ошибка! Невозможно отобразить данные. Попытайтесь ещё.");
             RequestDispatcher dispatcher = req.getRequestDispatcher("Error.jsp");
             try {

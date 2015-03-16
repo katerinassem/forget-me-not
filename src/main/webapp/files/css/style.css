@@ -16,7 +16,7 @@ form
     margin: 0 15% 0;
 }
 
-.main, .search
+#main, .search
 {
     width: 60%;
     margin: 0 20% 0;
@@ -41,7 +41,7 @@ input
 
 label
 {
-    margin: 1% 0% 1%;
+    margin: 1% 0 1%;
 }
 
 .sex, .tel
@@ -97,16 +97,12 @@ th
 .page-button
 {
     display: inline-block;
-    padding: 0px 9px;
+    padding: 0 9px;
     margin-right: 4px;
     background-color: mediumvioletred;
     font-weight: bold;
     text-decoration: none;
     color: white;
-}
-
-.active{
-    background-color: white;
 }
 
 a:link, a:active, a:hover, a:visited
@@ -142,7 +138,7 @@ button, .button
     position:fixed;
     top:3%;
 	left:20%;
-    margin:2% auto 0px auto;
+    margin:2% auto 0 auto;
     height: auto;
     padding: 2%;
     background-color: white;

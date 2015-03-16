@@ -154,7 +154,7 @@ public class MySQLContactDAO implements DAO<Contact>
                 try {
                     con.rollback();
                 } catch (SQLException e1) {
-                    logger.error(" - [CANNOT ROLLBACK]", e1);
+                    logger.error(e1);
                 }
             }
             throw new DAOSQLException(e);
@@ -167,7 +167,7 @@ public class MySQLContactDAO implements DAO<Contact>
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
             if(con != null)
@@ -221,7 +221,6 @@ public class MySQLContactDAO implements DAO<Contact>
         }
         catch (SQLException e)
         {
-            logger.error(e + " - [SQL EXCEPTION]");
             throw new DAOSQLException(e);
         }
         finally {
@@ -232,7 +231,7 @@ public class MySQLContactDAO implements DAO<Contact>
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
             if(con != null)
@@ -391,7 +390,7 @@ public class MySQLContactDAO implements DAO<Contact>
                 try {
                     con.rollback();
                 } catch (SQLException e1) {
-                    logger.error(" - [CANNOT ROLLBACK]", e1);
+                    logger.error(e1);
                 }
             }
             throw new DAOSQLException(e);
@@ -404,7 +403,7 @@ public class MySQLContactDAO implements DAO<Contact>
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
             if(con != null)
@@ -524,7 +523,7 @@ public class MySQLContactDAO implements DAO<Contact>
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
         }
@@ -550,7 +549,6 @@ public class MySQLContactDAO implements DAO<Contact>
                 deleted = true;
         }
         catch (SQLException e) {
-            logger.error(e + " - [SQL EXCEPTION]");
             throw new DAOSQLException(e);
         }
         finally {
@@ -561,7 +559,7 @@ public class MySQLContactDAO implements DAO<Contact>
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
             if(con != null)
@@ -616,7 +614,6 @@ public class MySQLContactDAO implements DAO<Contact>
         }
         catch (SQLException e)
         {
-            logger.error(e + " - [SQL EXCEPTION]");
             throw new DAOSQLException(e);
         }
         finally {
@@ -627,7 +624,7 @@ public class MySQLContactDAO implements DAO<Contact>
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
             if(con != null)
@@ -656,76 +653,87 @@ public class MySQLContactDAO implements DAO<Contact>
             connector = MySQLConnector.getInstance();
             con = connector.getConnection();
             statement = con.prepareStatement(query);
+            StringBuilder sb = new StringBuilder(query);
 
             DateTime beforeDateParam = (DateTime)params;
 
             if(object != null) {
                 if (StringUtils.isNotEmpty(object.getFirstName())) {
                     String partQuery = " AND contact.first_name LIKE ?";
-                    query += partQuery;
+                    sb.append(partQuery);
                 }
                 if (StringUtils.isNotEmpty(object.getSecondName())) {
                     String partQuery = " AND contact.second_name LIKE ?";
-                    query += partQuery;
+                    sb.append(partQuery);
                 }
                 if (StringUtils.isNotEmpty(object.getNameByFather())) {
                     String partQuery = " AND contact.name_by_father LIKE ?";
-                    query += partQuery;
+                    sb.append(partQuery);
                 }
 
                 DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("YYYY-MM-dd");
                 if(object.getDateOfBirth() != null && beforeDateParam != null) {
                     String partQuery = " AND contact.date_of_birth BETWEEN STR_TO_DATE(?, '%Y-%m-%d') AND STR_TO_DATE(?, '%Y-%m-%d')";
-                    query += partQuery;
+                    sb.append(partQuery);
                 }
 
                 if (object.getSex() != null) {
                     String partQuery = " AND contact.sex=?";
-                    query += partQuery;
+                    sb.append(partQuery);
                 }
                 if (StringUtils.isNotEmpty(object.getSitizenship())) {
                     String partQuery = " AND contact.sitizenship LIKE ?";
-                    query += partQuery;
+                    sb.append(partQuery);
                 }
             }
             if(object.getAddress() != null) {
                 Address address = object.getAddress();
                 if (StringUtils.isNotEmpty(address.getCountry())) {
                     String partQuery = " AND address.country LIKE ?";
-                    query += partQuery;
+                    sb.append(partQuery);
                 }
                 if (StringUtils.isNotEmpty(address.getCity())) {
                     String partQuery = " AND address.city LIKE ?";
-                    query += partQuery;
+                    sb.append(partQuery);
                 }
                 if (StringUtils.isNotEmpty(address.getStreet())) {
                     String partQuery = " AND address.street LIKE ?";
-                    query += partQuery;
+                    sb.append(partQuery);
                 }
                 if (address.getBuilding() != null) {
                     String partQuery = " AND address.building=?";
-                    query += partQuery;
+                    sb.append(partQuery);
                 }
                 if (address.getApartment() != null) {
                     String partQuery = " AND address.apartment=?";
-                    query += partQuery;
+                    sb.append(partQuery);
                 }
                 if (address.getIndex() != null) {
                     String partQuery = " AND address.post_index=?";
-                    query += partQuery;
+                    sb.append(partQuery);
                 }
             }
+            query = sb.toString();
             statement = con.prepareStatement(query);
             int i = 1;
             if(object != null) {
                 if (StringUtils.isNotEmpty(object.getFirstName())) {
-                    statement.setString(i++, "%" + object.getFirstName() + "%");
+                    StringBuilder sb1 = new StringBuilder("%");
+                    sb1.append(object.getFirstName());
+                    sb1.append("%");
+                    statement.setString(i++, sb1.toString());
                 }
                 if (StringUtils.isNotEmpty(object.getSecondName())) {
-                    statement.setString(i++, "%" + object.getSecondName() + "%");
+                    StringBuilder sb1 = new StringBuilder("%");
+                    sb1.append(object.getSecondName());
+                    sb1.append("%");
+                    statement.setString(i++, sb1.toString());
                 }
                 if (StringUtils.isNotEmpty(object.getNameByFather())) {
-                    statement.setString(i++, "%" + object.getNameByFather() + "%");
+                    StringBuilder sb1 = new StringBuilder("%");
+                    sb1.append(object.getNameByFather());
+                    sb1.append("%");
+                    statement.setString(i++, sb1.toString());
                 }
 
                 DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("YYYY-MM-dd");
@@ -738,19 +746,31 @@ public class MySQLContactDAO implements DAO<Contact>
                     statement.setString(i++, object.getSex().name());
                 }
                 if (StringUtils.isNotEmpty(object.getSitizenship())) {
-                    statement.setString(i++, "%" + object.getSitizenship() + "%");
+                    StringBuilder sb1 = new StringBuilder("%");
+                    sb1.append(object.getSitizenship());
+                    sb1.append("%");
+                    statement.setString(i++, sb1.toString());
                 }
             }
             if(object.getAddress() != null) {
                 Address address = object.getAddress();
                 if (StringUtils.isNotEmpty(address.getCountry())) {
-                    statement.setString(i++, "%" + address.getCountry() + "%");
+                    StringBuilder sb1 = new StringBuilder("%");
+                    sb1.append(address.getCountry());
+                    sb1.append("%");
+                    statement.setString(i++, sb1.toString());
                 }
                 if (StringUtils.isNotEmpty(address.getCity())) {
-                    statement.setString(i++, "%" + address.getCity() + "%");
+                    StringBuilder sb1 = new StringBuilder("%");
+                    sb1.append(address.getCity());
+                    sb1.append("%");
+                    statement.setString(i++, sb1.toString());
                 }
                 if (StringUtils.isNotEmpty(address.getStreet())) {
-                    statement.setString(i++, "%" + address.getStreet() + "%");
+                    StringBuilder sb1 = new StringBuilder("%");
+                    sb1.append(address.getStreet());
+                    sb1.append("%");
+                    statement.setString(i++, sb1.toString());
                 }
                 if (address.getBuilding() != null) {
                     statement.setInt(i++, address.getBuilding());
@@ -789,7 +809,6 @@ public class MySQLContactDAO implements DAO<Contact>
         }
         catch (SQLException e)
         {
-            logger.error(e + " - [SQL EXCEPTION]");
             throw new DAOSQLException(e);
         }
         finally {
@@ -800,7 +819,7 @@ public class MySQLContactDAO implements DAO<Contact>
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
             if(con != null)

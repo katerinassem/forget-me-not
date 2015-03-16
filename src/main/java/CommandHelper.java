@@ -43,13 +43,13 @@ public class CommandHelper {
     {
         Command command = null;
         try {
-            String commandClassName = commandName == null ? "commands.ShowContactsCommand" : commandName == "" ? "commands.ShowContactsCommand" : "commands." + commandName;
+            String commandClassName = commandName == null ? "commands.ShowContactsCommand" : StringUtils.isEmpty(commandName) ? "commands.ShowContactsCommand" : "commands." + commandName;
             Class c = Class.forName(commandClassName);
             command = (Command) c.newInstance();
         }
         catch (ClassNotFoundException e)
         {
-            logger.error(e + " - in getCommandForCommandName(String commandName), getting default command (commands.ShowContactsCommand)\n");
+            logger.error(e);
             String commandClassName = "commands.ShowContactsCommand";
             try {
                 Class c = Class.forName(commandClassName);
@@ -57,24 +57,24 @@ public class CommandHelper {
             }
             catch (ClassNotFoundException e1)
             {
-                logger.error(e1 + " - Cannot get default command class in getCommandForCommandName(String commandName)\n");
+                logger.error(e1);
             }
             catch (InstantiationException e1)
             {
-                logger.error(e1 + " - Cannot get instance of default command class in getCommandForCommandName(String commandName)\n");
+                logger.error(e1);
             }
             catch (IllegalAccessException e1)
             {
-                logger.error(e1 + " - Don't have access to the default command class in getCommandForCommandName(String commandName)\n");
+                logger.error(e1);
             }
         }
         catch (InstantiationException e)
         {
-            logger.error(e + " -  in getCommandForCommandName(String commandName)\n");
+            logger.error(e);
         }
         catch (IllegalAccessException e)
         {
-            logger.error(e + " - in getCommandForCommandName(String commandName)\n");
+            logger.error(e);
         }
         return command;
     }

@@ -17,7 +17,7 @@
 <h1>Отправить email контактам.</h1>
 <form name="send" method="post" action="?command=SendEmailCommand&option=send">
     <label>Кому:</label>
-    <label name="emails">${emails}</label>
+    <label>${emails}</label>
     <input name="emails" type="hidden" value="${emails}"/>
     <input name="checkedIds" type="hidden" value="${checkedIds}"/>
     <label>Тема:</label>
@@ -30,7 +30,6 @@
             <option>${template}</option>
         </c:forEach>
     </select>
-
     <textarea name="letter"  placeholder="текст письма"></textarea>
     <button type="button" onclick="validateSend()">Отправить</button>
     <button type="button"><a href="?command=ShowContactsCommand">Отменить</a></button>

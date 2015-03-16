@@ -27,6 +27,7 @@
     <form id="main" method="post" action="" enctype="multipart/form-data">
         <input type="hidden" name="command" value="CreateEditContactCommand"/>
         <input type="hidden" name="option" value="editmore"/>
+
         <div id="attachment-pop-up">
             <h3>Создать присоединение.</h3>
             <input name="attachmentId" type="hidden"/>
@@ -85,87 +86,87 @@
                 <label>Индекс:</label>
                 <input name="index" type="text" placeholder="индекс" value="${sessionScope.contact.address.index}"/>
         </fieldset>
-            <fieldset>
-                <legend>Контактные телефоны</legend>
-                <button type="button" onclick="deleteTelephones()">X удалить</button>
-                <button type="button" onclick="showPopUp('telephone-pop-up', 'block')">＋ создать</button>
-                <table id="telephone-table">
-                    <tr>
-                        <th class="checkbox"></th>
-                        <th>Номер</th>
-                        <th>Тип</th>
-                        <th>Комментарий</th>
-                    </tr>
-                    <c:if test="${sessionScope.contact.telephones != null}">
-                        <c:forEach items="${sessionScope.contact.telephones}" var="telephone" varStatus="status">
-                            <tr id="${status.index}" class="${telephone.isDeleted ? "deleted" : "foo"}">
-                                <td>
-                                    <input type="hidden" id="{telephone.id}" value="${status.index}"/>
-                                    <input id="telephone${telephone.id}" name="telephoneIds" type="hidden" value="${telephone.id}"/>
-                                    <input name="countryCodes" type="hidden" value="${telephone.countryCode}"/>
-                                    <input name="operatorCodes" type="hidden" value="${telephone.operatorCode}"/>
-                                    <input name="telephoneNumbers" type="hidden" value="${telephone.telephoneNumber}"/>
-                                    <input name="telephoneTypes" type="hidden" value="${telephone.type}"/>
-                                    <input name="telephoneComments" type="hidden" value="${telephone.comment}"/>
+        <fieldset>
+            <legend>Контактные телефоны</legend>
+            <button type="button" onclick="deleteTelephones()">X удалить</button>
+            <button type="button" onclick="showPopUp('telephone-pop-up', 'block')">＋ создать</button>
+            <table id="telephone-table">
+                <tr>
+                    <th class="checkbox"></th>
+                    <th>Номер</th>
+                    <th>Тип</th>
+                    <th>Комментарий</th>
+                </tr>
+                <c:if test="${sessionScope.contact.telephones != null}">
+                    <c:forEach items="${sessionScope.contact.telephones}" var="telephone" varStatus="status">
+                        <tr id="${status.index}" class="${telephone.isDeleted ? "deleted" : "foo"}">
+                            <td>
+                                <input type="hidden" id="{telephone.id}" value="${status.index}"/>
+                                <input id="telephone${telephone.id}" name="telephoneIds" type="hidden" value="${telephone.id}"/>
+                                <input name="countryCodes" type="hidden" value="${telephone.countryCode}"/>
+                                <input name="operatorCodes" type="hidden" value="${telephone.operatorCode}"/>
+                                <input name="telephoneNumbers" type="hidden" value="${telephone.telephoneNumber}"/>
+                                <input name="telephoneTypes" type="hidden" value="${telephone.type}"/>
+                                <input name="telephoneComments" type="hidden" value="${telephone.comment}"/>
 
-                                    <input class="checkbox" name="checkedTelephones" type="checkbox" value="${telephone.id}"/>
+                                <input class="checkbox" name="checkedTelephones" type="checkbox" value="${telephone.id}"/>
+                            </td>
+                            <td onclick="showPopUp('telephone-pop-up', 'block', '${status.index}')">✐${telephone.countryCode}(${telephone.operatorCode})${telephone.telephoneNumber}</td>
+                            <td>${telephone.typeString}</td>
+                            <td>${telephone.comment}</td>
+                        </tr>
+                    </c:forEach>
+                    <c:forEach items="${sessionScope.contact.telephones}" var="telephone" varStatus="status">
+                        <c:if test="${telephone.isDeleted}">
+                            <input type="hidden" name="deletedTelephones" value="${telephone.id}"/>
+                        </c:if>
+                    </c:forEach>
+                </c:if>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Список присоединений</legend>
+            <c:if test="${sessionScope.contact.id != null}">
+                <button type="button" onclick="deleteAttachments()">X удалить</button>
+                <button type="button" onclick="showPopUp('attachment-pop-up', 'block')">＋ создать</button>
+            </c:if>
+            <table id="attachment-table">
+                <tr>
+                    <th class="checkbox"></th>
+                    <th>Имя файла</th>
+                    <th>Дата загрузки</th>
+                    <th>Комментарий</th>
+                </tr>
+                <c:if test="${sessionScope.contact.id == null}">
+                    <h5>Файлы можно загружать для существующих контактов.</h5>
+                </c:if>
+                <c:if test="${sessionScope.contact.id != null}">
+                    <c:if test="${sessionScope.contact.attachments != null}">
+                        <c:forEach items="${sessionScope.contact.attachments}" var="attachment" varStatus="status">
+                            <tr id="${attachment.formattedUploadDate}" class="${attachment.isDeleted ? "deleted" : "foo"}">
+                                <td>
+                                    <input type="hidden" id="{attachment.id}" value="${attachment.formattedUploadDate}"/>
+                                    <input name="attachmentIds" type="hidden" value="${attachment.id}"/>
+                                    <input name="fileNames" type="hidden" value="${attachment.fileName}"/>
+                                    <input name="formattedUploadDates" type="hidden" value="${attachment.formattedUploadDate}"/>
+                                    <input name="attachmentComments" type="hidden" value="${attachment.comment}"/>
+
+                                    <input class="checkbox" name="checkedAttachments" type="checkbox" value="${attachment.id}"/>
                                 </td>
-                                <td onclick="showPopUp('telephone-pop-up', 'block', '${status.index}')">✐${telephone.countryCode}(${telephone.operatorCode})${telephone.telephoneNumber}</td>
-                                <td>${telephone.typeString}</td>
-                                <td>${telephone.comment}</td>
+                                <td><a href="?command=DownloadAttachmentCommand&fileName=${attachment.fileName}&contactId=${sessionScope.contact.id}">⇓</a><div onclick="showPopUp('attachment-pop-up', 'block', '${attachment.formattedUploadDate}')">&nbsp✐${attachment.fileName}</div></td>
+                                <td>${attachment.formattedUploadDate}</td>
+                                <td>${attachment.comment}</td>
                             </tr>
                         </c:forEach>
-                        <c:forEach items="${sessionScope.contact.telephones}" var="telephone" varStatus="status">
-                            <c:if test="${telephone.isDeleted}">
-                                <input type="hidden" name="deletedTelephones" value="${telephone.id}"/>
+                        <c:forEach items="${sessionScope.contact.attachments}" var="attachment" varStatus="status">
+                            <c:if test="${attachment.isDeleted}">
+                                <input type="hidden" name="deletedAttachments" value="${attachment.id}"/>
                             </c:if>
                         </c:forEach>
                     </c:if>
-                </table>
-            </fieldset>
-                <fieldset>
-                    <legend>Список присоединений</legend>
-                    <c:if test="${sessionScope.contact.id != null}">
-                        <button type="button" onclick="deleteAttachments()">X удалить</button>
-                        <button type="button" onclick="showPopUp('attachment-pop-up', 'block')">＋ создать</button>
-                    </c:if>
-                    <table id="attachment-table">
-                        <tr>
-                            <th class="checkbox"></th>
-                            <th>Имя файла</th>
-                            <th>Дата загрузки</th>
-                            <th>Комментарий</th>
-                        </tr>
-                        <c:if test="${sessionScope.contact.id == null}">
-                            <h5>Файлы можно загружать для существующих контактов.</h5>
-                        </c:if>
-                        <c:if test="${sessionScope.contact.id != null}">
-                            <c:if test="${sessionScope.contact.attachments != null}">
-                                <c:forEach items="${sessionScope.contact.attachments}" var="attachment" varStatus="status">
-                                    <tr id="${attachment.formattedUploadDate}" class="${attachment.isDeleted ? "deleted" : "foo"}">
-                                        <td>
-                                            <input type="hidden" id="{attachment.id}" value="${attachment.formattedUploadDate}"/>
-                                            <input name="attachmentIds" type="hidden" value="${attachment.id}"/>
-                                            <input name="fileNames" type="hidden" value="${attachment.fileName}"/>
-                                            <input name="formattedUploadDates" type="hidden" value="${attachment.formattedUploadDate}"/>
-                                            <input name="attachmentComments" type="hidden" value="${attachment.comment}"/>
-
-                                            <input class="checkbox" name="checkedAttachments" type="checkbox" value="${attachment.id}"/>
-                                        </td>
-                                        <td><a href="?command=DownloadAttachmentCommand&fileName=${attachment.fileName}&contactId=${sessionScope.contact.id}">⇓</a><div onclick="showPopUp('attachment-pop-up', 'block', '${attachment.formattedUploadDate}')">&nbsp✐${attachment.fileName}</div></td>
-                                        <td>${attachment.formattedUploadDate}</td>
-                                        <td>${attachment.comment}</td>
-                                    </tr>
-                                </c:forEach>
-                                <c:forEach items="${sessionScope.contact.attachments}" var="attachment" varStatus="status">
-                                    <c:if test="${attachment.isDeleted}">
-                                        <input type="hidden" name="deletedAttachments" value="${attachment.id}"/>
-                                    </c:if>
-                                </c:forEach>
-                            </c:if>
-                        </c:if>
-                    </table>
-                </fieldset>
+                </c:if>
+            </table>
+        </fieldset>
         <button form="main" onclick="validateMain()" type="button">Сохранить</button>
         <div id="telephone-pop-up">
             <h3>Создать или редактировать телефон.</h3>
@@ -180,9 +181,9 @@
             <fieldset>
                 <legend>Тип телефона</legend>
                 <label class="tel">Домашний</label>
-                <input name="checkedType" class="tel" type="radio" value="h" name="telephone_type"/>
+                <input name="checkedType" class="tel" type="radio" value="h"/>
                 <label class="tel">Мобильный</label>
-                <input name="checkedType" type="radio" class="tel" value="m" name="telephone_type" checked/>
+                <input name="checkedType" type="radio" class="tel" value="m" checked/>
             </fieldset>
             <label>Комментарий:</label>
             <input name="telephoneComment" type="text" placeholder="комментарий"/>

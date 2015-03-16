@@ -78,7 +78,6 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
         }
         catch (SQLException e)
         {
-            logger.error(e + " - [SQL EXCEPTION]");
             throw new DAOSQLException(e);
         }
         finally {
@@ -89,7 +88,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
             if(con != null)
@@ -158,7 +157,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
                 deleted = true;
         }
         catch (SQLException e) {
-            logger.error(e + " - [SQL EXCEPTION]");
+            logger.error(e);
             throw new DAOSQLException(e);
         }
         finally {
@@ -169,7 +168,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
             if(con != null)
@@ -216,7 +215,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
         }
         catch (SQLException e)
         {
-            logger.error(e + " - [SQL EXCEPTION]");
+            logger.error(e);
             throw new DAOSQLException(e);
         }
         finally {
@@ -227,7 +226,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
             if(con != null)
@@ -289,7 +288,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
             if(con != null){
@@ -353,7 +352,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
         }
@@ -410,7 +409,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
         }
@@ -438,7 +437,7 @@ public class MySQLTelephoneDAO implements DAO<Telephone> {
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
         }

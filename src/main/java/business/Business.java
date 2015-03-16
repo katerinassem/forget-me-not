@@ -35,7 +35,6 @@ public abstract class Business<T> {
             entity = entityDAO.read(id);
         }
         catch (DAOSQLException e) {
-            logger.error(" [DAO CAUSED EXCEPTION] - in getObjectById(int id)", e);
             throw new BLLDataException(e);
         }
         catch (DAOFatalException e)
@@ -60,7 +59,6 @@ public abstract class Business<T> {
             result = entityDAO.create(object);
         }
         catch (DAOSQLException e) {
-            logger.error(" [DAO CAUSED EXCEPTION] - in createObject(T object)", e);
             throw new BLLDataException(e);
         }
         catch (DAOFatalException e)
@@ -78,7 +76,6 @@ public abstract class Business<T> {
             result = entityDAO.update(object);
         }
         catch (DAOSQLException e) {
-            logger.error(" [DAO CAUSED EXCEPTION] - in updateObject(T object)", e);
             throw new BLLDataException(e);
         }
         catch (DAOFatalException e)
@@ -96,7 +93,6 @@ public abstract class Business<T> {
             result = entityDAO.delete(id);
         }
         catch (DAOSQLException e) {
-            logger.error(" [DAO CAUSED EXCEPTION] - in deleteObjectById(int id)", e);
             throw new BLLDataException(e);
         }
         catch (DAOFatalException e)
@@ -114,8 +110,8 @@ public abstract class Business<T> {
         try {
             objects = entityDAO.readAll();
         }
-        catch (DAOSQLException e) {
-            logger.error(" [DAO CAUSED EXCEPTION] - in readAllObjects()", e);
+        catch (DAOSQLException e)
+        {
             throw new BLLDataException(e);
         }
         catch (DAOFatalException e)
@@ -133,7 +129,6 @@ public abstract class Business<T> {
             objects = entityDAO.search(object, params);
         }
         catch (DAOSQLException e) {
-            logger.error(" [DAO CAUSED EXCEPTION] - in readAllObjects()", e);
             throw new BLLDataException(e);
         }
         catch (DAOFatalException e)

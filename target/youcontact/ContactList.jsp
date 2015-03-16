@@ -31,7 +31,7 @@
         </tr>
         <c:forEach items="${sessionScope.contacts}" var="contact" varStatus="varStatus">
             <tr>
-                <td><input class="checkbox" name="checkbox" value="${contact.id}" type="checkbox"/></td>
+                <td class="checkbox"><input class="checkbox" name="checkbox" value="${contact.id}" type="checkbox"/></td>
                 <td><a href="?command=CreateEditContactCommand&option=edit&id=${contact.id}">✐ ${contact.secondName} ${contact.firstName} ${contact.nameByFather}</a></td>
                 <td>${contact.formattedDateOfBirth}</td>
                 <td>${contact.address}</td>
@@ -41,7 +41,7 @@
     </table>
     <ul id="page-tab">
         <c:forEach var="index" varStatus="status" begin="1" end="${sessionScope.pageCount}" step="1">
-            <li class="page-button" onclick="setActive(index)" id="${index}"><a href="?command=ShowContacts&page=${index}">${index}</a></li>
+            <li class="page-button" id="${index}"><a href="?command=ShowContacts&page=${index}">${index}</a></li>
         </c:forEach>
     </ul>
 </form>

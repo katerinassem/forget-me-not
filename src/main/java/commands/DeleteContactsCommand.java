@@ -45,8 +45,6 @@ public class DeleteContactsCommand implements Command
             }
             req.getSession().removeAttribute("contact");
             resp.sendRedirect("Front?command=ShowContactsCommand");
-            //RequestDispatcher dispatcher = req.getRequestDispatcher("ContactList.jsp");
-            //dispatcher.forward(req, resp);
         }
         catch (FacadeFatalException e){
             throw new CommandFatalException(e);

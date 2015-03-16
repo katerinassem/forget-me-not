@@ -2,18 +2,6 @@
  * Created by Катерина on 07.03.2015.
  */
 
-function setActive(index){
-    var pageTabb = document.getElementById('page-tab');
-    var page = pageTabb.children[index-1];
-    var i = 0;
-    var pages = pageTabb.childrenl
-    for(i = 0; i < pages.length; i++){
-        pages[i].className = '';
-    }
-    page.className = 'active';
-    return true;
-}
-
 function validateMain(){
     document.getElementsByName("command")[0].value = 'SaveContactCommand';
     document.getElementsByName("option")[0].value = '';
@@ -106,7 +94,7 @@ function validateMain(){
     }
     if(email !== "" && ( email.length > 100 || !regEmail.test(email)) ){
         form.email.style.borderColor = 'red';
-        form.email.placeholder = 'неверный или слишком большой email'
+        form.email.placeholder = 'неверный или слишком большой email';
         valid = false;
     }
     else{

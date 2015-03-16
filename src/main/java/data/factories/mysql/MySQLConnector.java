@@ -15,8 +15,8 @@ import java.sql.SQLException;
 public class MySQLConnector
 {
     private Logger logger = Logger.getLogger(MySQLConnector.class);
-    DataSource pool;
 
+    DataSource pool;
     private static MySQLConnector instance = new MySQLConnector();
 
     private MySQLConnector()
@@ -27,7 +27,7 @@ public class MySQLConnector
         }
         catch (ClassNotFoundException e)
         {
-            logger.error(e + " - [CANNOT REGISTER com.mysql.jdbc.Driver]");
+            logger.error(e);
         }
         Context env = null;
         try {
@@ -37,7 +37,7 @@ public class MySQLConnector
                 logger.error(" - [CANNOT FIND DATA SOURCE]");
             }
         } catch (NamingException e) {
-            logger.error(e + " - [CONTEXT EXCEPTION] while creating a pool.");
+            logger.error(e);
         }
     }
 

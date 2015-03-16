@@ -75,7 +75,6 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
         }
         catch (SQLException e)
         {
-            logger.error(e + " - [SQL EXCEPTION]");
             throw new DAOSQLException(e);
         }
         finally {
@@ -86,7 +85,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
             if(con != null)
@@ -148,7 +147,6 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
             deleted = deleteWithExistingConnection(id, con);
         }
         catch (SQLException e) {
-            logger.error(e + " - [SQL EXCEPTION]");
             throw new DAOSQLException(e);
         }
         finally {
@@ -186,7 +184,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
         }
@@ -223,7 +221,6 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
         }
         catch (SQLException e)
         {
-            logger.error(e + " - [SQL EXCEPTION]");
             throw new DAOSQLException(e);
         }
         finally {
@@ -234,7 +231,7 @@ public class MySQLAttachmentDAO implements DAO<Attachment>
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
             if(con != null)

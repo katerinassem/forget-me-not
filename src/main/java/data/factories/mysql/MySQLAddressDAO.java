@@ -73,7 +73,7 @@ public class MySQLAddressDAO implements DAO<Address>
                 Integer building = rs.getInt("building");
                 if(rs.wasNull()){
                     building = null;
-                };
+                }
                 Integer apartment = rs.getInt("apartment");
                 if(rs.wasNull()){
                     apartment = null;
@@ -88,7 +88,6 @@ public class MySQLAddressDAO implements DAO<Address>
         }
         catch (SQLException e)
         {
-            logger.error(e + " - [SQL EXCEPTION]");
             throw new DAOSQLException(e);
         }
         finally {
@@ -99,7 +98,7 @@ public class MySQLAddressDAO implements DAO<Address>
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
             if(con != null)
@@ -163,7 +162,6 @@ public class MySQLAddressDAO implements DAO<Address>
                 deleted = true;
         }
         catch (SQLException e) {
-            logger.error(e + " - [SQL EXCEPTION]");
             throw new DAOSQLException(e);
         }
         finally {
@@ -174,7 +172,7 @@ public class MySQLAddressDAO implements DAO<Address>
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
             if(con != null)
@@ -231,7 +229,6 @@ public class MySQLAddressDAO implements DAO<Address>
         }
         catch (SQLException e)
         {
-            logger.error(e + " - [SQL EXCEPTION]");
             throw new DAOSQLException(e);
         }
         finally {
@@ -242,7 +239,7 @@ public class MySQLAddressDAO implements DAO<Address>
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
             if(con != null)
@@ -326,7 +323,7 @@ public class MySQLAddressDAO implements DAO<Address>
                     logger.info(" - [CLOSED THE STATEMENT]");
                 }
                 catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
         }
@@ -396,7 +393,7 @@ public class MySQLAddressDAO implements DAO<Address>
                     statement.close();
                     logger.info(" - [CLOSED THE STATEMENT]");
                 } catch (SQLException e) {
-                    logger.error(e + " - [CANNOT CLOSE THE STATEMENT]");
+                    logger.error(e);
                 }
             }
         }
