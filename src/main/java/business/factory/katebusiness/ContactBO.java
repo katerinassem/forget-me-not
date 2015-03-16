@@ -11,6 +11,7 @@ import data.factories.mysql.MySQLConnector;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.log4j.Logger;
 import transfer.*;
+import upload.UploadHelper;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -79,6 +80,22 @@ public class ContactBO extends Business<Contact>{
             }
         }
         return contact;
+    }
+
+    @Override
+    public boolean updateObject(Contact object) throws BLLDataException, BLLFatalException {
+
+        logger.info(" - [ENTERING METHOD: updateObject(Contact object), PARAMETERS: Contact object = " + object + "]");
+        boolean result =  super.updateObject(object);
+        for(Attachment attachment : object.getAttachments()) {
+            if (attachment.isDeleted()) {
+                UploadHelper uploadHelper = UploadHelper.getInstance();
+                if(!uploadHelper.deleteFile(attachment.getFileName(), attachment.getContactId())){
+                    result = false;
+                }
+            }
+        }
+        return result;
     }
 
     @Override

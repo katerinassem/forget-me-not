@@ -15,7 +15,7 @@
 </head>
 <body>
 <h1>Поиск контактов.</h1>
-<form name="search" method="post" action="?command=SearchContactsCommand">
+<form class="search" name="search" method="post" action="?command=SearchContactsCommand">
     <label>ФИО:</label>
     <input name="firstName" type="text" placeholder="имя"/>
     <input name="secondName" type="text" placeholder="фамилия"/>

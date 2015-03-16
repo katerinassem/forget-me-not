@@ -9,6 +9,7 @@ import data.daoexception.DAOSQLException;
 import data.factories.mysql.MySQLConnector;
 import org.apache.log4j.Logger;
 import transfer.Attachment;
+import upload.UploadHelper;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -51,6 +52,8 @@ public class AttachmentBO extends Business<Attachment>{
         }
         else {
             super.deleteObjectById(object.getId());
+            UploadHelper uploadHelper = UploadHelper.getInstance();
+            uploadHelper.deleteFile(object.getFileName(), object.getContactId());
         }
         return result;
     }

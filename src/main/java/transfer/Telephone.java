@@ -1,5 +1,7 @@
 package transfer;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * Created by Катерина on 23.02.2015.
  */
@@ -14,6 +16,25 @@ public class Telephone extends TransferObject
     boolean deleted = false;
 
     public Telephone(){}
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("");
+        sb.append(countryCode);
+        sb.append("(");
+        sb.append(operatorCode);
+        sb.append(")");
+        sb.append(telephoneNumber);
+        if(type != null){
+            sb.append(", ");
+            sb.append(type);
+        }
+        if(StringUtils.isNotEmpty(comment)){
+            sb.append(", ");
+            sb.append(comment);
+        }
+        return sb.toString();
+    }
 
     public Telephone(Integer id, Integer countryCode, Integer operatorCode, Long telephoneNumber, TelephoneType type, String comment, Integer contactId) {
         super(id);

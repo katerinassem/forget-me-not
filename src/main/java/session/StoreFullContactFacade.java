@@ -272,11 +272,11 @@ public class StoreFullContactFacade {
             saveNewAttachment(someAttachment);
         }
 
-        if(StringUtils.isNotEmpty(getAttributeString(req, "photoUrl"))){
-            contact.setPhotoUrl(getAttributeString(req, "photoUrl"));
-        }
-        else if(StringUtils.isNotEmpty(fileName) && StringUtils.isEmpty(uploadDateEntered)) {
+        if(StringUtils.isNotEmpty(fileName) && StringUtils.isEmpty(uploadDateEntered)) {
             contact.setPhotoUrl(fileName);
+        }
+        else if(StringUtils.isNotEmpty(getAttributeString(req, "photoUrl"))){
+            contact.setPhotoUrl(getAttributeString(req, "photoUrl"));
         }
 
         req.getSession().setAttribute("contact", contact);

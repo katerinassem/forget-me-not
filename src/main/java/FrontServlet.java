@@ -32,9 +32,6 @@ public class FrontServlet extends HttpServlet
     {
         req.setCharacterEncoding("utf-8");
         resp.setCharacterEncoding("utf-8");
-        if(req.getSession().getAttribute("path") == null ||  StringUtils.isEmpty((String)req.getSession().getAttribute("path"))){
-            setPath(req.getSession());
-        }
         try {
             cleanSessionAttributes(req.getSession());
             commandHelper.dispatchRequest(req, resp);
@@ -97,15 +94,5 @@ public class FrontServlet extends HttpServlet
         session.removeAttribute("errorMessage");
         session.removeAttribute("contacts");
 
-    }
-
-    private void setPath(HttpSession session){
-
-        ResourceBundle resourceBundle = ResourceBundle.getBundle("config");
-        String dir = resourceBundle.getString("uploadDir");
-        String rootPath = System.getProperty("catalina.home");
-        File f = new File(rootPath + File.separator + dir);
-        String path = f.getPath();
-        session.setAttribute("path", path);
     }
 }

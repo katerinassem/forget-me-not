@@ -86,20 +86,26 @@ public class Address extends TransferObject
 
     @Override
     public String toString() {
-        String result = "";
-        result += country + ", " + city;
+        StringBuilder sb = new StringBuilder("");
+        sb.append(country);
+        sb.append(", ");
+        sb.append(city);
         if(StringUtils.isNotEmpty(street)){
-            result += ", " + street;
+            sb.append(", ");
+            sb.append(street);
         }
         if(building != null){
-            result += " " + building;
+            sb.append(" ");
+            sb.append(building);
         }
         if(apartment != null){
-            result += "-" + apartment;
+            sb.append("-");
+            sb.append(apartment);
         }
         if(index != null){
-            result += ", " + index;
+            sb.append(", ");
+            sb.append(index);
         }
-        return result;
+        return sb.toString();
     }
 }

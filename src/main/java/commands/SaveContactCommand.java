@@ -61,7 +61,7 @@ public class SaveContactCommand implements Command {
                     req.getSession().setAttribute("infoMessage", "Изменения успешно сохранены.");
                 }
                 else {
-                    req.getSession().setAttribute("infoMessage", "Не удалось сохранить изменения..");
+                    req.getSession().setAttribute("infoMessage", "Не удалось сохранить изменения ли удалить файлы..");
                 }
             }
 

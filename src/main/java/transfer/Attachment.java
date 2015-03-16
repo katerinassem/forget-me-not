@@ -1,5 +1,6 @@
 package transfer;
 
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -18,6 +19,21 @@ public class Attachment extends TransferObject
     boolean deleted = false;
 
     public Attachment() {
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("");
+        sb.append(fileName);
+        if(uploadDate != null){
+            sb.append(", ");
+            sb.append(getFormattedUploadDate());
+        }
+        if(StringUtils.isNotEmpty(comment)){
+            sb.append(", ");
+            sb.append(comment);
+        }
+        return sb.toString();
     }
 
     public Attachment(Integer id, String fileName, DateTime uploadDate, String comment, Integer contactId) {
@@ -81,6 +97,7 @@ public class Attachment extends TransferObject
     public boolean isDeleted() {
         return deleted;
     }
+
     public boolean getIsDeleted() {
         return deleted;
     }

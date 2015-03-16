@@ -36,6 +36,47 @@ public class Contact extends TransferObject
         attachments = new ArrayList<Attachment>();
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("");
+        sb.append(firstName);
+        sb.append(" ");
+        sb.append(secondName);
+        if(StringUtils.isNotEmpty(nameByFather)){
+            sb.append(" ");
+            sb.append(nameByFather);
+        }
+        if(dateOfBirth != null){
+            sb.append(", ");
+            sb.append(getFormattedDateOfBirth());
+        }
+        if(sex != null){
+            sb.append(", ");
+            sb.append(sex);
+        }
+        if(StringUtils.isNotEmpty(sitizenship)){
+            sb.append(", ");
+            sb.append(sitizenship);
+        }
+        if(StringUtils.isNotEmpty(webSite)){
+            sb.append(", ");
+            sb.append(webSite);
+        }
+        if(StringUtils.isNotEmpty(email)){
+            sb.append(", ");
+            sb.append(email);
+        }
+        if(StringUtils.isNotEmpty(company)){
+            sb.append(", ");
+            sb.append(company);
+        }
+        if(StringUtils.isNotEmpty(photoUrl)){
+            sb.append(", ");
+            sb.append(photoUrl);
+        }
+        return sb.toString();
+    }
+
     public Contact(Integer id, String firstName, String secondName, String nameByFather, DateTime dateOfBirth, Sex sex, String sitizenship, String webSite, String email, String company, String photoUrl, Integer addressId) {
         super(id);
         telephones = new ArrayList<Telephone>();

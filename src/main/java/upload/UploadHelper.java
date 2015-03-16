@@ -4,6 +4,7 @@ import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
@@ -82,12 +83,11 @@ public class UploadHelper {
         //String uploadPath = request.getSession().getServletContext().getContextPath()
         //        + File.separator + UPLOAD_DIRECTORY;
 
-        String rootPath = System.getProperty("catalina.home");
-        String uploadPath = rootPath + File.separator + "/upload";
+        String uploadPath = "/upload";
         ResourceBundle resourceBundle = ResourceBundle.getBundle("config");
         String dir = resourceBundle.getString("uploadDir");
         if(StringUtils.isNotEmpty(dir)){
-            uploadPath = rootPath + File.separator + dir;
+            uploadPath = dir;
         }
 
         File uploadDir = new File(uploadPath);
@@ -143,8 +143,22 @@ public class UploadHelper {
                         uploadFileDir.mkdir();
                     }
                     fileName = dateNowString + fileName;
+                    if(StringUtils.isEmpty(uploadDate)){
+
+                        //  Значит, загружаем аву
+                        String[] arr = fileName.split("\\.");
+                        if(ArrayUtils.isNotEmpty(arr)) {
+                            String extension = arr[arr.length - 1];
+                            fileName = "avatar";
+                            StringBuilder sb = new StringBuilder(fileName);
+                            sb.append(".");
+                            sb.append(extension);
+                            fileName = sb.toString();
+                        }
+                    }
                     String filePath = contactPath + File.separator + fileName;
                     File storeFile = new File(filePath);
+                    logger.info(" - [ UPLOADING FILE... FILE PATH IS: " + storeFile + " ]");
                     // saves the file on disk
                     fileItem.write(storeFile);
                     request.getSession().setAttribute("infoMessage",
@@ -179,8 +193,7 @@ public class UploadHelper {
 
         ResourceBundle resourceBundle = ResourceBundle.getBundle("config");
         String dir = resourceBundle.getString("uploadDir");
-        String rootPath = System.getProperty("catalina.home");
-        File file = new File(rootPath + File.separator + dir + File.separator + contactId + File.separator + fileName);
+        File file = new File(dir + File.separator + contactId + File.separator + fileName);
         if(!file.exists()){
             throw new DownloadException("Запрашиваемый файл не существует");
         }
@@ -200,7 +213,7 @@ public class UploadHelper {
             os.flush();
             os.close();
             fis.close();
-            logger.info(" - [ FILE " + fileName + " WAS DOWNLOADED SUCCESFULLY]");
+            logger.info(" - [ FILE " + fileName + " WAS DOWNLOADED SUCCESFULLY!!!]");
             return true;
         }
         catch (FileNotFoundException e){
@@ -221,8 +234,7 @@ public class UploadHelper {
 
         ResourceBundle resourceBundle = ResourceBundle.getBundle("config");
         String dir = resourceBundle.getString("uploadDir");
-        String rootPath = System.getProperty("catalina.home");
-        File file = new File(rootPath + File.separator + dir + File.separator + contactId + File.separator + fileName);
+        File file = new File(dir + File.separator + contactId + File.separator + fileName);
         if(!file.exists()){
             throw new DownloadException("Запрашиваемый файл не существует");
         }
@@ -239,7 +251,7 @@ public class UploadHelper {
             os.flush();
             os.close();
             fis.close();
-            logger.info(" - [ FILE " + fileName + " WAS DOWNLOADED SUCCESFULLY]");
+            logger.info(" - [ IMAGE " + fileName + " WAS DOWNLOADED SUCCESFULLY!!!]");
         }
         catch (FileNotFoundException e){
             throw new DownloadException(e);
@@ -247,5 +259,19 @@ public class UploadHelper {
         catch (IOException e){
             throw new DownloadException(e);
         }
+    }
+
+    public boolean deleteFile(String fileName, Integer contactId){
+
+        logger.info(" - [ ENTERING METHOD deleteFile(String fileName, Integer contactId), PARAMETERS: String fileName = " + fileName + ", Integer contactId = " + contactId + "]");
+
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("config");
+        String dir = resourceBundle.getString("uploadDir");
+        File file = new File(dir + File.separator + contactId + File.separator + fileName);
+        if(!file.exists()){
+            logger.error("CANNOT DELETE unexsisting file!");
+        }
+        logger.info(" - [ DELETING FILE... FILE PATH IS: " + file + " ]");
+        return file.delete();
     }
 }

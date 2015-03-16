@@ -6,13 +6,20 @@ body
 
 h1
 {
-    font-size: 5em;
+    font-size: 4em;
+    margin: 0 auto 0;
 }
 
 form
 {
-    padding: 1% 10% 1%;
-    width: 80%;
+    width: 70%;
+    margin: 0 15% 0;
+}
+
+.main, .search
+{
+    width: 60%;
+    margin: 0 20% 0;
 }
 
 input, label
@@ -26,13 +33,10 @@ fieldset
     border: 5px solid purple;
 }
 
-.checkbox{
-    width: 20%;
-}
-
 input
 {
     border: 2px solid mediumpurple;
+    margin-bottom: 1%;
 }
 
 label
@@ -42,7 +46,13 @@ label
 
 .sex, .tel
 {
-    width: auto;
+    display: inline-block;
+    width: 10%;
+}
+
+.sex > input, .tel > input
+{
+    width: 100%;
 }
 
 fieldset
@@ -55,6 +65,7 @@ textarea
     width: 100%;
     color: grey;
     margin: 2% 0 2%;
+    min-height: 30%;
 }
 
 table
@@ -66,21 +77,21 @@ table
 
 td, th
 {
-    padding: 1%;
     border: 2px solid white;
+    padding: 1%;
 }
 
 th
 {
     background-color: rosybrown;
     font-size: 1.5em;
+    height: 10%;
 }
 
 #page-tab
 {
     list-style: none;
     margin: 0 auto 0;
-    width: 100%;
 }
 
 .page-button
@@ -92,6 +103,10 @@ th
     font-weight: bold;
     text-decoration: none;
     color: white;
+}
+
+.active{
+    background-color: white;
 }
 
 a:link, a:active, a:hover, a:visited
@@ -111,23 +126,25 @@ button, .button
     background-color: mediumvioletred;
     color: white;
     border: none;
+    margin: 1%;
 }
 
 #date-tab > input
 {
     display: inline-block;
-    width: 30%;
+    width: 14%;
+    margin-right: 15%;
 }
 
 #attachment-pop-up, #telephone-pop-up, #avatar-pop-up{
     display: none;
-    width:80%;
+    width:60%;
     position:fixed;
-    top:2%;
-	left:10%;
+    top:3%;
+	left:20%;
     margin:2% auto 0px auto;
     height: auto;
-    padding:10px;
+    padding: 2%;
     background-color: white;
     border-radius:5px;
 	border: 5px solid purple;
@@ -139,4 +156,14 @@ button, .button
 
 .deleted{
     display: none;
+}
+
+img{
+    max-height: 50ex;
+    margin: 0 auto 0;
+}
+
+.checkbox
+{
+    width: 20%;
 }

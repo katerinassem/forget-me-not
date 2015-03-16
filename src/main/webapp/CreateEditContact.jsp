@@ -14,7 +14,7 @@
     <script src="files/js/popup.js" ></script>
 </head>
 <body>
-    <h1>Создать или редактировать контакт.</h1>
+    <h1>Создать и редактировать</h1>
     <h4>${sessionScope.infoMessage}</h4>
     <div onclick="showPopUp('avatar-pop-up', 'block')">
         <c:if test="${sessionScope.contact.hasAvatar}">
@@ -28,7 +28,7 @@
         <input type="hidden" name="command" value="CreateEditContactCommand"/>
         <input type="hidden" name="option" value="editmore"/>
         <div id="attachment-pop-up">
-            <h4>Создать присоединение.</h4>
+            <h3>Создать присоединение.</h3>
             <input name="attachmentId" type="hidden"/>
             <input name="file" type="file"/>
             <input name="fileName" type="hidden"/>
@@ -51,12 +51,12 @@
             <input name=month type="text" placeholder="мм" value="${sessionScope.contact.month}"/>
             <input name="year" type="text" placeholder="гг" value="${sessionScope.contact.year}"/>
         </div>
-        <fieldset>
-            <label class="sex">женский</label>
+        <fieldset class="sex">
+            <label >женский</label>
             <input name="checkedSex" class="sex" type="radio" name="sex" value="f" ${sessionScope.contact.ifFemale}/>
         </fieldset>
-        <fieldset>
-            <label class="sex" >мужской</label>
+        <fieldset class="sex">
+            <label >мужской</label>
             <input name="checkedSex" class="sex" type="radio" name="sex" value="m" ${sessionScope.contact.ifMale}/>
         </fieldset>
 
@@ -168,7 +168,7 @@
                 </fieldset>
         <button form="main" onclick="validateMain()" type="button">Сохранить</button>
         <div id="telephone-pop-up">
-            <h4>Создать или редактировать телефон.</h4>
+            <h3>Создать или редактировать телефон.</h3>
             <input name="myId" type="hidden"/>
             <input name="telephoneId" type="hidden"/>
             <label>Код страны:</label>
@@ -191,7 +191,7 @@
         </div>
 
         <div id="avatar-pop-up">
-            <h4>Редактировать аватар.</h4>
+            <h3>Редактировать аватар.</h3>
             <c:if test="${sessionScope.contact.id != null}">
                 <label>Изображение:</label>
                 <input name="avatarFile" type="file"/>
